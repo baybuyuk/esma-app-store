@@ -15,6 +15,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { colors } from '../constants/colors';
 import { type } from '../constants/type';
 import { gunlukKayitlar } from '../db/db';
+import GradientArkaPlan from '../components/GradientArkaPlan';
 
 const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
 
@@ -118,6 +119,7 @@ export default function GecmisScreen({ navigation }) {
   }, [yukle]);
 
   return (
+    <GradientArkaPlan>
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
@@ -164,32 +166,35 @@ export default function GecmisScreen({ navigation }) {
       )}
 
       <Modal visible={!!aktif} animationType="slide" onRequestClose={() => setAktif(null)}>
-        <SafeAreaView style={styles.container}>
-          <View style={styles.header}>
-            <TouchableOpacity onPress={() => setAktif(null)}>
-              <Text style={styles.geri}>Kapat</Text>
-            </TouchableOpacity>
-            <Text style={styles.baslik}>{aktif ? tarihFormat(aktif.tarih) : ''}</Text>
-            <View style={{ width: 60 }} />
-          </View>
-          {!!aktif && (
-            <ScrollView contentContainerStyle={{ padding: 20 }}>
-              <Text style={styles.detayLabel}>Namaz</Text>
-              <Text style={styles.detayDeger}>{namazEtiket(aktif.namaz_sayisi)}</Text>
-              <Text style={styles.detayLabel}>Şükür</Text>
-              <Text style={styles.detayDeger}>{aktif.sukur_notu || '—'}</Text>
-              <Text style={styles.detayLabel}>İyilik</Text>
-              <Text style={styles.detayDeger}>{aktif.iyilik_notu || '—'}</Text>
-            </ScrollView>
-          )}
-        </SafeAreaView>
+        <GradientArkaPlan>
+          <SafeAreaView style={styles.container}>
+            <View style={styles.header}>
+              <TouchableOpacity onPress={() => setAktif(null)}>
+                <Text style={styles.geri}>Kapat</Text>
+              </TouchableOpacity>
+              <Text style={styles.baslik}>{aktif ? tarihFormat(aktif.tarih) : ''}</Text>
+              <View style={{ width: 60 }} />
+            </View>
+            {!!aktif && (
+              <ScrollView contentContainerStyle={{ padding: 20 }}>
+                <Text style={styles.detayLabel}>Namaz</Text>
+                <Text style={styles.detayDeger}>{namazEtiket(aktif.namaz_sayisi)}</Text>
+                <Text style={styles.detayLabel}>Şükür</Text>
+                <Text style={styles.detayDeger}>{aktif.sukur_notu || '—'}</Text>
+                <Text style={styles.detayLabel}>İyilik</Text>
+                <Text style={styles.detayDeger}>{aktif.iyilik_notu || '—'}</Text>
+              </ScrollView>
+            )}
+          </SafeAreaView>
+        </GradientArkaPlan>
       </Modal>
     </SafeAreaView>
+    </GradientArkaPlan>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: colors.krem },
+  container: { flex: 1, backgroundColor: 'transparent' },
   header: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 14, paddingVertical: 12 },
   geri: { color: colors.altin, fontSize: 16, width: 60 },
   baslik: { color: colors.anaYesil, fontSize: 18, fontWeight: '600', flex: 1, textAlign: 'center' },

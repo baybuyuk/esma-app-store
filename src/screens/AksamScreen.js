@@ -20,6 +20,7 @@ import { colors } from '../constants/colors';
 import { radii } from '../constants/radii';
 import { type } from '../constants/type';
 import { gunlukKayitEkle } from '../db/db';
+import GradientArkaPlan from '../components/GradientArkaPlan';
 
 const NAMAZ_SECENEK = [
   { key: 5, label: '5 vakit' },
@@ -96,6 +97,7 @@ export default function AksamScreen({ navigation }) {
   };
 
   return (
+    <GradientArkaPlan>
     <SafeAreaView style={styles.container}>
       <KeyboardAvoidingView
         style={{ flex: 1 }}
@@ -171,11 +173,12 @@ export default function AksamScreen({ navigation }) {
         </ScrollView>
       </KeyboardAvoidingView>
     </SafeAreaView>
+    </GradientArkaPlan>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: colors.krem },
+  container: { flex: 1, backgroundColor: 'transparent' },
   header: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 14, paddingVertical: 12 },
   geri: { color: colors.altin, fontSize: 16, width: 60 },
   baslik: { color: colors.anaYesil, fontSize: 18, fontWeight: '600' },

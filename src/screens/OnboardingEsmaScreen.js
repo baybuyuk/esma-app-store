@@ -13,11 +13,14 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { colors } from '../constants/colors';
 import { radii } from '../constants/radii';
 import { type } from '../constants/type';
+import GradientArkaPlan from '../components/GradientArkaPlan';
+import IsinPatlamasi from '../components/IsinPatlamasi';
 
 const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
 
 export default function OnboardingEsmaScreen({ navigation }) {
   const [veri, setVeri] = useState(null);
+  const [patlamaAktif, setPatlamaAktif] = useState(false);
 
   const ustOpacity = useRef(new Animated.Value(0)).current;
   const ustTranslateY = useRef(new Animated.Value(12)).current;
@@ -42,6 +45,7 @@ export default function OnboardingEsmaScreen({ navigation }) {
 
   useEffect(() => {
     if (!veri) return;
+    const patlamaTimer = setTimeout(() => setPatlamaAktif(true), 500);
     Animated.parallel([
       Animated.timing(ustOpacity, {
         toValue: 1,
@@ -112,6 +116,9 @@ export default function OnboardingEsmaScreen({ navigation }) {
         useNativeDriver: true,
       }),
     ]).start();
+    return () => {
+      clearTimeout(patlamaTimer);
+    };
   }, [
     veri,
     ustOpacity,
@@ -147,13 +154,16 @@ export default function OnboardingEsmaScreen({ navigation }) {
 
   if (!veri) {
     return (
-      <SafeAreaView style={styles.container}>
-        <View style={styles.inner}><Text style={styles.altYazi}>Yükleniyor...</Text></View>
-      </SafeAreaView>
+      <GradientArkaPlan>
+        <SafeAreaView style={styles.container}>
+          <View style={styles.inner}><Text style={styles.altYazi}>Yükleniyor...</Text></View>
+        </SafeAreaView>
+      </GradientArkaPlan>
     );
   }
 
   return (
+    <GradientArkaPlan>
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.inner}>
         <Animated.Text
@@ -242,12 +252,14 @@ export default function OnboardingEsmaScreen({ navigation }) {
           </AnimatedTouchable>
         </Animated.View>
       </ScrollView>
+      <IsinPatlamasi aktif={patlamaAktif} boyut={360} />
     </SafeAreaView>
+    </GradientArkaPlan>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: colors.krem },
+  container: { flex: 1, backgroundColor: 'transparent' },
   inner: { padding: 24, alignItems: 'center' },
   altYazi: { color: colors.ikincilMetin, fontSize: 14 },
   ust: {

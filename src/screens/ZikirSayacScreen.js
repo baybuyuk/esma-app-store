@@ -18,6 +18,9 @@ import { type } from '../constants/type';
 import { esmaById } from '../lib/esma';
 import { kisaZikirler } from '../lib/data';
 import { zikirKaydet, bugunkuToplamSayim, toplamSayimArtir } from '../db/db';
+import GradientArkaPlan from '../components/GradientArkaPlan';
+import NurHalesi from '../components/NurHalesi';
+import Partikullar from '../components/Partikullar';
 
 const MIN_ARALIK_MS = 200;
 const GUNLUK_MAX = 10000;
@@ -55,6 +58,7 @@ export default function ZikirSayacScreen({ route, navigation }) {
   const [sayim, setSayim] = useState(0);
   const [tamamlandi, setTamamlandi] = useState(false);
   const [gunlukToplam, setGunlukToplam] = useState(0);
+  const [efektAktif, setEfektAktif] = useState(false);
   const sonTikRef = useRef(0);
   const dakikalikTiklarRef = useRef([]);
   const baslangicRef = useRef(new Date().toISOString());
@@ -163,6 +167,7 @@ export default function ZikirSayacScreen({ route, navigation }) {
 
     if (yeni >= hedef && !tamamlandi) {
       setTamamlandi(true);
+      setEfektAktif(true);
       try {
         Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
       } catch (e) {}
@@ -198,6 +203,7 @@ export default function ZikirSayacScreen({ route, navigation }) {
       ]).start();
       alertTimeoutRef.current = setTimeout(() => {
         alertTimeoutRef.current = null;
+        setEfektAktif(false);
         Alert.alert('Elhamdulillah', 'Hedefe ulaştın. Allah kabul etsin.', [
           { text: 'Devam et', onPress: () => setTamamlandi(false) },
           { text: 'Bitir', onPress: tamamla, style: 'default' },
@@ -231,6 +237,7 @@ export default function ZikirSayacScreen({ route, navigation }) {
         onPress: () => {
           setSayim(0);
           setTamamlandi(false);
+          setEfektAktif(false);
           uyariGosterildiRef.current = false;
           baslangicRef.current = new Date().toISOString();
         },
@@ -239,6 +246,7 @@ export default function ZikirSayacScreen({ route, navigation }) {
   };
 
   return (
+    <GradientArkaPlan>
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()} accessibilityLabel="Geri">
@@ -319,12 +327,16 @@ export default function ZikirSayacScreen({ route, navigation }) {
           <Text style={[styles.altButonYazi, { color: '#fff' }]}>Tamamla</Text>
         </TouchableOpacity>
       </View>
+
+      <NurHalesi aktif={efektAktif} boyut={Math.min(ekranEn * 0.95, 420)} />
+      <Partikullar aktif={efektAktif} alan={{ en: Math.min(ekranEn * 0.85, 360), boy: 320 }} adet={12} />
     </SafeAreaView>
+    </GradientArkaPlan>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: colors.krem },
+  container: { flex: 1, backgroundColor: 'transparent' },
   arkaDaire: {
     position: 'absolute',
     top: '50%',

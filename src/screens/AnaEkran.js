@@ -19,6 +19,7 @@ import { type } from '../constants/type';
 import { gunlukVakitler, sonrakiVakit, vakitFormat, gericiSayim } from '../lib/namaz';
 import { gununIcerigi, bugunCumaMi } from '../lib/gunlukSecim';
 import { ayetler, hadisler } from '../lib/data';
+import GradientArkaPlan from '../components/GradientArkaPlan';
 
 export default function AnaEkran({ navigation }) {
   const [isim, setIsim] = useState('');
@@ -177,6 +178,7 @@ export default function AnaEkran({ navigation }) {
   }, [yukle]);
 
   return (
+    <GradientArkaPlan>
     <SafeAreaView style={styles.container} edges={['top']}>
       <ScrollView
         contentContainerStyle={styles.scroll}
@@ -310,6 +312,7 @@ export default function AnaEkran({ navigation }) {
         </Animated.View>
       </ScrollView>
     </SafeAreaView>
+    </GradientArkaPlan>
   );
 }
 
@@ -379,7 +382,7 @@ function KisaYol({ emoji, label, onPress }) {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: colors.krem },
+  container: { flex: 1, backgroundColor: 'transparent' },
   scroll: { padding: 16, paddingBottom: 32 },
   basliklik: { marginBottom: 16, marginTop: 4 },
   selam: { fontSize: 20, color: colors.anaYesil, fontWeight: '600' },

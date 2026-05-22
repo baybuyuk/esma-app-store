@@ -14,6 +14,7 @@ import { colors } from '../constants/colors';
 import { type } from '../constants/type';
 import { izinIste, namazBildirimleriniKur } from '../lib/bildirim';
 import { gunlukVakitler } from '../lib/namaz';
+import GradientArkaPlan from '../components/GradientArkaPlan';
 
 const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
 
@@ -120,6 +121,7 @@ export default function OnboardingNotificationScreen({ navigation }) {
   };
 
   return (
+    <GradientArkaPlan>
     <SafeAreaView style={styles.container}>
       <View style={styles.inner}>
         <Animated.Text
@@ -180,11 +182,12 @@ export default function OnboardingNotificationScreen({ navigation }) {
         </Animated.View>
       </View>
     </SafeAreaView>
+    </GradientArkaPlan>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: colors.krem },
+  container: { flex: 1, backgroundColor: 'transparent' },
   inner: { flex: 1, padding: 28, justifyContent: 'center' },
   baslik: {
     fontSize: 26,

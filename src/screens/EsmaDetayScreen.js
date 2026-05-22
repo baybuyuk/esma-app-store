@@ -14,6 +14,8 @@ import { radii } from '../constants/radii';
 import { type } from '../constants/type';
 import { esmaById } from '../lib/esma';
 import { esmaToplamSayim, esmaGunlukSayim, esmaStreak } from '../db/db';
+import GradientArkaPlan from '../components/GradientArkaPlan';
+import KaligrafiHalo from '../components/KaligrafiHalo';
 
 function bugunIsoTarih() {
   const d = new Date();
@@ -128,18 +130,21 @@ export default function EsmaDetayScreen({ route, navigation }) {
 
   if (!esma) {
     return (
-      <SafeAreaView style={styles.container}>
-        <View style={styles.header}>
-          <TouchableOpacity onPress={() => navigation.goBack()}>
-            <Text style={styles.geri}>‹ Geri</Text>
-          </TouchableOpacity>
-        </View>
-        <Text style={styles.bos}>Esma bulunamadı.</Text>
-      </SafeAreaView>
+      <GradientArkaPlan>
+        <SafeAreaView style={styles.container}>
+          <View style={styles.header}>
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+              <Text style={styles.geri}>‹ Geri</Text>
+            </TouchableOpacity>
+          </View>
+          <Text style={styles.bos}>Esma bulunamadı.</Text>
+        </SafeAreaView>
+      </GradientArkaPlan>
     );
   }
 
   return (
+    <GradientArkaPlan>
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()} accessibilityLabel="Geri">
@@ -148,20 +153,23 @@ export default function EsmaDetayScreen({ route, navigation }) {
       </View>
 
       <ScrollView contentContainerStyle={styles.scroll}>
-        <Animated.Text
-          style={[
-            styles.arapca,
-            {
-              opacity: arapcaOpacity,
-              transform: [
-                { scale: arapcaScale },
-                { translateY: arapcaTranslateY },
-              ],
-            },
-          ]}
-        >
-          {esma.arapca}
-        </Animated.Text>
+        <View style={styles.arapcaSarmal}>
+          <KaligrafiHalo boyut={240} />
+          <Animated.Text
+            style={[
+              styles.arapca,
+              {
+                opacity: arapcaOpacity,
+                transform: [
+                  { scale: arapcaScale },
+                  { translateY: arapcaTranslateY },
+                ],
+              },
+            ]}
+          >
+            {esma.arapca}
+          </Animated.Text>
+        </View>
         <Animated.Text
           style={[
             styles.yaEsma,
@@ -309,21 +317,28 @@ export default function EsmaDetayScreen({ route, navigation }) {
         </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
+    </GradientArkaPlan>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: colors.krem },
+  container: { flex: 1, backgroundColor: 'transparent' },
   header: { paddingHorizontal: 14, paddingVertical: 12 },
   geri: { color: colors.altin, fontSize: 16 },
   bos: { padding: 28, color: colors.ikincilMetin, textAlign: 'center' },
   scroll: { padding: 24, alignItems: 'center', paddingBottom: 40 },
 
+  arapcaSarmal: {
+    alignSelf: 'stretch',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 16,
+    minHeight: 80,
+  },
   arapca: {
     fontSize: 48,
     color: colors.altin,
     textAlign: 'center',
-    marginTop: 16,
   },
   yaEsma: {
     fontSize: type['2xl'],

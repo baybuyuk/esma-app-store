@@ -19,6 +19,7 @@ import { colors } from '../constants/colors';
 import { radii } from '../constants/radii';
 import { type } from '../constants/type';
 import { sehirler } from '../constants/sehirler';
+import GradientArkaPlan from '../components/GradientArkaPlan';
 
 const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
 
@@ -135,6 +136,7 @@ export default function OnboardingLocationScreen({ navigation }) {
     : sehirler;
 
   return (
+    <GradientArkaPlan>
     <SafeAreaView style={styles.container}>
       <View style={styles.inner}>
         <Animated.Text
@@ -195,40 +197,43 @@ export default function OnboardingLocationScreen({ navigation }) {
         animationType="slide"
         onRequestClose={() => setModalAcik(false)}
       >
-        <SafeAreaView style={styles.modalContainer}>
-          <View style={styles.modalHeader}>
-            <Text style={styles.modalBaslik}>Şehir seç</Text>
-            <TouchableOpacity onPress={() => setModalAcik(false)}>
-              <Text style={styles.modalKapat}>Kapat</Text>
-            </TouchableOpacity>
-          </View>
-          <TextInput
-            style={styles.aramaInput}
-            value={arama}
-            onChangeText={setArama}
-            placeholder="Şehir ara..."
-            placeholderTextColor={colors.ikincilMetin}
-          />
-          <FlatList
-            data={filtreli}
-            keyExtractor={(s) => s.ad}
-            renderItem={({ item }) => (
-              <TouchableOpacity
-                style={styles.sehirSatir}
-                onPress={() => sehirSec(item)}
-              >
-                <Text style={styles.sehirAd}>{item.ad}</Text>
+        <GradientArkaPlan>
+          <SafeAreaView style={styles.modalContainer}>
+            <View style={styles.modalHeader}>
+              <Text style={styles.modalBaslik}>Şehir seç</Text>
+              <TouchableOpacity onPress={() => setModalAcik(false)}>
+                <Text style={styles.modalKapat}>Kapat</Text>
               </TouchableOpacity>
-            )}
-          />
-        </SafeAreaView>
+            </View>
+            <TextInput
+              style={styles.aramaInput}
+              value={arama}
+              onChangeText={setArama}
+              placeholder="Şehir ara..."
+              placeholderTextColor={colors.ikincilMetin}
+            />
+            <FlatList
+              data={filtreli}
+              keyExtractor={(s) => s.ad}
+              renderItem={({ item }) => (
+                <TouchableOpacity
+                  style={styles.sehirSatir}
+                  onPress={() => sehirSec(item)}
+                >
+                  <Text style={styles.sehirAd}>{item.ad}</Text>
+                </TouchableOpacity>
+              )}
+            />
+          </SafeAreaView>
+        </GradientArkaPlan>
       </Modal>
     </SafeAreaView>
+    </GradientArkaPlan>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: colors.krem },
+  container: { flex: 1, backgroundColor: 'transparent' },
   inner: { flex: 1, padding: 28, justifyContent: 'center' },
   baslik: {
     fontSize: 26,
@@ -259,7 +264,7 @@ const styles = StyleSheet.create({
     borderColor: colors.cizgi,
   },
   butonIkincilYazi: { color: colors.anaYesil, fontSize: 16 },
-  modalContainer: { flex: 1, backgroundColor: colors.krem },
+  modalContainer: { flex: 1, backgroundColor: 'transparent' },
   modalHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',

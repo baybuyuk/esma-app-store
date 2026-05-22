@@ -5,6 +5,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { colors } from '../constants/colors';
 import { type } from '../constants/type';
 import { gunlukVakitler, sonrakiVakit, vakitFormat } from '../lib/namaz';
+import GradientArkaPlan from '../components/GradientArkaPlan';
 
 const SIRA = [
   ['imsak', 'İmsak'],
@@ -107,6 +108,7 @@ export default function TumVakitlerScreen({ navigation }) {
   }, [sonraki?.anahtar, aktifNefesAnim]);
 
   return (
+    <GradientArkaPlan>
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
@@ -154,11 +156,12 @@ export default function TumVakitlerScreen({ navigation }) {
         </View>
       )}
     </SafeAreaView>
+    </GradientArkaPlan>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: colors.krem },
+  container: { flex: 1, backgroundColor: 'transparent' },
   header: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 14, paddingVertical: 12 },
   geri: { color: colors.altin, fontSize: 16, width: 60 },
   baslik: { color: colors.anaYesil, fontSize: 18, fontWeight: '600', flex: 1, textAlign: 'center' },

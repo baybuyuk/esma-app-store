@@ -12,6 +12,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { colors } from '../constants/colors';
 import { type } from '../constants/type';
 import { kisaZikirler } from '../lib/data';
+import GradientArkaPlan from '../components/GradientArkaPlan';
 
 const KAYNAK_RENGI = {
   kuran: { arka: '#E6F0E6', metin: colors.anaYesil, etiket: '📖 KURAN' },
@@ -56,6 +57,7 @@ export default function KisaZikirlerScreen({ navigation }) {
   }, [girisOpacity, girisTranslateY, aciklamaOpacity, aciklamaTranslateY]);
 
   return (
+    <GradientArkaPlan>
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
@@ -107,11 +109,12 @@ export default function KisaZikirlerScreen({ navigation }) {
         />
       </Animated.View>
     </SafeAreaView>
+    </GradientArkaPlan>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: colors.krem },
+  container: { flex: 1, backgroundColor: 'transparent' },
   header: {
     flexDirection: 'row',
     alignItems: 'center',

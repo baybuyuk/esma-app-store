@@ -13,6 +13,7 @@ import { colors } from '../constants/colors';
 import { type } from '../constants/type';
 import { anlikZikirler, kisaZikirler } from '../lib/data';
 import { bugunCumaMi } from '../lib/gunlukSecim';
+import GradientArkaPlan from '../components/GradientArkaPlan';
 
 const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
 
@@ -103,6 +104,7 @@ export default function AnlikZikirScreen({ navigation }) {
   };
 
   return (
+    <GradientArkaPlan>
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
@@ -137,11 +139,12 @@ export default function AnlikZikirScreen({ navigation }) {
         })}
       </Animated.ScrollView>
     </SafeAreaView>
+    </GradientArkaPlan>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: colors.krem },
+  container: { flex: 1, backgroundColor: 'transparent' },
   header: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 14, paddingVertical: 12 },
   geri: { color: colors.altin, fontSize: 16, width: 60 },
   baslik: { color: colors.anaYesil, fontSize: type.lg, fontWeight: '600', flex: 1, textAlign: 'center' },

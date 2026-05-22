@@ -17,6 +17,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { colors } from '../constants/colors';
 import { type } from '../constants/type';
 import { isimdenEsma } from '../lib/esma';
+import GradientArkaPlan from '../components/GradientArkaPlan';
 
 const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
 
@@ -62,6 +63,7 @@ export default function OnboardingNameScreen({ navigation }) {
   };
 
   return (
+    <GradientArkaPlan>
     <SafeAreaView style={styles.container}>
       <KeyboardAvoidingView
         style={{ flex: 1 }}
@@ -101,11 +103,12 @@ export default function OnboardingNameScreen({ navigation }) {
         </TouchableWithoutFeedback>
       </KeyboardAvoidingView>
     </SafeAreaView>
+    </GradientArkaPlan>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: colors.krem },
+  container: { flex: 1, backgroundColor: 'transparent' },
   inner: { flex: 1, padding: 28, justifyContent: 'center' },
   selam: {
     fontSize: 32,

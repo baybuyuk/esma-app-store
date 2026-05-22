@@ -15,6 +15,7 @@ import { colors } from '../constants/colors';
 import { radii } from '../constants/radii';
 import { type } from '../constants/type';
 import { tumEsmalar } from '../lib/esma';
+import GradientArkaPlan from '../components/GradientArkaPlan';
 
 const FAVORI_KEY = 'esmaFavoriler';
 
@@ -212,6 +213,7 @@ export default function EsmalarListScreen({ navigation }) {
   };
 
   return (
+    <GradientArkaPlan>
     <SafeAreaView style={styles.container} edges={['top']}>
       <Animated.View
         style={{
@@ -292,11 +294,12 @@ export default function EsmalarListScreen({ navigation }) {
       </Animated.View>
       </Animated.View>
     </SafeAreaView>
+    </GradientArkaPlan>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: colors.krem },
+  container: { flex: 1, backgroundColor: 'transparent' },
 
   header: {
     flexDirection: 'row',

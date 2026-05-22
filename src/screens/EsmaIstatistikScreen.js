@@ -15,6 +15,7 @@ import { radii } from '../constants/radii';
 import { type } from '../constants/type';
 import { tumEsmalar } from '../lib/esma';
 import { tumEsmaIstatistik } from '../db/db';
+import GradientArkaPlan from '../components/GradientArkaPlan';
 
 function tarihFormat(s) {
   if (!s) return '';
@@ -131,6 +132,7 @@ export default function EsmaIstatistikScreen({ navigation }) {
   }, [yuklendi, satirlar.length]);
 
   return (
+    <GradientArkaPlan>
     <SafeAreaView style={styles.container} edges={['top']}>
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()} accessibilityLabel="Geri">
@@ -169,11 +171,12 @@ export default function EsmaIstatistikScreen({ navigation }) {
         )}
       </Animated.View>
     </SafeAreaView>
+    </GradientArkaPlan>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: colors.krem },
+  container: { flex: 1, backgroundColor: 'transparent' },
 
   header: {
     flexDirection: 'row',

@@ -12,6 +12,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { colors } from '../constants/colors';
 import { radii } from '../constants/radii';
 import { type } from '../constants/type';
+import GradientArkaPlan from '../components/GradientArkaPlan';
 
 export default function HakkindaScreen({ navigation }) {
   const logoOpacity = useRef(new Animated.Value(0)).current;
@@ -83,6 +84,7 @@ export default function HakkindaScreen({ navigation }) {
   ]);
 
   return (
+    <GradientArkaPlan>
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
@@ -139,11 +141,12 @@ export default function HakkindaScreen({ navigation }) {
         <Text style={styles.niyet}>🤲 Niyetimiz halis olsun</Text>
       </ScrollView>
     </SafeAreaView>
+    </GradientArkaPlan>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: colors.krem },
+  container: { flex: 1, backgroundColor: 'transparent' },
   header: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 14, paddingVertical: 12 },
   geri: { color: colors.altin, fontSize: 16, width: 60 },
   baslik: { color: colors.anaYesil, fontSize: 18, fontWeight: '600', flex: 1, textAlign: 'center' },

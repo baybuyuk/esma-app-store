@@ -66,7 +66,7 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator
           initialRouteName={baslangic}
-          screenOptions={{ headerShown: false, animation: 'fade' }}
+          screenOptions={{ headerShown: false, animation: 'fade_from_bottom', animationDuration: 380 }}
         >
           <Stack.Screen name="OnboardingName" component={OnboardingNameScreen} />
           <Stack.Screen name="OnboardingLocation" component={OnboardingLocationScreen} />

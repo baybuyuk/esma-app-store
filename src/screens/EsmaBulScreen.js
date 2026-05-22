@@ -15,6 +15,7 @@ import { colors } from '../constants/colors';
 import { radii } from '../constants/radii';
 import { type } from '../constants/type';
 import { isimdenEsma } from '../lib/esma';
+import GradientArkaPlan from '../components/GradientArkaPlan';
 
 export default function EsmaBulScreen({ navigation }) {
   const [isim, setIsim] = useState('');
@@ -52,6 +53,7 @@ export default function EsmaBulScreen({ navigation }) {
   };
 
   return (
+    <GradientArkaPlan>
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()} accessibilityLabel="Geri">
@@ -154,11 +156,12 @@ export default function EsmaBulScreen({ navigation }) {
         )}
       </ScrollView>
     </SafeAreaView>
+    </GradientArkaPlan>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: colors.krem },
+  container: { flex: 1, backgroundColor: 'transparent' },
   header: {
     flexDirection: 'row',
     alignItems: 'center',

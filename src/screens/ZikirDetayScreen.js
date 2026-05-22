@@ -13,6 +13,7 @@ import { colors } from '../constants/colors';
 import { radii } from '../constants/radii';
 import { type } from '../constants/type';
 import { kisaZikirler } from '../lib/data';
+import GradientArkaPlan from '../components/GradientArkaPlan';
 
 const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
 
@@ -79,13 +80,16 @@ export default function ZikirDetayScreen({ route, navigation }) {
 
   if (!zikir) {
     return (
-      <SafeAreaView style={styles.container}>
-        <Text style={styles.bos}>Zikir bulunamadı.</Text>
-      </SafeAreaView>
+      <GradientArkaPlan>
+        <SafeAreaView style={styles.container}>
+          <Text style={styles.bos}>Zikir bulunamadı.</Text>
+        </SafeAreaView>
+      </GradientArkaPlan>
     );
   }
 
   return (
+    <GradientArkaPlan>
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
@@ -151,11 +155,12 @@ export default function ZikirDetayScreen({ route, navigation }) {
         </AnimatedTouchable>
       </ScrollView>
     </SafeAreaView>
+    </GradientArkaPlan>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: colors.krem },
+  container: { flex: 1, backgroundColor: 'transparent' },
   header: { paddingHorizontal: 14, paddingVertical: 12 },
   geri: { color: colors.altin, fontSize: 16 },
   scroll: { padding: 24, alignItems: 'center' },
