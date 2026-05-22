@@ -1,0 +1,1232 @@
+{
+  "ahmet": {
+    "arapca": "أحمد",
+    "ebced": 53,
+    "cinsiyet": "e"
+  },
+  "mehmet": {
+    "arapca": "محمد",
+    "ebced": 92,
+    "cinsiyet": "e"
+  },
+  "muhammed": {
+    "arapca": "محمد",
+    "ebced": 92,
+    "cinsiyet": "e"
+  },
+  "mahmut": {
+    "arapca": "محمود",
+    "ebced": 92,
+    "cinsiyet": "e"
+  },
+  "mustafa": {
+    "arapca": "مصطفى",
+    "ebced": 211,
+    "cinsiyet": "e"
+  },
+  "ali": {
+    "arapca": "علي",
+    "ebced": 110,
+    "cinsiyet": "e"
+  },
+  "veli": {
+    "arapca": "ولي",
+    "ebced": 46,
+    "cinsiyet": "e"
+  },
+  "ömer": {
+    "arapca": "عمر",
+    "ebced": 310,
+    "cinsiyet": "e"
+  },
+  "osman": {
+    "arapca": "عثمان",
+    "ebced": 661,
+    "cinsiyet": "e"
+  },
+  "hüseyin": {
+    "arapca": "حسين",
+    "ebced": 128,
+    "cinsiyet": "e"
+  },
+  "hasan": {
+    "arapca": "حسن",
+    "ebced": 118,
+    "cinsiyet": "e"
+  },
+  "ibrahim": {
+    "arapca": "إبراهيم",
+    "ebced": 259,
+    "cinsiyet": "e"
+  },
+  "ismail": {
+    "arapca": "إسماعيل",
+    "ebced": 211,
+    "cinsiyet": "e"
+  },
+  "yusuf": {
+    "arapca": "يوسف",
+    "ebced": 156,
+    "cinsiyet": "e"
+  },
+  "yakup": {
+    "arapca": "يعقوب",
+    "ebced": 188,
+    "cinsiyet": "e"
+  },
+  "süleyman": {
+    "arapca": "سليمان",
+    "ebced": 200,
+    "cinsiyet": "e"
+  },
+  "davut": {
+    "arapca": "داود",
+    "ebced": 15,
+    "cinsiyet": "e"
+  },
+  "yunus": {
+    "arapca": "يونس",
+    "ebced": 126,
+    "cinsiyet": "e"
+  },
+  "musa": {
+    "arapca": "موسى",
+    "ebced": 116,
+    "cinsiyet": "e"
+  },
+  "isa": {
+    "arapca": "عيسى",
+    "ebced": 150,
+    "cinsiyet": "e"
+  },
+  "harun": {
+    "arapca": "هارون",
+    "ebced": 262,
+    "cinsiyet": "e"
+  },
+  "idris": {
+    "arapca": "إدريس",
+    "ebced": 275,
+    "cinsiyet": "e"
+  },
+  "zekeriya": {
+    "arapca": "زكريا",
+    "ebced": 248,
+    "cinsiyet": "e"
+  },
+  "yahya": {
+    "arapca": "يحيى",
+    "ebced": 34,
+    "cinsiyet": "e"
+  },
+  "salih": {
+    "arapca": "صالح",
+    "ebced": 129,
+    "cinsiyet": "e"
+  },
+  "halil": {
+    "arapca": "خليل",
+    "ebced": 670,
+    "cinsiyet": "e"
+  },
+  "halid": {
+    "arapca": "خالد",
+    "ebced": 635,
+    "cinsiyet": "e"
+  },
+  "hamza": {
+    "arapca": "حمزة",
+    "ebced": 56,
+    "cinsiyet": "e"
+  },
+  "hamdi": {
+    "arapca": "حمدي",
+    "ebced": 62,
+    "cinsiyet": "e"
+  },
+  "hamit": {
+    "arapca": "حامد",
+    "ebced": 53,
+    "cinsiyet": "e"
+  },
+  "ramazan": {
+    "arapca": "رمضان",
+    "ebced": 1091,
+    "cinsiyet": "e"
+  },
+  "şaban": {
+    "arapca": "شعبان",
+    "ebced": 423,
+    "cinsiyet": "e"
+  },
+  "recep": {
+    "arapca": "رجب",
+    "ebced": 205,
+    "cinsiyet": "e"
+  },
+  "muharrem": {
+    "arapca": "محرم",
+    "ebced": 288,
+    "cinsiyet": "e"
+  },
+  "abdullah": {
+    "arapca": "عبدالله",
+    "ebced": 142,
+    "cinsiyet": "e"
+  },
+  "abdurrahman": {
+    "arapca": "عبدالرحمن",
+    "ebced": 401,
+    "cinsiyet": "e"
+  },
+  "abdülkadir": {
+    "arapca": "عبدالقادر",
+    "ebced": 410,
+    "cinsiyet": "e"
+  },
+  "abdülaziz": {
+    "arapca": "عبدالعزيز",
+    "ebced": 199,
+    "cinsiyet": "e"
+  },
+  "abdülbaki": {
+    "arapca": "عبدالباقي",
+    "ebced": 218,
+    "cinsiyet": "e"
+  },
+  "abdülhamit": {
+    "arapca": "عبدالحميد",
+    "ebced": 167,
+    "cinsiyet": "e"
+  },
+  "abdurrezzak": {
+    "arapca": "عبدالرزاق",
+    "ebced": 413,
+    "cinsiyet": "e"
+  },
+  "kadir": {
+    "arapca": "قادر",
+    "ebced": 305,
+    "cinsiyet": "e"
+  },
+  "kemal": {
+    "arapca": "كمال",
+    "ebced": 91,
+    "cinsiyet": "e"
+  },
+  "kerim": {
+    "arapca": "كريم",
+    "ebced": 270,
+    "cinsiyet": "e"
+  },
+  "kazım": {
+    "arapca": "كاظم",
+    "ebced": 951,
+    "cinsiyet": "e"
+  },
+  "selim": {
+    "arapca": "سليم",
+    "ebced": 140,
+    "cinsiyet": "e"
+  },
+  "sami": {
+    "arapca": "سامي",
+    "ebced": 111,
+    "cinsiyet": "e"
+  },
+  "sabri": {
+    "arapca": "صبري",
+    "ebced": 302,
+    "cinsiyet": "e"
+  },
+  "saadettin": {
+    "arapca": "سعد الدين",
+    "ebced": 198,
+    "cinsiyet": "e"
+  },
+  "nuri": {
+    "arapca": "نوري",
+    "ebced": 266,
+    "cinsiyet": "e"
+  },
+  "nazım": {
+    "arapca": "ناظم",
+    "ebced": 992,
+    "cinsiyet": "e"
+  },
+  "necati": {
+    "arapca": "نجاتي",
+    "ebced": 463,
+    "cinsiyet": "e"
+  },
+  "necdet": {
+    "arapca": "نجدت",
+    "ebced": 457,
+    "cinsiyet": "e"
+  },
+  "necmettin": {
+    "arapca": "نجم الدين",
+    "ebced": 188,
+    "cinsiyet": "e"
+  },
+  "fatih": {
+    "arapca": "فاتح",
+    "ebced": 489,
+    "cinsiyet": "e"
+  },
+  "faruk": {
+    "arapca": "فاروق",
+    "ebced": 287,
+    "cinsiyet": "e"
+  },
+  "fahri": {
+    "arapca": "فخري",
+    "ebced": 814,
+    "cinsiyet": "e"
+  },
+  "ferhat": {
+    "arapca": "فرحات",
+    "ebced": 689,
+    "cinsiyet": "e"
+  },
+  "ferit": {
+    "arapca": "فريد",
+    "ebced": 294,
+    "cinsiyet": "e"
+  },
+  "furkan": {
+    "arapca": "فرقان",
+    "ebced": 431,
+    "cinsiyet": "e"
+  },
+  "feyzullah": {
+    "arapca": "فيض الله",
+    "ebced": 251,
+    "cinsiyet": "e"
+  },
+  "tarık": {
+    "arapca": "طارق",
+    "ebced": 310,
+    "cinsiyet": "e"
+  },
+  "talha": {
+    "arapca": "طلحة",
+    "ebced": 44,
+    "cinsiyet": "e"
+  },
+  "tayfun": {
+    "arapca": "طيفون",
+    "ebced": 215,
+    "cinsiyet": "e"
+  },
+  "tayyip": {
+    "arapca": "طيب",
+    "ebced": 22,
+    "cinsiyet": "e"
+  },
+  "yasin": {
+    "arapca": "ياسين",
+    "ebced": 130,
+    "cinsiyet": "e"
+  },
+  "yasir": {
+    "arapca": "ياسر",
+    "ebced": 281,
+    "cinsiyet": "e"
+  },
+  "ziya": {
+    "arapca": "ضياء",
+    "ebced": 1011,
+    "cinsiyet": "e"
+  },
+  "zafer": {
+    "arapca": "ظفر",
+    "ebced": 980,
+    "cinsiyet": "e"
+  },
+  "zeki": {
+    "arapca": "ذكي",
+    "ebced": 730,
+    "cinsiyet": "e"
+  },
+  "bayram": {
+    "arapca": "بيرام",
+    "ebced": 253,
+    "cinsiyet": "e"
+  },
+  "bahattin": {
+    "arapca": "بهاء الدين",
+    "ebced": 102,
+    "cinsiyet": "e"
+  },
+  "bilal": {
+    "arapca": "بلال",
+    "ebced": 64,
+    "cinsiyet": "e"
+  },
+  "bekir": {
+    "arapca": "بكر",
+    "ebced": 222,
+    "cinsiyet": "e"
+  },
+  "burhan": {
+    "arapca": "برهان",
+    "ebced": 258,
+    "cinsiyet": "e"
+  },
+  "celal": {
+    "arapca": "جلال",
+    "ebced": 73,
+    "cinsiyet": "e"
+  },
+  "cemal": {
+    "arapca": "جمال",
+    "ebced": 73,
+    "cinsiyet": "e"
+  },
+  "cemil": {
+    "arapca": "جميل",
+    "ebced": 83,
+    "cinsiyet": "e"
+  },
+  "cevdet": {
+    "arapca": "جودت",
+    "ebced": 413,
+    "cinsiyet": "e"
+  },
+  "cihan": {
+    "arapca": "جهان",
+    "ebced": 59,
+    "cinsiyet": "e"
+  },
+  "cengiz": {
+    "arapca": "جنكيز",
+    "ebced": 90,
+    "cinsiyet": "e"
+  },
+  "lokman": {
+    "arapca": "لقمان",
+    "ebced": 221,
+    "cinsiyet": "e"
+  },
+  "levent": {
+    "arapca": "لوند",
+    "ebced": 96,
+    "cinsiyet": "e"
+  },
+  "metin": {
+    "arapca": "متين",
+    "ebced": 500,
+    "cinsiyet": "e"
+  },
+  "murat": {
+    "arapca": "مراد",
+    "ebced": 245,
+    "cinsiyet": "e"
+  },
+  "murat ali": {
+    "arapca": "مراد علي",
+    "ebced": 355,
+    "cinsiyet": "e"
+  },
+  "nizamettin": {
+    "arapca": "نظام الدين",
+    "ebced": 1086,
+    "cinsiyet": "e"
+  },
+  "nasreddin": {
+    "arapca": "نصر الدين",
+    "ebced": 444,
+    "cinsiyet": "e"
+  },
+  "rıza": {
+    "arapca": "رضا",
+    "ebced": 1011,
+    "cinsiyet": "e"
+  },
+  "rifat": {
+    "arapca": "رفعت",
+    "ebced": 750,
+    "cinsiyet": "e"
+  },
+  "ridvan": {
+    "arapca": "رضوان",
+    "ebced": 957,
+    "cinsiyet": "e"
+  },
+  "şahin": {
+    "arapca": "شاهين",
+    "ebced": 366,
+    "cinsiyet": "e"
+  },
+  "şükrü": {
+    "arapca": "شكري",
+    "ebced": 530,
+    "cinsiyet": "e"
+  },
+  "şemsettin": {
+    "arapca": "شمس الدين",
+    "ebced": 494,
+    "cinsiyet": "e"
+  },
+  "sinan": {
+    "arapca": "سنان",
+    "ebced": 171,
+    "cinsiyet": "e"
+  },
+  "şevket": {
+    "arapca": "شوكت",
+    "ebced": 726,
+    "cinsiyet": "e"
+  },
+  "vahit": {
+    "arapca": "واحد",
+    "ebced": 19,
+    "cinsiyet": "e"
+  },
+  "vahdettin": {
+    "arapca": "وحيد الدين",
+    "ebced": 152,
+    "cinsiyet": "e"
+  },
+  "vedat": {
+    "arapca": "ودات",
+    "ebced": 415,
+    "cinsiyet": "e"
+  },
+  "hakan": {
+    "arapca": "خاقان",
+    "ebced": 752,
+    "cinsiyet": "e"
+  },
+  "kağan": {
+    "arapca": "قاغان",
+    "ebced": 1132,
+    "cinsiyet": "e"
+  },
+  "alper": {
+    "arapca": "ألبر",
+    "ebced": 233,
+    "cinsiyet": "e"
+  },
+  "alparslan": {
+    "arapca": "ألب أرسلان",
+    "ebced": 423,
+    "cinsiyet": "e"
+  },
+  "atilla": {
+    "arapca": "أتيلا",
+    "ebced": 442,
+    "cinsiyet": "e"
+  },
+  "barış": {
+    "arapca": "باريش",
+    "ebced": 513,
+    "cinsiyet": "e"
+  },
+  "berkay": {
+    "arapca": "بركاي",
+    "ebced": 243,
+    "cinsiyet": "e"
+  },
+  "burak": {
+    "arapca": "براق",
+    "ebced": 303,
+    "cinsiyet": "e"
+  },
+  "can": {
+    "arapca": "جان",
+    "ebced": 54,
+    "cinsiyet": "e"
+  },
+  "caner": {
+    "arapca": "جانر",
+    "ebced": 254,
+    "cinsiyet": "e"
+  },
+  "cem": {
+    "arapca": "جم",
+    "ebced": 43,
+    "cinsiyet": "e"
+  },
+  "cemre": {
+    "arapca": "جمره",
+    "ebced": 248,
+    "cinsiyet": "e"
+  },
+  "deniz": {
+    "arapca": "دنيز",
+    "ebced": 71,
+    "cinsiyet": "u"
+  },
+  "doğan": {
+    "arapca": "دوغان",
+    "ebced": 1064,
+    "cinsiyet": "e"
+  },
+  "ediz": {
+    "arapca": "أديز",
+    "ebced": 18,
+    "cinsiyet": "e"
+  },
+  "efe": {
+    "arapca": "إيفه",
+    "ebced": 96,
+    "cinsiyet": "e"
+  },
+  "ege": {
+    "arapca": "إيغه",
+    "ebced": 1016,
+    "cinsiyet": "u"
+  },
+  "emir": {
+    "arapca": "أمير",
+    "ebced": 251,
+    "cinsiyet": "e"
+  },
+  "emre": {
+    "arapca": "أمره",
+    "ebced": 247,
+    "cinsiyet": "e"
+  },
+  "engin": {
+    "arapca": "إنكين",
+    "ebced": 132,
+    "cinsiyet": "e"
+  },
+  "erdem": {
+    "arapca": "أرديم",
+    "ebced": 256,
+    "cinsiyet": "e"
+  },
+  "eren": {
+    "arapca": "أرين",
+    "ebced": 261,
+    "cinsiyet": "e"
+  },
+  "ergin": {
+    "arapca": "أركين",
+    "ebced": 281,
+    "cinsiyet": "e"
+  },
+  "ertan": {
+    "arapca": "أرتان",
+    "ebced": 652,
+    "cinsiyet": "e"
+  },
+  "ertuğrul": {
+    "arapca": "أرطغرل",
+    "ebced": 1041,
+    "cinsiyet": "e"
+  },
+  "fırat": {
+    "arapca": "فرات",
+    "ebced": 681,
+    "cinsiyet": "e"
+  },
+  "gökhan": {
+    "arapca": "كوكخان",
+    "ebced": 727,
+    "cinsiyet": "e"
+  },
+  "gökay": {
+    "arapca": "كوكاي",
+    "ebced": 47,
+    "cinsiyet": "e"
+  },
+  "ilker": {
+    "arapca": "إلكر",
+    "ebced": 251,
+    "cinsiyet": "e"
+  },
+  "ilhan": {
+    "arapca": "إلخان",
+    "ebced": 692,
+    "cinsiyet": "e"
+  },
+  "kaan": {
+    "arapca": "قاآن",
+    "ebced": 152,
+    "cinsiyet": "e"
+  },
+  "kayhan": {
+    "arapca": "قايخان",
+    "ebced": 761,
+    "cinsiyet": "e"
+  },
+  "kerem": {
+    "arapca": "كرم",
+    "ebced": 260,
+    "cinsiyet": "e"
+  },
+  "mert": {
+    "arapca": "مرت",
+    "ebced": 640,
+    "cinsiyet": "e"
+  },
+  "mete": {
+    "arapca": "متى",
+    "ebced": 450,
+    "cinsiyet": "e"
+  },
+  "ogün": {
+    "arapca": "أوكون",
+    "ebced": 83,
+    "cinsiyet": "e"
+  },
+  "onat": {
+    "arapca": "أوناط",
+    "ebced": 65,
+    "cinsiyet": "e"
+  },
+  "onur": {
+    "arapca": "أونور",
+    "ebced": 263,
+    "cinsiyet": "e"
+  },
+  "orhan": {
+    "arapca": "أورخان",
+    "ebced": 858,
+    "cinsiyet": "e"
+  },
+  "oğuz": {
+    "arapca": "أوغوز",
+    "ebced": 1024,
+    "cinsiyet": "e"
+  },
+  "okan": {
+    "arapca": "أوقان",
+    "ebced": 158,
+    "cinsiyet": "e"
+  },
+  "ozan": {
+    "arapca": "أوزان",
+    "ebced": 65,
+    "cinsiyet": "e"
+  },
+  "rüştü": {
+    "arapca": "رشدي",
+    "ebced": 514,
+    "cinsiyet": "e"
+  },
+  "sefa": {
+    "arapca": "صفا",
+    "ebced": 92,
+    "cinsiyet": "e"
+  },
+  "serdar": {
+    "arapca": "سردار",
+    "ebced": 466,
+    "cinsiyet": "e"
+  },
+  "serkan": {
+    "arapca": "سركان",
+    "ebced": 341,
+    "cinsiyet": "e"
+  },
+  "tolga": {
+    "arapca": "تولكا",
+    "ebced": 458,
+    "cinsiyet": "e"
+  },
+  "uğur": {
+    "arapca": "أوغور",
+    "ebced": 1213,
+    "cinsiyet": "e"
+  },
+  "umut": {
+    "arapca": "أوموت",
+    "ebced": 453,
+    "cinsiyet": "e"
+  },
+  "utku": {
+    "arapca": "أوتكو",
+    "ebced": 433,
+    "cinsiyet": "e"
+  },
+  "volkan": {
+    "arapca": "ولكان",
+    "ebced": 107,
+    "cinsiyet": "e"
+  },
+  "yavuz": {
+    "arapca": "ياووز",
+    "ebced": 24,
+    "cinsiyet": "e"
+  },
+  "fatma": {
+    "arapca": "فاطمة",
+    "ebced": 135,
+    "cinsiyet": "k"
+  },
+  "fadime": {
+    "arapca": "فاطمة",
+    "ebced": 135,
+    "cinsiyet": "k"
+  },
+  "ayşe": {
+    "arapca": "عائشة",
+    "ebced": 386,
+    "cinsiyet": "k"
+  },
+  "hatice": {
+    "arapca": "خديجة",
+    "ebced": 627,
+    "cinsiyet": "k"
+  },
+  "zeynep": {
+    "arapca": "زينب",
+    "ebced": 67,
+    "cinsiyet": "k"
+  },
+  "meryem": {
+    "arapca": "مريم",
+    "ebced": 290,
+    "cinsiyet": "k"
+  },
+  "emine": {
+    "arapca": "آمنة",
+    "ebced": 96,
+    "cinsiyet": "k"
+  },
+  "elif": {
+    "arapca": "ألف",
+    "ebced": 111,
+    "cinsiyet": "k"
+  },
+  "esma": {
+    "arapca": "أسماء",
+    "ebced": 132,
+    "cinsiyet": "k"
+  },
+  "havva": {
+    "arapca": "حواء",
+    "ebced": 16,
+    "cinsiyet": "k"
+  },
+  "sare": {
+    "arapca": "ساره",
+    "ebced": 266,
+    "cinsiyet": "k"
+  },
+  "asiye": {
+    "arapca": "آسية",
+    "ebced": 76,
+    "cinsiyet": "k"
+  },
+  "rabia": {
+    "arapca": "رابعة",
+    "ebced": 278,
+    "cinsiyet": "k"
+  },
+  "rahime": {
+    "arapca": "رحيمة",
+    "ebced": 263,
+    "cinsiyet": "k"
+  },
+  "rukiye": {
+    "arapca": "رقية",
+    "ebced": 315,
+    "cinsiyet": "k"
+  },
+  "saliha": {
+    "arapca": "صالحة",
+    "ebced": 134,
+    "cinsiyet": "k"
+  },
+  "sümeyye": {
+    "arapca": "سمية",
+    "ebced": 125,
+    "cinsiyet": "k"
+  },
+  "sevgi": {
+    "arapca": "سوكي",
+    "ebced": 96,
+    "cinsiyet": "k"
+  },
+  "selma": {
+    "arapca": "سلمى",
+    "ebced": 131,
+    "cinsiyet": "k"
+  },
+  "şule": {
+    "arapca": "شعلة",
+    "ebced": 405,
+    "cinsiyet": "k"
+  },
+  "şükran": {
+    "arapca": "شكران",
+    "ebced": 571,
+    "cinsiyet": "k"
+  },
+  "şirin": {
+    "arapca": "شيرين",
+    "ebced": 580,
+    "cinsiyet": "k"
+  },
+  "nesibe": {
+    "arapca": "نسيبة",
+    "ebced": 127,
+    "cinsiyet": "k"
+  },
+  "nesrin": {
+    "arapca": "نسرين",
+    "ebced": 320,
+    "cinsiyet": "k"
+  },
+  "nevin": {
+    "arapca": "نوين",
+    "ebced": 116,
+    "cinsiyet": "k"
+  },
+  "necla": {
+    "arapca": "نجلاء",
+    "ebced": 84,
+    "cinsiyet": "k"
+  },
+  "nazmiye": {
+    "arapca": "نظمية",
+    "ebced": 1005,
+    "cinsiyet": "k"
+  },
+  "naciye": {
+    "arapca": "ناجية",
+    "ebced": 73,
+    "cinsiyet": "k"
+  },
+  "nadide": {
+    "arapca": "نديدة",
+    "ebced": 73,
+    "cinsiyet": "k"
+  },
+  "nilgün": {
+    "arapca": "نيلكون",
+    "ebced": 196,
+    "cinsiyet": "k"
+  },
+  "nurseli": {
+    "arapca": "نورسلي",
+    "ebced": 356,
+    "cinsiyet": "k"
+  },
+  "nur": {
+    "arapca": "نور",
+    "ebced": 256,
+    "cinsiyet": "u"
+  },
+  "leyla": {
+    "arapca": "ليلى",
+    "ebced": 71,
+    "cinsiyet": "k"
+  },
+  "lale": {
+    "arapca": "لاله",
+    "ebced": 36,
+    "cinsiyet": "k"
+  },
+  "kübra": {
+    "arapca": "كبرى",
+    "ebced": 232,
+    "cinsiyet": "k"
+  },
+  "kader": {
+    "arapca": "قدر",
+    "ebced": 304,
+    "cinsiyet": "k"
+  },
+  "kevser": {
+    "arapca": "كوثر",
+    "ebced": 726,
+    "cinsiyet": "k"
+  },
+  "hülya": {
+    "arapca": "هوليا",
+    "ebced": 52,
+    "cinsiyet": "k"
+  },
+  "hayriye": {
+    "arapca": "خيرية",
+    "ebced": 825,
+    "cinsiyet": "k"
+  },
+  "hanife": {
+    "arapca": "حنيفة",
+    "ebced": 153,
+    "cinsiyet": "k"
+  },
+  "halime": {
+    "arapca": "حليمة",
+    "ebced": 93,
+    "cinsiyet": "k"
+  },
+  "hediye": {
+    "arapca": "هدية",
+    "ebced": 24,
+    "cinsiyet": "k"
+  },
+  "hicran": {
+    "arapca": "هجران",
+    "ebced": 268,
+    "cinsiyet": "k"
+  },
+  "hilal": {
+    "arapca": "هلال",
+    "ebced": 66,
+    "cinsiyet": "u"
+  },
+  "feride": {
+    "arapca": "فريدة",
+    "ebced": 299,
+    "cinsiyet": "k"
+  },
+  "fethiye": {
+    "arapca": "فتحية",
+    "ebced": 503,
+    "cinsiyet": "k"
+  },
+  "filiz": {
+    "arapca": "فيليز",
+    "ebced": 137,
+    "cinsiyet": "k"
+  },
+  "esra": {
+    "arapca": "إسراء",
+    "ebced": 263,
+    "cinsiyet": "k"
+  },
+  "ebru": {
+    "arapca": "إبرو",
+    "ebced": 209,
+    "cinsiyet": "k"
+  },
+  "ela": {
+    "arapca": "إلا",
+    "ebced": 32,
+    "cinsiyet": "k"
+  },
+  "ece": {
+    "arapca": "إجة",
+    "ebced": 14,
+    "cinsiyet": "k"
+  },
+  "duygu": {
+    "arapca": "دويكو",
+    "ebced": 40,
+    "cinsiyet": "k"
+  },
+  "dilara": {
+    "arapca": "دل آرا",
+    "ebced": 235,
+    "cinsiyet": "k"
+  },
+  "deniz hanım": {
+    "arapca": "دنيز",
+    "ebced": 71,
+    "cinsiyet": "k"
+  },
+  "derya": {
+    "arapca": "دريا",
+    "ebced": 215,
+    "cinsiyet": "k"
+  },
+  "damla": {
+    "arapca": "داملا",
+    "ebced": 76,
+    "cinsiyet": "k"
+  },
+  "ceren": {
+    "arapca": "جيرن",
+    "ebced": 263,
+    "cinsiyet": "k"
+  },
+  "ceyda": {
+    "arapca": "جيدا",
+    "ebced": 21,
+    "cinsiyet": "k"
+  },
+  "buse": {
+    "arapca": "بوسة",
+    "ebced": 73,
+    "cinsiyet": "k"
+  },
+  "büşra": {
+    "arapca": "بشرى",
+    "ebced": 502,
+    "cinsiyet": "k"
+  },
+  "berna": {
+    "arapca": "برنا",
+    "ebced": 253,
+    "cinsiyet": "k"
+  },
+  "berrin": {
+    "arapca": "برين",
+    "ebced": 262,
+    "cinsiyet": "k"
+  },
+  "beyza": {
+    "arapca": "بيضاء",
+    "ebced": 814,
+    "cinsiyet": "k"
+  },
+  "beyhan": {
+    "arapca": "بيخان",
+    "ebced": 673,
+    "cinsiyet": "k"
+  },
+  "bahar": {
+    "arapca": "بهار",
+    "ebced": 208,
+    "cinsiyet": "k"
+  },
+  "banu": {
+    "arapca": "بانو",
+    "ebced": 59,
+    "cinsiyet": "k"
+  },
+  "aysu": {
+    "arapca": "آيسو",
+    "ebced": 87,
+    "cinsiyet": "k"
+  },
+  "aslı": {
+    "arapca": "أصلي",
+    "ebced": 121,
+    "cinsiyet": "k"
+  },
+  "aslıhan": {
+    "arapca": "أصلهان",
+    "ebced": 712,
+    "cinsiyet": "k"
+  },
+  "aydan": {
+    "arapca": "آيدان",
+    "ebced": 65,
+    "cinsiyet": "k"
+  },
+  "ayten": {
+    "arapca": "آيتن",
+    "ebced": 461,
+    "cinsiyet": "k"
+  },
+  "ayşegül": {
+    "arapca": "عائشة كل",
+    "ebced": 436,
+    "cinsiyet": "k"
+  },
+  "gamze": {
+    "arapca": "غمزة",
+    "ebced": 1047,
+    "cinsiyet": "k"
+  },
+  "gizem": {
+    "arapca": "كيزم",
+    "ebced": 67,
+    "cinsiyet": "k"
+  },
+  "gül": {
+    "arapca": "كل",
+    "ebced": 50,
+    "cinsiyet": "k"
+  },
+  "gülay": {
+    "arapca": "كل آي",
+    "ebced": 60,
+    "cinsiyet": "k"
+  },
+  "güneş": {
+    "arapca": "كونش",
+    "ebced": 376,
+    "cinsiyet": "k"
+  },
+  "ipek": {
+    "arapca": "إيبك",
+    "ebced": 113,
+    "cinsiyet": "k"
+  },
+  "irem": {
+    "arapca": "إرم",
+    "ebced": 241,
+    "cinsiyet": "k"
+  },
+  "melek": {
+    "arapca": "ملك",
+    "ebced": 90,
+    "cinsiyet": "k"
+  },
+  "melike": {
+    "arapca": "مليكة",
+    "ebced": 95,
+    "cinsiyet": "k"
+  },
+  "merve": {
+    "arapca": "مروة",
+    "ebced": 251,
+    "cinsiyet": "k"
+  },
+  "nazlı": {
+    "arapca": "نازلي",
+    "ebced": 98,
+    "cinsiyet": "k"
+  },
+  "özlem": {
+    "arapca": "أوزلم",
+    "ebced": 78,
+    "cinsiyet": "k"
+  },
+  "pelin": {
+    "arapca": "بلين",
+    "ebced": 142,
+    "cinsiyet": "k"
+  },
+  "pınar": {
+    "arapca": "بنار",
+    "ebced": 253,
+    "cinsiyet": "k"
+  },
+  "sevda": {
+    "arapca": "سودا",
+    "ebced": 71,
+    "cinsiyet": "k"
+  },
+  "sevim": {
+    "arapca": "سويم",
+    "ebced": 116,
+    "cinsiyet": "k"
+  },
+  "selin": {
+    "arapca": "سلين",
+    "ebced": 150,
+    "cinsiyet": "k"
+  },
+  "sema": {
+    "arapca": "سما",
+    "ebced": 101,
+    "cinsiyet": "k"
+  },
+  "tuğçe": {
+    "arapca": "طوغجة",
+    "ebced": 1023,
+    "cinsiyet": "k"
+  },
+  "yasemin": {
+    "arapca": "ياسمين",
+    "ebced": 180,
+    "cinsiyet": "k"
+  },
+  "yaprak": {
+    "arapca": "يابراق",
+    "ebced": 314,
+    "cinsiyet": "k"
+  },
+  "zehra": {
+    "arapca": "زهراء",
+    "ebced": 213,
+    "cinsiyet": "k"
+  },
+  "zeliha": {
+    "arapca": "زليخا",
+    "ebced": 658,
+    "cinsiyet": "k"
+  }
+}

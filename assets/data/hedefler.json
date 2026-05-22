@@ -1,0 +1,74 @@
+[
+  {
+    "id": "rizik",
+    "ad": "Rızık ve Bereket",
+    "ikon": "💰",
+    "aciklama": "Maddi sıkıntıların giderilmesi, geçim, iş açılması için",
+    "esma_no": 19,
+    "ek_esma": [
+      18,
+      89,
+      17
+    ]
+  },
+  {
+    "id": "huzur",
+    "ad": "Huzur ve Sükûnet",
+    "ikon": "🕊️",
+    "aciklama": "Kalp huzuru, kaygıdan kurtulma, ferahlık için",
+    "esma_no": 6,
+    "ek_esma": [
+      5,
+      33,
+      100
+    ]
+  },
+  {
+    "id": "sifa",
+    "ad": "Şifa ve Sağlık",
+    "ikon": "🩹",
+    "aciklama": "Bedensel ve manevi şifa, hastalıktan kurtulma için",
+    "esma_no": 61,
+    "ek_esma": [
+      13,
+      63,
+      6
+    ]
+  },
+  {
+    "id": "sevgi",
+    "ad": "Sevgi ve İlişki",
+    "ikon": "❤️",
+    "aciklama": "Aile sevgisi, eş bulma, ilişkilerde ahenk için",
+    "esma_no": 48,
+    "ek_esma": [
+      3,
+      88,
+      84
+    ]
+  },
+  {
+    "id": "karar",
+    "ad": "Karar ve Hidayet",
+    "ikon": "🧭",
+    "aciklama": "Doğru karar verme, kararsızlıktan kurtulma için",
+    "esma_no": 95,
+    "ek_esma": [
+      99,
+      47,
+      20
+    ]
+  },
+  {
+    "id": "koruma",
+    "ad": "Koruma ve Güvenlik",
+    "ikon": "🛡️",
+    "aciklama": "Manevi koruma, kötülüklerden uzak durma için",
+    "esma_no": 39,
+    "ek_esma": [
+      91,
+      7,
+      8
+    ]
+  }
+]

@@ -1,0 +1,56 @@
+{
+  "expo": {
+    "name": "Hu",
+    "slug": "hu-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#F8F5EE"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Namaz vakitlerini hesaplayabilmek icin konum bilgine ihtiyacimiz var.",
+        "NSUserNotificationsUsageDescription": "Namaz vakitlerini ve aksam muhasebesini sefkatli bir tonla hatirlatabilmemiz icin bildirim izni gerekli."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#F8F5EE"
+      },
+      "edgeToEdgeEnabled": true,
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "VIBRATE",
+        "RECEIVE_BOOT_COMPLETED",
+        "SCHEDULE_EXACT_ALARM"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-sqlite",
+      "expo-font",
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Namaz vakitlerini hesaplayabilmek icin konum bilgine ihtiyacimiz var."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "color": "#B08D2E"
+        }
+      ]
+    ]
+  }
+}

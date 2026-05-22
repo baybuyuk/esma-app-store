@@ -1,0 +1,172 @@
+[
+  {
+    "id": "hasbiyallah",
+    "ad": "Hasbiyallah",
+    "arapca": "حَسْبِيَ اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ ۖ عَلَيْهِ تَوَكَّلْتُ ۖ وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ",
+    "okunus": "Hasbiyallâhu lâ ilâhe illâ hû, aleyhi tevekkeltü ve hüve rabbül arşil azîm",
+    "meal": "Allah bana yeter, O'ndan başka ilah yoktur. Ben yalnız O'na güvendim. O, büyük arşın Rabbidir.",
+    "kaynak": "Tevbe Sûresi, 129",
+    "kaynak_turu": "kuran",
+    "onerilen_sayi": 7,
+    "vakit": "Sabah-akşam",
+    "fazilet": "Sabah 7, akşam 7 kez okuyanın dünya ve ahirette önemli olan her şeyine Allah'ın kâfi geleceği rivayet edilir (Ebû Davûd, Tirmizî).",
+    "tesir": [
+      "korku",
+      "kaygi",
+      "zorluk",
+      "tevekkul"
+    ]
+  },
+  {
+    "id": "hasbunallah",
+    "ad": "Hasbünallah ve Ni'mel Vekil",
+    "arapca": "حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ",
+    "okunus": "Hasbünallâhu ve ni'mel vekîl",
+    "meal": "Allah bize yeter, O ne güzel vekildir.",
+    "kaynak": "Âl-i İmrân Sûresi, 173",
+    "kaynak_turu": "kuran",
+    "onerilen_sayi": 313,
+    "vakit": "Sıkıntı anında",
+    "fazilet": "İbrahim (as) ateşe atılırken bu duayı okudu, Allah onu korudu. Resûlullah ve sahabe Uhud sonrası okudu, düşmandan korundular. 313 sayısı Bedir'deki sahabe sayısıdır.",
+    "tesir": [
+      "dusman",
+      "zorluk",
+      "korku"
+    ]
+  },
+  {
+    "id": "la_havle",
+    "ad": "Lâ Havle Velâ Kuvvete",
+    "arapca": "لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ",
+    "okunus": "Lâ havle velâ kuvvete illâ billâh",
+    "meal": "Güç ve kuvvet ancak Allah'tandır.",
+    "kaynak": "Buhârî, Müslim",
+    "kaynak_turu": "sahih_hadis",
+    "onerilen_sayi": 100,
+    "vakit": "Her vakit",
+    "fazilet": "Resûlullah buyurdu: 'Bu kelime cennet hazinelerinden bir hazinedir.' Aciz hissedildiği anlarda, zor işlere başlarken okunur.",
+    "tesir": [
+      "acizlik",
+      "zorluk",
+      "is"
+    ]
+  },
+  {
+    "id": "subhanallah_bihamdihi",
+    "ad": "Sübhânallâhi ve Bihamdihî",
+    "arapca": "سُبْحَانَ اللَّهِ وَبِحَمْدِهِ",
+    "okunus": "Sübhânallâhi ve bihamdihî",
+    "meal": "Allah'ı hamd ile tesbih ederim.",
+    "kaynak": "Buhârî, Müslim",
+    "kaynak_turu": "sahih_hadis",
+    "onerilen_sayi": 100,
+    "vakit": "Sabah-akşam",
+    "fazilet": "Resûlullah: 'Kim günde 100 kez bunu derse, deniz köpüğü kadar günahı olsa bile bağışlanır.' (Buhârî)",
+    "tesir": [
+      "gunah",
+      "sukur"
+    ]
+  },
+  {
+    "id": "estagfirullah",
+    "ad": "Estağfirullah",
+    "arapca": "أَسْتَغْفِرُ اللَّهَ الْعَظِيمَ",
+    "okunus": "Estağfirullâhel azîm",
+    "meal": "Azîm olan Allah'tan mağfiret diler ve O'na tövbe ederim.",
+    "kaynak": "Sahih hadis - Resûlullah günde 70-100 kez okurdu",
+    "kaynak_turu": "sahih_hadis",
+    "onerilen_sayi": 70,
+    "vakit": "Sabah-akşam",
+    "fazilet": "Resûlullah günde 70-100 kez istiğfar ederdi. Vicdan azabını gideren, kalp huzuru veren ve günahları silen zikirdir.",
+    "tesir": [
+      "gunah",
+      "vicdan",
+      "tovbe"
+    ]
+  },
+  {
+    "id": "innalillah",
+    "ad": "İnnâlillâh",
+    "arapca": "إِنَّا لِلَّهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ",
+    "okunus": "İnnâ lillâhi ve innâ ileyhi râciûn",
+    "meal": "Biz Allah'a aitiz ve mutlaka O'na döneceğiz.",
+    "kaynak": "Bakara Sûresi, 156",
+    "kaynak_turu": "kuran",
+    "onerilen_sayi": 1,
+    "vakit": "Musibet anında",
+    "fazilet": "Musibet anında okunur. Resûlullah: 'Kim bunu söyler ve Allâhümme'cürnî fî musîbetî der ise, Allah daha hayırlısını verir.' (Müslim)",
+    "tesir": [
+      "uzuntu",
+      "kayip",
+      "musibet"
+    ]
+  },
+  {
+    "id": "la_ilahe_illallah",
+    "ad": "Lâ İlâhe İllâllah",
+    "arapca": "لَا إِلَٰهَ إِلَّا اللَّهُ",
+    "okunus": "Lâ ilâhe illâllâh",
+    "meal": "Allah'tan başka ilah yoktur.",
+    "kaynak": "Tirmizî",
+    "kaynak_turu": "sahih_hadis",
+    "onerilen_sayi": 100,
+    "vakit": "Her vakit",
+    "fazilet": "Resûlullah: 'Zikrin en faziletlisi Lâ ilâhe illallah'tır.' (Tirmizî). Tüm zikirlerin temeli, tevhid kalbidir.",
+    "tesir": [
+      "tevhid",
+      "kalp",
+      "iman"
+    ]
+  },
+  {
+    "id": "salavat_ibrahimi",
+    "ad": "Salât-ı İbrâhimî",
+    "arapca": "اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ",
+    "okunus": "Allâhümme salli alâ Muhammedin ve alâ âli Muhammed",
+    "meal": "Allah'ım Muhammed'e ve âilesine salât et.",
+    "kaynak": "Buhârî, Müslim",
+    "kaynak_turu": "sahih_hadis",
+    "onerilen_sayi": 100,
+    "vakit": "Cuma günü ve geceleri",
+    "fazilet": "Resûlullah'a salavat getirenin günahları affedilir, dereceleri yükselir. Cuma günü 100 kez okumak çok faziletlidir.",
+    "tesir": [
+      "sevap",
+      "manevi",
+      "cuma"
+    ]
+  },
+  {
+    "id": "iki_kelime_mizan",
+    "ad": "İki Kelime (Mizan Hadisi)",
+    "arapca": "سُبْحَانَ اللَّهِ وَبِحَمْدِهِ، سُبْحَانَ اللَّهِ الْعَظِيمِ",
+    "okunus": "Sübhânallâhi ve bihamdihî, Sübhânallâhi'l-azîm",
+    "meal": "Hamdi ile Allah'ı tesbih ederim, Yüce Allah'ı tesbih ederim.",
+    "kaynak": "Buhârî'nin son hadisi",
+    "kaynak_turu": "sahih_hadis",
+    "onerilen_sayi": 33,
+    "vakit": "Her vakit",
+    "fazilet": "Resûlullah: 'Dilde hafif, mizanda ağır, Rahmân'a sevimli iki kelime.' (Buhârî, Müslim)",
+    "tesir": [
+      "sevap",
+      "sukur",
+      "ahirret"
+    ]
+  },
+  {
+    "id": "afv_duasi",
+    "ad": "Afv Duası (Kadir Gecesi)",
+    "arapca": "اللَّهُمَّ إِنَّكَ عَفُوٌّ كَرِيمٌ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي",
+    "okunus": "Allâhümme inneke afüvvün kerîmün tühibbül afve fa'fü annî",
+    "meal": "Allah'ım, sen çok affedicisin, affetmeyi seversin, beni affeyle.",
+    "kaynak": "Tirmizî, İbn Mâce",
+    "kaynak_turu": "sahih_hadis",
+    "onerilen_sayi": 100,
+    "vakit": "Kadir Gecesi ve Ramazan son 10 gün",
+    "fazilet": "Hz. Aişe: 'Yâ Resûlallah, Kadir Gecesi'ne denk gelirsem ne söyleyeyim?' diye sordu. Resûlullah bu duayı öğretti.",
+    "tesir": [
+      "af",
+      "tovbe",
+      "ramazan"
+    ]
+  }
+]
