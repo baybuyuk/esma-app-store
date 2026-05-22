@@ -24,6 +24,9 @@ import TumVakitlerScreen from './src/screens/TumVakitlerScreen';
 import GecmisScreen from './src/screens/GecmisScreen';
 import AyarlarScreen from './src/screens/AyarlarScreen';
 import HakkindaScreen from './src/screens/HakkindaScreen';
+import KibleScreen from './src/screens/KibleScreen';
+import EvradScreen from './src/screens/EvradScreen';
+import DualarScreen from './src/screens/DualarScreen';
 
 import { colors } from './src/constants/colors';
 import { type } from './src/constants/type';
@@ -86,6 +89,9 @@ export default function App() {
           <Stack.Screen name="Gecmis" component={GecmisScreen} />
           <Stack.Screen name="Ayarlar" component={AyarlarScreen} />
           <Stack.Screen name="Hakkinda" component={HakkindaScreen} />
+          <Stack.Screen name="Kible" component={KibleScreen} />
+          <Stack.Screen name="Evrad" component={EvradScreen} />
+          <Stack.Screen name="Dualar" component={DualarScreen} />
         </Stack.Navigator>
       </NavigationContainer>
       <StatusBar style="dark" />

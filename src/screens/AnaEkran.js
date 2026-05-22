@@ -19,6 +19,7 @@ import { type } from '../constants/type';
 import { gunlukVakitler, sonrakiVakit, vakitFormat, gericiSayim } from '../lib/namaz';
 import { gununIcerigi, bugunCumaMi } from '../lib/gunlukSecim';
 import { ayetler, hadisler } from '../lib/data';
+import { hicriTarih, mubarekGun, sonrakiMubarekGun } from '../lib/hicri';
 import GradientArkaPlan from '../components/GradientArkaPlan';
 
 export default function AnaEkran({ navigation }) {
@@ -170,6 +171,32 @@ export default function AnaEkran({ navigation }) {
     }
   }, [simdi]);
 
+  const hicri = useMemo(() => hicriTarih(simdi), [simdi]);
+  const hicriYazi = useMemo(
+    () => `${hicri.gun} ${hicri.ayAdi} ${hicri.yil}`,
+    [hicri]
+  );
+  const mubarek = useMemo(() => mubarekGun(simdi), [simdi]);
+  const yaklasan = useMemo(() => {
+    if (mubarek) return null;
+    const s = sonrakiMubarekGun(simdi);
+    // Sadece 14 gun ve daha yakindaki mubarek gunleri goster.
+    if (s && s.kalanGun <= 14) return s;
+    return null;
+  }, [mubarek, simdi]);
+
+  // Saate gore akilli evrad onerisi.
+  const evradOnerisi = useMemo(() => {
+    const saat = simdi.getHours();
+    if (saat >= 5 && saat < 10) {
+      return { tip: 'sabah', emoji: '🌅', metin: 'Sabah evrâdını oku' };
+    }
+    if (saat >= 17 && saat < 22) {
+      return { tip: 'aksam', emoji: '🌆', metin: 'Akşam evrâdını oku' };
+    }
+    return null;
+  }, [simdi]);
+
   const onRefresh = useCallback(async () => {
     setRefreshing(true);
     await yukle();
@@ -193,7 +220,35 @@ export default function AnaEkran({ navigation }) {
           <View style={styles.basliklik}>
             <Text style={styles.selam}>Selamün Aleyküm, {isim || 'Kardeşim'}</Text>
             <Text style={styles.tarih}>{tarihYazi}</Text>
+            <Text style={styles.hicri}>{hicriYazi}</Text>
+            {yaklasan && (
+              <Text style={styles.yaklasan}>
+                {yaklasan.kalanGun === 1
+                  ? `Yarın: ${yaklasan.ad}`
+                  : `${yaklasan.kalanGun} gün sonra ${yaklasan.ad}`}
+              </Text>
+            )}
+            {evradOnerisi && (
+              <TouchableOpacity
+                onPress={() => navigation.navigate('Evrad', { tip: evradOnerisi.tip })}
+                style={styles.evradOneri}
+                activeOpacity={0.8}
+                hitSlop={6}
+              >
+                <Text style={styles.evradOneriYazi}>
+                  {evradOnerisi.emoji} {evradOnerisi.metin} ›
+                </Text>
+              </TouchableOpacity>
+            )}
           </View>
+
+          {mubarek && (
+            <View style={styles.mubarekKart}>
+              <Text style={styles.mubarekEmoji}>🌙</Text>
+              <Text style={styles.mubarekAd}>{mubarek.ad}</Text>
+              <Text style={styles.mubarekVurgu}>{mubarek.vurgu}</Text>
+            </View>
+          )}
         </Animated.View>
 
         <Animated.View
@@ -295,18 +350,25 @@ export default function AnaEkran({ navigation }) {
           <View style={styles.grid}>
             <KisaYol emoji="💎" label="Kısa Zikirler" onPress={() => navigation.navigate('KisaZikirler')} />
             <KisaYol emoji="🌟" label="Anlık Zikir" onPress={() => navigation.navigate('AnlikZikir')} />
+            <KisaYol emoji="🧭" label="Kıble" onPress={() => navigation.navigate('Kible')} />
+            <KisaYol emoji="🌅" label="Sabah Evrâdı" onPress={() => navigation.navigate('Evrad', { tip: 'sabah' })} />
+            <KisaYol emoji="🌆" label="Akşam Evrâdı" onPress={() => navigation.navigate('Evrad', { tip: 'aksam' })} />
+            <KisaYol emoji="🤲" label="Dualar" onPress={() => navigation.navigate('Dualar')} />
+            <KisaYol emoji="🌙" label="Akşam Muhasebesi" onPress={() => navigation.navigate('Aksam')} />
             <KisaYol emoji="📿" label="Tüm Vakitler" onPress={() => navigation.navigate('TumVakitler')} />
             <KisaYol emoji="📊" label="Geçmiş" onPress={() => navigation.navigate('Gecmis')} />
-            <KisaYol emoji="📈" label="İstatistik" onPress={() => navigation.navigate('EsmaIstatistik')} />
             <KisaYol emoji="🔍" label="Esma Bul" onPress={() => navigation.navigate('EsmaBul')} />
           </View>
 
           <View style={styles.altMenu}>
-            <TouchableOpacity onPress={() => navigation.navigate('Aksam')}>
-              <Text style={styles.altLink}>🌙 Akşam Muhasebesi</Text>
+            <TouchableOpacity onPress={() => navigation.navigate('EsmaIstatistik')}>
+              <Text style={styles.altLink}>📈 İstatistik</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('Ayarlar')}>
               <Text style={styles.altLink}>⚙️ Ayarlar</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Hakkinda')}>
+              <Text style={styles.altLink}>ℹ️ Hakkında</Text>
             </TouchableOpacity>
           </View>
         </Animated.View>
@@ -387,6 +449,53 @@ const styles = StyleSheet.create({
   basliklik: { marginBottom: 16, marginTop: 4 },
   selam: { fontSize: 20, color: colors.anaYesil, fontWeight: '600' },
   tarih: { fontSize: type.sm, color: colors.ikincilMetin, marginTop: 4 },
+  hicri: { fontSize: type.sm, color: colors.altin, marginTop: 2, fontWeight: '600' },
+  yaklasan: {
+    marginTop: 6,
+    fontSize: type.sm,
+    color: colors.anaYesil,
+    fontStyle: 'italic',
+  },
+  evradOneri: {
+    marginTop: 10,
+    alignSelf: 'flex-start',
+    paddingVertical: 6,
+    paddingHorizontal: 12,
+    borderRadius: radii.sm,
+    backgroundColor: '#FFF7E0',
+    borderWidth: 1,
+    borderColor: colors.cizgi,
+  },
+  evradOneriYazi: {
+    fontSize: type.sm,
+    color: colors.anaYesil,
+    fontWeight: '600',
+  },
+
+  mubarekKart: {
+    backgroundColor: '#FFF7E0',
+    borderRadius: radii.md,
+    paddingVertical: 16,
+    paddingHorizontal: 18,
+    marginBottom: 12,
+    borderWidth: 2,
+    borderColor: colors.altin,
+    alignItems: 'center',
+  },
+  mubarekEmoji: { fontSize: 36, marginBottom: 4 },
+  mubarekAd: {
+    fontSize: type.xl,
+    color: colors.anaYesil,
+    fontWeight: '700',
+    textAlign: 'center',
+    marginBottom: 6,
+  },
+  mubarekVurgu: {
+    fontSize: type.base,
+    color: colors.anaMetin,
+    textAlign: 'center',
+    lineHeight: 22,
+  },
 
   vakitKart: {
     backgroundColor: colors.anaYesil,
