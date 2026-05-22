@@ -1,0 +1,127 @@
+{
+  "ad": "Sabah Evrâdı",
+  "vakit": "Sabah namazından sonra ile güneşin doğmasına kadar",
+  "aciklama": "Peygamberimiz aleyhisselâmın sabah okumayı tavsiye ettiği zikir ve dualar. Sırasıyla oku, acele etme.",
+  "maddeler": [
+    {
+      "no": 1,
+      "ad": "Seyyidü'l-İstiğfâr",
+      "arapca": "اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَهَ إِلَّا أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ، وَأَبُوءُ بِذَنْبِي فَاغْفِرْ لِي فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ",
+      "okunus": "Allâhumme ente rabbî, lâ ilâhe illâ ente, halaktenî ve ene abdüke, ve ene alâ ahdike ve va'dike mestetâ'tü, eûzü bike min şerri mâ sana'tü, ebûü leke bi-ni'metike aleyye, ve ebûü bi-zenbî fağfir lî fe-innehû lâ yeğfiru'z-zünûbe illâ ente",
+      "meal": "Allahım! Sen benim Rabbimsin. Senden başka ilah yoktur. Beni sen yarattın, ben senin kulunum. Gücüm yettiğince senin ahdine ve va'dine bağlıyım. İşlediğim günahların şerrinden sana sığınırım. Bana lutfettiğin nimetleri ikrar ederim, günahımı da itiraf ederim. Beni bağışla; çünkü günahları ancak sen bağışlarsın.",
+      "tekrar": 1,
+      "kaynak": "Buhârî, Daavât 2",
+      "fazilet": "Sabah inanarak okuyup o gün ölen kişi cennete girer."
+    },
+    {
+      "no": 2,
+      "ad": "Âyetü'l-Kürsî",
+      "arapca": "اللَّهُ لَا إِلَهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ ۚ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۖ وَلَا يَئُودُهُ حِفْظُهُمَا ۚ وَهُوَ الْعَلِيُّ الْعَظِيمُ",
+      "okunus": "Allâhu lâ ilâhe illâ huve'l-hayyu'l-kayyûm... (Bakara, 255)",
+      "meal": "Allah, kendisinden başka hiçbir ilah olmayandır. Diridir, kayyûmdur...",
+      "tekrar": 1,
+      "kaynak": "Nesâî, Amelü'l-yevm 100",
+      "fazilet": "Sabah okuyana akşama kadar Allah'ın koruması olur."
+    },
+    {
+      "no": 3,
+      "ad": "İhlâs Sûresi",
+      "arapca": "قُلْ هُوَ اللَّهُ أَحَدٌ ۝ اللَّهُ الصَّمَدُ ۝ لَمْ يَلِدْ وَلَمْ يُولَدْ ۝ وَلَمْ يَكُنْ لَهُ كُفُوًا أَحَدٌ",
+      "okunus": "Kul huvallâhu ehad. Allâhu's-samed. Lem yelid ve lem yûled. Ve lem yekun lehû küfüven ehad.",
+      "meal": "De ki: O Allah birdir. Allah samed'dir. Doğurmamış, doğurulmamıştır. Hiçbir şey O'na denk değildir.",
+      "tekrar": 3,
+      "kaynak": "Ebû Dâvûd, Edeb 101; Tirmizî, Daavât 116",
+      "fazilet": "Sabah-akşam 3'er kere okuyana her şeye karşı yeter."
+    },
+    {
+      "no": 4,
+      "ad": "Felak Sûresi",
+      "arapca": "قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ ۝ مِنْ شَرِّ مَا خَلَقَ ۝ وَمِنْ شَرِّ غَاسِقٍ إِذَا وَقَبَ ۝ وَمِنْ شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ ۝ وَمِنْ شَرِّ حَاسِدٍ إِذَا حَسَدَ",
+      "okunus": "Kul eûzü birabbi'l-felak. Min şerri mâ halak. Ve min şerri ğâsikın izâ vekab. Ve min şerri'n-neffâsâti fi'l-ukad. Ve min şerri hâsidin izâ hased.",
+      "meal": "De ki: Sabahın Rabbine sığınırım; yarattıklarının şerrinden, çöküp bastıran karanlığın şerrinden, düğümlere üfleyenlerin şerrinden, hased ettiğinde haset edenin şerrinden.",
+      "tekrar": 3,
+      "kaynak": "Ebû Dâvûd, Edeb 101",
+      "fazilet": "Şer ve nazardan korunmak için en güçlü sığınma."
+    },
+    {
+      "no": 5,
+      "ad": "Nâs Sûresi",
+      "arapca": "قُلْ أَعُوذُ بِرَبِّ النَّاسِ ۝ مَلِكِ النَّاسِ ۝ إِلَهِ النَّاسِ ۝ مِنْ شَرِّ الْوَسْوَاسِ الْخَنَّاسِ ۝ الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ ۝ مِنَ الْجِنَّةِ وَالنَّاسِ",
+      "okunus": "Kul eûzü birabbi'n-nâs. Meliki'n-nâs. İlâhi'n-nâs. Min şerri'l-vesvâsi'l-hannâs. Ellezî yüvesvisü fî sudûri'n-nâs. Mine'l-cinneti ve'n-nâs.",
+      "meal": "De ki: İnsanların Rabbine, Melikine, ilâhına sığınırım; sinsi vesvesecinin şerrinden -ki o, insanların göğüslerine vesvese verir-, cinlerden ve insanlardan olan vesvesecinin şerrinden.",
+      "tekrar": 3,
+      "kaynak": "Ebû Dâvûd, Edeb 101",
+      "fazilet": "Vesvese, korku ve şeytanın şerrinden korunma duâsı."
+    },
+    {
+      "no": 6,
+      "ad": "Tam Kelimelere Sığınma",
+      "arapca": "أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ",
+      "okunus": "Eûzü bi-kelimâtillâhi't-tâmmâti min şerri mâ halak",
+      "meal": "Yarattığı her şeyin şerrinden, Allah'ın tam kelimelerine sığınırım.",
+      "tekrar": 3,
+      "kaynak": "Müslim, Zikir 54; Tirmizî, Daavât 14",
+      "fazilet": "Bunu sabah okuyana o gün hiçbir şey zarar veremez."
+    },
+    {
+      "no": 7,
+      "ad": "İsm-i Şerîf ile Sığınma",
+      "arapca": "بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ",
+      "okunus": "Bismillâhillezî lâ yedurru mea'smihî şey'ün fi'l-ardı ve lâ fi's-semâi ve huve's-semîu'l-alîm",
+      "meal": "İsmi ile birlikte anıldığında yerde ve gökte hiçbir şeyin zarar veremediği Allah'ın adıyla. O, hakkıyla işiten ve bilendir.",
+      "tekrar": 3,
+      "kaynak": "Ebû Dâvûd, Edeb 101; Tirmizî, Daavât 13",
+      "fazilet": "Sabah-akşam 3'er kere okuyana ani bela isabet etmez."
+    },
+    {
+      "no": 8,
+      "ad": "Hasbiyallâh",
+      "arapca": "حَسْبِيَ اللَّهُ لَا إِلَهَ إِلَّا هُوَ عَلَيْهِ تَوَكَّلْتُ وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ",
+      "okunus": "Hasbiyallâhu lâ ilâhe illâ hüve aleyhi tevekkeltü ve hüve rabbü'l-arşi'l-azîm",
+      "meal": "Allah bana yeter; O'ndan başka ilah yoktur. O'na tevekkül ettim. O, büyük arşın Rabbidir.",
+      "tekrar": 7,
+      "kaynak": "Ebû Dâvûd, Edeb 100",
+      "fazilet": "7 kere okuyana Allah dünya ve ahiretin sıkıntılarında kâfîdir."
+    },
+    {
+      "no": 9,
+      "ad": "Âfiyet Duâsı",
+      "arapca": "اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي الدُّنْيَا وَالْآخِرَةِ، اللَّهُمَّ اسْتُرْ عَوْرَاتِي وَآمِنْ رَوْعَاتِي",
+      "okunus": "Allâhumme innî es'elüke'l-afve ve'l-âfiyete fi'd-dünyâ ve'l-âhirah. Allâhümme'stür avrâtî ve âmin rav'âtî",
+      "meal": "Allahım! Senden dünya ve ahirette af ve afiyet dilerim. Allahım! Kusurlarımı ört ve korkularımı güvene çevir.",
+      "tekrar": 1,
+      "kaynak": "Ebû Dâvûd, Edeb 100; İbn Mâce, Duâ 14",
+      "fazilet": "Sağlık, huzur ve gizli kusurların örtülmesi için en kapsamlı duâ."
+    },
+    {
+      "no": 10,
+      "ad": "Tesbih",
+      "arapca": "سُبْحَانَ اللَّهِ وَبِحَمْدِهِ",
+      "okunus": "Sübhânallâhi ve bi-hamdih",
+      "meal": "Allah'ı hamd ile tesbih ederim.",
+      "tekrar": 100,
+      "kaynak": "Müslim, Zikir 79",
+      "fazilet": "Günde 100 defa diyenin günahları deniz köpüğü kadar da olsa bağışlanır."
+    },
+    {
+      "no": 11,
+      "ad": "Tevhid",
+      "arapca": "لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ",
+      "okunus": "Lâ ilâhe illallâhu vahdehû lâ şerîke leh, lehu'l-mülkü ve lehu'l-hamdü ve huve alâ külli şey'in kadîr",
+      "meal": "Allah'tan başka ilah yoktur, O birdir, ortağı yoktur. Mülk O'nundur, hamd O'nadır. O her şeye gücü yetendir.",
+      "tekrar": 10,
+      "kaynak": "Buhârî, Daavât 64; Müslim, Zikir 28",
+      "fazilet": "Sabah 10 defa diyene 10 köle azat etmiş sevabı vardır."
+    },
+    {
+      "no": 12,
+      "ad": "Salavât-ı Şerîfe",
+      "arapca": "اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ إِنَّكَ حَمِيدٌ مَجِيدٌ",
+      "okunus": "Allâhümme salli alâ Muhammedin ve alâ âli Muhammed, kemâ salleyte alâ İbrâhîme ve alâ âli İbrâhîme inneke hamîdün mecîd",
+      "meal": "Allahım! İbrâhim ve âline salât eylediğin gibi Muhammed ve âline de salât eyle. Şüphesiz sen hamde lâyık ve şanı yüce olansın.",
+      "tekrar": 10,
+      "kaynak": "Buhârî, Enbiyâ 10",
+      "fazilet": "Sabah-akşam 10'ar salavat getirene Peygamberimizin şefaati ulaşır."
+    }
+  ]
+}
