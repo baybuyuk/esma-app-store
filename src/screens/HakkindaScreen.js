@@ -136,6 +136,7 @@ export default function HakkindaScreen({ navigation }) {
           <Text style={styles.lisansSatir}>📚 Hadisler: fawazahmed0/hadith-api (MIT)</Text>
           <Text style={styles.lisansSatir}>🕌 Namaz vakitleri: adhan-js</Text>
           <Text style={styles.lisansSatir}>🌟 Esma faziletleri: Klasik İslami kaynaklar (Bûnî, Gümüşhânevî, Nâzilî)</Text>
+          <Text style={styles.lisansSatir}>🔔 Ezan sesi: Wikimedia Commons / Mahfoudou (CC BY-SA 4.0)</Text>
         </Animated.View>
 
         <Text style={styles.niyet}>🤲 Niyetimiz halis olsun</Text>

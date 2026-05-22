@@ -48,7 +48,8 @@
       [
         "expo-notifications",
         {
-          "color": "#B08D2E"
+          "color": "#B08D2E",
+          "sounds": ["./assets/sounds/ezan.oga"]
         }
       ]
     ]
