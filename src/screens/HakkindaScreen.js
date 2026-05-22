@@ -10,6 +10,8 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { colors } from '../constants/colors';
+import { radii } from '../constants/radii';
+import { type } from '../constants/type';
 
 export default function HakkindaScreen({ navigation }) {
   const logoOpacity = useRef(new Animated.Value(0)).current;
@@ -146,9 +148,9 @@ const styles = StyleSheet.create({
   geri: { color: colors.altin, fontSize: 16, width: 60 },
   baslik: { color: colors.anaYesil, fontSize: 18, fontWeight: '600', flex: 1, textAlign: 'center' },
   scroll: { padding: 24, alignItems: 'center' },
-  logo: { fontSize: 56, color: colors.altin, marginTop: 12 },
+  logo: { fontSize: type.display, color: colors.altin, marginTop: 12 },
   arapca: { fontSize: 40, color: colors.anaMetin, marginTop: 4 },
-  surum: { fontSize: 13, color: colors.ikincilMetin, marginTop: 8 },
+  surum: { fontSize: type.sm, color: colors.ikincilMetin, marginTop: 8 },
   paragraf: {
     fontSize: 14,
     color: colors.anaMetin,
@@ -162,10 +164,10 @@ const styles = StyleSheet.create({
     padding: 14,
     borderWidth: 1,
     borderColor: colors.cizgi,
-    borderRadius: 10,
+    borderRadius: radii.sm,
     width: '100%',
   },
-  lisansSatir: { fontSize: 12, color: colors.anaMetin, marginVertical: 3 },
+  lisansSatir: { fontSize: type.xs, color: colors.anaMetin, marginVertical: 3 },
   niyet: {
     marginTop: 28,
     fontSize: 14,

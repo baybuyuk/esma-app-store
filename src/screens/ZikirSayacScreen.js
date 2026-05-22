@@ -14,6 +14,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import * as Haptics from 'expo-haptics';
 import { colors } from '../constants/colors';
+import { type } from '../constants/type';
 import { esmaById } from '../lib/esma';
 import { kisaZikirler } from '../lib/data';
 import { zikirKaydet, bugunkuToplamSayim, toplamSayimArtir } from '../db/db';
@@ -349,7 +350,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   ustAnlam: {
-    fontSize: 13,
+    fontSize: type.sm,
     color: colors.ikincilMetin,
     textAlign: 'center',
     fontStyle: 'italic',
@@ -376,9 +377,9 @@ const styles = StyleSheet.create({
   },
   tikAlani: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   sayiKutusu: { alignItems: 'center', paddingHorizontal: 24 },
-  sayi: { fontSize: 96, color: colors.anaYesil, fontWeight: '300' },
+  sayi: { fontSize: type.count, color: colors.anaYesil, fontWeight: '300' },
   altYazi: {
-    fontSize: 13,
+    fontSize: type.sm,
     color: colors.ikincilMetin,
     marginTop: 4,
     textAlign: 'center',
@@ -394,7 +395,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   barIn: { height: 6, borderRadius: 6 },
-  yuzde: { fontSize: 13, color: colors.ikincilMetin, marginTop: 8 },
+  yuzde: { fontSize: type.sm, color: colors.ikincilMetin, marginTop: 8 },
   altBar: { flexDirection: 'row', padding: 16, gap: 12 },
   altButon: {
     flex: 1,
@@ -405,5 +406,5 @@ const styles = StyleSheet.create({
   sifirlaButon: { borderWidth: 1, borderColor: colors.cizgi },
   tamamlaButon: { backgroundColor: colors.altin },
   tamamlaPasif: { opacity: 0.6 },
-  altButonYazi: { fontSize: 15, color: colors.anaMetin, fontWeight: '600' },
+  altButonYazi: { fontSize: type.base, color: colors.anaMetin, fontWeight: '600' },
 });

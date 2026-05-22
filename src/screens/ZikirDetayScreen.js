@@ -10,6 +10,8 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { colors } from '../constants/colors';
+import { radii } from '../constants/radii';
+import { type } from '../constants/type';
 import { kisaZikirler } from '../lib/data';
 
 const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
@@ -168,10 +170,10 @@ const styles = StyleSheet.create({
     borderColor: colors.altin,
     paddingHorizontal: 14,
     paddingVertical: 8,
-    borderRadius: 10,
+    borderRadius: radii.sm,
     marginBottom: 18,
   },
-  kaynak: { color: colors.altin, fontSize: 13 },
+  kaynak: { color: colors.altin, fontSize: type.sm },
   fazilet: {
     fontSize: 14,
     color: colors.anaMetin,
@@ -182,7 +184,7 @@ const styles = StyleSheet.create({
     marginBottom: 18,
   },
   bilgi: { alignSelf: 'stretch', alignItems: 'center', marginBottom: 18 },
-  bilgiSatir: { color: colors.altin, fontSize: 13, marginVertical: 2 },
+  bilgiSatir: { color: colors.altin, fontSize: type.sm, marginVertical: 2 },
   buton: {
     backgroundColor: colors.altin,
     paddingVertical: 14,

@@ -16,6 +16,8 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { colors } from '../constants/colors';
+import { radii } from '../constants/radii';
+import { type } from '../constants/type';
 import { sehirler } from '../constants/sehirler';
 import { izinIste, namazBildirimleriniKur, tumBildirimleriIptal } from '../lib/bildirim';
 import { gunlukVakitler } from '../lib/namaz';
@@ -230,14 +232,14 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#EFE9D8',
   },
-  label: { fontSize: 15, color: colors.anaMetin },
+  label: { fontSize: type.base, color: colors.anaMetin },
   deger: { fontSize: 14, color: colors.altin },
   aramaInput: {
     margin: 16,
     padding: 12,
     borderWidth: 1,
     borderColor: colors.cizgi,
-    borderRadius: 10,
+    borderRadius: radii.sm,
     fontSize: 16,
     color: colors.anaMetin,
   },

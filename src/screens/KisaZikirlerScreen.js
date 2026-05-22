@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { colors } from '../constants/colors';
+import { type } from '../constants/type';
 import { kisaZikirler } from '../lib/data';
 
 const KAYNAK_RENGI = {
@@ -121,7 +122,7 @@ const styles = StyleSheet.create({
   baslik: { color: colors.anaYesil, fontSize: 18, fontWeight: '600', flex: 1, textAlign: 'center' },
   aciklama: {
     color: colors.ikincilMetin,
-    fontSize: 13,
+    fontSize: type.sm,
     paddingHorizontal: 16,
     marginBottom: 10,
   },
@@ -138,7 +139,7 @@ const styles = StyleSheet.create({
   },
   ad: { fontSize: 16, color: colors.anaYesil, fontWeight: '600' },
   arapca: { fontSize: 16, color: colors.anaMetin, marginTop: 6, fontStyle: 'italic' },
-  meal: { fontSize: 13, color: colors.ikincilMetin, marginTop: 4 },
+  meal: { fontSize: type.sm, color: colors.ikincilMetin, marginTop: 4 },
   rozet: { alignSelf: 'flex-start', marginTop: 8, paddingHorizontal: 8, paddingVertical: 3, borderRadius: 8 },
   rozetYazi: { fontSize: 11, fontWeight: '600' },
 });

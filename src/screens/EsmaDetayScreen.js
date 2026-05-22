@@ -10,6 +10,8 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { colors } from '../constants/colors';
+import { radii } from '../constants/radii';
+import { type } from '../constants/type';
 import { esmaById } from '../lib/esma';
 import { esmaToplamSayim, esmaGunlukSayim, esmaStreak } from '../db/db';
 
@@ -324,7 +326,7 @@ const styles = StyleSheet.create({
     marginTop: 16,
   },
   yaEsma: {
-    fontSize: 28,
+    fontSize: type['2xl'],
     color: colors.anaYesil,
     textAlign: 'center',
     marginTop: 12,
@@ -337,7 +339,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 28,
     borderWidth: 1.5,
     borderColor: colors.altin,
-    borderRadius: 14,
+    borderRadius: radii.md,
     alignItems: 'center',
     alignSelf: 'stretch',
   },
@@ -348,14 +350,14 @@ const styles = StyleSheet.create({
   },
   ebcedEtiket: {
     marginTop: 6,
-    fontSize: 12,
+    fontSize: type.xs,
     color: colors.anaYesil,
     letterSpacing: 2,
     fontWeight: '600',
   },
   ebcedNot: {
     marginTop: 8,
-    fontSize: 12,
+    fontSize: type.xs,
     color: colors.ikincilMetin,
     fontStyle: 'italic',
   },
@@ -364,7 +366,7 @@ const styles = StyleSheet.create({
     marginTop: 24,
     padding: 18,
     backgroundColor: '#fff',
-    borderRadius: 14,
+    borderRadius: radii.md,
     alignSelf: 'stretch',
     elevation: 1,
     shadowColor: '#000',
@@ -379,7 +381,7 @@ const styles = StyleSheet.create({
     marginBottom: 14,
   },
   istatistikBos: {
-    fontSize: 13,
+    fontSize: type.sm,
     color: colors.ikincilMetin,
     fontStyle: 'italic',
     textAlign: 'center',
@@ -401,7 +403,7 @@ const styles = StyleSheet.create({
     opacity: 0.5,
   },
   istatistikSayi: {
-    fontSize: 22,
+    fontSize: type.xl,
     color: colors.altin,
     fontWeight: '700',
   },
@@ -417,7 +419,7 @@ const styles = StyleSheet.create({
     padding: 18,
     borderWidth: 1.5,
     borderColor: colors.altin,
-    borderRadius: 14,
+    borderRadius: radii.md,
     alignSelf: 'stretch',
   },
   faziletBaslik: {
@@ -427,7 +429,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   faziletMetin: {
-    fontSize: 15,
+    fontSize: type.base,
     color: colors.ikincilMetin,
     fontStyle: 'italic',
     lineHeight: 22,
@@ -457,7 +459,7 @@ const styles = StyleSheet.create({
     paddingVertical: 4,
   },
   devamYazi: {
-    fontSize: 13,
+    fontSize: type.sm,
     color: colors.altin,
     fontWeight: '600',
   },
@@ -466,7 +468,7 @@ const styles = StyleSheet.create({
     marginTop: 24,
     padding: 18,
     backgroundColor: '#fff',
-    borderRadius: 14,
+    borderRadius: radii.md,
     alignSelf: 'stretch',
     elevation: 1,
     shadowColor: '#000',
@@ -522,7 +524,7 @@ const styles = StyleSheet.create({
   },
   tesirYazi: {
     color: '#fff',
-    fontSize: 13,
+    fontSize: type.sm,
     fontWeight: '600',
   },
 
@@ -531,12 +533,12 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
     backgroundColor: colors.altin,
     paddingVertical: 18,
-    borderRadius: 14,
+    borderRadius: radii.md,
     alignItems: 'center',
   },
   zikretYazi: {
     color: '#fff',
-    fontSize: 17,
+    fontSize: type.lg,
     fontWeight: '700',
   },
 });

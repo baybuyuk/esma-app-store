@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { colors } from '../constants/colors';
+import { type } from '../constants/type';
 import { gunlukKayitlar } from '../db/db';
 
 const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
@@ -202,8 +203,8 @@ const styles = StyleSheet.create({
   },
   kartUst: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 6 },
   tarih: { color: colors.anaYesil, fontSize: 14, fontWeight: '600' },
-  namaz: { color: colors.altin, fontSize: 13 },
-  sukur: { color: colors.ikincilMetin, fontSize: 13, fontStyle: 'italic' },
-  detayLabel: { color: colors.altin, fontSize: 13, marginTop: 14, marginBottom: 4 },
-  detayDeger: { color: colors.anaMetin, fontSize: 15, lineHeight: 22 },
+  namaz: { color: colors.altin, fontSize: type.sm },
+  sukur: { color: colors.ikincilMetin, fontSize: type.sm, fontStyle: 'italic' },
+  detayLabel: { color: colors.altin, fontSize: type.sm, marginTop: 14, marginBottom: 4 },
+  detayDeger: { color: colors.anaMetin, fontSize: type.base, lineHeight: 22 },
 });

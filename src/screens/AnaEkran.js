@@ -14,6 +14,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { format } from 'date-fns';
 import { tr } from 'date-fns/locale';
 import { colors } from '../constants/colors';
+import { radii } from '../constants/radii';
+import { type } from '../constants/type';
 import { gunlukVakitler, sonrakiVakit, vakitFormat, gericiSayim } from '../lib/namaz';
 import { gununIcerigi, bugunCumaMi } from '../lib/gunlukSecim';
 import { ayetler, hadisler } from '../lib/data';
@@ -294,7 +296,7 @@ export default function AnaEkran({ navigation }) {
             <KisaYol emoji="📿" label="Tüm Vakitler" onPress={() => navigation.navigate('TumVakitler')} />
             <KisaYol emoji="📊" label="Geçmiş" onPress={() => navigation.navigate('Gecmis')} />
             <KisaYol emoji="📈" label="İstatistik" onPress={() => navigation.navigate('EsmaIstatistik')} />
-            <View style={styles.gridDolgu} />
+            <KisaYol emoji="🔍" label="Esma Bul" onPress={() => navigation.navigate('EsmaBul')} />
           </View>
 
           <View style={styles.altMenu}>
@@ -381,7 +383,7 @@ const styles = StyleSheet.create({
   scroll: { padding: 16, paddingBottom: 32 },
   basliklik: { marginBottom: 16, marginTop: 4 },
   selam: { fontSize: 20, color: colors.anaYesil, fontWeight: '600' },
-  tarih: { fontSize: 13, color: colors.ikincilMetin, marginTop: 4 },
+  tarih: { fontSize: type.sm, color: colors.ikincilMetin, marginTop: 4 },
 
   vakitKart: {
     backgroundColor: colors.anaYesil,
@@ -390,10 +392,10 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     alignItems: 'center',
   },
-  vakitIkon: { fontSize: 28, marginBottom: 6 },
+  vakitIkon: { fontSize: type['2xl'], marginBottom: 6 },
   vakitLabel: { color: colors.krem, fontSize: 14, opacity: 0.9 },
   vakitSaat: { color: '#fff', fontSize: 44, fontWeight: '300', marginVertical: 4 },
-  vakitKaldi: { color: colors.kremAlt, fontSize: 13 },
+  vakitKaldi: { color: colors.kremAlt, fontSize: type.sm },
 
   tumEsmalarKart: {
     flexDirection: 'row',
@@ -405,18 +407,18 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   tumEsmalarIkon: {
-    fontSize: 22,
+    fontSize: type.xl,
     marginRight: 12,
   },
   tumEsmalarOrta: { flex: 1 },
   tumEsmalarBaslik: {
     color: '#fff',
-    fontSize: 15,
+    fontSize: type.base,
     fontWeight: '700',
   },
   tumEsmalarAlt: {
     color: colors.kremAlt,
-    fontSize: 12,
+    fontSize: type.xs,
     marginTop: 2,
   },
   tumEsmalarOk: {
@@ -430,7 +432,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#fff',
     padding: 16,
-    borderRadius: 14,
+    borderRadius: radii.md,
     marginBottom: 12,
     borderLeftWidth: 3,
     borderLeftColor: colors.altin,
@@ -443,7 +445,7 @@ const styles = StyleSheet.create({
   zikirNoRozet: {
     width: 44,
     height: 44,
-    borderRadius: 22,
+    borderRadius: radii.lg,
     backgroundColor: colors.altin,
     alignItems: 'center',
     justifyContent: 'center',
@@ -462,9 +464,9 @@ const styles = StyleSheet.create({
     letterSpacing: 1.2,
     fontWeight: '700',
   },
-  zikirAd: { color: colors.anaYesil, fontSize: 22, fontWeight: '600', marginTop: 4 },
+  zikirAd: { color: colors.anaYesil, fontSize: type.xl, fontWeight: '600', marginTop: 4 },
   zikirEbced: { color: colors.altin, fontSize: 11, marginTop: 4, letterSpacing: 0.3 },
-  zikirAnlam: { color: colors.ikincilMetin, fontSize: 13, marginTop: 4 },
+  zikirAnlam: { color: colors.ikincilMetin, fontSize: type.sm, marginTop: 4 },
 
   kart: {
     backgroundColor: '#fff',
@@ -477,10 +479,10 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     shadowOffset: { width: 0, height: 1 },
   },
-  kartBaslik: { color: colors.anaYesil, fontSize: 13, marginBottom: 8, fontWeight: '600' },
-  ayetMeal: { color: colors.anaMetin, fontSize: 15, fontStyle: 'italic', lineHeight: 22 },
-  kaynak: { color: colors.altin, fontSize: 12, marginTop: 8 },
-  toggle: { color: colors.altin, fontSize: 12, marginTop: 8, textAlign: 'right' },
+  kartBaslik: { color: colors.anaYesil, fontSize: type.sm, marginBottom: 8, fontWeight: '600' },
+  ayetMeal: { color: colors.anaMetin, fontSize: type.base, fontStyle: 'italic', lineHeight: 22 },
+  kaynak: { color: colors.altin, fontSize: type.xs, marginTop: 8 },
+  toggle: { color: colors.altin, fontSize: type.xs, marginTop: 8, textAlign: 'right' },
   arapca: {
     color: colors.anaMetin,
     fontSize: 20,
@@ -506,11 +508,11 @@ const styles = StyleSheet.create({
   },
   gridDolgu: { width: '48%' },
   gridEmoji: { fontSize: 24, marginBottom: 6 },
-  gridLabel: { fontSize: 13, color: colors.anaMetin, textAlign: 'center' },
+  gridLabel: { fontSize: type.sm, color: colors.anaMetin, textAlign: 'center' },
   altMenu: {
     flexDirection: 'row',
     justifyContent: 'space-around',
     marginTop: 8,
   },
-  altLink: { color: colors.anaYesil, fontSize: 13 },
+  altLink: { color: colors.anaYesil, fontSize: type.sm },
 });

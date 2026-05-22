@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { colors } from '../constants/colors';
+import { type } from '../constants/type';
 import { anlikZikirler, kisaZikirler } from '../lib/data';
 import { bugunCumaMi } from '../lib/gunlukSecim';
 
@@ -143,7 +144,7 @@ const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: colors.krem },
   header: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 14, paddingVertical: 12 },
   geri: { color: colors.altin, fontSize: 16, width: 60 },
-  baslik: { color: colors.anaYesil, fontSize: 17, fontWeight: '600', flex: 1, textAlign: 'center' },
+  baslik: { color: colors.anaYesil, fontSize: type.lg, fontWeight: '600', flex: 1, textAlign: 'center' },
   scroll: { padding: 16, paddingBottom: 32 },
   buton: {
     minHeight: 80,
@@ -154,7 +155,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 12,
   },
-  emoji: { fontSize: 28, marginRight: 14 },
-  durum: { color: '#fff', fontSize: 17, fontWeight: '600' },
-  zikirAd: { color: 'rgba(255,255,255,0.85)', fontSize: 12, marginTop: 4 },
+  emoji: { fontSize: type['2xl'], marginRight: 14 },
+  durum: { color: '#fff', fontSize: type.lg, fontWeight: '600' },
+  zikirAd: { color: 'rgba(255,255,255,0.85)', fontSize: type.xs, marginTop: 4 },
 });

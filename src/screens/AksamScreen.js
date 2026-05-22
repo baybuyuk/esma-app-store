@@ -17,6 +17,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { format } from 'date-fns';
 import { tr } from 'date-fns/locale';
 import { colors } from '../constants/colors';
+import { radii } from '../constants/radii';
+import { type } from '../constants/type';
 import { gunlukKayitEkle } from '../db/db';
 
 const NAMAZ_SECENEK = [
@@ -177,10 +179,10 @@ const styles = StyleSheet.create({
   header: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 14, paddingVertical: 12 },
   geri: { color: colors.altin, fontSize: 16, width: 60 },
   baslik: { color: colors.anaYesil, fontSize: 18, fontWeight: '600' },
-  tarih: { color: colors.ikincilMetin, fontSize: 12, marginTop: 2 },
+  tarih: { color: colors.ikincilMetin, fontSize: type.xs, marginTop: 2 },
   scroll: { padding: 18, paddingBottom: 32 },
   soru: {
-    fontSize: 15,
+    fontSize: type.base,
     color: colors.anaYesil,
     fontWeight: '600',
     marginTop: 18,
@@ -193,21 +195,21 @@ const styles = StyleSheet.create({
     paddingHorizontal: 14,
     borderWidth: 1,
     borderColor: colors.cizgi,
-    borderRadius: 10,
+    borderRadius: radii.sm,
     marginBottom: 8,
     backgroundColor: '#fff',
   },
   radioSecili: { borderColor: colors.altin, backgroundColor: '#FBF6E6' },
   radioBullet: { fontSize: 18, color: colors.ikincilMetin, marginRight: 10 },
   radioBulletSecili: { color: colors.altin },
-  radioLabel: { fontSize: 15, color: colors.anaMetin },
+  radioLabel: { fontSize: type.base, color: colors.anaMetin },
   input: {
     backgroundColor: '#fff',
     borderWidth: 1,
     borderColor: colors.cizgi,
-    borderRadius: 10,
+    borderRadius: radii.sm,
     padding: 12,
-    fontSize: 15,
+    fontSize: type.base,
     color: colors.anaMetin,
   },
   kapatButon: {
@@ -217,5 +219,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 24,
   },
-  kapatYazi: { color: '#fff', fontSize: 17, fontWeight: '600' },
+  kapatYazi: { color: '#fff', fontSize: type.lg, fontWeight: '600' },
 });

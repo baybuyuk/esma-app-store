@@ -15,6 +15,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { colors } from '../constants/colors';
+import { type } from '../constants/type';
 import { isimdenEsma } from '../lib/esma';
 
 const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
@@ -119,7 +120,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   input: {
-    fontSize: 22,
+    fontSize: type.xl,
     textAlign: 'center',
     borderBottomWidth: 1,
     borderBottomColor: colors.cizgi,
@@ -133,5 +134,5 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     alignItems: 'center',
   },
-  butonYazi: { color: '#fff', fontSize: 17, fontWeight: '600' },
+  butonYazi: { color: '#fff', fontSize: type.lg, fontWeight: '600' },
 });

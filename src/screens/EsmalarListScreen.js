@@ -12,6 +12,8 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { colors } from '../constants/colors';
+import { radii } from '../constants/radii';
+import { type } from '../constants/type';
 import { tumEsmalar } from '../lib/esma';
 
 const FAVORI_KEY = 'esmaFavoriler';
@@ -307,7 +309,7 @@ const styles = StyleSheet.create({
   baslik: {
     flex: 1,
     textAlign: 'center',
-    fontSize: 17,
+    fontSize: type.lg,
     fontWeight: '700',
     color: colors.anaYesil,
   },
@@ -322,7 +324,7 @@ const styles = StyleSheet.create({
   sekme: {
     flex: 1,
     paddingVertical: 10,
-    borderRadius: 10,
+    borderRadius: radii.sm,
     borderWidth: 1,
     borderColor: colors.cizgi,
     backgroundColor: '#fff',
@@ -333,7 +335,7 @@ const styles = StyleSheet.create({
     borderColor: colors.anaYesil,
   },
   sekmeYazi: {
-    fontSize: 13,
+    fontSize: type.sm,
     fontWeight: '600',
     color: colors.ikincilMetin,
   },
@@ -385,7 +387,7 @@ const styles = StyleSheet.create({
   },
   noYazi: {
     color: '#fff',
-    fontSize: 13,
+    fontSize: type.sm,
     fontWeight: '700',
   },
   ortaBlok: {
@@ -398,7 +400,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   anlam: {
-    fontSize: 12,
+    fontSize: type.xs,
     color: colors.ikincilMetin,
     marginTop: 2,
   },
@@ -406,7 +408,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
   },
   arapca: {
-    fontSize: 22,
+    fontSize: type.xl,
     color: colors.altin,
   },
   ebcedBadge: {
@@ -414,7 +416,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.krem,
     borderWidth: 1,
     borderColor: colors.altin,
-    borderRadius: 10,
+    borderRadius: radii.sm,
     paddingHorizontal: 8,
     paddingVertical: 2,
   },
@@ -431,7 +433,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   favoriIkon: {
-    fontSize: 22,
+    fontSize: type.xl,
     color: colors.ikincilMetin,
   },
   favoriIkonAktif: {

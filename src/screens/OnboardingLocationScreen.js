@@ -16,6 +16,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Location from 'expo-location';
 import { colors } from '../constants/colors';
+import { radii } from '../constants/radii';
+import { type } from '../constants/type';
 import { sehirler } from '../constants/sehirler';
 
 const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
@@ -235,7 +237,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   aciklama: {
-    fontSize: 15,
+    fontSize: type.base,
     color: colors.ikincilMetin,
     marginBottom: 32,
     textAlign: 'center',
@@ -248,7 +250,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 12,
   },
-  butonYazi: { color: '#fff', fontSize: 17, fontWeight: '600' },
+  butonYazi: { color: '#fff', fontSize: type.lg, fontWeight: '600' },
   butonIkincil: {
     paddingVertical: 14,
     borderRadius: 12,
@@ -267,13 +269,13 @@ const styles = StyleSheet.create({
     borderBottomColor: colors.cizgi,
   },
   modalBaslik: { fontSize: 18, color: colors.anaYesil, fontWeight: '600' },
-  modalKapat: { color: colors.altin, fontSize: 15 },
+  modalKapat: { color: colors.altin, fontSize: type.base },
   aramaInput: {
     margin: 16,
     padding: 12,
     borderWidth: 1,
     borderColor: colors.cizgi,
-    borderRadius: 10,
+    borderRadius: radii.sm,
     fontSize: 16,
     color: colors.anaMetin,
   },

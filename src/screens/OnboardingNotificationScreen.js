@@ -11,6 +11,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { colors } from '../constants/colors';
+import { type } from '../constants/type';
 import { izinIste, namazBildirimleriniKur } from '../lib/bildirim';
 import { gunlukVakitler } from '../lib/namaz';
 
@@ -192,7 +193,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   aciklama: {
-    fontSize: 15,
+    fontSize: type.base,
     color: colors.ikincilMetin,
     marginBottom: 32,
     textAlign: 'center',
@@ -206,7 +207,7 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   butonPasif: { opacity: 0.5 },
-  butonYazi: { color: '#fff', fontSize: 17, fontWeight: '600' },
+  butonYazi: { color: '#fff', fontSize: type.lg, fontWeight: '600' },
   butonIkincil: {
     paddingVertical: 14,
     borderRadius: 12,
@@ -217,7 +218,7 @@ const styles = StyleSheet.create({
   butonIkincilYazi: { color: colors.anaYesil, fontSize: 16 },
   not: {
     marginTop: 24,
-    fontSize: 12,
+    fontSize: type.xs,
     color: colors.ikincilMetin,
     textAlign: 'center',
     fontStyle: 'italic',

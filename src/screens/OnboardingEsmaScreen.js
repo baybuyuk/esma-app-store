@@ -11,6 +11,8 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { colors } from '../constants/colors';
+import { radii } from '../constants/radii';
+import { type } from '../constants/type';
 
 const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
 
@@ -255,7 +257,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   kutu: { alignItems: 'center', marginBottom: 16 },
-  arapca: { fontSize: 38, color: colors.anaMetin, marginBottom: 8 },
+  arapca: { fontSize: type['3xl'], color: colors.anaMetin, marginBottom: 8 },
   ebced: { fontSize: 14, color: colors.ikincilMetin },
   not: {
     fontSize: 14,
@@ -277,8 +279,8 @@ const styles = StyleSheet.create({
     marginVertical: 14,
   },
   label: { fontSize: 14, color: colors.ikincilMetin, marginBottom: 8 },
-  esmaArapca: { fontSize: 56, color: colors.altin, marginBottom: 6 },
-  yaEsma: { fontSize: 22, color: colors.anaYesil, marginBottom: 6, fontWeight: '600' },
+  esmaArapca: { fontSize: type.display, color: colors.altin, marginBottom: 6 },
+  yaEsma: { fontSize: type.xl, color: colors.anaYesil, marginBottom: 6, fontWeight: '600' },
   anlam: { fontSize: 16, color: colors.anaMetin, textAlign: 'center' },
   fazilet: {
     fontSize: 14,
@@ -293,10 +295,10 @@ const styles = StyleSheet.create({
     padding: 14,
     borderWidth: 1,
     borderColor: colors.cizgi,
-    borderRadius: 10,
+    borderRadius: radii.sm,
     width: '100%',
   },
-  bilgiSatir: { fontSize: 13, color: colors.anaMetin, marginVertical: 2 },
+  bilgiSatir: { fontSize: type.sm, color: colors.anaMetin, marginVertical: 2 },
   buton: {
     backgroundColor: colors.altin,
     paddingVertical: 16,
@@ -306,5 +308,5 @@ const styles = StyleSheet.create({
     marginTop: 28,
     alignSelf: 'stretch',
   },
-  butonYazi: { color: '#fff', fontSize: 17, fontWeight: '600' },
+  butonYazi: { color: '#fff', fontSize: type.lg, fontWeight: '600' },
 });

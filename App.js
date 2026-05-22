@@ -15,6 +15,7 @@ import ZikirSayacScreen from './src/screens/ZikirSayacScreen';
 import EsmaDetayScreen from './src/screens/EsmaDetayScreen';
 import EsmalarListScreen from './src/screens/EsmalarListScreen';
 import EsmaIstatistikScreen from './src/screens/EsmaIstatistikScreen';
+import EsmaBulScreen from './src/screens/EsmaBulScreen';
 import KisaZikirlerScreen from './src/screens/KisaZikirlerScreen';
 import ZikirDetayScreen from './src/screens/ZikirDetayScreen';
 import AnlikZikirScreen from './src/screens/AnlikZikirScreen';
@@ -25,6 +26,7 @@ import AyarlarScreen from './src/screens/AyarlarScreen';
 import HakkindaScreen from './src/screens/HakkindaScreen';
 
 import { colors } from './src/constants/colors';
+import { type } from './src/constants/type';
 import { getDb } from './src/db/db';
 
 const Stack = createNativeStackNavigator();
@@ -75,6 +77,7 @@ export default function App() {
           <Stack.Screen name="EsmaDetay" component={EsmaDetayScreen} />
           <Stack.Screen name="EsmaListesi" component={EsmalarListScreen} />
           <Stack.Screen name="EsmaIstatistik" component={EsmaIstatistikScreen} />
+          <Stack.Screen name="EsmaBul" component={EsmaBulScreen} />
           <Stack.Screen name="KisaZikirler" component={KisaZikirlerScreen} />
           <Stack.Screen name="ZikirDetay" component={ZikirDetayScreen} />
           <Stack.Screen name="AnlikZikir" component={AnlikZikirScreen} />
@@ -101,7 +104,7 @@ const styles = StyleSheet.create({
   splashArapca: { fontSize: 48, color: colors.anaMetin, marginTop: 4 },
   splashAlt: {
     marginTop: 28,
-    fontSize: 12,
+    fontSize: type.xs,
     color: colors.ikincilMetin,
     fontStyle: 'italic',
   },

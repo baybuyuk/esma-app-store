@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity, Animated, Easing } from 'reac
 import { SafeAreaView } from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { colors } from '../constants/colors';
+import { type } from '../constants/type';
 import { gunlukVakitler, sonrakiVakit, vakitFormat } from '../lib/namaz';
 
 const SIRA = [
@@ -161,7 +162,7 @@ const styles = StyleSheet.create({
   header: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 14, paddingVertical: 12 },
   geri: { color: colors.altin, fontSize: 16, width: 60 },
   baslik: { color: colors.anaYesil, fontSize: 18, fontWeight: '600', flex: 1, textAlign: 'center' },
-  sehir: { color: colors.ikincilMetin, fontSize: 13, paddingHorizontal: 18, marginBottom: 8 },
+  sehir: { color: colors.ikincilMetin, fontSize: type.sm, paddingHorizontal: 18, marginBottom: 8 },
   bos: { padding: 24, color: colors.ikincilMetin, textAlign: 'center' },
   tablo: {
     margin: 16,
