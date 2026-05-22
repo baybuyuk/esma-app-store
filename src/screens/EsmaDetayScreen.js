@@ -27,6 +27,7 @@ export default function EsmaDetayScreen({ route, navigation }) {
     bugun: 0,
     streak: 0,
   });
+  const [faziletAcik, setFaziletAcik] = useState(false);
 
   useEffect(() => {
     if (!esma) return;
@@ -216,6 +217,33 @@ export default function EsmaDetayScreen({ route, navigation }) {
           <View style={styles.faziletKart}>
             <Text style={styles.faziletBaslik}>✨ Fazilet</Text>
             <Text style={styles.faziletMetin}>{esma.fazilet}</Text>
+
+            {!!esma.faziletDetay && (() => {
+              const detay = esma.faziletDetay;
+              const KESIM = 250;
+              const uzun = detay.length > KESIM;
+              const gosterilen = !uzun || faziletAcik
+                ? detay
+                : detay.substring(0, KESIM).trimEnd() + '…';
+              return (
+                <>
+                  <View style={styles.faziletAyirici} />
+                  <Text style={styles.faziletAltBaslik}>🕯️ Havâs ve Tesirleri</Text>
+                  <Text style={styles.faziletDetayMetin}>{gosterilen}</Text>
+                  {uzun && (
+                    <TouchableOpacity
+                      onPress={() => setFaziletAcik((a) => !a)}
+                      style={styles.devamButon}
+                      activeOpacity={0.7}
+                    >
+                      <Text style={styles.devamYazi}>
+                        {faziletAcik ? 'Daha az göster' : 'Devamını oku'}
+                      </Text>
+                    </TouchableOpacity>
+                  )}
+                </>
+              );
+            })()}
           </View>
         )}
 
@@ -403,6 +431,35 @@ const styles = StyleSheet.create({
     color: colors.ikincilMetin,
     fontStyle: 'italic',
     lineHeight: 22,
+  },
+  faziletAyirici: {
+    height: 1,
+    backgroundColor: colors.cizgi,
+    opacity: 0.4,
+    marginTop: 14,
+    marginBottom: 14,
+  },
+  faziletAltBaslik: {
+    fontSize: 14,
+    color: colors.anaYesil,
+    fontWeight: '700',
+    marginBottom: 8,
+    letterSpacing: 0.3,
+  },
+  faziletDetayMetin: {
+    fontSize: 14.5,
+    color: colors.ikincilMetin,
+    lineHeight: 22,
+  },
+  devamButon: {
+    marginTop: 10,
+    alignSelf: 'flex-start',
+    paddingVertical: 4,
+  },
+  devamYazi: {
+    fontSize: 13,
+    color: colors.altin,
+    fontWeight: '600',
   },
 
   rehberKart: {

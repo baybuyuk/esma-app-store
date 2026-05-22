@@ -49,6 +49,10 @@ files.zip
 # yedek dosyalar (git zaten versiyonluyor)
 *.bak
 *.havasbak
+*_bak
+
+# gecici cikti dizini (ajan/refactor outputs)
+tmp/
 
 # kaynak materyal (esma havas PDF'leri — repoyu şişirir)
 esma-pdf/
