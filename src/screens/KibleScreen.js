@@ -12,7 +12,6 @@ import {
   Easing,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Magnetometer } from 'expo-sensors';
 import * as Location from 'expo-location';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { colors } from '../constants/colors';
@@ -79,27 +78,28 @@ export default function KibleScreen({ navigation }) {
     };
   }, []);
 
-  // Magnetometer dinleyici.
+  // Pusula: Expo Location heading API. Bu native sensor fuzyonu yapar
+  // (accelerometer + magnetometer + gyroscope) ve magnetik->gercek kuzey
+  // donusumunu otomatik halleder. Magnetometer'i ham okumaktan cok daha
+  // dogru sonuc verir. Kible icin gercek kuzey sart.
   useEffect(() => {
     let iptal = false;
     (async () => {
       try {
-        const mevcut = await Magnetometer.isAvailableAsync();
-        if (!mevcut) {
+        const { status } = await Location.requestForegroundPermissionsAsync();
+        if (status !== 'granted') {
           if (!iptal) setSensorVar(false);
           return;
         }
-        // Android 12+ varsayilan 200ms alt sinir; daha hizliya HIGH_SAMPLING_RATE_SENSORS izni gerek.
-        Magnetometer.setUpdateInterval(200);
-        const sub = Magnetometer.addListener((data) => {
-          // x,y duzleminde aci. Kuzeyden saat yonune sapma (0=Kuzey, 90=Dogu).
-          const { x, y } = data;
-          let angle = Math.atan2(y, x) * (180 / Math.PI);
-          // Atan2(y,x) Kuzey'i 90'a yerlestirir; "Kuzey=0" eksenine donduruyoruz.
-          angle = 90 - angle;
-          if (angle < 0) angle += 360;
-          if (angle >= 360) angle -= 360;
-          if (!iptal) setHeading(angle);
+        const sub = await Location.watchHeadingAsync((data) => {
+          if (iptal) return;
+          // trueHeading: gercek kuzeyden sapma (declination uygulanmis).
+          // magHeading: manyetik kuzeyden sapma. trueHeading -1 ise henuz
+          // kalibrasyon tamamlanmamis, magHeading fallback.
+          const h = data.trueHeading >= 0 ? data.trueHeading : data.magHeading;
+          if (typeof h === 'number' && !isNaN(h)) {
+            setHeading(((h % 360) + 360) % 360);
+          }
         });
         subRef.current = sub;
       } catch (e) {
@@ -112,9 +112,6 @@ export default function KibleScreen({ navigation }) {
         subRef.current.remove();
         subRef.current = null;
       }
-      try {
-        Magnetometer.removeAllListeners();
-      } catch (e) {}
     };
   }, []);
 

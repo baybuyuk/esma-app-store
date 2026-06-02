@@ -20,6 +20,8 @@
       }
     },
     "android": {
+      "package": "com.baybuyukk.huapp",
+      "versionCode": 2,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#F8F5EE"
@@ -30,7 +32,9 @@
         "ACCESS_FINE_LOCATION",
         "VIBRATE",
         "RECEIVE_BOOT_COMPLETED",
-        "SCHEDULE_EXACT_ALARM"
+        "SCHEDULE_EXACT_ALARM",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION"
       ]
     },
     "web": {
@@ -49,9 +53,17 @@
         "expo-notifications",
         {
           "color": "#B08D2E",
-          "sounds": ["./assets/sounds/ezan.oga"]
+          "sounds": [
+            "./assets/sounds/ezan.oga"
+          ]
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "9f8280df-6a70-4dd8-bb04-90641e896b86"
+      }
+    },
+    "owner": "baybuyukk"
   }
 }
