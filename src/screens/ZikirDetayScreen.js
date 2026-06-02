@@ -12,6 +12,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { colors } from '../constants/colors';
 import { radii } from '../constants/radii';
 import { type } from '../constants/type';
+import { useTipScale } from '../context/YaziKademesiContext';
 import { kisaZikirler } from '../lib/data';
 import GradientArkaPlan from '../components/GradientArkaPlan';
 
@@ -20,6 +21,7 @@ const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
 export default function ZikirDetayScreen({ route, navigation }) {
   const { zikirId } = route.params || {};
   const zikir = kisaZikirler.find((z) => z.id === zikirId);
+  const tip = useTipScale();
 
   const g1Opacity = useRef(new Animated.Value(0)).current;
   const g1TranslateY = useRef(new Animated.Value(20)).current;
@@ -82,7 +84,7 @@ export default function ZikirDetayScreen({ route, navigation }) {
     return (
       <GradientArkaPlan>
         <SafeAreaView style={styles.container}>
-          <Text style={styles.bos}>Zikir bulunamadı.</Text>
+          <Text style={[styles.bos, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>Zikir bulunamadı.</Text>
         </SafeAreaView>
       </GradientArkaPlan>
     );
@@ -93,7 +95,7 @@ export default function ZikirDetayScreen({ route, navigation }) {
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Text style={styles.geri}>‹ Geri</Text>
+          <Text style={[styles.geri, { fontSize: tip.geri.fontSize, lineHeight: tip.geri.lineHeight }]}>‹ Geri</Text>
         </TouchableOpacity>
       </View>
       <ScrollView contentContainerStyle={styles.scroll}>
@@ -105,7 +107,7 @@ export default function ZikirDetayScreen({ route, navigation }) {
             transform: [{ translateY: g1TranslateY }],
           }}
         >
-          <Text style={styles.ad}>{zikir.ad}</Text>
+          <Text style={[styles.ad, { fontSize: tip.xl.fontSize, lineHeight: tip.xl.lineHeight }]}>{zikir.ad}</Text>
         </Animated.View>
 
         <Animated.View
@@ -116,7 +118,7 @@ export default function ZikirDetayScreen({ route, navigation }) {
             transform: [{ translateY: g2TranslateY }],
           }}
         >
-          <Text style={styles.arapca}>{zikir.arapca}</Text>
+          <Text style={[styles.arapca, { fontSize: tip.arapcaBuyuk.fontSize, lineHeight: tip.arapcaBuyuk.lineHeight }]}>{zikir.arapca}</Text>
         </Animated.View>
 
         <Animated.View
@@ -127,21 +129,21 @@ export default function ZikirDetayScreen({ route, navigation }) {
             transform: [{ translateY: g3TranslateY }],
           }}
         >
-          <Text style={styles.okunus}>{zikir.okunus}</Text>
-          <Text style={styles.meal}>{zikir.meal}</Text>
+          <Text style={[styles.okunus, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>{zikir.okunus}</Text>
+          <Text style={[styles.meal, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>{zikir.meal}</Text>
         </Animated.View>
 
         <View style={styles.cizgi} />
 
         <View style={styles.kaynakKutu}>
-          <Text style={styles.kaynak}>📖 {zikir.kaynak}</Text>
+          <Text style={[styles.kaynak, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>📖 {zikir.kaynak}</Text>
         </View>
 
-        {!!zikir.fazilet && <Text style={styles.fazilet}>{zikir.fazilet}</Text>}
+        {!!zikir.fazilet && <Text style={[styles.fazilet, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>{zikir.fazilet}</Text>}
 
         <View style={styles.bilgi}>
-          <Text style={styles.bilgiSatir}>Önerilen sayı: {zikir.onerilen_sayi}</Text>
-          {!!zikir.vakit && <Text style={styles.bilgiSatir}>Vakit: {zikir.vakit}</Text>}
+          <Text style={[styles.bilgiSatir, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>Önerilen sayı: {zikir.onerilen_sayi}</Text>
+          {!!zikir.vakit && <Text style={[styles.bilgiSatir, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>Vakit: {zikir.vakit}</Text>}
         </View>
 
         <AnimatedTouchable
@@ -151,7 +153,7 @@ export default function ZikirDetayScreen({ route, navigation }) {
           onPressOut={butonPressOut}
           activeOpacity={0.9}
         >
-          <Text style={styles.butonYazi}>Zikretmeye Başla</Text>
+          <Text style={[styles.butonYazi, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>Zikretmeye Başla</Text>
         </AnimatedTouchable>
       </ScrollView>
     </SafeAreaView>
@@ -162,13 +164,13 @@ export default function ZikirDetayScreen({ route, navigation }) {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: 'transparent' },
   header: { paddingHorizontal: 14, paddingVertical: 12 },
-  geri: { color: colors.altin, fontSize: 16 },
+  geri: { color: colors.altin },
   scroll: { padding: 24, alignItems: 'center' },
   bos: { padding: 24, color: colors.ikincilMetin },
-  ad: { fontSize: 24, color: colors.anaYesil, fontWeight: '600', marginBottom: 18, textAlign: 'center' },
-  arapca: { fontSize: 30, color: colors.anaMetin, textAlign: 'center', lineHeight: 48, marginBottom: 10 },
-  okunus: { fontSize: 14, color: colors.ikincilMetin, fontStyle: 'italic', textAlign: 'center', marginBottom: 10 },
-  meal: { fontSize: 16, color: colors.anaMetin, textAlign: 'center', lineHeight: 24 },
+  ad: { color: colors.anaYesil, fontWeight: '600', marginBottom: 18, textAlign: 'center' },
+  arapca: { color: colors.anaMetin, textAlign: 'center', marginBottom: 10 },
+  okunus: { color: colors.ikincilMetin, fontStyle: 'italic', textAlign: 'center', marginBottom: 10 },
+  meal: { color: colors.anaMetin, textAlign: 'center' },
   cizgi: { height: 1, width: '60%', backgroundColor: colors.cizgi, marginVertical: 20 },
   kaynakKutu: {
     borderWidth: 1,
@@ -178,18 +180,16 @@ const styles = StyleSheet.create({
     borderRadius: radii.sm,
     marginBottom: 18,
   },
-  kaynak: { color: colors.altin, fontSize: type.sm },
+  kaynak: { color: colors.altin },
   fazilet: {
-    fontSize: 14,
     color: colors.anaMetin,
     fontStyle: 'italic',
-    lineHeight: 22,
     textAlign: 'center',
     paddingHorizontal: 8,
     marginBottom: 18,
   },
   bilgi: { alignSelf: 'stretch', alignItems: 'center', marginBottom: 18 },
-  bilgiSatir: { color: colors.altin, fontSize: type.sm, marginVertical: 2 },
+  bilgiSatir: { color: colors.altin, marginVertical: 2 },
   buton: {
     backgroundColor: colors.altin,
     paddingVertical: 14,
@@ -199,5 +199,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 8,
   },
-  butonYazi: { color: '#fff', fontSize: 16, fontWeight: '600' },
+  butonYazi: { color: '#fff', fontWeight: '600' },
 });

@@ -12,6 +12,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { colors } from '../constants/colors';
 import { type } from '../constants/type';
+import { useTipScale } from '../context/YaziKademesiContext';
 import { izinIste, namazBildirimleriniKur } from '../lib/bildirim';
 import { gunlukVakitler } from '../lib/namaz';
 import GradientArkaPlan from '../components/GradientArkaPlan';
@@ -19,6 +20,7 @@ import GradientArkaPlan from '../components/GradientArkaPlan';
 const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
 
 export default function OnboardingNotificationScreen({ navigation }) {
+  const tip = useTipScale();
   const [yukleniyor, setYukleniyor] = useState(false);
 
   const g1Opacity = useRef(new Animated.Value(0)).current;
@@ -127,6 +129,7 @@ export default function OnboardingNotificationScreen({ navigation }) {
         <Animated.Text
           style={[
             styles.baslik,
+            { fontSize: tip['2xl'].fontSize, lineHeight: tip['2xl'].lineHeight },
             {
               opacity: g1Opacity,
               transform: [{ translateY: g1TranslateY }],
@@ -138,6 +141,7 @@ export default function OnboardingNotificationScreen({ navigation }) {
         <Animated.Text
           style={[
             styles.aciklama,
+            { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight },
             {
               opacity: g2Opacity,
               transform: [{ translateY: g2TranslateY }],
@@ -168,15 +172,15 @@ export default function OnboardingNotificationScreen({ navigation }) {
             {yukleniyor ? (
               <ActivityIndicator color="#fff" />
             ) : (
-              <Text style={styles.butonYazi}>Evet, Bildir</Text>
+              <Text style={[styles.butonYazi, { fontSize: tip.lg.fontSize, lineHeight: tip.lg.lineHeight }]}>Evet, Bildir</Text>
             )}
           </AnimatedTouchable>
 
           <TouchableOpacity style={styles.butonIkincil} onPress={hayir} disabled={yukleniyor}>
-            <Text style={styles.butonIkincilYazi}>Şimdilik Hayır</Text>
+            <Text style={[styles.butonIkincilYazi, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>Şimdilik Hayır</Text>
           </TouchableOpacity>
 
-          <Text style={styles.not}>
+          <Text style={[styles.not, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>
             Bildirim almak istemesen de uygulama yine çalışır.
           </Text>
         </Animated.View>
@@ -190,17 +194,14 @@ const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: 'transparent' },
   inner: { flex: 1, padding: 28, justifyContent: 'center' },
   baslik: {
-    fontSize: 26,
     color: colors.anaYesil,
     marginBottom: 12,
     textAlign: 'center',
   },
   aciklama: {
-    fontSize: type.base,
     color: colors.ikincilMetin,
     marginBottom: 32,
     textAlign: 'center',
-    lineHeight: 22,
   },
   buton: {
     backgroundColor: colors.altin,
@@ -210,7 +211,7 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   butonPasif: { opacity: 0.5 },
-  butonYazi: { color: '#fff', fontSize: type.lg, fontWeight: '600' },
+  butonYazi: { color: '#fff', fontWeight: '600' },
   butonIkincil: {
     paddingVertical: 14,
     borderRadius: 12,
@@ -218,10 +219,9 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: colors.cizgi,
   },
-  butonIkincilYazi: { color: colors.anaYesil, fontSize: 16 },
+  butonIkincilYazi: { color: colors.anaYesil },
   not: {
     marginTop: 24,
-    fontSize: type.xs,
     color: colors.ikincilMetin,
     textAlign: 'center',
     fontStyle: 'italic',

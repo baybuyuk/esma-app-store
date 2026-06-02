@@ -11,6 +11,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { colors } from '../constants/colors';
 import { type } from '../constants/type';
+import { useTipScale } from '../context/YaziKademesiContext';
 import { anlikZikirler, kisaZikirler } from '../lib/data';
 import { bugunCumaMi } from '../lib/gunlukSecim';
 import GradientArkaPlan from '../components/GradientArkaPlan';
@@ -70,6 +71,7 @@ function emojiBul(durum) {
 }
 
 export default function AnlikZikirScreen({ navigation }) {
+  const tip = useTipScale();
   const cuma = bugunCumaMi();
   const girisOpacity = useRef(new Animated.Value(0)).current;
   const girisTranslateY = useRef(new Animated.Value(20)).current;
@@ -108,9 +110,9 @@ export default function AnlikZikirScreen({ navigation }) {
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Text style={styles.geri}>‹ Geri</Text>
+          <Text style={[styles.geri, { fontSize: tip.geri.fontSize, lineHeight: tip.geri.lineHeight }]}>‹ Geri</Text>
         </TouchableOpacity>
-        <Text style={styles.baslik}>Şu an ne hissediyorsun?</Text>
+        <Text style={[styles.baslik, { fontSize: tip.lg.fontSize, lineHeight: tip.lg.lineHeight }]}>Şu an ne hissediyorsun?</Text>
         <View style={{ width: 60 }} />
       </View>
 
@@ -131,8 +133,8 @@ export default function AnlikZikirScreen({ navigation }) {
             >
               <Text style={styles.emoji}>{emojiBul(item.durum)}</Text>
               <View style={{ flex: 1 }}>
-                <Text style={styles.durum}>{item.durum}</Text>
-                {!!zikir && <Text style={styles.zikirAd}>{zikir.ad}</Text>}
+                <Text style={[styles.durum, { fontSize: tip.lg.fontSize, lineHeight: tip.lg.lineHeight }]}>{item.durum}</Text>
+                {!!zikir && <Text style={[styles.zikirAd, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>{zikir.ad}</Text>}
               </View>
             </DuyguButon>
           );
@@ -146,8 +148,8 @@ export default function AnlikZikirScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: 'transparent' },
   header: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 14, paddingVertical: 12 },
-  geri: { color: colors.altin, fontSize: 16, width: 60 },
-  baslik: { color: colors.anaYesil, fontSize: type.lg, fontWeight: '600', flex: 1, textAlign: 'center' },
+  geri: { color: colors.altin, width: 60 },
+  baslik: { color: colors.anaYesil, fontWeight: '600', flex: 1, textAlign: 'center' },
   scroll: { padding: 16, paddingBottom: 32 },
   buton: {
     minHeight: 80,
@@ -158,7 +160,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 12,
   },
-  emoji: { fontSize: type['2xl'], marginRight: 14 },
-  durum: { color: '#fff', fontSize: type.lg, fontWeight: '600' },
-  zikirAd: { color: 'rgba(255,255,255,0.85)', fontSize: type.xs, marginTop: 4 },
+  emoji: { fontSize: type['2xl'], marginRight: 14 }, // emoji ikon — sabit
+  durum: { color: '#fff', fontWeight: '600' },
+  zikirAd: { color: 'rgba(255,255,255,0.85)', marginTop: 4 },
 });

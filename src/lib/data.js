@@ -9,6 +9,7 @@ import ayetler from '../../assets/data/ayetler.json';
 import sabahEvradi from '../../assets/data/sabah_evradi.json';
 import aksamEvradi from '../../assets/data/aksam_evradi.json';
 import dualar from '../../assets/data/dualar.json';
+import salavatlar from '../../assets/data/salavatlar.json';
 
 export {
   esmalar,
@@ -22,4 +23,5 @@ export {
   sabahEvradi,
   aksamEvradi,
   dualar,
+  salavatlar,
 };

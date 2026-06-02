@@ -18,12 +18,14 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { colors } from '../constants/colors';
 import { radii } from '../constants/radii';
 import { type } from '../constants/type';
+import { useTipScale } from '../context/YaziKademesiContext';
 import { kibleBearing, kibleSapma, kabeMesafeKm } from '../lib/kible';
 import GradientArkaPlan from '../components/GradientArkaPlan';
 
 const PUSULA_BOYUT = 300;
 
 export default function KibleScreen({ navigation }) {
+  const tip = useTipScale();
   const [konum, setKonum] = useState(null); // { enlem, boylam } | null
   const [heading, setHeading] = useState(0); // 0-360 derece (cihaz kuzeyden sapma)
   const [sensorVar, setSensorVar] = useState(true);
@@ -188,17 +190,17 @@ export default function KibleScreen({ navigation }) {
       <SafeAreaView style={styles.container} edges={['top']}>
         <View style={styles.header}>
           <TouchableOpacity onPress={() => navigation.goBack()} hitSlop={10}>
-            <Text style={styles.geri}>‹ Geri</Text>
+            <Text style={[styles.geri, { fontSize: tip.geri.fontSize, lineHeight: tip.geri.lineHeight }]}>‹ Geri</Text>
           </TouchableOpacity>
-          <Text style={styles.baslik}>Kıble Yönü</Text>
+          <Text style={[styles.baslik, { fontSize: tip.lg.fontSize, lineHeight: tip.lg.lineHeight }]}>Kıble Yönü</Text>
           <View style={{ width: 60 }} />
         </View>
 
         {konumDurum === 'yok' ? (
           <View style={styles.bos}>
             <Text style={styles.bosEmoji}>📍</Text>
-            <Text style={styles.bosBaslik}>Konum gerekli</Text>
-            <Text style={styles.bosMetin}>
+            <Text style={[styles.bosBaslik, { fontSize: tip.xl.fontSize, lineHeight: tip.xl.lineHeight }]}>Konum gerekli</Text>
+            <Text style={[styles.bosMetin, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>
               Kıble yönünü göstermek için bulunduğun şehri bilmem lazım.
             </Text>
             <TouchableOpacity
@@ -206,18 +208,18 @@ export default function KibleScreen({ navigation }) {
               onPress={() => navigation.navigate('Ayarlar')}
               activeOpacity={0.85}
             >
-              <Text style={styles.ctaYazi}>Ayarlara Git</Text>
+              <Text style={[styles.ctaYazi, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>Ayarlara Git</Text>
             </TouchableOpacity>
           </View>
         ) : !sensorVar ? (
           <View style={styles.bos}>
             <Text style={styles.bosEmoji}>🧭</Text>
-            <Text style={styles.bosBaslik}>Pusula bulunamadı</Text>
-            <Text style={styles.bosMetin}>
+            <Text style={[styles.bosBaslik, { fontSize: tip.xl.fontSize, lineHeight: tip.xl.lineHeight }]}>Pusula bulunamadı</Text>
+            <Text style={[styles.bosMetin, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>
               Cihazın pusula sensörünü desteklemiyor ya da kapalı.
             </Text>
             {konum && (
-              <Text style={styles.bosBilgi}>
+              <Text style={[styles.bosBilgi, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>
                 Yine de Kâbe yönü kuzeyden{' '}
                 <Text style={{ color: colors.altin, fontWeight: '700' }}>
                   {Math.round(hedefBearing)}°
@@ -228,7 +230,7 @@ export default function KibleScreen({ navigation }) {
           </View>
         ) : (
           <View style={styles.govde}>
-            <Text style={styles.ustBilgi}>
+            <Text style={[styles.ustBilgi, { fontSize: tip.xl.fontSize, lineHeight: tip.xl.lineHeight }]}>
               {dogruYon
                 ? '✓ Tam Kıbledesin'
                 : yakinYon
@@ -240,7 +242,7 @@ export default function KibleScreen({ navigation }) {
               {/* Sabit kuzey ok'u (ust). Yasli icin "ben buyum, hareketsiz" */}
               <View style={styles.merkezOk}>
                 <Text style={[styles.okYazi, { color: renkDurum }]}>▲</Text>
-                <Text style={styles.okAlt}>Telefonun</Text>
+                <Text style={[styles.okAlt, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>Telefonun</Text>
               </View>
 
               {/* Donen daire */}
@@ -275,11 +277,11 @@ export default function KibleScreen({ navigation }) {
             </View>
 
             <View style={[styles.sapmaKart, { borderColor: renkDurum }]}>
-              <Text style={styles.sapmaLabel}>Sapma</Text>
+              <Text style={[styles.sapmaLabel, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>Sapma</Text>
               <Text style={[styles.sapmaDerece, { color: renkDurum }]}>
                 {Math.round(sapmaMutlak)}°
               </Text>
-              <Text style={styles.sapmaYon}>
+              <Text style={[styles.sapmaYon, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>
                 {dogruYon
                   ? 'Kâbe karşında'
                   : sapma > 0
@@ -289,10 +291,10 @@ export default function KibleScreen({ navigation }) {
             </View>
 
             {mesafe != null && (
-              <Text style={styles.mesafe}>Mekke'ye yaklaşık {mesafe.toLocaleString('tr-TR')} km</Text>
+              <Text style={[styles.mesafe, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>Mekke'ye yaklaşık {mesafe.toLocaleString('tr-TR')} km</Text>
             )}
 
-            <Text style={styles.ipucu}>
+            <Text style={[styles.ipucu, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>
               Telefonu düz tut. Kırmızı/altın 🕋 işaretini yukarıdaki ▲ ile çakıştır.
             </Text>
           </View>
@@ -310,10 +312,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 14,
     paddingVertical: 12,
   },
-  geri: { color: colors.altin, fontSize: type.geri, width: 60 },
+  geri: { color: colors.altin, width: 60 },
   baslik: {
     color: colors.anaYesil,
-    fontSize: type.lg,
     fontWeight: '600',
     flex: 1,
     textAlign: 'center',
@@ -326,7 +327,6 @@ const styles = StyleSheet.create({
     paddingTop: 8,
   },
   ustBilgi: {
-    fontSize: type.xl,
     color: colors.anaYesil,
     fontWeight: '600',
     marginBottom: 18,
@@ -349,7 +349,6 @@ const styles = StyleSheet.create({
     lineHeight: 36,
   },
   okAlt: {
-    fontSize: type.xs,
     color: colors.ikincilMetin,
     marginTop: 2,
   },
@@ -365,7 +364,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     color: colors.anaMetin,
     fontWeight: '700',
-    fontSize: type.lg,
+    fontSize: 17, // pusula icindeki yon harfleri — overflow riski
   },
   yonK: { top: 8, left: PUSULA_BOYUT / 2 - 8 },
   yonG: { bottom: 8, left: PUSULA_BOYUT / 2 - 8 },
@@ -398,7 +397,6 @@ const styles = StyleSheet.create({
     minWidth: 200,
   },
   sapmaLabel: {
-    fontSize: type.sm,
     color: colors.ikincilMetin,
     letterSpacing: 1.2,
     fontWeight: '600',
@@ -409,22 +407,18 @@ const styles = StyleSheet.create({
     marginVertical: 2,
   },
   sapmaYon: {
-    fontSize: type.base,
     color: colors.anaMetin,
     marginTop: 2,
   },
   mesafe: {
     marginTop: 14,
-    fontSize: type.sm,
     color: colors.ikincilMetin,
   },
   ipucu: {
     marginTop: 16,
-    fontSize: type.sm,
     color: colors.ikincilMetin,
     textAlign: 'center',
     paddingHorizontal: 20,
-    lineHeight: 20,
   },
 
   bos: {
@@ -435,20 +429,16 @@ const styles = StyleSheet.create({
   },
   bosEmoji: { fontSize: 56, marginBottom: 18 },
   bosBaslik: {
-    fontSize: type.xl,
     color: colors.anaYesil,
     fontWeight: '600',
     marginBottom: 10,
   },
   bosMetin: {
-    fontSize: type.base,
     color: colors.anaMetin,
     textAlign: 'center',
-    lineHeight: 22,
   },
   bosBilgi: {
     marginTop: 14,
-    fontSize: type.sm,
     color: colors.ikincilMetin,
     textAlign: 'center',
   },
@@ -461,5 +451,5 @@ const styles = StyleSheet.create({
     minHeight: 48,
     justifyContent: 'center',
   },
-  ctaYazi: { color: '#fff', fontSize: type.base, fontWeight: '600' },
+  ctaYazi: { color: '#fff', fontWeight: '600' },
 });

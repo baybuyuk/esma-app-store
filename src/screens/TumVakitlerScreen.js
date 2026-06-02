@@ -4,6 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { colors } from '../constants/colors';
 import { type } from '../constants/type';
+import { useTipScale } from '../context/YaziKademesiContext';
 import { gunlukVakitler, sonrakiVakit, vakitFormat } from '../lib/namaz';
 import GradientArkaPlan from '../components/GradientArkaPlan';
 
@@ -17,6 +18,7 @@ const SIRA = [
 ];
 
 export default function TumVakitlerScreen({ navigation }) {
+  const tip = useTipScale();
   const [konum, setKonum] = useState(null);
   const [sehir, setSehir] = useState('');
   const simdi = new Date();
@@ -112,16 +114,16 @@ export default function TumVakitlerScreen({ navigation }) {
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Text style={styles.geri}>‹ Geri</Text>
+          <Text style={[styles.geri, { fontSize: tip.geri.fontSize, lineHeight: tip.geri.lineHeight }]}>‹ Geri</Text>
         </TouchableOpacity>
-        <Text style={styles.baslik}>Tüm Vakitler</Text>
+        <Text style={[styles.baslik, { fontSize: tip.lg.fontSize, lineHeight: tip.lg.lineHeight }]}>Tüm Vakitler</Text>
         <View style={{ width: 60 }} />
       </View>
 
-      {!!sehir && <Text style={styles.sehir}>{sehir}</Text>}
+      {!!sehir && <Text style={[styles.sehir, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>{sehir}</Text>}
 
       {!vakitler ? (
-        <Text style={styles.bos}>Konum gerekli.</Text>
+        <Text style={[styles.bos, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>Konum gerekli.</Text>
       ) : (
         <View style={styles.tablo}>
           {SIRA.map(([anahtar, ad], i) => {
@@ -144,10 +146,10 @@ export default function TumVakitlerScreen({ navigation }) {
                   },
                 ]}
               >
-                <Text style={[styles.vakit, gecmis && styles.solgun, aktif && styles.aktifYazi]}>
+                <Text style={[styles.vakit, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }, gecmis && styles.solgun, aktif && styles.aktifYazi]}>
                   {ad}
                 </Text>
-                <Text style={[styles.saat, gecmis && styles.solgun, aktif && styles.aktifYazi]}>
+                <Text style={[styles.saat, gecmis && styles.solgun, aktif && styles.aktifYazi]} numberOfLines={1}>
                   {vakitFormat(t)}
                 </Text>
               </Animated.View>
@@ -163,9 +165,9 @@ export default function TumVakitlerScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: 'transparent' },
   header: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 14, paddingVertical: 12 },
-  geri: { color: colors.altin, fontSize: 16, width: 60 },
-  baslik: { color: colors.anaYesil, fontSize: 18, fontWeight: '600', flex: 1, textAlign: 'center' },
-  sehir: { color: colors.ikincilMetin, fontSize: type.sm, paddingHorizontal: 18, marginBottom: 8 },
+  geri: { color: colors.altin, width: 60 },
+  baslik: { color: colors.anaYesil, fontWeight: '600', flex: 1, textAlign: 'center' },
+  sehir: { color: colors.ikincilMetin, paddingHorizontal: 18, marginBottom: 8 },
   bos: { padding: 24, color: colors.ikincilMetin, textAlign: 'center' },
   tablo: {
     margin: 16,
@@ -183,8 +185,8 @@ const styles = StyleSheet.create({
     borderBottomColor: '#EFE9D8',
   },
   satirAktif: { backgroundColor: '#FBF6E6' },
-  vakit: { fontSize: 16, color: colors.anaMetin },
-  saat: { fontSize: 16, color: colors.anaMetin, fontVariant: ['tabular-nums'] },
+  vakit: { color: colors.anaMetin },
+  saat: { fontSize: 16, color: colors.anaMetin, fontVariant: ['tabular-nums'] }, // saat HH:MM — sabit (overflow risk)
   solgun: { color: '#AFA98F' },
   aktifYazi: { color: colors.altin, fontWeight: '700' },
 });

@@ -19,7 +19,7 @@ import { colors } from '../constants/colors';
 import { radii } from '../constants/radii';
 import { type } from '../constants/type';
 import { sehirler } from '../constants/sehirler';
-import { useYaziKademesi } from '../context/YaziKademesiContext';
+import { useYaziKademesi, useTipScale } from '../context/YaziKademesiContext';
 import { izinIste, namazBildirimleriniKur, tumBildirimleriIptal } from '../lib/bildirim';
 import { gunlukVakitler } from '../lib/namaz';
 import GradientArkaPlan from '../components/GradientArkaPlan';
@@ -36,6 +36,7 @@ export default function AyarlarScreen({ navigation }) {
   const [konumModal, setKonumModal] = useState(false);
   const [arama, setArama] = useState('');
   const { kademe } = useYaziKademesi();
+  const tip = useTipScale();
 
   const satirLiOpacity = useRef(new Animated.Value(0)).current;
   const satirLiTranslateY = useRef(new Animated.Value(16)).current;
@@ -146,9 +147,9 @@ export default function AyarlarScreen({ navigation }) {
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Text style={styles.geri}>‹ Geri</Text>
+          <Text style={[styles.geri, { fontSize: tip.geri.fontSize, lineHeight: tip.geri.lineHeight }]}>‹ Geri</Text>
         </TouchableOpacity>
-        <Text style={styles.baslik}>Ayarlar</Text>
+        <Text style={[styles.baslik, { fontSize: tip.lg.fontSize, lineHeight: tip.lg.lineHeight }]}>Ayarlar</Text>
         <View style={{ width: 60 }} />
       </View>
 
@@ -167,14 +168,14 @@ export default function AyarlarScreen({ navigation }) {
           accessibilityLabel="Yazi Boyutu"
         >
           <View style={{ flex: 1 }}>
-            <Text style={styles.label}>Yazı Boyutu</Text>
-            <Text style={styles.altMetin}>{KADEME_ETIKET[kademe] || 'Normal'}</Text>
+            <Text style={[styles.label, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>Yazı Boyutu</Text>
+            <Text style={[styles.altMetin, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>{KADEME_ETIKET[kademe] || 'Normal'}</Text>
           </View>
           <Text style={styles.deger}>›</Text>
         </TouchableOpacity>
 
         <Animated.View style={[styles.satir, { transform: [{ scale: bildirimScale }] }]}>
-          <Animated.Text style={[styles.label, { opacity: bildirimLabelOpacity }]}>
+          <Animated.Text style={[styles.label, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }, { opacity: bildirimLabelOpacity }]}>
             Bildirimler
           </Animated.Text>
           <Switch
@@ -186,12 +187,12 @@ export default function AyarlarScreen({ navigation }) {
         </Animated.View>
 
         <TouchableOpacity style={styles.satir} onPress={() => setKonumModal(true)}>
-          <Text style={styles.label}>Konum / Şehir</Text>
-          <Text style={styles.deger}>{sehir || 'Seç'}</Text>
+          <Text style={[styles.label, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>Konum / Şehir</Text>
+          <Text style={[styles.deger, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>{sehir || 'Seç'}</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.satir} onPress={() => navigation.navigate('Hakkinda')}>
-          <Text style={styles.label}>Hakkında</Text>
+          <Text style={[styles.label, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>Hakkında</Text>
           <Text style={styles.deger}>›</Text>
         </TouchableOpacity>
 
@@ -199,7 +200,7 @@ export default function AyarlarScreen({ navigation }) {
           style={styles.satir}
           onPress={() => Linking.openURL('mailto:?subject=Hu%20Geri%20Bildirim')}
         >
-          <Text style={styles.label}>Bize Geri Bildirim</Text>
+          <Text style={[styles.label, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>Bize Geri Bildirim</Text>
           <Text style={styles.deger}>›</Text>
         </TouchableOpacity>
       </Animated.View>
@@ -208,13 +209,13 @@ export default function AyarlarScreen({ navigation }) {
         <GradientArkaPlan>
           <SafeAreaView style={styles.container}>
             <View style={styles.header}>
-              <Text style={styles.baslik}>Şehir seç</Text>
+              <Text style={[styles.baslik, { fontSize: tip.lg.fontSize, lineHeight: tip.lg.lineHeight }]}>Şehir seç</Text>
               <TouchableOpacity onPress={() => setKonumModal(false)}>
-                <Text style={styles.geri}>Kapat</Text>
+                <Text style={[styles.geri, { fontSize: tip.geri.fontSize, lineHeight: tip.geri.lineHeight }]}>Kapat</Text>
               </TouchableOpacity>
             </View>
             <TextInput
-              style={styles.aramaInput}
+              style={[styles.aramaInput, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}
               value={arama}
               onChangeText={setArama}
               placeholder="Şehir ara..."
@@ -225,7 +226,7 @@ export default function AyarlarScreen({ navigation }) {
               keyExtractor={(s) => s.ad}
               renderItem={({ item }) => (
                 <TouchableOpacity style={styles.sehirSatir} onPress={() => sehirSec(item)}>
-                  <Text style={styles.sehirAd}>{item.ad}</Text>
+                  <Text style={[styles.sehirAd, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>{item.ad}</Text>
                 </TouchableOpacity>
               )}
             />
@@ -245,8 +246,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 14,
     paddingVertical: 12,
   },
-  geri: { color: colors.altin, fontSize: 16, width: 60 },
-  baslik: { color: colors.anaYesil, fontSize: 18, fontWeight: '600', flex: 1, textAlign: 'center' },
+  geri: { color: colors.altin, width: 60 },
+  baslik: { color: colors.anaYesil, fontWeight: '600', flex: 1, textAlign: 'center' },
   satirLi: { marginTop: 8, marginHorizontal: 16, backgroundColor: '#fff', borderRadius: 12, overflow: 'hidden' },
   satir: {
     flexDirection: 'row',
@@ -257,18 +258,17 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#EFE9D8',
   },
-  label: { fontSize: type.base, color: colors.anaMetin },
-  altMetin: { fontSize: type.sm, color: colors.ikincilMetin, marginTop: 2 },
-  deger: { fontSize: 14, color: colors.altin },
+  label: { color: colors.anaMetin },
+  altMetin: { color: colors.ikincilMetin, marginTop: 2 },
+  deger: { color: colors.altin },
   aramaInput: {
     margin: 16,
     padding: 12,
     borderWidth: 1,
     borderColor: colors.cizgi,
     borderRadius: radii.sm,
-    fontSize: 16,
     color: colors.anaMetin,
   },
   sehirSatir: { padding: 16, borderBottomWidth: 1, borderBottomColor: '#EFE9D8' },
-  sehirAd: { fontSize: 16, color: colors.anaMetin },
+  sehirAd: { color: colors.anaMetin },
 });

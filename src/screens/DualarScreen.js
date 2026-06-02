@@ -17,6 +17,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { colors } from '../constants/colors';
 import { radii } from '../constants/radii';
 import { type } from '../constants/type';
+import { useTipScale } from '../context/YaziKademesiContext';
 import { dualar } from '../lib/data';
 import GradientArkaPlan from '../components/GradientArkaPlan';
 
@@ -40,6 +41,7 @@ function kategoriIkon(id) {
 }
 
 export default function DualarScreen({ navigation }) {
+  const tip = useTipScale();
   const [secilen, setSecilen] = useState(null); // kategori objesi | null
   const kategoriler = dualar?.kategoriler || [];
 
@@ -80,9 +82,9 @@ export default function DualarScreen({ navigation }) {
       <SafeAreaView style={styles.container} edges={['top']}>
         <View style={styles.header}>
           <TouchableOpacity onPress={geriBas} hitSlop={10}>
-            <Text style={styles.geri}>‹ Geri</Text>
+            <Text style={[styles.geri, { fontSize: tip.geri.fontSize, lineHeight: tip.geri.lineHeight }]}>‹ Geri</Text>
           </TouchableOpacity>
-          <Text style={styles.baslik} numberOfLines={1}>
+          <Text style={[styles.baslik, { fontSize: tip.lg.fontSize, lineHeight: tip.lg.lineHeight }]} numberOfLines={1}>
             {secilen ? secilen.ad : 'Günlük Dualar'}
           </Text>
           <View style={{ width: 60 }} />
@@ -94,9 +96,10 @@ export default function DualarScreen({ navigation }) {
               kategoriler={kategoriler}
               aciklama={dualar?.aciklama}
               onSec={setSecilen}
+              tip={tip}
             />
           ) : (
-            <KategoriDetay kategori={secilen} />
+            <KategoriDetay kategori={secilen} tip={tip} />
           )}
         </Animated.View>
       </SafeAreaView>
@@ -104,13 +107,13 @@ export default function DualarScreen({ navigation }) {
   );
 }
 
-function KategoriListesi({ kategoriler, aciklama, onSec }) {
+function KategoriListesi({ kategoriler, aciklama, onSec, tip }) {
   return (
     <ScrollView
       contentContainerStyle={styles.scroll}
       showsVerticalScrollIndicator={false}
     >
-      {aciklama && <Text style={styles.aciklama}>{aciklama}</Text>}
+      {aciklama && <Text style={[styles.aciklama, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>{aciklama}</Text>}
 
       <View style={styles.grid}>
         {kategoriler.map((k) => (
@@ -118,6 +121,7 @@ function KategoriListesi({ kategoriler, aciklama, onSec }) {
             key={k.id}
             kategori={k}
             onPress={() => onSec(k)}
+            tip={tip}
           />
         ))}
       </View>
@@ -125,7 +129,7 @@ function KategoriListesi({ kategoriler, aciklama, onSec }) {
   );
 }
 
-function KategoriKart({ kategori, onPress }) {
+function KategoriKart({ kategori, onPress, tip }) {
   const scale = useRef(new Animated.Value(1)).current;
   const pressIn = () =>
     Animated.timing(scale, {
@@ -153,33 +157,33 @@ function KategoriKart({ kategori, onPress }) {
         activeOpacity={0.88}
       >
         <Text style={styles.kategoriEmoji}>{kategoriIkon(kategori.id)}</Text>
-        <Text style={styles.kategoriAd} numberOfLines={2}>{kategori.ad}</Text>
-        <Text style={styles.kategoriSayi}>{sayi} duâ</Text>
+        <Text style={[styles.kategoriAd, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]} numberOfLines={2}>{kategori.ad}</Text>
+        <Text style={[styles.kategoriSayi, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>{sayi} duâ</Text>
       </TouchableOpacity>
     </Animated.View>
   );
 }
 
-function KategoriDetay({ kategori }) {
+function KategoriDetay({ kategori, tip }) {
   const dualarListe = kategori.dualar || [];
   return (
     <ScrollView
       contentContainerStyle={styles.scroll}
       showsVerticalScrollIndicator={false}
     >
-      <Text style={styles.detayBaslik}>
+      <Text style={[styles.detayBaslik, { fontSize: tip.xl.fontSize, lineHeight: tip.xl.lineHeight }]}>
         {kategoriIkon(kategori.id)} {kategori.ad}
       </Text>
 
       {dualarListe.map((d, i) => (
         <View key={`${kategori.id}-${i}`} style={styles.duaKart}>
-          <Text style={styles.duaAd}>{d.ad}</Text>
-          <Text style={styles.arapca}>{d.arapca}</Text>
-          <Text style={styles.okunus}>{d.okunus}</Text>
-          <Text style={styles.meal}>{d.meal}</Text>
-          {d.not && <Text style={styles.not}>{d.not}</Text>}
-          {d.fazilet && <Text style={styles.fazilet}>{d.fazilet}</Text>}
-          {d.kaynak && <Text style={styles.kaynak}>— {d.kaynak}</Text>}
+          <Text style={[styles.duaAd, { fontSize: tip.lg.fontSize, lineHeight: tip.lg.lineHeight }]}>{d.ad}</Text>
+          <Text style={[styles.arapca, { fontSize: tip.arapcaBuyuk.fontSize, lineHeight: tip.arapcaBuyuk.lineHeight }]}>{d.arapca}</Text>
+          <Text style={[styles.okunus, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>{d.okunus}</Text>
+          <Text style={[styles.meal, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>{d.meal}</Text>
+          {d.not && <Text style={[styles.not, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>{d.not}</Text>}
+          {d.fazilet && <Text style={[styles.fazilet, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>{d.fazilet}</Text>}
+          {d.kaynak && <Text style={[styles.kaynak, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>— {d.kaynak}</Text>}
         </View>
       ))}
 
@@ -196,20 +200,17 @@ const styles = StyleSheet.create({
     paddingHorizontal: 14,
     paddingVertical: 12,
   },
-  geri: { color: colors.altin, fontSize: type.geri, width: 60 },
+  geri: { color: colors.altin, width: 60 },
   baslik: {
     color: colors.anaYesil,
-    fontSize: type.lg,
     fontWeight: '600',
     flex: 1,
     textAlign: 'center',
   },
   scroll: { paddingHorizontal: 16, paddingBottom: 24 },
   aciklama: {
-    fontSize: type.sm,
     color: colors.ikincilMetin,
     marginVertical: 12,
-    lineHeight: 20,
   },
 
   grid: {
@@ -242,19 +243,16 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   kategoriAd: {
-    fontSize: type.base,
     color: colors.anaYesil,
     fontWeight: '600',
     textAlign: 'center',
   },
   kategoriSayi: {
-    fontSize: type.xs,
     color: colors.ikincilMetin,
     marginTop: 4,
   },
 
   detayBaslik: {
-    fontSize: type.xl,
     color: colors.anaYesil,
     fontWeight: '700',
     marginVertical: 14,
@@ -273,46 +271,34 @@ const styles = StyleSheet.create({
     borderLeftColor: colors.altin,
   },
   duaAd: {
-    fontSize: type.lg,
     color: colors.anaYesil,
     fontWeight: '600',
     marginBottom: 10,
   },
   arapca: {
-    fontSize: 24,
     color: colors.anaMetin,
     textAlign: 'right',
-    lineHeight: 40,
     marginBottom: 10,
   },
   okunus: {
-    fontSize: type.base,
     color: colors.anaMetin,
     fontStyle: 'italic',
-    lineHeight: 22,
     marginBottom: 6,
   },
   meal: {
-    fontSize: type.base,
     color: colors.ikincilMetin,
-    lineHeight: 22,
   },
   not: {
-    fontSize: type.sm,
     color: colors.altin,
     marginTop: 10,
     fontStyle: 'italic',
-    lineHeight: 20,
   },
   fazilet: {
-    fontSize: type.sm,
     color: colors.anaMetin,
     marginTop: 10,
-    lineHeight: 20,
     fontStyle: 'italic',
   },
   kaynak: {
-    fontSize: type.xs,
     color: colors.altin,
     marginTop: 8,
   },

@@ -12,9 +12,11 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { colors } from '../constants/colors';
 import { radii } from '../constants/radii';
 import { type } from '../constants/type';
+import { useTipScale } from '../context/YaziKademesiContext';
 import GradientArkaPlan from '../components/GradientArkaPlan';
 
 export default function HakkindaScreen({ navigation }) {
+  const tip = useTipScale();
   const logoOpacity = useRef(new Animated.Value(0)).current;
   const logoScale = useRef(new Animated.Value(0.85)).current;
   const arapcaOpacity = useRef(new Animated.Value(0)).current;
@@ -88,9 +90,9 @@ export default function HakkindaScreen({ navigation }) {
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Text style={styles.geri}>‹ Geri</Text>
+          <Text style={[styles.geri, { fontSize: tip.geri.fontSize, lineHeight: tip.geri.lineHeight }]}>‹ Geri</Text>
         </TouchableOpacity>
-        <Text style={styles.baslik}>Hakkında</Text>
+        <Text style={[styles.baslik, { fontSize: tip.lg.fontSize, lineHeight: tip.lg.lineHeight }]}>Hakkında</Text>
         <View style={{ width: 60 }} />
       </View>
       <ScrollView contentContainerStyle={styles.scroll}>
@@ -116,12 +118,21 @@ export default function HakkindaScreen({ navigation }) {
         >
           هُو
         </Animated.Text>
-        <Animated.Text style={[styles.surum, { opacity: surumOpacity }]}>v1.0.0</Animated.Text>
+        <Animated.Text style={[styles.surum, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }, { opacity: surumOpacity }]}>v1.0.0</Animated.Text>
 
-        <Text style={styles.paragraf}>
+        <Text style={[styles.paragraf, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>
           Hu, Müslüman bireyler için sade ve reklamsız bir manevi rutin asistanıdır.
           Sadaka-i câriye niyetiyle yapılmıştır.
         </Text>
+
+        <View style={styles.bilgiKutu}>
+          <Text style={[styles.bilgiBaslik, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>
+            Hicri Takvim Hakkında
+          </Text>
+          <Text style={[styles.bilgiMetin, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>
+            Hicri tarih hesaplaması Kuwaiti algoritmasına dayanır. Bu yöntem astronomik olarak yeni ayın doğuş anını hesaplar. Diyanet İşleri Başkanlığı ay görme (rüyet) esaslı resmi takvim yayınlar, bu iki sistem arasında 1-2 gün farklılık olabilir. Ramazan, Kurban Bayramı, Mevlid, Berat, Kadir ve diğer mübarek günler için Diyanet İşleri Başkanlığı'nın resmi takvimini esas alınız.
+          </Text>
+        </View>
 
         <Animated.View
           style={[
@@ -132,14 +143,14 @@ export default function HakkindaScreen({ navigation }) {
             },
           ]}
         >
-          <Text style={styles.lisansSatir}>📖 Meal: Diyanet İşleri Başkanlığı</Text>
-          <Text style={styles.lisansSatir}>📚 Hadisler: fawazahmed0/hadith-api (MIT)</Text>
-          <Text style={styles.lisansSatir}>🕌 Namaz vakitleri: adhan-js</Text>
-          <Text style={styles.lisansSatir}>🌟 Esma faziletleri: Klasik İslami kaynaklar (Bûnî, Gümüşhânevî, Nâzilî)</Text>
-          <Text style={styles.lisansSatir}>🔔 Ezan sesi: Wikimedia Commons / Mahfoudou (CC BY-SA 4.0)</Text>
+          <Text style={[styles.lisansSatir, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>📖 Meal: Diyanet İşleri Başkanlığı</Text>
+          <Text style={[styles.lisansSatir, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>📚 Hadisler: fawazahmed0/hadith-api (MIT)</Text>
+          <Text style={[styles.lisansSatir, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>🕌 Namaz vakitleri: adhan-js</Text>
+          <Text style={[styles.lisansSatir, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>🌟 Esma faziletleri: Klasik İslami kaynaklar (Bûnî, Gümüşhânevî, Nâzilî)</Text>
+          <Text style={[styles.lisansSatir, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>🔔 Ezan sesi: Wikimedia Commons / Mahfoudou (CC BY-SA 4.0)</Text>
         </Animated.View>
 
-        <Text style={styles.niyet}>🤲 Niyetimiz halis olsun</Text>
+        <Text style={[styles.niyet, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>🤲 Niyetimiz halis olsun</Text>
       </ScrollView>
     </SafeAreaView>
     </GradientArkaPlan>
@@ -149,32 +160,47 @@ export default function HakkindaScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: 'transparent' },
   header: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 14, paddingVertical: 12 },
-  geri: { color: colors.altin, fontSize: 16, width: 60 },
-  baslik: { color: colors.anaYesil, fontSize: 18, fontWeight: '600', flex: 1, textAlign: 'center' },
+  geri: { color: colors.altin, width: 60 },
+  baslik: { color: colors.anaYesil, fontWeight: '600', flex: 1, textAlign: 'center' },
   scroll: { padding: 24, alignItems: 'center' },
   logo: { fontSize: type.display, color: colors.altin, marginTop: 12 },
   arapca: { fontSize: 40, color: colors.anaMetin, marginTop: 4 },
-  surum: { fontSize: type.sm, color: colors.ikincilMetin, marginTop: 8 },
+  surum: { color: colors.ikincilMetin, marginTop: 8 },
   paragraf: {
-    fontSize: 14,
     color: colors.anaMetin,
-    lineHeight: 22,
     textAlign: 'center',
     marginTop: 22,
     paddingHorizontal: 8,
   },
+  bilgiKutu: {
+    marginTop: 22,
+    padding: 14,
+    borderWidth: 1,
+    borderColor: colors.cizgi,
+    borderRadius: radii.sm,
+    width: '100%',
+    backgroundColor: '#FFF7E0',
+  },
+  bilgiBaslik: {
+    color: colors.anaYesil,
+    fontWeight: '700',
+    marginBottom: 8,
+  },
+  bilgiMetin: {
+    color: colors.anaMetin,
+    textAlign: 'left',
+  },
   lisansKutu: {
-    marginTop: 28,
+    marginTop: 22,
     padding: 14,
     borderWidth: 1,
     borderColor: colors.cizgi,
     borderRadius: radii.sm,
     width: '100%',
   },
-  lisansSatir: { fontSize: type.xs, color: colors.anaMetin, marginVertical: 3 },
+  lisansSatir: { color: colors.anaMetin, marginVertical: 3 },
   niyet: {
     marginTop: 28,
-    fontSize: 14,
     color: colors.anaYesil,
     fontStyle: 'italic',
     textAlign: 'center',

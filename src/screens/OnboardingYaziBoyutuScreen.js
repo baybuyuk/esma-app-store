@@ -94,6 +94,7 @@ export default function OnboardingYaziBoyutuScreen({ navigation }) {
           <Animated.Text
             style={[
               styles.baslik,
+              { fontSize: tip['2xl'].fontSize, lineHeight: tip['2xl'].lineHeight },
               { opacity: g1Opacity, transform: [{ translateY: g1TranslateY }] },
             ]}
           >
@@ -103,6 +104,7 @@ export default function OnboardingYaziBoyutuScreen({ navigation }) {
           <Animated.Text
             style={[
               styles.aciklama,
+              { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight },
               { opacity: g1Opacity, transform: [{ translateY: g1TranslateY }] },
             ]}
           >
@@ -152,7 +154,7 @@ export default function OnboardingYaziBoyutuScreen({ navigation }) {
                     </View>
                   )}
                   <Text style={[styles.kademeAa, { fontSize: k.orneklemPt }]}>Aa</Text>
-                  <Text style={[styles.kademeEtiket, secili && styles.kademeEtiketSecili]}>
+                  <Text style={[styles.kademeEtiket, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }, secili && styles.kademeEtiketSecili]}>
                     {k.etiket}
                   </Text>
                 </TouchableOpacity>
@@ -172,7 +174,7 @@ export default function OnboardingYaziBoyutuScreen({ navigation }) {
               activeOpacity={0.9}
               accessibilityLabel="Devam Et"
             >
-              <Text style={styles.butonYazi}>Devam</Text>
+              <Text style={[styles.butonYazi, { fontSize: tip.lg.fontSize, lineHeight: tip.lg.lineHeight }]}>Devam</Text>
             </TouchableOpacity>
           </Animated.View>
         </View>
@@ -185,18 +187,15 @@ const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: 'transparent' },
   inner: { flex: 1, padding: 24, justifyContent: 'center' },
   baslik: {
-    fontSize: 26,
     color: colors.anaYesil,
     marginBottom: 10,
     textAlign: 'center',
     fontWeight: '600',
   },
   aciklama: {
-    fontSize: type.base,
     color: colors.ikincilMetin,
     marginBottom: 26,
     textAlign: 'center',
-    lineHeight: 22,
   },
   onizlemeKart: {
     backgroundColor: '#fff',
@@ -256,7 +255,6 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   kademeEtiket: {
-    fontSize: type.base,
     color: colors.ikincilMetin,
     fontWeight: '600',
   },
@@ -271,7 +269,6 @@ const styles = StyleSheet.create({
   },
   butonYazi: {
     color: '#fff',
-    fontSize: type.lg,
     fontWeight: '600',
   },
 });

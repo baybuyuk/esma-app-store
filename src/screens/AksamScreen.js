@@ -19,6 +19,7 @@ import { tr } from 'date-fns/locale';
 import { colors } from '../constants/colors';
 import { radii } from '../constants/radii';
 import { type } from '../constants/type';
+import { useTipScale } from '../context/YaziKademesiContext';
 import { gunlukKayitEkle } from '../db/db';
 import GradientArkaPlan from '../components/GradientArkaPlan';
 
@@ -32,6 +33,7 @@ const NAMAZ_SECENEK = [
 const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
 
 export default function AksamScreen({ navigation }) {
+  const tip = useTipScale();
   const [namazSayisi, setNamazSayisi] = useState(null);
   const [sukur, setSukur] = useState('');
   const [iyilik, setIyilik] = useState('');
@@ -105,17 +107,17 @@ export default function AksamScreen({ navigation }) {
       >
         <View style={styles.header}>
           <TouchableOpacity onPress={() => navigation.goBack()}>
-            <Text style={styles.geri}>‹ Geri</Text>
+            <Text style={[styles.geri, { fontSize: tip.geri.fontSize, lineHeight: tip.geri.lineHeight }]}>‹ Geri</Text>
           </TouchableOpacity>
           <View style={{ alignItems: 'center', flex: 1 }}>
-            <Text style={styles.baslik}>Günü bağla</Text>
-            <Text style={styles.tarih}>{tarihYazi}</Text>
+            <Text style={[styles.baslik, { fontSize: tip.lg.fontSize, lineHeight: tip.lg.lineHeight }]}>Günü bağla</Text>
+            <Text style={[styles.tarih, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>{tarihYazi}</Text>
           </View>
           <View style={{ width: 60 }} />
         </View>
 
         <ScrollView contentContainerStyle={styles.scroll}>
-          <Text style={styles.soru}>Bugün kaç vakit namaz kıldın?</Text>
+          <Text style={[styles.soru, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>Bugün kaç vakit namaz kıldın?</Text>
           {NAMAZ_SECENEK.map((s) => {
             const secili = namazSayisi === s.key;
             const scale = radioScaleRef.current[s.key];
@@ -136,14 +138,14 @@ export default function AksamScreen({ navigation }) {
                 <Text style={[styles.radioBullet, secili && styles.radioBulletSecili]}>
                   {secili ? '●' : '○'}
                 </Text>
-                <Text style={[styles.radioLabel, secili && { color: colors.anaYesil }]}>{s.label}</Text>
+                <Text style={[styles.radioLabel, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }, secili && { color: colors.anaYesil }]}>{s.label}</Text>
               </AnimatedTouchable>
             );
           })}
 
-          <Text style={styles.soru}>Bugün için şükredeceğin ne var?</Text>
+          <Text style={[styles.soru, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>Bugün için şükredeceğin ne var?</Text>
           <TextInput
-            style={[styles.input, { minHeight: 90 }]}
+            style={[styles.input, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight, minHeight: 90 }]}
             value={sukur}
             onChangeText={setSukur}
             placeholder="Bir kelime bile yeter..."
@@ -152,9 +154,9 @@ export default function AksamScreen({ navigation }) {
             textAlignVertical="top"
           />
 
-          <Text style={styles.soru}>Bugün kimi sevindirdin?</Text>
+          <Text style={[styles.soru, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>Bugün kimi sevindirdin?</Text>
           <TextInput
-            style={[styles.input, { minHeight: 70 }]}
+            style={[styles.input, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight, minHeight: 70 }]}
             value={iyilik}
             onChangeText={setIyilik}
             placeholder="Boş bırakabilirsin..."
@@ -168,7 +170,7 @@ export default function AksamScreen({ navigation }) {
             onPress={kapat}
             disabled={yukleniyor}
           >
-            <Text style={styles.kapatYazi}>Günü Kapat</Text>
+            <Text style={[styles.kapatYazi, { fontSize: tip.lg.fontSize, lineHeight: tip.lg.lineHeight }]}>Günü Kapat</Text>
           </TouchableOpacity>
         </ScrollView>
       </KeyboardAvoidingView>
@@ -180,12 +182,11 @@ export default function AksamScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: 'transparent' },
   header: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 14, paddingVertical: 12 },
-  geri: { color: colors.altin, fontSize: 16, width: 60 },
-  baslik: { color: colors.anaYesil, fontSize: 18, fontWeight: '600' },
-  tarih: { color: colors.ikincilMetin, fontSize: type.xs, marginTop: 2 },
+  geri: { color: colors.altin, width: 60 },
+  baslik: { color: colors.anaYesil, fontWeight: '600' },
+  tarih: { color: colors.ikincilMetin, marginTop: 2 },
   scroll: { padding: 18, paddingBottom: 32 },
   soru: {
-    fontSize: type.base,
     color: colors.anaYesil,
     fontWeight: '600',
     marginTop: 18,
@@ -203,16 +204,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   radioSecili: { borderColor: colors.altin, backgroundColor: '#FBF6E6' },
-  radioBullet: { fontSize: 18, color: colors.ikincilMetin, marginRight: 10 },
+  radioBullet: { fontSize: 18, color: colors.ikincilMetin, marginRight: 10 }, // bullet ikon — sabit
   radioBulletSecili: { color: colors.altin },
-  radioLabel: { fontSize: type.base, color: colors.anaMetin },
+  radioLabel: { color: colors.anaMetin },
   input: {
     backgroundColor: '#fff',
     borderWidth: 1,
     borderColor: colors.cizgi,
     borderRadius: radii.sm,
     padding: 12,
-    fontSize: type.base,
     color: colors.anaMetin,
   },
   kapatButon: {
@@ -222,5 +222,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 24,
   },
-  kapatYazi: { color: '#fff', fontSize: type.lg, fontWeight: '600' },
+  kapatYazi: { color: '#fff', fontWeight: '600' },
 });

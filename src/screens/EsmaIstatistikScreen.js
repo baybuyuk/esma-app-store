@@ -13,6 +13,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { colors } from '../constants/colors';
 import { radii } from '../constants/radii';
 import { type } from '../constants/type';
+import { useTipScale } from '../context/YaziKademesiContext';
 import { tumEsmalar } from '../lib/esma';
 import { tumEsmaIstatistik } from '../db/db';
 import GradientArkaPlan from '../components/GradientArkaPlan';
@@ -25,6 +26,7 @@ function tarihFormat(s) {
 }
 
 export default function EsmaIstatistikScreen({ navigation }) {
+  const tip = useTipScale();
   const [satirlar, setSatirlar] = useState([]);
   const [yuklendi, setYuklendi] = useState(false);
   const [refreshing, setRefreshing] = useState(false);
@@ -99,21 +101,21 @@ export default function EsmaIstatistikScreen({ navigation }) {
         activeOpacity={0.85}
       >
         <View style={styles.noRozet}>
-          <Text style={styles.noYazi}>{item.esmaNo}</Text>
+          <Text style={[styles.noYazi, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>{item.esmaNo}</Text>
         </View>
         <View style={styles.ortaBlok}>
-          <Text style={styles.yaEsma}>Yâ {item.esma.esma}</Text>
+          <Text style={[styles.yaEsma, { fontSize: tip.lg.fontSize, lineHeight: tip.lg.lineHeight }]} numberOfLines={1}>Yâ {item.esma.esma}</Text>
           {!!item.sonOkuma && (
-            <Text style={styles.sonOkuma}>Son: {tarihFormat(item.sonOkuma)}</Text>
+            <Text style={[styles.sonOkuma, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>Son: {tarihFormat(item.sonOkuma)}</Text>
           )}
         </View>
         <View style={styles.sagBlok}>
-          <Text style={styles.toplamSayi}>{item.toplamSayim}</Text>
-          <Text style={styles.toplamEtiket}>kez</Text>
+          <Text style={[styles.toplamSayi, { fontSize: tip.xl.fontSize, lineHeight: tip.xl.lineHeight }]} numberOfLines={1}>{item.toplamSayim}</Text>
+          <Text style={[styles.toplamEtiket, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>kez</Text>
         </View>
       </TouchableOpacity>
     ),
-    [navigation]
+    [navigation, tip]
   );
 
   const bosMesaj = useMemo(() => {
@@ -121,24 +123,24 @@ export default function EsmaIstatistikScreen({ navigation }) {
     if (satirlar.length === 0) {
       return (
         <View style={styles.bosKutu}>
-          <Text style={styles.bosBaslik}>Henüz hiçbir esma okumadın</Text>
-          <Text style={styles.bosAlt}>
+          <Text style={[styles.bosBaslik, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>Henüz hiçbir esma okumadın</Text>
+          <Text style={[styles.bosAlt, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>
             Bir esmayı zikretmeye başla, istatistiklerin burada birikir.
           </Text>
         </View>
       );
     }
     return null;
-  }, [yuklendi, satirlar.length]);
+  }, [yuklendi, satirlar.length, tip]);
 
   return (
     <GradientArkaPlan>
     <SafeAreaView style={styles.container} edges={['top']}>
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()} accessibilityLabel="Geri">
-          <Text style={styles.geri}>‹ Geri</Text>
+          <Text style={[styles.geri, { fontSize: tip.geri.fontSize, lineHeight: tip.geri.lineHeight }]}>‹ Geri</Text>
         </TouchableOpacity>
-        <Text style={styles.baslik}>📊 Esma İstatistikleri</Text>
+        <Text style={[styles.baslik, { fontSize: tip.lg.fontSize, lineHeight: tip.lg.lineHeight }]}>📊 Esma İstatistikleri</Text>
         <View style={styles.headerSag} />
       </View>
 
@@ -185,11 +187,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 14,
     paddingVertical: 12,
   },
-  geri: { color: colors.altin, fontSize: type.geri, minWidth: 60 },
+  geri: { color: colors.altin, minWidth: 60 },
   baslik: {
     flex: 1,
     textAlign: 'center',
-    fontSize: type.lg,
     fontWeight: '700',
     color: colors.anaYesil,
   },
@@ -219,28 +220,25 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginRight: 12,
   },
-  noYazi: { color: '#fff', fontSize: type.sm, fontWeight: '700' },
+  noYazi: { color: '#fff', fontWeight: '700' },
 
   ortaBlok: { flex: 1, paddingRight: 10 },
-  yaEsma: { fontSize: type.lg, color: colors.anaYesil, fontWeight: '600' },
-  sonOkuma: { fontSize: type.xs, color: colors.ikincilMetin, marginTop: 2 },
+  yaEsma: { color: colors.anaYesil, fontWeight: '600' },
+  sonOkuma: { color: colors.ikincilMetin, marginTop: 2 },
 
   sagBlok: { alignItems: 'flex-end' },
-  toplamSayi: { fontSize: type.xl, color: colors.altin, fontWeight: '700' },
-  toplamEtiket: { fontSize: type.xs, color: colors.ikincilMetin, marginTop: -2 },
+  toplamSayi: { color: colors.altin, fontWeight: '700' },
+  toplamEtiket: { color: colors.ikincilMetin, marginTop: -2 },
 
   bosKutu: { padding: 36, alignItems: 'center' },
   bosBaslik: {
-    fontSize: type.base,
     color: colors.anaYesil,
     fontWeight: '600',
     marginBottom: 8,
     textAlign: 'center',
   },
   bosAlt: {
-    fontSize: type.sm,
     color: colors.ikincilMetin,
     textAlign: 'center',
-    lineHeight: 20,
   },
 });

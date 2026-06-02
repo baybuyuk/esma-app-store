@@ -15,6 +15,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import * as Haptics from 'expo-haptics';
 import { colors } from '../constants/colors';
 import { type } from '../constants/type';
+import { useTipScale } from '../context/YaziKademesiContext';
 import { esmaById } from '../lib/esma';
 import { kisaZikirler } from '../lib/data';
 import { zikirKaydet, bugunkuToplamSayim, toplamSayimArtir } from '../db/db';
@@ -36,6 +37,7 @@ export default function ZikirSayacScreen({ route, navigation }) {
   const { esmaNo = null, zikirId = null, hedef: hedefParam = null } = route.params || {};
   const { width: ekranEn } = useWindowDimensions();
   const daireBoyut = Math.min(ekranEn * 0.85, 380);
+  const tip = useTipScale();
 
   const esma = useMemo(() => (esmaNo ? esmaById(esmaNo) : null), [esmaNo]);
   const zikir = useMemo(
@@ -250,11 +252,11 @@ export default function ZikirSayacScreen({ route, navigation }) {
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()} accessibilityLabel="Geri">
-          <Text style={styles.geri}>‹ Geri</Text>
+          <Text style={[styles.geri, { fontSize: tip.geri.fontSize, lineHeight: tip.geri.lineHeight }]}>‹ Geri</Text>
         </TouchableOpacity>
         <View style={{ alignItems: 'center', flex: 1 }}>
-          <Text style={styles.baslik}>{baslik}</Text>
-          {!!arapca && <Text style={styles.arapca}>{arapca}</Text>}
+          <Text style={[styles.baslik, { fontSize: tip.lg.fontSize, lineHeight: tip.lg.lineHeight }]} numberOfLines={1}>{baslik}</Text>
+          {!!arapca && <Text style={[styles.arapca, { fontSize: tip.arapca.fontSize, lineHeight: tip.arapca.lineHeight }]} numberOfLines={1}>{arapca}</Text>}
         </View>
         <View style={{ width: 50 }} />
       </View>
@@ -262,7 +264,7 @@ export default function ZikirSayacScreen({ route, navigation }) {
       {(!!altYazi || tesirler.length > 0) && (
         <View style={styles.ustBilgi}>
           {!!altYazi && (
-            <Text style={styles.ustAnlam} numberOfLines={2}>
+            <Text style={[styles.ustAnlam, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]} numberOfLines={2}>
               {altYazi}
             </Text>
           )}
@@ -270,7 +272,7 @@ export default function ZikirSayacScreen({ route, navigation }) {
             <View style={styles.tesirler}>
               {tesirler.map((t) => (
                 <View key={t} style={styles.tesir}>
-                  <Text style={styles.tesirYazi}>{t}</Text>
+                  <Text style={[styles.tesirYazi, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>{t}</Text>
                 </View>
               ))}
             </View>
@@ -302,7 +304,7 @@ export default function ZikirSayacScreen({ route, navigation }) {
           <Animated.Text style={[styles.sayi, { opacity: sayiFlashAnim }]}>
             {sayim}
           </Animated.Text>
-          <Text style={styles.hedef}>Hedef: {hedef}</Text>
+          <Text style={[styles.hedef, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>Hedef: {hedef}</Text>
           <View style={styles.barOut}>
             <View
               style={[
@@ -311,20 +313,20 @@ export default function ZikirSayacScreen({ route, navigation }) {
               ]}
             />
           </View>
-          <Text style={styles.yuzde}>%{yuzde}</Text>
+          <Text style={[styles.yuzde, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>%{yuzde}</Text>
         </Animated.View>
       </TouchableOpacity>
 
       <View style={styles.altBar}>
         <TouchableOpacity style={[styles.altButon, styles.sifirlaButon]} onPress={sifirla}>
-          <Text style={styles.altButonYazi}>Sıfırla</Text>
+          <Text style={[styles.altButonYazi, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>Sıfırla</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={[styles.altButon, styles.tamamlaButon, sayim < hedef && styles.tamamlaPasif]}
           onPress={tamamla}
           disabled={sayim === 0}
         >
-          <Text style={[styles.altButonYazi, { color: '#fff' }]}>Tamamla</Text>
+          <Text style={[styles.altButonYazi, { color: '#fff', fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>Tamamla</Text>
         </TouchableOpacity>
       </View>
 
@@ -353,16 +355,15 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#EFE9D8',
   },
-  geri: { color: colors.altin, fontSize: 16, width: 60 },
-  baslik: { color: colors.anaYesil, fontSize: 18, fontWeight: '600' },
-  arapca: { color: colors.anaMetin, fontSize: 16, marginTop: 2 },
+  geri: { color: colors.altin, width: 60 },
+  baslik: { color: colors.anaYesil, fontWeight: '600' },
+  arapca: { color: colors.anaMetin, marginTop: 2 },
   ustBilgi: {
     paddingHorizontal: 24,
     paddingTop: 14,
     alignItems: 'center',
   },
   ustAnlam: {
-    fontSize: type.sm,
     color: colors.ikincilMetin,
     textAlign: 'center',
     fontStyle: 'italic',
@@ -383,7 +384,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#FBF6E6',
   },
   tesirYazi: {
-    fontSize: 11,
     color: colors.altin,
     fontWeight: '600',
   },
@@ -391,13 +391,12 @@ const styles = StyleSheet.create({
   sayiKutusu: { alignItems: 'center', paddingHorizontal: 24 },
   sayi: { fontSize: type.count, color: colors.anaYesil, fontWeight: '300' },
   altYazi: {
-    fontSize: type.sm,
     color: colors.ikincilMetin,
     marginTop: 4,
     textAlign: 'center',
     paddingHorizontal: 24,
   },
-  hedef: { fontSize: 16, color: colors.altin, marginTop: 18 },
+  hedef: { color: colors.altin, marginTop: 18 },
   barOut: {
     width: 220,
     height: 6,
@@ -407,7 +406,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   barIn: { height: 6, borderRadius: 6 },
-  yuzde: { fontSize: type.sm, color: colors.ikincilMetin, marginTop: 8 },
+  yuzde: { color: colors.ikincilMetin, marginTop: 8 },
   altBar: { flexDirection: 'row', padding: 16, gap: 12 },
   altButon: {
     flex: 1,
@@ -418,5 +417,5 @@ const styles = StyleSheet.create({
   sifirlaButon: { borderWidth: 1, borderColor: colors.cizgi },
   tamamlaButon: { backgroundColor: colors.altin },
   tamamlaPasif: { opacity: 0.6 },
-  altButonYazi: { fontSize: type.base, color: colors.anaMetin, fontWeight: '600' },
+  altButonYazi: { color: colors.anaMetin, fontWeight: '600' },
 });

@@ -18,10 +18,12 @@ import * as Haptics from 'expo-haptics';
 import { colors } from '../constants/colors';
 import { radii } from '../constants/radii';
 import { type } from '../constants/type';
+import { useTipScale } from '../context/YaziKademesiContext';
 import { sabahEvradi, aksamEvradi } from '../lib/data';
 import GradientArkaPlan from '../components/GradientArkaPlan';
 
 export default function EvradScreen({ navigation, route }) {
+  const yazi = useTipScale();
   const tip = route?.params?.tip === 'aksam' ? 'aksam' : 'sabah';
   const veri = tip === 'aksam' ? aksamEvradi : sabahEvradi;
   const maddeler = veri?.maddeler || [];
@@ -60,16 +62,16 @@ export default function EvradScreen({ navigation, route }) {
       <SafeAreaView style={styles.container} edges={['top']}>
         <View style={styles.header}>
           <TouchableOpacity onPress={() => navigation.goBack()} hitSlop={10}>
-            <Text style={styles.geri}>‹ Geri</Text>
+            <Text style={[styles.geri, { fontSize: yazi.geri.fontSize, lineHeight: yazi.geri.lineHeight }]}>‹ Geri</Text>
           </TouchableOpacity>
-          <Text style={styles.baslik}>{baslik}</Text>
+          <Text style={[styles.baslik, { fontSize: yazi.lg.fontSize, lineHeight: yazi.lg.lineHeight }]}>{baslik}</Text>
           <View style={{ width: 60 }} />
         </View>
 
-        <Text style={styles.vakit}>{veri?.vakit || ''}</Text>
+        <Text style={[styles.vakit, { fontSize: yazi.sm.fontSize, lineHeight: yazi.sm.lineHeight }]}>{veri?.vakit || ''}</Text>
 
         <View style={styles.ilerleme}>
-          <Text style={styles.ilerlemeYazi}>
+          <Text style={[styles.ilerlemeYazi, { fontSize: yazi.sm.fontSize, lineHeight: yazi.sm.lineHeight }]}>
             {tamamlanan} / {toplam} tamamlandı
           </Text>
           <View style={styles.barArka}>
@@ -90,18 +92,18 @@ export default function EvradScreen({ navigation, route }) {
           showsVerticalScrollIndicator={false}
         >
           {veri?.aciklama && (
-            <Text style={styles.aciklama}>{veri.aciklama}</Text>
+            <Text style={[styles.aciklama, { fontSize: yazi.sm.fontSize, lineHeight: yazi.sm.lineHeight }]}>{veri.aciklama}</Text>
           )}
 
           {hepsiBitti && (
             <View style={styles.bitisKart}>
               <Text style={styles.bitisEmoji}>🤲</Text>
-              <Text style={styles.bitisBaslik}>
+              <Text style={[styles.bitisBaslik, { fontSize: yazi.lg.fontSize, lineHeight: yazi.lg.lineHeight }]}>
                 {tip === 'aksam'
                   ? 'Akşam evrâdın tamamlandı'
                   : 'Sabah evrâdın tamamlandı'}
               </Text>
-              <Text style={styles.bitisAlt}>Allah kabul etsin.</Text>
+              <Text style={[styles.bitisAlt, { fontSize: yazi.base.fontSize, lineHeight: yazi.base.lineHeight }]}>Allah kabul etsin.</Text>
             </View>
           )}
 
@@ -111,6 +113,7 @@ export default function EvradScreen({ navigation, route }) {
               madde={madde}
               gecerli={sayaclar[madde.no] || 0}
               onArtir={() => arttir(madde)}
+              yazi={yazi}
             />
           ))}
 
@@ -121,7 +124,7 @@ export default function EvradScreen({ navigation, route }) {
   );
 }
 
-function MaddeKart({ madde, gecerli, onArtir }) {
+function MaddeKart({ madde, gecerli, onArtir, yazi }) {
   const tamam = gecerli >= madde.tekrar;
   const scale = useRef(new Animated.Value(1)).current;
 
@@ -144,15 +147,15 @@ function MaddeKart({ madde, gecerli, onArtir }) {
     <View style={[styles.kart, tamam && styles.kartTamam]}>
       <View style={styles.kartUst}>
         <View style={styles.noRozet}>
-          <Text style={styles.noYazi}>{madde.no}</Text>
+          <Text style={[styles.noYazi, { fontSize: yazi.sm.fontSize, lineHeight: yazi.sm.lineHeight }]}>{madde.no}</Text>
         </View>
-        <Text style={styles.ad} numberOfLines={2}>{madde.ad}</Text>
+        <Text style={[styles.ad, { fontSize: yazi.lg.fontSize, lineHeight: yazi.lg.lineHeight }]} numberOfLines={2}>{madde.ad}</Text>
         {tamam && <Text style={styles.tik}>✓</Text>}
       </View>
 
-      <Text style={styles.arapca}>{madde.arapca}</Text>
-      <Text style={styles.okunus}>{madde.okunus}</Text>
-      <Text style={styles.meal}>{madde.meal}</Text>
+      <Text style={[styles.arapca, { fontSize: yazi.arapcaBuyuk.fontSize, lineHeight: yazi.arapcaBuyuk.lineHeight }]}>{madde.arapca}</Text>
+      <Text style={[styles.okunus, { fontSize: yazi.base.fontSize, lineHeight: yazi.base.lineHeight }]}>{madde.okunus}</Text>
+      <Text style={[styles.meal, { fontSize: yazi.base.fontSize, lineHeight: yazi.base.lineHeight }]}>{madde.meal}</Text>
 
       <View style={styles.sayacSatir}>
         <View style={styles.sayacBilgi}>
@@ -160,7 +163,7 @@ function MaddeKart({ madde, gecerli, onArtir }) {
             {gecerli}
             <Text style={styles.sayacHedef}> / {madde.tekrar}</Text>
           </Text>
-          <Text style={styles.sayacEtiket}>
+          <Text style={[styles.sayacEtiket, { fontSize: yazi.xs.fontSize, lineHeight: yazi.xs.lineHeight }]}>
             {tamam ? 'tamamlandı' : 'tekrar'}
           </Text>
         </View>
@@ -182,10 +185,10 @@ function MaddeKart({ madde, gecerli, onArtir }) {
       {(madde.kaynak || madde.fazilet) && (
         <View style={styles.altBilgi}>
           {madde.fazilet && (
-            <Text style={styles.fazilet}>{madde.fazilet}</Text>
+            <Text style={[styles.fazilet, { fontSize: yazi.sm.fontSize, lineHeight: yazi.sm.lineHeight }]}>{madde.fazilet}</Text>
           )}
           {madde.kaynak && (
-            <Text style={styles.kaynak}>— {madde.kaynak}</Text>
+            <Text style={[styles.kaynak, { fontSize: yazi.xs.fontSize, lineHeight: yazi.xs.lineHeight }]}>— {madde.kaynak}</Text>
           )}
         </View>
       )}
@@ -201,17 +204,15 @@ const styles = StyleSheet.create({
     paddingHorizontal: 14,
     paddingVertical: 12,
   },
-  geri: { color: colors.altin, fontSize: type.geri, width: 60 },
+  geri: { color: colors.altin, width: 60 },
   baslik: {
     color: colors.anaYesil,
-    fontSize: type.lg,
     fontWeight: '600',
     flex: 1,
     textAlign: 'center',
   },
   vakit: {
     paddingHorizontal: 16,
-    fontSize: type.sm,
     color: colors.ikincilMetin,
     fontStyle: 'italic',
     marginBottom: 8,
@@ -221,7 +222,6 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   ilerlemeYazi: {
-    fontSize: type.sm,
     color: colors.anaMetin,
     marginBottom: 6,
     fontWeight: '600',
@@ -238,10 +238,8 @@ const styles = StyleSheet.create({
   },
   scroll: { paddingHorizontal: 16, paddingBottom: 24 },
   aciklama: {
-    fontSize: type.sm,
     color: colors.ikincilMetin,
     marginVertical: 10,
-    lineHeight: 20,
   },
 
   bitisKart: {
@@ -255,13 +253,11 @@ const styles = StyleSheet.create({
   bitisEmoji: { fontSize: 40, marginBottom: 6 },
   bitisBaslik: {
     color: '#fff',
-    fontSize: type.lg,
     fontWeight: '700',
     textAlign: 'center',
   },
   bitisAlt: {
     color: colors.kremAlt,
-    fontSize: type.base,
     marginTop: 6,
   },
 
@@ -296,10 +292,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginRight: 12,
   },
-  noYazi: { color: '#fff', fontSize: type.sm, fontWeight: '700' },
+  noYazi: { color: '#fff', fontWeight: '700' },
   ad: {
     flex: 1,
-    fontSize: type.lg,
     color: colors.anaYesil,
     fontWeight: '600',
   },
@@ -311,23 +306,17 @@ const styles = StyleSheet.create({
   },
 
   arapca: {
-    fontSize: 24,
     color: colors.anaMetin,
     textAlign: 'right',
-    lineHeight: 40,
     marginVertical: 8,
   },
   okunus: {
-    fontSize: type.base,
     color: colors.anaMetin,
     fontStyle: 'italic',
-    lineHeight: 22,
     marginBottom: 6,
   },
   meal: {
-    fontSize: type.base,
     color: colors.ikincilMetin,
-    lineHeight: 22,
   },
 
   sayacSatir: {
@@ -346,14 +335,13 @@ const styles = StyleSheet.create({
     fontSize: type.xl,
     color: colors.anaYesil,
     fontWeight: '700',
-  },
+  }, // rakam — sabit
   sayacHedef: {
     fontSize: type.base,
     color: colors.ikincilMetin,
     fontWeight: '400',
   },
   sayacEtiket: {
-    fontSize: type.xs,
     color: colors.ikincilMetin,
     marginTop: 2,
     letterSpacing: 0.8,
@@ -387,13 +375,10 @@ const styles = StyleSheet.create({
     borderTopColor: '#F0E8CF',
   },
   fazilet: {
-    fontSize: type.sm,
     color: colors.anaMetin,
-    lineHeight: 20,
     fontStyle: 'italic',
   },
   kaynak: {
-    fontSize: type.xs,
     color: colors.altin,
     marginTop: 4,
   },

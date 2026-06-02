@@ -8,6 +8,7 @@ import {
   RefreshControl,
   Animated,
   Easing,
+  Alert,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -199,6 +200,32 @@ export default function AnaEkran({ navigation }) {
     return null;
   }, [simdi]);
 
+  // Grid kisayollari — Cuma gunu Salavat 1. siraya cikar.
+  // simdi.getDay() bagimliligi yerine sadece gun degerine bagla; 30sn'lik tik
+  // her dakika kisaYollar referansini degistirmesin.
+  const cumaMi = useMemo(() => simdi.getDay() === 5, [simdi]);
+  const kisaYollar = useMemo(() => {
+    const salavat = {
+      key: 'salavat',
+      emoji: '🌹',
+      label: 'Salavat',
+      onPress: () => navigation.navigate('Salavat'),
+    };
+    const digerleri = [
+      { key: 'kisaZikirler', emoji: '💎', label: 'Kısa Zikirler', onPress: () => navigation.navigate('KisaZikirler') },
+      { key: 'anlikZikir', emoji: '🌟', label: 'Anlık Zikir', onPress: () => navigation.navigate('AnlikZikir') },
+      { key: 'kible', emoji: '🧭', label: 'Kıble', onPress: () => navigation.navigate('Kible') },
+      { key: 'sabahEvrad', emoji: '🌅', label: 'Sabah Evrâdı', onPress: () => navigation.navigate('Evrad', { tip: 'sabah' }) },
+      { key: 'aksamEvrad', emoji: '🌆', label: 'Akşam Evrâdı', onPress: () => navigation.navigate('Evrad', { tip: 'aksam' }) },
+      { key: 'dualar', emoji: '🤲', label: 'Dualar', onPress: () => navigation.navigate('Dualar') },
+      { key: 'aksamMuhasebe', emoji: '🌙', label: 'Akşam Muhasebesi', onPress: () => navigation.navigate('Aksam') },
+      { key: 'tumVakitler', emoji: '📿', label: 'Tüm Vakitler', onPress: () => navigation.navigate('TumVakitler') },
+      { key: 'gecmis', emoji: '📊', label: 'Geçmiş', onPress: () => navigation.navigate('Gecmis') },
+      { key: 'esmaBul', emoji: '🔍', label: 'Esma Bul', onPress: () => navigation.navigate('EsmaBul') },
+    ];
+    return cumaMi ? [salavat, ...digerleri] : [...digerleri, salavat];
+  }, [cumaMi, navigation]);
+
   const onRefresh = useCallback(async () => {
     setRefreshing(true);
     await yukle();
@@ -226,15 +253,37 @@ export default function AnaEkran({ navigation }) {
             <Text style={[styles.tarih, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>
               {tarihYazi}
             </Text>
-            <Text style={[styles.hicri, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>
-              {hicriYazi}
-            </Text>
-            {yaklasan && (
-              <Text style={[styles.yaklasan, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>
-                {yaklasan.kalanGun === 1
-                  ? `Yarın: ${yaklasan.ad}`
-                  : `${yaklasan.kalanGun} gün sonra ${yaklasan.ad}`}
+            <View style={styles.hicriSatir}>
+              <Text style={[styles.hicri, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>
+                {hicriYazi}
               </Text>
+              <TouchableOpacity
+                onPress={() =>
+                  Alert.alert(
+                    'Hicri Tarih Hakkında',
+                    "Bu uygulama hicri tarihi astronomik hesaplama (Kuwaiti algoritma) ile gösterir. Diyanet İşleri Başkanlığı'nın resmi takvimi rüyet (ay görme) esaslıdır ve 1-2 gün farklılık gösterebilir. Önemli ibadetler (Ramazan, Bayramlar, Kandiller) için Diyanet İşleri Başkanlığı veya yerel müftülüğünüzü teyit edin.",
+                    [{ text: 'Anladım' }]
+                  )
+                }
+                style={styles.hicriInfo}
+                hitSlop={12}
+                accessibilityLabel="Hicri tarih hakkında bilgi"
+                accessibilityRole="button"
+              >
+                <Text style={[styles.hicriInfoYazi, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>ⓘ</Text>
+              </TouchableOpacity>
+            </View>
+            {yaklasan && (
+              <>
+                <Text style={[styles.yaklasan, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>
+                  {yaklasan.kalanGun === 1
+                    ? `Yarın: ${yaklasan.ad}`
+                    : `${yaklasan.kalanGun} gün sonra ${yaklasan.ad}`}
+                </Text>
+                <Text style={[styles.yaklasanUyari, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>
+                  Hesaplama yaklaşıktır, lütfen Diyanet'ten teyit edin.
+                </Text>
+              </>
             )}
             {evradOnerisi && (
               <TouchableOpacity
@@ -395,16 +444,16 @@ export default function AnaEkran({ navigation }) {
           )}
 
           <View style={styles.grid}>
-            <KisaYol tip={tip} emoji="💎" label="Kısa Zikirler" onPress={() => navigation.navigate('KisaZikirler')} />
-            <KisaYol tip={tip} emoji="🌟" label="Anlık Zikir" onPress={() => navigation.navigate('AnlikZikir')} />
-            <KisaYol tip={tip} emoji="🧭" label="Kıble" onPress={() => navigation.navigate('Kible')} />
-            <KisaYol tip={tip} emoji="🌅" label="Sabah Evrâdı" onPress={() => navigation.navigate('Evrad', { tip: 'sabah' })} />
-            <KisaYol tip={tip} emoji="🌆" label="Akşam Evrâdı" onPress={() => navigation.navigate('Evrad', { tip: 'aksam' })} />
-            <KisaYol tip={tip} emoji="🤲" label="Dualar" onPress={() => navigation.navigate('Dualar')} />
-            <KisaYol tip={tip} emoji="🌙" label="Akşam Muhasebesi" onPress={() => navigation.navigate('Aksam')} />
-            <KisaYol tip={tip} emoji="📿" label="Tüm Vakitler" onPress={() => navigation.navigate('TumVakitler')} />
-            <KisaYol tip={tip} emoji="📊" label="Geçmiş" onPress={() => navigation.navigate('Gecmis')} />
-            <KisaYol tip={tip} emoji="🔍" label="Esma Bul" onPress={() => navigation.navigate('EsmaBul')} />
+            {kisaYollar.map((k) => (
+              <KisaYol
+                key={k.key}
+                tip={tip}
+                emoji={k.emoji}
+                label={k.label}
+                onPress={k.onPress}
+              />
+            ))}
+            {kisaYollar.length % 2 === 1 && <View style={styles.gridDolgu} />}
           </View>
 
           <View style={styles.altMenu}>
@@ -509,12 +558,34 @@ const styles = StyleSheet.create({
   basliklik: { marginBottom: 16, marginTop: 4 },
   selam: { fontSize: 20, color: colors.anaYesil, fontWeight: '600' },
   tarih: { fontSize: type.sm, color: colors.ikincilMetin, marginTop: 4 },
-  hicri: { fontSize: type.sm, color: colors.altin, marginTop: 2, fontWeight: '600' },
+  hicriSatir: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 2,
+  },
+  hicri: { fontSize: type.sm, color: colors.altin, fontWeight: '600' },
+  hicriInfo: {
+    marginLeft: 8,
+    minWidth: 24,
+    minHeight: 24,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  hicriInfoYazi: {
+    fontSize: type.sm,
+    color: colors.altin,
+    fontWeight: '600',
+  },
   yaklasan: {
     marginTop: 6,
     fontSize: type.sm,
     color: colors.anaYesil,
     fontStyle: 'italic',
+  },
+  yaklasanUyari: {
+    marginTop: 2,
+    fontSize: type.xs,
+    color: colors.ikincilMetin,
   },
   evradOneri: {
     marginTop: 10,

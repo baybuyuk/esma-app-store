@@ -11,6 +11,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { colors } from '../constants/colors';
 import { type } from '../constants/type';
+import { useTipScale } from '../context/YaziKademesiContext';
 import { kisaZikirler } from '../lib/data';
 import GradientArkaPlan from '../components/GradientArkaPlan';
 
@@ -20,6 +21,7 @@ const KAYNAK_RENGI = {
 };
 
 export default function KisaZikirlerScreen({ navigation }) {
+  const tip = useTipScale();
   const girisOpacity = useRef(new Animated.Value(0)).current;
   const girisTranslateY = useRef(new Animated.Value(20)).current;
   const aciklamaOpacity = useRef(new Animated.Value(0)).current;
@@ -61,14 +63,15 @@ export default function KisaZikirlerScreen({ navigation }) {
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Text style={styles.geri}>‹ Geri</Text>
+          <Text style={[styles.geri, { fontSize: tip.geri.fontSize, lineHeight: tip.geri.lineHeight }]}>‹ Geri</Text>
         </TouchableOpacity>
-        <Text style={styles.baslik}>Kısa Zikirler</Text>
+        <Text style={[styles.baslik, { fontSize: tip.lg.fontSize, lineHeight: tip.lg.lineHeight }]}>Kısa Zikirler</Text>
         <View style={{ width: 60 }} />
       </View>
       <Animated.Text
         style={[
           styles.aciklama,
+          { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight },
           {
             opacity: aciklamaOpacity,
             transform: [{ translateY: aciklamaTranslateY }],
@@ -97,11 +100,11 @@ export default function KisaZikirlerScreen({ navigation }) {
                 onPress={() => navigation.navigate('ZikirDetay', { zikirId: item.id })}
                 activeOpacity={0.85}
               >
-                <Text style={styles.ad}>{item.ad}</Text>
-                <Text style={styles.arapca} numberOfLines={1}>{item.arapca}</Text>
-                <Text style={styles.meal} numberOfLines={1}>{item.meal}</Text>
+                <Text style={[styles.ad, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>{item.ad}</Text>
+                <Text style={[styles.arapca, { fontSize: tip.arapca.fontSize, lineHeight: tip.arapca.lineHeight }]} numberOfLines={1}>{item.arapca}</Text>
+                <Text style={[styles.meal, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]} numberOfLines={1}>{item.meal}</Text>
                 <View style={[styles.rozet, { backgroundColor: rozet.arka }]}>
-                  <Text style={[styles.rozetYazi, { color: rozet.metin }]}>{rozet.etiket}</Text>
+                  <Text style={[styles.rozetYazi, { color: rozet.metin, fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>{rozet.etiket}</Text>
                 </View>
               </TouchableOpacity>
             );
@@ -121,11 +124,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 14,
     paddingVertical: 12,
   },
-  geri: { color: colors.altin, fontSize: 16, width: 60 },
-  baslik: { color: colors.anaYesil, fontSize: 18, fontWeight: '600', flex: 1, textAlign: 'center' },
+  geri: { color: colors.altin, width: 60 },
+  baslik: { color: colors.anaYesil, fontWeight: '600', flex: 1, textAlign: 'center' },
   aciklama: {
     color: colors.ikincilMetin,
-    fontSize: type.sm,
     paddingHorizontal: 16,
     marginBottom: 10,
   },
@@ -140,9 +142,9 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     shadowOffset: { width: 0, height: 1 },
   },
-  ad: { fontSize: 16, color: colors.anaYesil, fontWeight: '600' },
-  arapca: { fontSize: 16, color: colors.anaMetin, marginTop: 6, fontStyle: 'italic' },
-  meal: { fontSize: type.sm, color: colors.ikincilMetin, marginTop: 4 },
+  ad: { color: colors.anaYesil, fontWeight: '600' },
+  arapca: { color: colors.anaMetin, marginTop: 6, fontStyle: 'italic' },
+  meal: { color: colors.ikincilMetin, marginTop: 4 },
   rozet: { alignSelf: 'flex-start', marginTop: 8, paddingHorizontal: 8, paddingVertical: 3, borderRadius: 8 },
-  rozetYazi: { fontSize: 11, fontWeight: '600' },
+  rozetYazi: { fontWeight: '600' },
 });

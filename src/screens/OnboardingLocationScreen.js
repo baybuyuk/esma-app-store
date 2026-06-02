@@ -18,12 +18,14 @@ import * as Location from 'expo-location';
 import { colors } from '../constants/colors';
 import { radii } from '../constants/radii';
 import { type } from '../constants/type';
+import { useTipScale } from '../context/YaziKademesiContext';
 import { sehirler } from '../constants/sehirler';
 import GradientArkaPlan from '../components/GradientArkaPlan';
 
 const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
 
 export default function OnboardingLocationScreen({ navigation }) {
+  const tip = useTipScale();
   const [yukleniyor, setYukleniyor] = useState(false);
   const [modalAcik, setModalAcik] = useState(false);
   const [arama, setArama] = useState('');
@@ -142,6 +144,7 @@ export default function OnboardingLocationScreen({ navigation }) {
         <Animated.Text
           style={[
             styles.baslik,
+            { fontSize: tip['2xl'].fontSize, lineHeight: tip['2xl'].lineHeight },
             {
               opacity: g1Opacity,
               transform: [{ translateY: g1TranslateY }],
@@ -153,6 +156,7 @@ export default function OnboardingLocationScreen({ navigation }) {
         <Animated.Text
           style={[
             styles.aciklama,
+            { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight },
             {
               opacity: g2Opacity,
               transform: [{ translateY: g2TranslateY }],
@@ -179,7 +183,7 @@ export default function OnboardingLocationScreen({ navigation }) {
             {yukleniyor ? (
               <ActivityIndicator color="#fff" />
             ) : (
-              <Text style={styles.butonYazi}>Konumumu Kullan</Text>
+              <Text style={[styles.butonYazi, { fontSize: tip.lg.fontSize, lineHeight: tip.lg.lineHeight }]}>Konumumu Kullan</Text>
             )}
           </AnimatedTouchable>
 
@@ -187,7 +191,7 @@ export default function OnboardingLocationScreen({ navigation }) {
             style={styles.butonIkincil}
             onPress={() => setModalAcik(true)}
           >
-            <Text style={styles.butonIkincilYazi}>Manuel Şehir Seç</Text>
+            <Text style={[styles.butonIkincilYazi, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>Manuel Şehir Seç</Text>
           </TouchableOpacity>
         </Animated.View>
       </View>
@@ -200,13 +204,13 @@ export default function OnboardingLocationScreen({ navigation }) {
         <GradientArkaPlan>
           <SafeAreaView style={styles.modalContainer}>
             <View style={styles.modalHeader}>
-              <Text style={styles.modalBaslik}>Şehir seç</Text>
+              <Text style={[styles.modalBaslik, { fontSize: tip.lg.fontSize, lineHeight: tip.lg.lineHeight }]}>Şehir seç</Text>
               <TouchableOpacity onPress={() => setModalAcik(false)}>
-                <Text style={styles.modalKapat}>Kapat</Text>
+                <Text style={[styles.modalKapat, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>Kapat</Text>
               </TouchableOpacity>
             </View>
             <TextInput
-              style={styles.aramaInput}
+              style={[styles.aramaInput, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}
               value={arama}
               onChangeText={setArama}
               placeholder="Şehir ara..."
@@ -220,7 +224,7 @@ export default function OnboardingLocationScreen({ navigation }) {
                   style={styles.sehirSatir}
                   onPress={() => sehirSec(item)}
                 >
-                  <Text style={styles.sehirAd}>{item.ad}</Text>
+                  <Text style={[styles.sehirAd, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>{item.ad}</Text>
                 </TouchableOpacity>
               )}
             />
@@ -236,17 +240,14 @@ const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: 'transparent' },
   inner: { flex: 1, padding: 28, justifyContent: 'center' },
   baslik: {
-    fontSize: 26,
     color: colors.anaYesil,
     marginBottom: 12,
     textAlign: 'center',
   },
   aciklama: {
-    fontSize: type.base,
     color: colors.ikincilMetin,
     marginBottom: 32,
     textAlign: 'center',
-    lineHeight: 22,
   },
   buton: {
     backgroundColor: colors.altin,
@@ -255,7 +256,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 12,
   },
-  butonYazi: { color: '#fff', fontSize: type.lg, fontWeight: '600' },
+  butonYazi: { color: '#fff', fontWeight: '600' },
   butonIkincil: {
     paddingVertical: 14,
     borderRadius: 12,
@@ -263,7 +264,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: colors.cizgi,
   },
-  butonIkincilYazi: { color: colors.anaYesil, fontSize: 16 },
+  butonIkincilYazi: { color: colors.anaYesil },
   modalContainer: { flex: 1, backgroundColor: 'transparent' },
   modalHeader: {
     flexDirection: 'row',
@@ -273,15 +274,14 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: colors.cizgi,
   },
-  modalBaslik: { fontSize: 18, color: colors.anaYesil, fontWeight: '600' },
-  modalKapat: { color: colors.altin, fontSize: type.base },
+  modalBaslik: { color: colors.anaYesil, fontWeight: '600' },
+  modalKapat: { color: colors.altin },
   aramaInput: {
     margin: 16,
     padding: 12,
     borderWidth: 1,
     borderColor: colors.cizgi,
     borderRadius: radii.sm,
-    fontSize: 16,
     color: colors.anaMetin,
   },
   sehirSatir: {
@@ -289,5 +289,5 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#EFE9D8',
   },
-  sehirAd: { fontSize: 16, color: colors.anaMetin },
+  sehirAd: { color: colors.anaMetin },
 });

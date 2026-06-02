@@ -13,12 +13,14 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { colors } from '../constants/colors';
 import { radii } from '../constants/radii';
 import { type } from '../constants/type';
+import { useTipScale } from '../context/YaziKademesiContext';
 import GradientArkaPlan from '../components/GradientArkaPlan';
 import IsinPatlamasi from '../components/IsinPatlamasi';
 
 const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
 
 export default function OnboardingEsmaScreen({ navigation }) {
+  const tip = useTipScale();
   const [veri, setVeri] = useState(null);
   const [patlamaAktif, setPatlamaAktif] = useState(false);
 
@@ -156,7 +158,7 @@ export default function OnboardingEsmaScreen({ navigation }) {
     return (
       <GradientArkaPlan>
         <SafeAreaView style={styles.container}>
-          <View style={styles.inner}><Text style={styles.altYazi}>Yükleniyor...</Text></View>
+          <View style={styles.inner}><Text style={[styles.altYazi, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>Yükleniyor...</Text></View>
         </SafeAreaView>
       </GradientArkaPlan>
     );
@@ -169,6 +171,7 @@ export default function OnboardingEsmaScreen({ navigation }) {
         <Animated.Text
           style={[
             styles.ust,
+            { fontSize: tip['2xl'].fontSize, lineHeight: tip['2xl'].lineHeight },
             {
               opacity: ustOpacity,
               transform: [{ translateY: ustTranslateY }],
@@ -189,12 +192,13 @@ export default function OnboardingEsmaScreen({ navigation }) {
             ]}
           >
             <Text style={styles.arapca}>{veri.isim_arapca}</Text>
-            <Text style={styles.ebced}>Ebced değerin: {veri.isim_ebced}</Text>
+            <Text style={[styles.ebced, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>Ebced değerin: {veri.isim_ebced}</Text>
           </Animated.View>
         ) : (
           <Animated.Text
             style={[
               styles.not,
+              { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight },
               {
                 opacity: isimOpacity,
                 transform: [{ scale: isimScale }],
@@ -218,20 +222,20 @@ export default function OnboardingEsmaScreen({ navigation }) {
             ],
           }}
         >
-          <Text style={styles.label}>Senin esman:</Text>
+          <Text style={[styles.label, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>Senin esman:</Text>
           <Text style={styles.esmaArapca}>{veri.esma.arapca}</Text>
-          <Text style={styles.yaEsma}>Yâ {veri.esma.esma}</Text>
-          <Text style={styles.anlam}>{veri.esma.anlam}</Text>
+          <Text style={[styles.yaEsma, { fontSize: tip.xl.fontSize, lineHeight: tip.xl.lineHeight }]}>Yâ {veri.esma.esma}</Text>
+          <Text style={[styles.anlam, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>{veri.esma.anlam}</Text>
         </Animated.View>
 
         <View style={styles.cizgiInce} />
 
-        <Text style={styles.fazilet}>{veri.esma.fazilet}</Text>
+        <Text style={[styles.fazilet, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>{veri.esma.fazilet}</Text>
 
         <View style={styles.bilgiKutusu}>
-          <Text style={styles.bilgiSatir}>Gün: {veri.esma.gun}</Text>
-          <Text style={styles.bilgiSatir}>Saat: {veri.esma.saat}</Text>
-          <Text style={styles.bilgiSatir}>Vakit: {veri.esma.vakit}</Text>
+          <Text style={[styles.bilgiSatir, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>Gün: {veri.esma.gun}</Text>
+          <Text style={[styles.bilgiSatir, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>Saat: {veri.esma.saat}</Text>
+          <Text style={[styles.bilgiSatir, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>Vakit: {veri.esma.vakit}</Text>
         </View>
 
         <Animated.View
@@ -248,7 +252,7 @@ export default function OnboardingEsmaScreen({ navigation }) {
             onPressOut={butonPressOut}
             activeOpacity={0.9}
           >
-            <Text style={styles.butonYazi}>Bismillah, Başlayalım</Text>
+            <Text style={[styles.butonYazi, { fontSize: tip.lg.fontSize, lineHeight: tip.lg.lineHeight }]}>Bismillah, Başlayalım</Text>
           </AnimatedTouchable>
         </Animated.View>
       </ScrollView>
@@ -261,18 +265,16 @@ export default function OnboardingEsmaScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: 'transparent' },
   inner: { padding: 24, alignItems: 'center' },
-  altYazi: { color: colors.ikincilMetin, fontSize: 14 },
+  altYazi: { color: colors.ikincilMetin },
   ust: {
-    fontSize: 26,
     color: colors.anaYesil,
     marginTop: 12,
     marginBottom: 20,
   },
   kutu: { alignItems: 'center', marginBottom: 16 },
-  arapca: { fontSize: type['3xl'], color: colors.anaMetin, marginBottom: 8 },
-  ebced: { fontSize: 14, color: colors.ikincilMetin },
+  arapca: { fontSize: type['3xl'], color: colors.anaMetin, marginBottom: 8 }, // display arapca — sabit
+  ebced: { color: colors.ikincilMetin },
   not: {
-    fontSize: 14,
     color: colors.ikincilMetin,
     textAlign: 'center',
     fontStyle: 'italic',
@@ -290,14 +292,12 @@ const styles = StyleSheet.create({
     backgroundColor: colors.cizgi,
     marginVertical: 14,
   },
-  label: { fontSize: 14, color: colors.ikincilMetin, marginBottom: 8 },
+  label: { color: colors.ikincilMetin, marginBottom: 8 },
   esmaArapca: { fontSize: type.display, color: colors.altin, marginBottom: 6 },
-  yaEsma: { fontSize: type.xl, color: colors.anaYesil, marginBottom: 6, fontWeight: '600' },
-  anlam: { fontSize: 16, color: colors.anaMetin, textAlign: 'center' },
+  yaEsma: { color: colors.anaYesil, marginBottom: 6, fontWeight: '600' },
+  anlam: { color: colors.anaMetin, textAlign: 'center' },
   fazilet: {
-    fontSize: 14,
     color: colors.anaMetin,
-    lineHeight: 22,
     textAlign: 'center',
     fontStyle: 'italic',
     paddingHorizontal: 12,
@@ -310,7 +310,7 @@ const styles = StyleSheet.create({
     borderRadius: radii.sm,
     width: '100%',
   },
-  bilgiSatir: { fontSize: type.sm, color: colors.anaMetin, marginVertical: 2 },
+  bilgiSatir: { color: colors.anaMetin, marginVertical: 2 },
   buton: {
     backgroundColor: colors.altin,
     paddingVertical: 16,
@@ -320,5 +320,5 @@ const styles = StyleSheet.create({
     marginTop: 28,
     alignSelf: 'stretch',
   },
-  butonYazi: { color: '#fff', fontSize: type.lg, fontWeight: '600' },
+  butonYazi: { color: '#fff', fontWeight: '600' },
 });

@@ -1,0 +1,78 @@
+{
+  "ad": "Meshur Salavatlar",
+  "aciklama": "Peygamberimiz aleyhisselatu vesselama getirilen, ehl-i sunnet kaynaklarinda yer alan meshur salavat-i serifeler. Her birinin okunmasi mustehab, getirisi buyuk; ozellikle Cuma gunleri ve sikinti zamanlarinda tavsiye edilmistir.",
+  "salavatlar": [
+    {
+      "id": "salat_kisa",
+      "ad": "Salavat-i Serife (Kisa)",
+      "arapca": "اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلٰى اٰلِ سَيِّدِنَا مُحَمَّدٍ",
+      "okunus": "Allahumme salli ala seyyidina Muhammedin ve ala ali seyyidina Muhammed.",
+      "anlam": "Allah'im! Efendimiz Muhammed'e ve onun Ehl-i Beyt'ine salat (rahmet ve selam) eyle.",
+      "fazilet": "Her gun, her firsatta okunabilen en kisa ve en yaygin salavat-i serifedir. Peygamberimiz buyurdu: 'Bana bir kez salavat getirene Allah on rahmet gonderir.' Yorulmadigi anlarda 100 defa okumak adettir. Cuma gunleri sayiyi artirmak menduptur.",
+      "kaynak": "Muslim, Salat 70; Tirmizi, Vitr 21; Diyanet Ilmihal."
+    },
+    {
+      "id": "salat_munciye",
+      "ad": "Salat-i Munciye (Kurtarici Salavat)",
+      "arapca": "اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ صَلٰوةً تُنْجِينَا بِهَا مِنْ جَمِيعِ الْاَهْوَالِ وَالْاٰفَاتِ وَتَقْضِي لَنَا بِهَا جَمِيعَ الْحَاجَاتِ وَتُطَهِّرُنَا بِهَا مِنْ جَمِيعِ السَّيِّئَاتِ وَتَرْفَعُنَا بِهَا عِنْدَكَ اَعْلَى الدَّرَجَاتِ وَتُبَلِّغُنَا بِهَا اَقْصَى الْغَايَاتِ مِنْ جَمِيعِ الْخَيْرَاتِ فِي الْحَيَاةِ وَبَعْدَ الْمَمَاتِ",
+      "okunus": "Allahumme salli ala seyyidina Muhammedin salaten tuncina biha min cemii'l-ehvali ve'l-afat, ve takdi lena biha cemia'l-hacat, ve tutahhiruna biha min cemii's-seyyiat, ve terfeuna biha indeke a'le'd-derecat, ve tubelliguna biha aksa'l-gayat min cemii'l-hayrati fi'l-hayati ve ba'de'l-memat.",
+      "anlam": "Allah'im! Efendimiz Muhammed'e oyle bir salat eyle ki, onunla bizi butun korkulardan ve belalardan kurtarsin; butun ihtiyaclarimizi gidersin; butun gunahlarimizdan temizlesin; katinda en yuksek derecelere yukseltsin; hayatta ve oldukten sonra her hayrin en son hedefine ulastirsin.",
+      "fazilet": "Sikinti, dert, hastalik, korku, borc ve agir bir isin altinda ezildigin zaman okunur. Buyuklerimiz dert ve bela cokken 41 veya 100 defa okumayi tavsiye etmistir. Ayni zamanda 'Salat-i Tuncina' adiyla bilinen budur; iki ayri salavat degildir. Aile fertlerinden biri darda kaldiginda da okunmasi adettendir.",
+      "kaynak": "Imam Sehavi, el-Kavlu'l-Bedi; Cezeri, el-Hisnu'l-Hasin; Diyanet Yayinlari, Cevsen ve Dualar."
+    },
+    {
+      "id": "salat_tefriciye",
+      "ad": "Salat-i Tefriciye (Nariye)",
+      "arapca": "اَللّٰهُمَّ صَلِّ صَلٰوةً كَامِلَةً وَسَلِّمْ سَلَامًا تَامًّا عَلٰى سَيِّدِنَا مُحَمَّدٍ الَّذِي تَنْحَلُّ بِهِ الْعُقَدُ وَتَنْفَرِجُ بِهِ الْكُرَبُ وَتُقْضٰى بِهِ الْحَوَائِجُ وَتُنَالُ بِهِ الرَّغَائِبُ وَحُسْنُ الْخَوَاتِيمِ وَيُسْتَسْقَى الْغَمَامُ بِوَجْهِهِ الْكَرِيمِ وَعَلٰى اٰلِهِ وَصَحْبِهِ فِي كُلِّ لَمْحَةٍ وَنَفَسٍ بِعَدَدِ كُلِّ مَعْلُومٍ لَكَ",
+      "okunus": "Allahumme salli salaten kamileten ve sellim selamen tammen ala seyyidina Muhammedin'illezi tenhallu bihi'l-ukadu ve tenfericu bihi'l-kurabu ve tukda bihi'l-havaicu ve tunalu bihi'r-regaibu ve husnu'l-havatim, ve yustaska'l-gamamu bivechihi'l-kerim, ve ala alihi ve sahbihi fi kulli lemhatin ve nefesin biadedi kulli ma'lumin lek.",
+      "anlam": "Allah'im! Efendimiz Muhammed'e tam bir salat ve eksiksiz bir selam eyle. O Efendimiz ki, onun yuzu suyu hurmetine dugumler cozulur, sikintilar dagilir, ihtiyaclar giderilir, arzu edilen seyler ve guzel sonuclar elde edilir, kerim yuzu hurmetine bulutlardan yagmur istenir. Aline ve ashabina da senin ilminde olan her seyin sayisinca, her bir an ve nefeste salat eyle.",
+      "fazilet": "Cok onemli ve dugum gibi cozulmesi zor isler icin okunur. Halk arasinda 'Nariye' diye anilir; her gun 11 veya 41 defa okunmasi tavsiye edilmistir. Buyuk bir hacet, zor bir sinav, ev-is sikintisi, geciken kismet gibi durumlarda 4444 defa hatim seklinde de okunur (toplu yapilir). Imam Kurtubi tavsiye edenler arasindadir.",
+      "kaynak": "Imam Kurtubi; Imam Senhuri; Diyanet, Ilmihal cilt 1."
+    },
+    {
+      "id": "salat_fethiyye",
+      "ad": "Salat-i Fethiyye",
+      "arapca": "اَللّٰهُمَّ صَلِّ وَسَلِّمْ وَبَارِكْ عَلٰى سَيِّدِنَا مُحَمَّدٍ الْفَاتِحِ لِمَا اُغْلِقَ وَالْخَاتِمِ لِمَا سَبَقَ وَالنَّاصِرِ الْحَقَّ بِالْحَقِّ وَالْهَادِي اِلٰى صِرَاطِكَ الْمُسْتَقِيمِ وَعَلٰى اٰلِهِ حَقَّ قَدْرِهِ وَمِقْدَارِهِ الْعَظِيمِ",
+      "okunus": "Allahumme salli ve sellim ve barik ala seyyidina Muhammedin'il-fatihi lima uglika, ve'l-hatimi lima sebeka, ve'n-nasiri'l-hakka bi'l-hakki, ve'l-hadi ila siratike'l-mustakim, ve ala alihi hakka kadrihi ve mikdarihi'l-azim.",
+      "anlam": "Allah'im! Kapali olanlari acan, gecmis olanlari muhurleyen, hakki hak ile destekleyen, dosdogru yoluna ileten Efendimiz Muhammed'e ve Aline; O'nun yuksek kadr-u kiymetine layik bir sekilde salat ve selam eyle, bereket ihsan eyle.",
+      "fazilet": "Rizik darligi, isin acilmamasi, kapali kalmis isler, zihin tikanikligi icin tavsiye edilmistir. Sabah namazindan sonra 10 defa okumak adettir. Ozellikle Ticani tarikati buyukleri vurgulamis, Osmanli ulemasi da yaymistir. Yeni bir ise baslarken niyetlenerek okunur.",
+      "kaynak": "Seyh Muhammed el-Bekri; Imam Ticani, Cevahiru'l-Meani."
+    },
+    {
+      "id": "salat_ibrahimiyye",
+      "ad": "Salat-i Ibrahimiyye (Namazda Okunan)",
+      "arapca": "اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلٰى اٰلِ سَيِّدِنَا مُحَمَّدٍ كَمَا صَلَّيْتَ عَلٰى سَيِّدِنَا اِبْرَاهِيمَ وَعَلٰى اٰلِ سَيِّدِنَا اِبْرَاهِيمَ وَبَارِكْ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلٰى اٰلِ سَيِّدِنَا مُحَمَّدٍ كَمَا بَارَكْتَ عَلٰى سَيِّدِنَا اِبْرَاهِيمَ وَعَلٰى اٰلِ سَيِّدِنَا اِبْرَاهِيمَ فِي الْعَالَمِينَ اِنَّكَ حَمِيدٌ مَجِيدٌ",
+      "okunus": "Allahumme salli ala seyyidina Muhammedin ve ala ali seyyidina Muhammedin kema salleyte ala seyyidina Ibrahime ve ala ali seyyidina Ibrahim, ve barik ala seyyidina Muhammedin ve ala ali seyyidina Muhammedin kema barekte ala seyyidina Ibrahime ve ala ali seyyidina Ibrahime fi'l-alemine inneke Hamidun Mecid.",
+      "anlam": "Allah'im! Ibrahim'e ve Ibrahim'in ailesine salat ettigin gibi Muhammed'e ve Muhammed'in ailesine de salat eyle. Ibrahim'e ve Ibrahim'in ailesine bereket verdigin gibi Muhammed'e ve Muhammed'in ailesine de alemlerde bereket ver. Suphesiz Sen Hamid'sin, Mecid'sin.",
+      "fazilet": "Her namazin son oturusunda Ettehiyyatu'dan sonra okudugumuz salavattir; Peygamberimiz ashabina bizzat ogretmistir. Namaz disinda da okumak sevaptir. Bu salavati ezbere bilmek, namazin sahih olmasinin yaninda en buyuk salavatlardan birini hatim etmek demektir. Cuma gunu 80 defa okumak menduptur.",
+      "kaynak": "Buhari, Enbiya 10; Muslim, Salat 65-69; Diyanet Ilmihal."
+    },
+    {
+      "id": "salat_selam",
+      "ad": "Salat-u Selam (Cuma Salatu Selami)",
+      "arapca": "اَللّٰهُمَّ صَلِّ وَسَلِّمْ وَبَارِكْ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلٰى اٰلِهِ وَصَحْبِهِ اَجْمَعِينَ",
+      "okunus": "Allahumme salli ve sellim ve barik ala seyyidina Muhammedin ve ala alihi ve sahbihi ecmain.",
+      "anlam": "Allah'im! Efendimiz Muhammed'e, butun Aline ve butun Ashabina salat eyle, selam eyle, bereket eyle.",
+      "fazilet": "Camilerde Cuma gunu hatipler vaazi bitirirken okuyan, halkin da bildiği en yaygin salavatlardandir. Kisa oldugu icin yolda, isteyken, yatarken her durumda tekrar edilebilir. Bediuzzaman Said Nursi de eserlerinde Peygamberimiz'in ismi geciktigi her yerde bu salavati yazmistir. Gunluk 100 sayisi tutturmak icin elverislidir.",
+      "kaynak": "Diyanet, Hutbeler Mecmuasi; Nesai, Sehv 46."
+    },
+    {
+      "id": "salat_kemaliye",
+      "ad": "Salat-i Kemaliye",
+      "arapca": "اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ بِعَدَدِ كَمَالِ اللّٰهِ وَكَمَا يَلِيقُ بِكَمَالِهِ",
+      "okunus": "Allahumme salli ala seyyidina Muhammedin biadedi kemalillahi ve kema yeliku bi kemalih.",
+      "anlam": "Allah'im! Efendimiz Muhammed'e, Allah'in kemalinin (mukemmelliginin) sayisinca ve O'nun kemaline layik oldugu sekilde salat eyle.",
+      "fazilet": "Cok kisa olmasina ragmen, manen butun salavatlari icine alacak buyuklukte oldugu icin bir defa okumakla pek cok salavat sevabi alinacagi rivayet edilmistir. Mesguliyetli gunlerde, bir nefeslik vakitte 7 veya 11 defa tekrar etmek adettir. Ehl-i tasavvufun vird olarak ekledigi salavatlardandir.",
+      "kaynak": "Yusuf Nebhani, Sa'adetu'd-Dareyn; Seyh Muhammed Hakkani."
+    },
+    {
+      "id": "salat_meshure",
+      "ad": "Salat-i Meshure (Salavat-i Serife-i Aliyye)",
+      "arapca": "اَللّٰهُمَّ صَلِّ عَلٰى مُحَمَّدٍ وَاَزْوَاجِهِ وَذُرِّيَّتِهِ كَمَا صَلَّيْتَ عَلٰى اٰلِ اِبْرَاهِيمَ وَبَارِكْ عَلٰى مُحَمَّدٍ وَاَزْوَاجِهِ وَذُرِّيَّتِهِ كَمَا بَارَكْتَ عَلٰى اٰلِ اِبْرَاهِيمَ اِنَّكَ حَمِيدٌ مَجِيدٌ",
+      "okunus": "Allahumme salli ala Muhammedin ve ezvacihi ve zurriyyetihi kema salleyte ala ali Ibrahim, ve barik ala Muhammedin ve ezvacihi ve zurriyyetihi kema barekte ala ali Ibrahime inneke Hamidun Mecid.",
+      "anlam": "Allah'im! Muhammed'e, hanimlarina ve zurriyetine; Ibrahim ailesine salat ettigin gibi salat eyle. Muhammed'e, hanimlarina ve zurriyetine; Ibrahim ailesine bereket verdigin gibi bereket ver. Suphesiz sen Hamid'sin, Mecid'sin.",
+      "fazilet": "Peygamberimiz'in bizzat tarif ettigi salavatlardandir; ailemiz ve cocuklarimiz icin hayir dilenirken okumak mendup gorulmustur. Anne-babalar evlatlari icin gece yatsidan sonra 3 veya 7 defa okur. Aile berekati, cocuklarin salahi icin tavsiye edilmistir.",
+      "kaynak": "Buhari, Daavat 32; Muslim, Salat 69."
+    }
+  ]
+}

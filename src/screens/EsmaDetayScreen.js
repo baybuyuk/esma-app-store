@@ -12,6 +12,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { colors } from '../constants/colors';
 import { radii } from '../constants/radii';
 import { type } from '../constants/type';
+import { useTipScale } from '../context/YaziKademesiContext';
 import { esmaById } from '../lib/esma';
 import { esmaToplamSayim, esmaGunlukSayim, esmaStreak } from '../db/db';
 import GradientArkaPlan from '../components/GradientArkaPlan';
@@ -25,6 +26,7 @@ function bugunIsoTarih() {
 export default function EsmaDetayScreen({ route, navigation }) {
   const { esmaNo } = route.params || {};
   const esma = esmaById(esmaNo);
+  const tip = useTipScale();
   const [istatistik, setIstatistik] = useState({
     yuklendi: false,
     toplam: 0,
@@ -134,10 +136,10 @@ export default function EsmaDetayScreen({ route, navigation }) {
         <SafeAreaView style={styles.container}>
           <View style={styles.header}>
             <TouchableOpacity onPress={() => navigation.goBack()}>
-              <Text style={styles.geri}>‹ Geri</Text>
+              <Text style={[styles.geri, { fontSize: tip.geri.fontSize, lineHeight: tip.geri.lineHeight }]}>‹ Geri</Text>
             </TouchableOpacity>
           </View>
-          <Text style={styles.bos}>Esma bulunamadı.</Text>
+          <Text style={[styles.bos, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>Esma bulunamadı.</Text>
         </SafeAreaView>
       </GradientArkaPlan>
     );
@@ -173,6 +175,7 @@ export default function EsmaDetayScreen({ route, navigation }) {
         <Animated.Text
           style={[
             styles.yaEsma,
+            { fontSize: tip['2xl'].fontSize, lineHeight: tip['2xl'].lineHeight },
             {
               opacity: yaEsmaOpacity,
               transform: [{ translateY: yaEsmaTranslateY }],
@@ -192,32 +195,32 @@ export default function EsmaDetayScreen({ route, navigation }) {
           ]}
         >
           <Text style={styles.ebcedSayi}>{esma.ebced}</Text>
-          <Text style={styles.ebcedEtiket}>EBCED DEĞERİ</Text>
-          <Text style={styles.ebcedNot}>Önerilen zikir sayısı</Text>
+          <Text style={[styles.ebcedEtiket, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>EBCED DEĞERİ</Text>
+          <Text style={[styles.ebcedNot, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>Önerilen zikir sayısı</Text>
         </Animated.View>
 
         <View style={styles.istatistikKart}>
-          <Text style={styles.istatistikBaslik}>📊 İstatistik</Text>
+          <Text style={[styles.istatistikBaslik, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>📊 İstatistik</Text>
           {istatistik.yuklendi &&
           istatistik.toplam === 0 &&
           istatistik.bugun === 0 &&
           istatistik.streak === 0 ? (
-            <Text style={styles.istatistikBos}>Henüz okuma yok</Text>
+            <Text style={[styles.istatistikBos, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>Henüz okuma yok</Text>
           ) : (
             <View style={styles.istatistikSatir}>
               <View style={styles.istatistikKutu}>
-                <Text style={styles.istatistikSayi}>{istatistik.bugun}</Text>
-                <Text style={styles.istatistikEtiket}>Bugün</Text>
+                <Text style={styles.istatistikSayi} numberOfLines={1}>{istatistik.bugun}</Text>
+                <Text style={[styles.istatistikEtiket, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>Bugün</Text>
               </View>
               <View style={styles.istatistikAyirici} />
               <View style={styles.istatistikKutu}>
-                <Text style={styles.istatistikSayi}>{istatistik.toplam}</Text>
-                <Text style={styles.istatistikEtiket}>Toplam</Text>
+                <Text style={styles.istatistikSayi} numberOfLines={1}>{istatistik.toplam}</Text>
+                <Text style={[styles.istatistikEtiket, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>Toplam</Text>
               </View>
               <View style={styles.istatistikAyirici} />
               <View style={styles.istatistikKutu}>
-                <Text style={styles.istatistikSayi}>🔥 {istatistik.streak}</Text>
-                <Text style={styles.istatistikEtiket}>Streak (gün)</Text>
+                <Text style={styles.istatistikSayi} numberOfLines={1}>🔥 {istatistik.streak}</Text>
+                <Text style={[styles.istatistikEtiket, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>Streak (gün)</Text>
               </View>
             </View>
           )}
@@ -225,8 +228,8 @@ export default function EsmaDetayScreen({ route, navigation }) {
 
         {!!esma.fazilet && (
           <View style={styles.faziletKart}>
-            <Text style={styles.faziletBaslik}>✨ Fazilet</Text>
-            <Text style={styles.faziletMetin}>{esma.fazilet}</Text>
+            <Text style={[styles.faziletBaslik, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>✨ Fazilet</Text>
+            <Text style={[styles.faziletMetin, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>{esma.fazilet}</Text>
 
             {!!esma.faziletDetay && (() => {
               const detay = esma.faziletDetay;
@@ -238,15 +241,15 @@ export default function EsmaDetayScreen({ route, navigation }) {
               return (
                 <>
                   <View style={styles.faziletAyirici} />
-                  <Text style={styles.faziletAltBaslik}>🕯️ Havâs ve Tesirleri</Text>
-                  <Text style={styles.faziletDetayMetin}>{gosterilen}</Text>
+                  <Text style={[styles.faziletAltBaslik, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>🕯️ Havâs ve Tesirleri</Text>
+                  <Text style={[styles.faziletDetayMetin, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>{gosterilen}</Text>
                   {uzun && (
                     <TouchableOpacity
                       onPress={() => setFaziletAcik((a) => !a)}
                       style={styles.devamButon}
                       activeOpacity={0.7}
                     >
-                      <Text style={styles.devamYazi}>
+                      <Text style={[styles.devamYazi, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>
                         {faziletAcik ? 'Daha az göster' : 'Devamını oku'}
                       </Text>
                     </TouchableOpacity>
@@ -258,11 +261,11 @@ export default function EsmaDetayScreen({ route, navigation }) {
         )}
 
         <View style={styles.rehberKart}>
-          <Text style={styles.rehberBaslik}>📿 Zikir Rehberi</Text>
+          <Text style={[styles.rehberBaslik, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>📿 Zikir Rehberi</Text>
 
           <View style={styles.rehberSatir}>
             <Text style={styles.rehberEmoji}>🔢</Text>
-            <Text style={styles.rehberMetin}>
+            <Text style={[styles.rehberMetin, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>
               Önerilen sayı:{' '}
               <Text style={styles.rehberVurgu}>{esma.ebced} kez</Text>
             </Text>
@@ -270,21 +273,21 @@ export default function EsmaDetayScreen({ route, navigation }) {
 
           <View style={styles.rehberSatir}>
             <Text style={styles.rehberEmoji}>🌅</Text>
-            <Text style={styles.rehberMetin}>
+            <Text style={[styles.rehberMetin, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>
               Uygun vakit: <Text style={styles.rehberVurgu}>{esma.vakit}</Text>
             </Text>
           </View>
 
           <View style={styles.rehberSatir}>
             <Text style={styles.rehberEmoji}>📅</Text>
-            <Text style={styles.rehberMetin}>
+            <Text style={[styles.rehberMetin, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>
               Uygun gün: <Text style={styles.rehberVurgu}>{esma.gun}</Text>
             </Text>
           </View>
 
           <View style={styles.rehberSatir}>
             <Text style={styles.rehberEmoji}>🪐</Text>
-            <Text style={styles.rehberMetin}>
+            <Text style={[styles.rehberMetin, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>
               Gezegen saati: <Text style={styles.rehberVurgu}>{esma.saat}</Text>
             </Text>
           </View>
@@ -292,11 +295,11 @@ export default function EsmaDetayScreen({ route, navigation }) {
 
         {Array.isArray(esma.tesir) && esma.tesir.length > 0 && (
           <View style={styles.tesirKart}>
-            <Text style={styles.tesirBaslik}>🎯 Tesir Alanları</Text>
+            <Text style={[styles.tesirBaslik, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>🎯 Tesir Alanları</Text>
             <View style={styles.tesirler}>
               {esma.tesir.map((t) => (
                 <View key={t} style={styles.tesirRozet}>
-                  <Text style={styles.tesirYazi}>{t}</Text>
+                  <Text style={[styles.tesirYazi, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>{t}</Text>
                 </View>
               ))}
             </View>
@@ -313,7 +316,7 @@ export default function EsmaDetayScreen({ route, navigation }) {
           }
           activeOpacity={0.85}
         >
-          <Text style={styles.zikretYazi}>🤲 Zikretmeye Başla</Text>
+          <Text style={[styles.zikretYazi, { fontSize: tip.lg.fontSize, lineHeight: tip.lg.lineHeight }]}>🤲 Zikretmeye Başla</Text>
         </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
@@ -324,7 +327,7 @@ export default function EsmaDetayScreen({ route, navigation }) {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: 'transparent' },
   header: { paddingHorizontal: 14, paddingVertical: 12 },
-  geri: { color: colors.altin, fontSize: 16 },
+  geri: { color: colors.altin },
   bos: { padding: 28, color: colors.ikincilMetin, textAlign: 'center' },
   scroll: { padding: 24, alignItems: 'center', paddingBottom: 40 },
 
@@ -341,7 +344,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   yaEsma: {
-    fontSize: type['2xl'],
     color: colors.anaYesil,
     textAlign: 'center',
     marginTop: 12,
@@ -365,14 +367,12 @@ const styles = StyleSheet.create({
   },
   ebcedEtiket: {
     marginTop: 6,
-    fontSize: type.xs,
     color: colors.anaYesil,
     letterSpacing: 2,
     fontWeight: '600',
   },
   ebcedNot: {
     marginTop: 8,
-    fontSize: type.xs,
     color: colors.ikincilMetin,
     fontStyle: 'italic',
   },
@@ -390,13 +390,11 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 1 },
   },
   istatistikBaslik: {
-    fontSize: 16,
     color: colors.anaYesil,
     fontWeight: '700',
     marginBottom: 14,
   },
   istatistikBos: {
-    fontSize: type.sm,
     color: colors.ikincilMetin,
     fontStyle: 'italic',
     textAlign: 'center',
@@ -423,7 +421,6 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
   istatistikEtiket: {
-    fontSize: 11,
     color: colors.ikincilMetin,
     marginTop: 4,
     letterSpacing: 0.3,
@@ -438,16 +435,13 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
   },
   faziletBaslik: {
-    fontSize: 16,
     color: colors.anaYesil,
     fontWeight: '700',
     marginBottom: 10,
   },
   faziletMetin: {
-    fontSize: type.base,
     color: colors.ikincilMetin,
     fontStyle: 'italic',
-    lineHeight: 22,
   },
   faziletAyirici: {
     height: 1,
@@ -457,16 +451,13 @@ const styles = StyleSheet.create({
     marginBottom: 14,
   },
   faziletAltBaslik: {
-    fontSize: 14,
     color: colors.anaYesil,
     fontWeight: '700',
     marginBottom: 8,
     letterSpacing: 0.3,
   },
   faziletDetayMetin: {
-    fontSize: 14.5,
     color: colors.ikincilMetin,
-    lineHeight: 22,
   },
   devamButon: {
     marginTop: 10,
@@ -474,7 +465,6 @@ const styles = StyleSheet.create({
     paddingVertical: 4,
   },
   devamYazi: {
-    fontSize: type.sm,
     color: colors.altin,
     fontWeight: '600',
   },
@@ -492,7 +482,6 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 1 },
   },
   rehberBaslik: {
-    fontSize: 16,
     color: colors.anaYesil,
     fontWeight: '700',
     marginBottom: 12,
@@ -508,7 +497,6 @@ const styles = StyleSheet.create({
   },
   rehberMetin: {
     flex: 1,
-    fontSize: 14,
     color: colors.ikincilMetin,
   },
   rehberVurgu: {
@@ -521,7 +509,6 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
   },
   tesirBaslik: {
-    fontSize: 16,
     color: colors.anaYesil,
     fontWeight: '700',
     marginBottom: 12,
@@ -539,7 +526,6 @@ const styles = StyleSheet.create({
   },
   tesirYazi: {
     color: '#fff',
-    fontSize: type.sm,
     fontWeight: '600',
   },
 
@@ -553,7 +539,6 @@ const styles = StyleSheet.create({
   },
   zikretYazi: {
     color: '#fff',
-    fontSize: type.lg,
     fontWeight: '700',
   },
 });

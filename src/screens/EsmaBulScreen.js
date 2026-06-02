@@ -14,10 +14,12 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { colors } from '../constants/colors';
 import { radii } from '../constants/radii';
 import { type } from '../constants/type';
+import { useTipScale } from '../context/YaziKademesiContext';
 import { isimdenEsma } from '../lib/esma';
 import GradientArkaPlan from '../components/GradientArkaPlan';
 
 export default function EsmaBulScreen({ navigation }) {
+  const tip = useTipScale();
   const [isim, setIsim] = useState('');
   const [sonuc, setSonuc] = useState(null);
   const sonucOpacity = useRef(new Animated.Value(0)).current;
@@ -57,20 +59,20 @@ export default function EsmaBulScreen({ navigation }) {
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()} accessibilityLabel="Geri">
-          <Text style={styles.geri}>‹ Geri</Text>
+          <Text style={[styles.geri, { fontSize: tip.geri.fontSize, lineHeight: tip.geri.lineHeight }]}>‹ Geri</Text>
         </TouchableOpacity>
-        <Text style={styles.baslik}>Esma Bul</Text>
+        <Text style={[styles.baslik, { fontSize: tip.lg.fontSize, lineHeight: tip.lg.lineHeight }]}>Esma Bul</Text>
         <View style={{ width: 60 }} />
       </View>
 
       <ScrollView contentContainerStyle={styles.scroll} keyboardShouldPersistTaps="handled">
-        <Text style={styles.aciklama}>
+        <Text style={[styles.aciklama, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>
           Bir kişinin ismini girin, ebced hesabına göre en yakın esmayı bulalım.
         </Text>
 
         <View style={styles.girisAlani}>
           <TextInput
-            style={styles.input}
+            style={[styles.input, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}
             value={isim}
             onChangeText={setIsim}
             placeholder="Örn: Ayşe, Mehmet, Fatma..."
@@ -88,11 +90,11 @@ export default function EsmaBulScreen({ navigation }) {
               disabled={!isim.trim()}
               activeOpacity={0.85}
             >
-              <Text style={styles.butonYazi}>🔍 Esmayı Bul</Text>
+              <Text style={[styles.butonYazi, { fontSize: tip.lg.fontSize, lineHeight: tip.lg.lineHeight }]}>🔍 Esmayı Bul</Text>
             </TouchableOpacity>
             {(isim || sonuc) && (
               <TouchableOpacity style={styles.temizleButon} onPress={temizle} activeOpacity={0.7}>
-                <Text style={styles.temizleYazi}>Temizle</Text>
+                <Text style={[styles.temizleYazi, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>Temizle</Text>
               </TouchableOpacity>
             )}
           </View>
@@ -108,14 +110,14 @@ export default function EsmaBulScreen({ navigation }) {
               },
             ]}
           >
-            <Text style={styles.sonucEtiket}>
+            <Text style={[styles.sonucEtiket, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>
               {sonuc.bulundu ? `${sonuc.isim_turkce} için` : 'Sonuç'}
             </Text>
 
             {sonuc.bulundu && (
               <View style={styles.isimBilgi}>
                 <Text style={styles.isimArapca}>{sonuc.isim_arapca}</Text>
-                <Text style={styles.isimDetay}>
+                <Text style={[styles.isimDetay, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>
                   {sonuc.isim_turkce} · Ebced: <Text style={styles.vurgu}>{sonuc.isim_ebced}</Text>
                 </Text>
               </View>
@@ -127,9 +129,9 @@ export default function EsmaBulScreen({ navigation }) {
 
             <View style={styles.esmaBilgi}>
               <Text style={styles.esmaArapca}>{sonuc.esma.arapca}</Text>
-              <Text style={styles.yaEsma}>Yâ {sonuc.esma.esma}</Text>
-              <Text style={styles.esmaAnlam}>{sonuc.esma.anlam}</Text>
-              <Text style={styles.esmaEbced}>
+              <Text style={[styles.yaEsma, { fontSize: tip.xl.fontSize, lineHeight: tip.xl.lineHeight }]}>Yâ {sonuc.esma.esma}</Text>
+              <Text style={[styles.esmaAnlam, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>{sonuc.esma.anlam}</Text>
+              <Text style={[styles.esmaEbced, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>
                 Ebced: <Text style={styles.vurgu}>{sonuc.esma.ebced}</Text>
                 {sonuc.fark != null && sonuc.fark > 0 && (
                   <Text style={styles.fark}> · fark {sonuc.fark}</Text>
@@ -139,7 +141,7 @@ export default function EsmaBulScreen({ navigation }) {
 
             {sonuc.not && (
               <View style={styles.notKutu}>
-                <Text style={styles.notYazi}>{sonuc.not}</Text>
+                <Text style={[styles.notYazi, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>{sonuc.not}</Text>
               </View>
             )}
 
@@ -150,7 +152,7 @@ export default function EsmaBulScreen({ navigation }) {
               }
               activeOpacity={0.85}
             >
-              <Text style={styles.detayYazi}>Esmanın Detayını Gör ›</Text>
+              <Text style={[styles.detayYazi, { fontSize: tip.lg.fontSize, lineHeight: tip.lg.lineHeight }]}>Esmanın Detayını Gör ›</Text>
             </TouchableOpacity>
           </Animated.View>
         )}
@@ -169,16 +171,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 14,
     paddingVertical: 12,
   },
-  geri: { color: colors.altin, fontSize: type.geri, width: 60 },
-  baslik: { color: colors.anaYesil, fontSize: 18, fontWeight: '600' },
+  geri: { color: colors.altin, width: 60 },
+  baslik: { color: colors.anaYesil, fontWeight: '600' },
 
   scroll: { padding: 20, paddingBottom: 40 },
   aciklama: {
-    fontSize: type.base,
     color: colors.ikincilMetin,
     textAlign: 'center',
     marginBottom: 24,
-    lineHeight: 22,
   },
 
   girisAlani: { marginBottom: 24 },
@@ -187,7 +187,6 @@ const styles = StyleSheet.create({
     borderRadius: radii.md,
     paddingHorizontal: 16,
     paddingVertical: 14,
-    fontSize: type.base,
     color: colors.anaMetin,
     borderWidth: 1,
     borderColor: colors.cizgi,
@@ -201,14 +200,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   butonDisabled: { opacity: 0.5 },
-  butonYazi: { color: '#fff', fontSize: type.lg, fontWeight: '700' },
+  butonYazi: { color: '#fff', fontWeight: '700' },
   temizleButon: {
     paddingVertical: 14,
     paddingHorizontal: 16,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  temizleYazi: { color: colors.ikincilMetin, fontSize: type.sm },
+  temizleYazi: { color: colors.ikincilMetin },
 
   sonucKart: {
     backgroundColor: '#fff',
@@ -222,7 +221,6 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
   },
   sonucEtiket: {
-    fontSize: type.xs,
     color: colors.altin,
     letterSpacing: 1.6,
     fontWeight: '700',
@@ -231,7 +229,7 @@ const styles = StyleSheet.create({
 
   isimBilgi: { alignItems: 'center', marginBottom: 4 },
   isimArapca: { fontSize: 32, color: colors.anaMetin, marginBottom: 4 },
-  isimDetay: { fontSize: type.sm, color: colors.ikincilMetin },
+  isimDetay: { color: colors.ikincilMetin },
 
   okSatir: { paddingVertical: 12 },
   okYazi: { fontSize: 24, color: colors.altin, opacity: 0.6 },
@@ -239,18 +237,16 @@ const styles = StyleSheet.create({
   esmaBilgi: { alignItems: 'center', marginBottom: 8 },
   esmaArapca: { fontSize: type.display, color: colors.altin },
   yaEsma: {
-    fontSize: type.xl,
     color: colors.anaYesil,
     fontWeight: '600',
     marginTop: 6,
   },
   esmaAnlam: {
-    fontSize: type.base,
     color: colors.anaMetin,
     marginTop: 6,
     textAlign: 'center',
   },
-  esmaEbced: { fontSize: type.sm, color: colors.ikincilMetin, marginTop: 8 },
+  esmaEbced: { color: colors.ikincilMetin, marginTop: 8 },
   vurgu: { color: colors.altin, fontWeight: '700' },
   fark: { color: colors.ikincilMetin, fontWeight: '400' },
 
@@ -262,7 +258,6 @@ const styles = StyleSheet.create({
     borderRadius: radii.sm,
   },
   notYazi: {
-    fontSize: type.sm,
     color: colors.anaMetin,
     fontStyle: 'italic',
     textAlign: 'center',
@@ -276,5 +271,5 @@ const styles = StyleSheet.create({
     borderRadius: radii.md,
     alignItems: 'center',
   },
-  detayYazi: { color: '#fff', fontSize: type.lg, fontWeight: '600' },
+  detayYazi: { color: '#fff', fontWeight: '600' },
 });

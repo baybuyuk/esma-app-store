@@ -14,12 +14,14 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { colors } from '../constants/colors';
 import { radii } from '../constants/radii';
 import { type } from '../constants/type';
+import { useTipScale } from '../context/YaziKademesiContext';
 import { tumEsmalar } from '../lib/esma';
 import GradientArkaPlan from '../components/GradientArkaPlan';
 
 const FAVORI_KEY = 'esmaFavoriler';
 
 export default function EsmalarListScreen({ navigation }) {
+  const tip = useTipScale();
   const [arama, setArama] = useState('');
   const [sekme, setSekme] = useState('tumu');
   const [favoriler, setFavoriler] = useState(() => new Set());
@@ -173,22 +175,22 @@ export default function EsmalarListScreen({ navigation }) {
         activeOpacity={0.85}
       >
         <View style={styles.noRozet}>
-          <Text style={styles.noYazi}>{item.no}</Text>
+          <Text style={[styles.noYazi, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>{item.no}</Text>
         </View>
 
         <View style={styles.ortaBlok}>
-          <Text style={styles.yaEsma}>Yâ {item.esma}</Text>
+          <Text style={[styles.yaEsma, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]} numberOfLines={1}>Yâ {item.esma}</Text>
           {!!item.anlam && (
-            <Text style={styles.anlam} numberOfLines={2}>
+            <Text style={[styles.anlam, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]} numberOfLines={2}>
               {item.anlam}
             </Text>
           )}
         </View>
 
         <View style={styles.sagBlok}>
-          <Text style={styles.arapca}>{item.arapca}</Text>
+          <Text style={[styles.arapca, { fontSize: tip.arapca.fontSize, lineHeight: tip.arapca.lineHeight }]} numberOfLines={1}>{item.arapca}</Text>
           <View style={styles.ebcedBadge}>
-            <Text style={styles.ebcedYazi}>{item.ebced}</Text>
+            <Text style={[styles.ebcedYazi, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>{item.ebced}</Text>
           </View>
         </View>
 
@@ -224,9 +226,9 @@ export default function EsmalarListScreen({ navigation }) {
       >
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()} accessibilityLabel="Geri">
-          <Text style={styles.geri}>‹ Geri</Text>
+          <Text style={[styles.geri, { fontSize: tip.geri.fontSize, lineHeight: tip.geri.lineHeight }]}>‹ Geri</Text>
         </TouchableOpacity>
-        <Text style={styles.baslik}>99 Esmaü'l-Hüsnâ</Text>
+        <Text style={[styles.baslik, { fontSize: tip.lg.fontSize, lineHeight: tip.lg.lineHeight }]}>99 Esmaü'l-Hüsnâ</Text>
         <View style={styles.headerSag} />
       </View>
 
@@ -236,7 +238,7 @@ export default function EsmalarListScreen({ navigation }) {
           onPress={() => setSekme('tumu')}
           activeOpacity={0.8}
         >
-          <Text style={[styles.sekmeYazi, sekme === 'tumu' && styles.sekmeYaziAktif]}>
+          <Text style={[styles.sekmeYazi, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }, sekme === 'tumu' && styles.sekmeYaziAktif]}>
             Tümü
           </Text>
         </TouchableOpacity>
@@ -245,7 +247,7 @@ export default function EsmalarListScreen({ navigation }) {
           onPress={() => setSekme('favoriler')}
           activeOpacity={0.8}
         >
-          <Text style={[styles.sekmeYazi, sekme === 'favoriler' && styles.sekmeYaziAktif]}>
+          <Text style={[styles.sekmeYazi, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }, sekme === 'favoriler' && styles.sekmeYaziAktif]}>
             ♥ Favoriler{favoriler.size > 0 ? ` (${favoriler.size})` : ''}
           </Text>
         </TouchableOpacity>
@@ -253,7 +255,7 @@ export default function EsmalarListScreen({ navigation }) {
 
       <View style={styles.aramaSar}>
         <TextInput
-          style={styles.arama}
+          style={[styles.arama, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}
           placeholder="Esma, anlam veya ebced ara..."
           placeholderTextColor={colors.ikincilMetin}
           value={arama}
@@ -279,7 +281,7 @@ export default function EsmalarListScreen({ navigation }) {
           ItemSeparatorComponent={() => <View style={styles.ayirici} />}
           ListEmptyComponent={
             <View style={styles.bosKutu}>
-              <Text style={styles.bosYazi}>
+              <Text style={[styles.bosYazi, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>
                 {sekme === 'favoriler'
                   ? favoriler.size === 0
                     ? 'Henüz favori esma yok'
@@ -308,11 +310,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 14,
     paddingVertical: 12,
   },
-  geri: { color: colors.altin, fontSize: 16, minWidth: 60 },
+  geri: { color: colors.altin, minWidth: 60 },
   baslik: {
     flex: 1,
     textAlign: 'center',
-    fontSize: type.lg,
     fontWeight: '700',
     color: colors.anaYesil,
   },
@@ -338,7 +339,6 @@ const styles = StyleSheet.create({
     borderColor: colors.anaYesil,
   },
   sekmeYazi: {
-    fontSize: type.sm,
     fontWeight: '600',
     color: colors.ikincilMetin,
   },
@@ -357,7 +357,6 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     paddingHorizontal: 14,
     paddingVertical: 10,
-    fontSize: 14,
     color: colors.anaMetin,
   },
 
@@ -390,7 +389,6 @@ const styles = StyleSheet.create({
   },
   noYazi: {
     color: '#fff',
-    fontSize: type.sm,
     fontWeight: '700',
   },
   ortaBlok: {
@@ -398,12 +396,10 @@ const styles = StyleSheet.create({
     paddingRight: 10,
   },
   yaEsma: {
-    fontSize: 16,
     color: colors.anaYesil,
     fontWeight: '600',
   },
   anlam: {
-    fontSize: type.xs,
     color: colors.ikincilMetin,
     marginTop: 2,
   },
@@ -411,7 +407,6 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
   },
   arapca: {
-    fontSize: type.xl,
     color: colors.altin,
   },
   ebcedBadge: {
@@ -425,7 +420,6 @@ const styles = StyleSheet.create({
   },
   ebcedYazi: {
     color: colors.altin,
-    fontSize: 11,
     fontWeight: '700',
   },
   favoriButon: {
@@ -436,7 +430,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   favoriIkon: {
-    fontSize: type.xl,
+    fontSize: type.xl, // ikon — sabit
     color: colors.ikincilMetin,
   },
   favoriIkonAktif: {
@@ -449,7 +443,6 @@ const styles = StyleSheet.create({
   },
   bosYazi: {
     color: colors.ikincilMetin,
-    fontSize: 14,
     fontStyle: 'italic',
   },
 });

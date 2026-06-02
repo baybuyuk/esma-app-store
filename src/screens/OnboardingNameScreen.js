@@ -16,12 +16,14 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { colors } from '../constants/colors';
 import { type } from '../constants/type';
+import { useTipScale } from '../context/YaziKademesiContext';
 import { isimdenEsma } from '../lib/esma';
 import GradientArkaPlan from '../components/GradientArkaPlan';
 
 const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
 
 export default function OnboardingNameScreen({ navigation }) {
+  const tip = useTipScale();
   const [isim, setIsim] = useState('');
   const [yukleniyor, setYukleniyor] = useState(false);
   const butonOpacity = useRef(new Animated.Value(0.5)).current;
@@ -71,10 +73,10 @@ export default function OnboardingNameScreen({ navigation }) {
       >
         <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
           <View style={styles.inner}>
-            <Text style={styles.selam}>Selamün Aleyküm</Text>
-            <Text style={styles.soru}>Adın nedir?</Text>
+            <Text style={[styles.selam, { fontSize: tip['3xl'].fontSize, lineHeight: tip['3xl'].lineHeight }]}>Selamün Aleyküm</Text>
+            <Text style={[styles.soru, { fontSize: tip.xl.fontSize, lineHeight: tip.xl.lineHeight }]}>Adın nedir?</Text>
             <TextInput
-              style={styles.input}
+              style={[styles.input, { fontSize: tip.xl.fontSize, lineHeight: tip.xl.lineHeight }]}
               value={isim}
               onChangeText={setIsim}
               placeholder="İsmin"
@@ -97,7 +99,7 @@ export default function OnboardingNameScreen({ navigation }) {
               disabled={!isim.trim() || yukleniyor}
               accessibilityLabel="Devam Et"
             >
-              <Text style={styles.butonYazi}>Devam Et</Text>
+              <Text style={[styles.butonYazi, { fontSize: tip.lg.fontSize, lineHeight: tip.lg.lineHeight }]}>Devam Et</Text>
             </AnimatedTouchable>
           </View>
         </TouchableWithoutFeedback>
@@ -111,19 +113,16 @@ const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: 'transparent' },
   inner: { flex: 1, padding: 28, justifyContent: 'center' },
   selam: {
-    fontSize: 32,
     color: colors.anaYesil,
     marginBottom: 40,
     textAlign: 'center',
   },
   soru: {
-    fontSize: 20,
     color: colors.anaMetin,
     marginBottom: 16,
     textAlign: 'center',
   },
   input: {
-    fontSize: type.xl,
     textAlign: 'center',
     borderBottomWidth: 1,
     borderBottomColor: colors.cizgi,
@@ -137,5 +136,5 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     alignItems: 'center',
   },
-  butonYazi: { color: '#fff', fontSize: type.lg, fontWeight: '600' },
+  butonYazi: { color: '#fff', fontWeight: '600' },
 });

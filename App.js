@@ -28,6 +28,7 @@ import HakkindaScreen from './src/screens/HakkindaScreen';
 import KibleScreen from './src/screens/KibleScreen';
 import EvradScreen from './src/screens/EvradScreen';
 import DualarScreen from './src/screens/DualarScreen';
+import SalavatScreen from './src/screens/SalavatScreen';
 import ErisilebilirlikScreen from './src/screens/ErisilebilirlikScreen';
 
 import { colors } from './src/constants/colors';
@@ -97,6 +98,7 @@ export default function App() {
             <Stack.Screen name="Kible" component={KibleScreen} />
             <Stack.Screen name="Evrad" component={EvradScreen} />
             <Stack.Screen name="Dualar" component={DualarScreen} />
+            <Stack.Screen name="Salavat" component={SalavatScreen} />
             <Stack.Screen name="Erisilebilirlik" component={ErisilebilirlikScreen} />
           </Stack.Navigator>
         </NavigationContainer>
