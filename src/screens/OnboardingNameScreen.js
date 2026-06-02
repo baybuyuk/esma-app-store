@@ -56,7 +56,7 @@ export default function OnboardingNameScreen({ navigation }) {
       const sonuc = isimdenEsma(temiz);
       await AsyncStorage.setItem('userName', temiz);
       await AsyncStorage.setItem('userEsma', JSON.stringify(sonuc));
-      navigation.navigate('OnboardingLocation');
+      navigation.navigate('OnboardingYaziBoyutu');
     } catch (e) {
       setYukleniyor(false);
     }

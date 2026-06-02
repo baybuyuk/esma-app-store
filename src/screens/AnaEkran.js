@@ -20,9 +20,11 @@ import { gunlukVakitler, sonrakiVakit, vakitFormat, gericiSayim } from '../lib/n
 import { gununIcerigi, bugunCumaMi } from '../lib/gunlukSecim';
 import { ayetler, hadisler } from '../lib/data';
 import { hicriTarih, mubarekGun, sonrakiMubarekGun } from '../lib/hicri';
+import { useTipScale } from '../context/YaziKademesiContext';
 import GradientArkaPlan from '../components/GradientArkaPlan';
 
 export default function AnaEkran({ navigation }) {
+  const tip = useTipScale();
   const [isim, setIsim] = useState('');
   const [esma, setEsma] = useState(null);
   const [konum, setKonum] = useState(null);
@@ -218,11 +220,17 @@ export default function AnaEkran({ navigation }) {
           }}
         >
           <View style={styles.basliklik}>
-            <Text style={styles.selam}>Selamün Aleyküm, {isim || 'Kardeşim'}</Text>
-            <Text style={styles.tarih}>{tarihYazi}</Text>
-            <Text style={styles.hicri}>{hicriYazi}</Text>
+            <Text style={[styles.selam, { fontSize: tip.xl.fontSize, lineHeight: tip.xl.lineHeight }]}>
+              Selamün Aleyküm, {isim || 'Kardeşim'}
+            </Text>
+            <Text style={[styles.tarih, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>
+              {tarihYazi}
+            </Text>
+            <Text style={[styles.hicri, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>
+              {hicriYazi}
+            </Text>
             {yaklasan && (
-              <Text style={styles.yaklasan}>
+              <Text style={[styles.yaklasan, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>
                 {yaklasan.kalanGun === 1
                   ? `Yarın: ${yaklasan.ad}`
                   : `${yaklasan.kalanGun} gün sonra ${yaklasan.ad}`}
@@ -235,7 +243,7 @@ export default function AnaEkran({ navigation }) {
                 activeOpacity={0.8}
                 hitSlop={6}
               >
-                <Text style={styles.evradOneriYazi}>
+                <Text style={[styles.evradOneriYazi, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>
                   {evradOnerisi.emoji} {evradOnerisi.metin} ›
                 </Text>
               </TouchableOpacity>
@@ -265,15 +273,21 @@ export default function AnaEkran({ navigation }) {
             {sonraki ? (
               <>
                 <Text style={styles.vakitIkon}>🕌</Text>
-                <Text style={styles.vakitLabel}>Sonraki: {sonraki.ad}</Text>
+                <Text style={[styles.vakitLabel, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>
+                  Sonraki: {sonraki.ad}
+                </Text>
                 <Text style={styles.vakitSaat}>{vakitFormat(sonraki.zaman)}</Text>
-                <Text style={styles.vakitKaldi}>{gericiSayim(sonraki.zaman, simdi)} kaldı</Text>
+                <Text style={[styles.vakitKaldi, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>
+                  {gericiSayim(sonraki.zaman, simdi)} kaldı
+                </Text>
               </>
             ) : (
               <>
                 <Text style={styles.vakitIkon}>🕌</Text>
-                <Text style={styles.vakitLabel}>Namaz vakitleri</Text>
-                <Text style={styles.vakitKaldi}>
+                <Text style={[styles.vakitLabel, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>
+                  Namaz vakitleri
+                </Text>
+                <Text style={[styles.vakitKaldi, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>
                   {konum ? 'Yarın imsak için bekle' : 'Konumunu ayarla'}
                 </Text>
               </>
@@ -286,8 +300,12 @@ export default function AnaEkran({ navigation }) {
           >
             <Text style={styles.tumEsmalarIkon}>✨</Text>
             <View style={styles.tumEsmalarOrta}>
-              <Text style={styles.tumEsmalarBaslik}>Tüm Esmalar</Text>
-              <Text style={styles.tumEsmalarAlt}>99 ismin tamamı · Ara, oku, zikret</Text>
+              <Text style={[styles.tumEsmalarBaslik, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>
+                Tüm Esmalar
+              </Text>
+              <Text style={[styles.tumEsmalarAlt, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>
+                99 ismin tamamı · Ara, oku, zikret
+              </Text>
             </View>
             <Text style={styles.tumEsmalarOk}>›</Text>
           </PressKart>
@@ -302,13 +320,18 @@ export default function AnaEkran({ navigation }) {
               </View>
               <View style={styles.zikirIcerik}>
                 <Text style={styles.zikirEtiket}>SENİN ESMAN</Text>
-                <Text style={styles.zikirAd}>Yâ {esma.esma.esma}</Text>
+                <Text style={[styles.zikirAd, { fontSize: tip.xl.fontSize, lineHeight: tip.xl.lineHeight }]}>
+                  Yâ {esma.esma.esma}
+                </Text>
                 {esma.isim_ebced != null && esma.isim_turkce ? (
                   <Text style={styles.zikirEbced} numberOfLines={1} ellipsizeMode="tail">
                     {esma.isim_turkce} ({esma.isim_ebced}) → {esma.esma.esma} ({esma.esma.ebced})
                   </Text>
                 ) : (
-                  <Text style={styles.zikirAnlam} numberOfLines={2}>
+                  <Text
+                    style={[styles.zikirAnlam, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}
+                    numberOfLines={2}
+                  >
                     {esma.esma.anlam}
                   </Text>
                 )}
@@ -325,50 +348,80 @@ export default function AnaEkran({ navigation }) {
         >
           {gununAyeti && (
             <View style={styles.kart}>
-              <Text style={styles.kartBaslik}>📖 Günün Ayeti</Text>
-              <Text style={styles.ayetMeal}>{gununAyeti.tr}</Text>
-              <Text style={styles.kaynak}>— {gununAyeti.sure_adi}, {gununAyeti.ayet_no}</Text>
-              <TouchableOpacity onPress={() => setAyetGoster((v) => !v)}>
-                <Text style={styles.toggle}>{ayetGoster ? 'Gizle' : 'Aslını Göster'}</Text>
+              <Text style={[styles.kartBaslik, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>
+                📖 Günün Ayeti
+              </Text>
+              <Text style={[styles.ayetMeal, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>
+                {gununAyeti.tr}
+              </Text>
+              <Text style={[styles.kaynak, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>
+                — {gununAyeti.sure_adi}, {gununAyeti.ayet_no}
+              </Text>
+              <TouchableOpacity onPress={() => setAyetGoster((v) => !v)} hitSlop={8}>
+                <Text style={[styles.toggle, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>
+                  {ayetGoster ? 'Gizle' : 'Aslını Göster'}
+                </Text>
               </TouchableOpacity>
-              {ayetGoster && <Text style={styles.arapca}>{gununAyeti.ar}</Text>}
+              {ayetGoster && (
+                <Text style={[styles.arapca, { fontSize: tip.arapca.fontSize, lineHeight: tip.arapca.lineHeight }]}>
+                  {gununAyeti.ar}
+                </Text>
+              )}
             </View>
           )}
 
           {gununHadisi && (
             <View style={styles.kart}>
-              <Text style={styles.kartBaslik}>📚 Günün Hadisi</Text>
-              <Text style={styles.ayetMeal}>{gununHadisi.tr}</Text>
-              <Text style={styles.kaynak}>— {gununHadisi.kaynak}</Text>
-              <TouchableOpacity onPress={() => setHadisGoster((v) => !v)}>
-                <Text style={styles.toggle}>{hadisGoster ? 'Gizle' : 'Aslını Göster'}</Text>
+              <Text style={[styles.kartBaslik, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>
+                📚 Günün Hadisi
+              </Text>
+              <Text style={[styles.ayetMeal, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>
+                {gununHadisi.tr}
+              </Text>
+              <Text style={[styles.kaynak, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>
+                — {gununHadisi.kaynak}
+              </Text>
+              <TouchableOpacity onPress={() => setHadisGoster((v) => !v)} hitSlop={8}>
+                <Text style={[styles.toggle, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>
+                  {hadisGoster ? 'Gizle' : 'Aslını Göster'}
+                </Text>
               </TouchableOpacity>
-              {hadisGoster && <Text style={styles.arapca}>{gununHadisi.ar}</Text>}
+              {hadisGoster && (
+                <Text style={[styles.arapca, { fontSize: tip.arapca.fontSize, lineHeight: tip.arapca.lineHeight }]}>
+                  {gununHadisi.ar}
+                </Text>
+              )}
             </View>
           )}
 
           <View style={styles.grid}>
-            <KisaYol emoji="💎" label="Kısa Zikirler" onPress={() => navigation.navigate('KisaZikirler')} />
-            <KisaYol emoji="🌟" label="Anlık Zikir" onPress={() => navigation.navigate('AnlikZikir')} />
-            <KisaYol emoji="🧭" label="Kıble" onPress={() => navigation.navigate('Kible')} />
-            <KisaYol emoji="🌅" label="Sabah Evrâdı" onPress={() => navigation.navigate('Evrad', { tip: 'sabah' })} />
-            <KisaYol emoji="🌆" label="Akşam Evrâdı" onPress={() => navigation.navigate('Evrad', { tip: 'aksam' })} />
-            <KisaYol emoji="🤲" label="Dualar" onPress={() => navigation.navigate('Dualar')} />
-            <KisaYol emoji="🌙" label="Akşam Muhasebesi" onPress={() => navigation.navigate('Aksam')} />
-            <KisaYol emoji="📿" label="Tüm Vakitler" onPress={() => navigation.navigate('TumVakitler')} />
-            <KisaYol emoji="📊" label="Geçmiş" onPress={() => navigation.navigate('Gecmis')} />
-            <KisaYol emoji="🔍" label="Esma Bul" onPress={() => navigation.navigate('EsmaBul')} />
+            <KisaYol tip={tip} emoji="💎" label="Kısa Zikirler" onPress={() => navigation.navigate('KisaZikirler')} />
+            <KisaYol tip={tip} emoji="🌟" label="Anlık Zikir" onPress={() => navigation.navigate('AnlikZikir')} />
+            <KisaYol tip={tip} emoji="🧭" label="Kıble" onPress={() => navigation.navigate('Kible')} />
+            <KisaYol tip={tip} emoji="🌅" label="Sabah Evrâdı" onPress={() => navigation.navigate('Evrad', { tip: 'sabah' })} />
+            <KisaYol tip={tip} emoji="🌆" label="Akşam Evrâdı" onPress={() => navigation.navigate('Evrad', { tip: 'aksam' })} />
+            <KisaYol tip={tip} emoji="🤲" label="Dualar" onPress={() => navigation.navigate('Dualar')} />
+            <KisaYol tip={tip} emoji="🌙" label="Akşam Muhasebesi" onPress={() => navigation.navigate('Aksam')} />
+            <KisaYol tip={tip} emoji="📿" label="Tüm Vakitler" onPress={() => navigation.navigate('TumVakitler')} />
+            <KisaYol tip={tip} emoji="📊" label="Geçmiş" onPress={() => navigation.navigate('Gecmis')} />
+            <KisaYol tip={tip} emoji="🔍" label="Esma Bul" onPress={() => navigation.navigate('EsmaBul')} />
           </View>
 
           <View style={styles.altMenu}>
-            <TouchableOpacity onPress={() => navigation.navigate('EsmaIstatistik')}>
-              <Text style={styles.altLink}>📈 İstatistik</Text>
+            <TouchableOpacity onPress={() => navigation.navigate('EsmaIstatistik')} hitSlop={8}>
+              <Text style={[styles.altLink, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>
+                📈 İstatistik
+              </Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('Ayarlar')}>
-              <Text style={styles.altLink}>⚙️ Ayarlar</Text>
+            <TouchableOpacity onPress={() => navigation.navigate('Ayarlar')} hitSlop={8}>
+              <Text style={[styles.altLink, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>
+                ⚙️ Ayarlar
+              </Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('Hakkinda')}>
-              <Text style={styles.altLink}>ℹ️ Hakkında</Text>
+            <TouchableOpacity onPress={() => navigation.navigate('Hakkinda')} hitSlop={8}>
+              <Text style={[styles.altLink, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>
+                ℹ️ Hakkında
+              </Text>
             </TouchableOpacity>
           </View>
         </Animated.View>
@@ -413,7 +466,7 @@ function PressKart({ style, onPress, children, extraScale }) {
   );
 }
 
-function KisaYol({ emoji, label, onPress }) {
+function KisaYol({ emoji, label, onPress, tip }) {
   const scale = useRef(new Animated.Value(1)).current;
   const pressIn = () =>
     Animated.timing(scale, {
@@ -438,7 +491,14 @@ function KisaYol({ emoji, label, onPress }) {
       activeOpacity={0.85}
     >
       <Text style={styles.gridEmoji}>{emoji}</Text>
-      <Text style={styles.gridLabel}>{label}</Text>
+      <Text
+        style={[
+          styles.gridLabel,
+          tip ? { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight } : null,
+        ]}
+      >
+        {label}
+      </Text>
     </AnimatedTouchable>
   );
 }

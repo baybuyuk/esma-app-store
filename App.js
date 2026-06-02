@@ -7,6 +7,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import OnboardingNameScreen from './src/screens/OnboardingNameScreen';
+import OnboardingYaziBoyutuScreen from './src/screens/OnboardingYaziBoyutuScreen';
 import OnboardingLocationScreen from './src/screens/OnboardingLocationScreen';
 import OnboardingNotificationScreen from './src/screens/OnboardingNotificationScreen';
 import OnboardingEsmaScreen from './src/screens/OnboardingEsmaScreen';
@@ -27,10 +28,12 @@ import HakkindaScreen from './src/screens/HakkindaScreen';
 import KibleScreen from './src/screens/KibleScreen';
 import EvradScreen from './src/screens/EvradScreen';
 import DualarScreen from './src/screens/DualarScreen';
+import ErisilebilirlikScreen from './src/screens/ErisilebilirlikScreen';
 
 import { colors } from './src/constants/colors';
 import { type } from './src/constants/type';
 import { getDb } from './src/db/db';
+import { YaziKademesiProvider } from './src/context/YaziKademesiContext';
 
 const Stack = createNativeStackNavigator();
 
@@ -65,37 +68,41 @@ export default function App() {
   }
 
   return (
-    <SafeAreaProvider>
-      <NavigationContainer>
-        <Stack.Navigator
-          initialRouteName={baslangic}
-          screenOptions={{ headerShown: false, animation: 'fade_from_bottom', animationDuration: 380 }}
-        >
-          <Stack.Screen name="OnboardingName" component={OnboardingNameScreen} />
-          <Stack.Screen name="OnboardingLocation" component={OnboardingLocationScreen} />
-          <Stack.Screen name="OnboardingNotification" component={OnboardingNotificationScreen} />
-          <Stack.Screen name="OnboardingEsma" component={OnboardingEsmaScreen} />
-          <Stack.Screen name="AnaEkran" component={AnaEkran} />
-          <Stack.Screen name="ZikirSayac" component={ZikirSayacScreen} />
-          <Stack.Screen name="EsmaDetay" component={EsmaDetayScreen} />
-          <Stack.Screen name="EsmaListesi" component={EsmalarListScreen} />
-          <Stack.Screen name="EsmaIstatistik" component={EsmaIstatistikScreen} />
-          <Stack.Screen name="EsmaBul" component={EsmaBulScreen} />
-          <Stack.Screen name="KisaZikirler" component={KisaZikirlerScreen} />
-          <Stack.Screen name="ZikirDetay" component={ZikirDetayScreen} />
-          <Stack.Screen name="AnlikZikir" component={AnlikZikirScreen} />
-          <Stack.Screen name="Aksam" component={AksamScreen} />
-          <Stack.Screen name="TumVakitler" component={TumVakitlerScreen} />
-          <Stack.Screen name="Gecmis" component={GecmisScreen} />
-          <Stack.Screen name="Ayarlar" component={AyarlarScreen} />
-          <Stack.Screen name="Hakkinda" component={HakkindaScreen} />
-          <Stack.Screen name="Kible" component={KibleScreen} />
-          <Stack.Screen name="Evrad" component={EvradScreen} />
-          <Stack.Screen name="Dualar" component={DualarScreen} />
-        </Stack.Navigator>
-      </NavigationContainer>
-      <StatusBar style="dark" />
-    </SafeAreaProvider>
+    <YaziKademesiProvider>
+      <SafeAreaProvider>
+        <NavigationContainer>
+          <Stack.Navigator
+            initialRouteName={baslangic}
+            screenOptions={{ headerShown: false, animation: 'fade_from_bottom', animationDuration: 380 }}
+          >
+            <Stack.Screen name="OnboardingName" component={OnboardingNameScreen} />
+            <Stack.Screen name="OnboardingYaziBoyutu" component={OnboardingYaziBoyutuScreen} />
+            <Stack.Screen name="OnboardingLocation" component={OnboardingLocationScreen} />
+            <Stack.Screen name="OnboardingNotification" component={OnboardingNotificationScreen} />
+            <Stack.Screen name="OnboardingEsma" component={OnboardingEsmaScreen} />
+            <Stack.Screen name="AnaEkran" component={AnaEkran} />
+            <Stack.Screen name="ZikirSayac" component={ZikirSayacScreen} />
+            <Stack.Screen name="EsmaDetay" component={EsmaDetayScreen} />
+            <Stack.Screen name="EsmaListesi" component={EsmalarListScreen} />
+            <Stack.Screen name="EsmaIstatistik" component={EsmaIstatistikScreen} />
+            <Stack.Screen name="EsmaBul" component={EsmaBulScreen} />
+            <Stack.Screen name="KisaZikirler" component={KisaZikirlerScreen} />
+            <Stack.Screen name="ZikirDetay" component={ZikirDetayScreen} />
+            <Stack.Screen name="AnlikZikir" component={AnlikZikirScreen} />
+            <Stack.Screen name="Aksam" component={AksamScreen} />
+            <Stack.Screen name="TumVakitler" component={TumVakitlerScreen} />
+            <Stack.Screen name="Gecmis" component={GecmisScreen} />
+            <Stack.Screen name="Ayarlar" component={AyarlarScreen} />
+            <Stack.Screen name="Hakkinda" component={HakkindaScreen} />
+            <Stack.Screen name="Kible" component={KibleScreen} />
+            <Stack.Screen name="Evrad" component={EvradScreen} />
+            <Stack.Screen name="Dualar" component={DualarScreen} />
+            <Stack.Screen name="Erisilebilirlik" component={ErisilebilirlikScreen} />
+          </Stack.Navigator>
+        </NavigationContainer>
+        <StatusBar style="dark" />
+      </SafeAreaProvider>
+    </YaziKademesiProvider>
   );
 }
 

@@ -19,15 +19,23 @@ import { colors } from '../constants/colors';
 import { radii } from '../constants/radii';
 import { type } from '../constants/type';
 import { sehirler } from '../constants/sehirler';
+import { useYaziKademesi } from '../context/YaziKademesiContext';
 import { izinIste, namazBildirimleriniKur, tumBildirimleriIptal } from '../lib/bildirim';
 import { gunlukVakitler } from '../lib/namaz';
 import GradientArkaPlan from '../components/GradientArkaPlan';
+
+const KADEME_ETIKET = {
+  kucuk: 'Küçük',
+  normal: 'Normal',
+  buyuk: 'Büyük',
+};
 
 export default function AyarlarScreen({ navigation }) {
   const [bildirimAcik, setBildirimAcik] = useState(false);
   const [sehir, setSehir] = useState('');
   const [konumModal, setKonumModal] = useState(false);
   const [arama, setArama] = useState('');
+  const { kademe } = useYaziKademesi();
 
   const satirLiOpacity = useRef(new Animated.Value(0)).current;
   const satirLiTranslateY = useRef(new Animated.Value(16)).current;
@@ -153,6 +161,18 @@ export default function AyarlarScreen({ navigation }) {
           },
         ]}
       >
+        <TouchableOpacity
+          style={styles.satir}
+          onPress={() => navigation.navigate('Erisilebilirlik')}
+          accessibilityLabel="Yazi Boyutu"
+        >
+          <View style={{ flex: 1 }}>
+            <Text style={styles.label}>Yazı Boyutu</Text>
+            <Text style={styles.altMetin}>{KADEME_ETIKET[kademe] || 'Normal'}</Text>
+          </View>
+          <Text style={styles.deger}>›</Text>
+        </TouchableOpacity>
+
         <Animated.View style={[styles.satir, { transform: [{ scale: bildirimScale }] }]}>
           <Animated.Text style={[styles.label, { opacity: bildirimLabelOpacity }]}>
             Bildirimler
@@ -238,6 +258,7 @@ const styles = StyleSheet.create({
     borderBottomColor: '#EFE9D8',
   },
   label: { fontSize: type.base, color: colors.anaMetin },
+  altMetin: { fontSize: type.sm, color: colors.ikincilMetin, marginTop: 2 },
   deger: { fontSize: 14, color: colors.altin },
   aramaInput: {
     margin: 16,
