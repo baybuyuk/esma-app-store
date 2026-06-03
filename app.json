@@ -54,8 +54,15 @@
         {
           "color": "#B08D2E",
           "sounds": [
-            "./assets/sounds/ezan.oga"
+            "./assets/sounds/ezan.mp3"
           ]
+        }
+      ],
+      [
+        "expo-audio",
+        {
+          "microphonePermission": false,
+          "recordAudioAndroid": false
         }
       ]
     ],

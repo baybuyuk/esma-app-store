@@ -22,6 +22,7 @@ import { sehirler } from '../constants/sehirler';
 import { useYaziKademesi, useTipScale } from '../context/YaziKademesiContext';
 import { izinIste, namazBildirimleriniKur, tumBildirimleriIptal } from '../lib/bildirim';
 import { gunlukVakitler } from '../lib/namaz';
+import { tasbihAyari, tasbihAyariOku } from '../lib/ses';
 import GradientArkaPlan from '../components/GradientArkaPlan';
 
 const KADEME_ETIKET = {
@@ -35,6 +36,8 @@ export default function AyarlarScreen({ navigation }) {
   const [sehir, setSehir] = useState('');
   const [konumModal, setKonumModal] = useState(false);
   const [arama, setArama] = useState('');
+  // Tasbih (zikir + salavat sayaclari) tikir sesi — default acik.
+  const [sesAcik, setSesAcik] = useState(true);
   const { kademe } = useYaziKademesi();
   const tip = useTipScale();
 
@@ -102,9 +105,20 @@ export default function AyarlarScreen({ navigation }) {
     setBildirimAcik(b === '1');
     const s = await AsyncStorage.getItem('sehir');
     if (s) setSehir(s);
+    try {
+      const a = await tasbihAyariOku();
+      setSesAcik(!!a);
+    } catch (e) {}
   }, []);
 
   useEffect(() => { yukle(); }, [yukle]);
+
+  const sesToggle = async (deger) => {
+    setSesAcik(deger);
+    try {
+      await tasbihAyari(deger);
+    } catch (e) {}
+  };
 
   const bildirimToggle = async (deger) => {
     setBildirimAcik(deger);
@@ -173,6 +187,24 @@ export default function AyarlarScreen({ navigation }) {
           </View>
           <Text style={styles.deger}>›</Text>
         </TouchableOpacity>
+
+        <View style={styles.satir}>
+          <View style={{ flex: 1, paddingRight: 12 }}>
+            <Text style={[styles.label, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>Tasbih sesi</Text>
+            <Text style={[styles.altMetin, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>
+              Zikir ve salavat sayaçlarında her tıkta tahta tıkır sesi
+            </Text>
+          </View>
+          <Switch
+            value={sesAcik}
+            onValueChange={sesToggle}
+            trackColor={{ false: '#ccc', true: colors.ortaYesil }}
+            thumbColor={sesAcik ? colors.altin : '#fff'}
+            accessibilityLabel="Tasbih sesi"
+            accessibilityRole="switch"
+            accessibilityState={{ checked: sesAcik }}
+          />
+        </View>
 
         <Animated.View style={[styles.satir, { transform: [{ scale: bildirimScale }] }]}>
           <Animated.Text style={[styles.label, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }, { opacity: bildirimLabelOpacity }]}>

@@ -16,6 +16,7 @@ import {
   useWindowDimensions,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useFocusEffect } from '@react-navigation/native';
 import * as Haptics from 'expo-haptics';
 import { colors } from '../constants/colors';
 import { radii } from '../constants/radii';
@@ -27,6 +28,7 @@ import {
   salavatSayacOku,
   salavatSayacArtir,
 } from '../lib/salavat';
+import { tasbihCal, tasbihAyari, tasbihAyariOku } from '../lib/ses';
 import GradientArkaPlan from '../components/GradientArkaPlan';
 import IsinPatlamasi from '../components/IsinPatlamasi';
 
@@ -78,8 +80,52 @@ export default function SalavatScreen({ navigation }) {
   const [toplamSayim, setToplamSayim] = useState(0);
   const [sekme, setSekme] = useState('okunus');
   const [kutlama, setKutlama] = useState(false);
+  // Tasbih ses ayari — Ayarlar ile senkron, header'dan anlik toggle.
+  const [sesAcik, setSesAcik] = useState(true);
   const kutlandiRef = useRef(false);
   const sonTikRef = useRef(0);
+  // Unmount sonrasi setTimeout/Alert leak'ini engellemek icin mount guard
+  const mountedRef = useRef(true);
+  const kutlamaTimerRef = useRef(null);
+  const alertTimerRef = useRef(null);
+
+  useEffect(() => {
+    mountedRef.current = true;
+    // Tasbih ses cache'ini ilk tikta sessiz kalmasin diye onyukle.
+    (async () => {
+      try {
+        const a = await tasbihAyariOku();
+        if (mountedRef.current) setSesAcik(!!a);
+      } catch (e) {}
+    })();
+    return () => {
+      mountedRef.current = false;
+      if (kutlamaTimerRef.current) {
+        clearTimeout(kutlamaTimerRef.current);
+        kutlamaTimerRef.current = null;
+      }
+      if (alertTimerRef.current) {
+        clearTimeout(alertTimerRef.current);
+        alertTimerRef.current = null;
+      }
+    };
+  }, []);
+
+  // Ayarlar ekranindan donulunce ses ayarini tazele.
+  useFocusEffect(
+    useCallback(() => {
+      let iptal = false;
+      (async () => {
+        try {
+          const a = await tasbihAyariOku();
+          if (!iptal) setSesAcik(!!a);
+        } catch (e) {}
+      })();
+      return () => {
+        iptal = true;
+      };
+    }, [])
+  );
 
   // Animasyonlar — sadece transform/opacity
   const butonScale = useRef(new Animated.Value(1)).current;
@@ -143,6 +189,8 @@ export default function SalavatScreen({ navigation }) {
     try {
       Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     } catch (e) {}
+    // Tahta tikir sesi — fire-and-forget. Ayar kapaliysa ses.js icinden sessiz doner.
+    tasbihCal();
 
     // Buton + sayi flash animasyonu (yalin, transform/opacity)
     Animated.sequence([
@@ -179,13 +227,15 @@ export default function SalavatScreen({ navigation }) {
 
     try {
       const sonuc = await salavatSayacArtir(aktifId, 1);
-      if (sonuc) {
+      if (sonuc && mountedRef.current) {
         setBugunSayim(sonuc.bugun || yeniBugun);
         setToplamSayim(sonuc.toplam || toplamSayim + 1);
       }
     } catch (e) {
       // Sessiz fallback — iyimser update kalsin
     }
+
+    if (!mountedRef.current) return;
 
     // Hedefe ulasinca kutlama (sadece ilk kez)
     if (yeniBugun >= hedef && !kutlandiRef.current) {
@@ -197,14 +247,32 @@ export default function SalavatScreen({ navigation }) {
       if (Platform.OS === 'android') {
         ToastAndroid.show('Elhamdulillah — hedefe ulaştın', ToastAndroid.LONG);
       } else {
-        setTimeout(() => {
+        alertTimerRef.current = setTimeout(() => {
+          alertTimerRef.current = null;
+          if (!mountedRef.current) return;
           Alert.alert('Elhamdulillah', 'Hedefe ulaştın. Allah kabul etsin.');
         }, 400);
       }
       // Isin patlamasi 1.5s sonra otomatik kapanir
-      setTimeout(() => setKutlama(false), 1500);
+      kutlamaTimerRef.current = setTimeout(() => {
+        kutlamaTimerRef.current = null;
+        if (!mountedRef.current) return;
+        setKutlama(false);
+      }, 1500);
     }
   }, [aktifId, bugunSayim, toplamSayim, hedef, butonScale, sayiFlash]);
+
+  // Header ses toggle — anlik susturma. AsyncStorage'a yazar, cache senkronlanir.
+  const sesToggle = useCallback(async () => {
+    const yeni = !sesAcik;
+    setSesAcik(yeni);
+    try {
+      Haptics.selectionAsync();
+    } catch (e) {}
+    try {
+      await tasbihAyari(yeni);
+    } catch (e) {}
+  }, [sesAcik]);
 
   const aktifSalavatSec = useCallback((id) => {
     if (id === aktifId) return;
@@ -257,7 +325,29 @@ export default function SalavatScreen({ navigation }) {
           <Text style={[styles.headerBaslik, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]} numberOfLines={1}>
             Salavat
           </Text>
-          <View style={{ width: 60 }} />
+          <View style={styles.sagAksiyonlar}>
+            <TouchableOpacity
+              onPress={sesToggle}
+              hitSlop={8}
+              style={styles.sesBtn}
+              accessibilityRole="switch"
+              accessibilityState={{ checked: sesAcik }}
+              accessibilityLabel={sesAcik ? 'Tasbih sesi acik, kapatmak icin dokun' : 'Tasbih sesi kapali, acmak icin dokun'}
+            >
+              <Text style={styles.sesIkon}>{sesAcik ? '🔊' : '🔇'}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('SalavatIstatistik')}
+              hitSlop={8}
+              accessibilityLabel="İstatistik ekranı"
+              accessibilityRole="button"
+              style={styles.istatistikBtn}
+            >
+              <Text style={[styles.istatistikYazi, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>
+                İst.
+              </Text>
+            </TouchableOpacity>
+          </View>
         </View>
 
         <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
@@ -424,8 +514,33 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#EFE9D8',
   },
-  geri: { color: colors.altin, fontWeight: '600', width: 60 },
-  headerBaslik: { color: colors.anaYesil, fontWeight: '700' },
+  geri: { color: colors.altin, fontWeight: '600', width: 80 },
+  headerBaslik: { color: colors.anaYesil, fontWeight: '700', flex: 1, textAlign: 'center' },
+  sagAksiyonlar: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    width: 100,
+    minHeight: 44,
+  },
+  sesBtn: {
+    width: 44,
+    minHeight: 44,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  sesIkon: { fontSize: 22 },
+  istatistikBtn: {
+    minWidth: 44,
+    minHeight: 44,
+    paddingLeft: 8,
+    alignItems: 'flex-end',
+    justifyContent: 'center',
+  },
+  istatistikYazi: {
+    color: colors.altin,
+    fontWeight: '600',
+  },
 
   scroll: { paddingHorizontal: 16, paddingBottom: 32 },
 

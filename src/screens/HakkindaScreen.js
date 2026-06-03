@@ -147,7 +147,8 @@ export default function HakkindaScreen({ navigation }) {
           <Text style={[styles.lisansSatir, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>📚 Hadisler: fawazahmed0/hadith-api (MIT)</Text>
           <Text style={[styles.lisansSatir, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>🕌 Namaz vakitleri: adhan-js</Text>
           <Text style={[styles.lisansSatir, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>🌟 Esma faziletleri: Klasik İslami kaynaklar (Bûnî, Gümüşhânevî, Nâzilî)</Text>
-          <Text style={[styles.lisansSatir, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>🔔 Ezan sesi: Wikimedia Commons / Mahfoudou (CC BY-SA 4.0)</Text>
+          <Text style={[styles.lisansSatir, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>🔔 Ezan sesi: Wikimedia Commons / Aaqib Azeez (CC BY-SA 4.0)</Text>
+          <Text style={[styles.lisansSatir, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>🪵 Tasbih sesi: OpenGameArt / rubberduck "80 CC0 RPG SFX" (CC0)</Text>
         </Animated.View>
 
         <Text style={[styles.niyet, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>🤲 Niyetimiz halis olsun</Text>

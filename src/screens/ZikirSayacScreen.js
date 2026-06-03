@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   View,
   Text,
@@ -12,6 +12,7 @@ import {
   useWindowDimensions,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useFocusEffect } from '@react-navigation/native';
 import * as Haptics from 'expo-haptics';
 import { colors } from '../constants/colors';
 import { type } from '../constants/type';
@@ -19,6 +20,7 @@ import { useTipScale } from '../context/YaziKademesiContext';
 import { esmaById } from '../lib/esma';
 import { kisaZikirler } from '../lib/data';
 import { zikirKaydet, bugunkuToplamSayim, toplamSayimArtir } from '../db/db';
+import { tasbihCal, tasbihAyari, tasbihAyariOku } from '../lib/ses';
 import GradientArkaPlan from '../components/GradientArkaPlan';
 import NurHalesi from '../components/NurHalesi';
 import Partikullar from '../components/Partikullar';
@@ -61,6 +63,8 @@ export default function ZikirSayacScreen({ route, navigation }) {
   const [tamamlandi, setTamamlandi] = useState(false);
   const [gunlukToplam, setGunlukToplam] = useState(0);
   const [efektAktif, setEfektAktif] = useState(false);
+  // Tasbih ses ayari — Ayarlar ekraniyla senkron, header'dan anlik toggle.
+  const [sesAcik, setSesAcik] = useState(true);
   const sonTikRef = useRef(0);
   const dakikalikTiklarRef = useRef([]);
   const baslangicRef = useRef(new Date().toISOString());
@@ -80,6 +84,11 @@ export default function ZikirSayacScreen({ route, navigation }) {
         const t = await bugunkuToplamSayim(bugunIso());
         setGunlukToplam(t);
       } catch (e) {}
+      // Tasbih ses cache'ini ilk tikta sessiz kalmasin diye onceden doldur.
+      try {
+        const a = await tasbihAyariOku();
+        setSesAcik(!!a);
+      } catch (e) {}
     })();
     return () => {
       if (alertTimeoutRef.current) {
@@ -88,6 +97,22 @@ export default function ZikirSayacScreen({ route, navigation }) {
       }
     };
   }, []);
+
+  // Ayarlar ekranindan donulunce ses ayarini tazele (focus senkronu).
+  useFocusEffect(
+    useCallback(() => {
+      let iptal = false;
+      (async () => {
+        try {
+          const a = await tasbihAyariOku();
+          if (!iptal) setSesAcik(!!a);
+        } catch (e) {}
+      })();
+      return () => {
+        iptal = true;
+      };
+    }, [])
+  );
 
   const ilerleme = Math.min(sayim / hedef, 1);
   const yuzde = Math.round(ilerleme * 100);
@@ -129,6 +154,8 @@ export default function ZikirSayacScreen({ route, navigation }) {
     try {
       Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     } catch (e) {}
+    // Tahta tikir sesi — fire-and-forget. Ses ayari kapaliysa ses.js icinden sessiz doner.
+    tasbihCal();
 
     Animated.sequence([
       Animated.timing(scaleAnim, {
@@ -230,6 +257,18 @@ export default function ZikirSayacScreen({ route, navigation }) {
     navigation.goBack();
   };
 
+  // Header ses toggle — anlik susturma. AsyncStorage'a yazar, cache senkronlanir.
+  const sesToggle = async () => {
+    const yeni = !sesAcik;
+    setSesAcik(yeni);
+    try {
+      Haptics.selectionAsync();
+    } catch (e) {}
+    try {
+      await tasbihAyari(yeni);
+    } catch (e) {}
+  };
+
   const sifirla = () => {
     Alert.alert('Sıfırla', 'Sayımı sıfırlamak ister misin?', [
       { text: 'Vazgeç', style: 'cancel' },
@@ -258,7 +297,16 @@ export default function ZikirSayacScreen({ route, navigation }) {
           <Text style={[styles.baslik, { fontSize: tip.lg.fontSize, lineHeight: tip.lg.lineHeight }]} numberOfLines={1}>{baslik}</Text>
           {!!arapca && <Text style={[styles.arapca, { fontSize: tip.arapca.fontSize, lineHeight: tip.arapca.lineHeight }]} numberOfLines={1}>{arapca}</Text>}
         </View>
-        <View style={{ width: 50 }} />
+        <TouchableOpacity
+          onPress={sesToggle}
+          style={styles.sesBtn}
+          hitSlop={8}
+          accessibilityRole="switch"
+          accessibilityState={{ checked: sesAcik }}
+          accessibilityLabel={sesAcik ? 'Tasbih sesi acik, kapatmak icin dokun' : 'Tasbih sesi kapali, acmak icin dokun'}
+        >
+          <Text style={styles.sesIkon}>{sesAcik ? '🔊' : '🔇'}</Text>
+        </TouchableOpacity>
       </View>
 
       {(!!altYazi || tesirler.length > 0) && (
@@ -356,6 +404,13 @@ const styles = StyleSheet.create({
     borderBottomColor: '#EFE9D8',
   },
   geri: { color: colors.altin, width: 60 },
+  sesBtn: {
+    width: 50,
+    minHeight: 44,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  sesIkon: { fontSize: 22 },
   baslik: { color: colors.anaYesil, fontWeight: '600' },
   arapca: { color: colors.anaMetin, marginTop: 2 },
   ustBilgi: {

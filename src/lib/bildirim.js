@@ -14,8 +14,8 @@ Notifications.setNotificationHandler({
 const CH_NAMAZ = 'default';
 const CH_MUHASEBE = 'muhasebe';
 
-// Android'de custom ses; iOS'ta default ses
-const EZAN_SESI = Platform.OS === 'android' ? 'ezan.oga' : true;
+// Cross-platform custom ses (Android: kanal sound, iOS: notification sound dosya adi)
+const EZAN_SESI = 'ezan.mp3';
 
 // Yasli dostu, namaza ozendiren kisa ayet havuzu — ASCII transliterasyon
 // Konsol/JSON guvenligi icin Turkce karakter yok. Apostrof ihtiyaclarinda escape.
@@ -83,7 +83,7 @@ export async function izinIste() {
       await Notifications.setNotificationChannelAsync(CH_NAMAZ, {
         name: 'Hu',
         importance: Notifications.AndroidImportance.DEFAULT,
-        sound: 'ezan.oga',
+        sound: 'ezan.mp3',
         vibrationPattern: [0, 120, 80, 120],
         lightColor: '#B08D2E',
       });
