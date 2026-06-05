@@ -32,6 +32,7 @@ import SurelerScreen from './src/screens/SurelerScreen';
 import SureDetayScreen from './src/screens/SureDetayScreen';
 import SalavatScreen from './src/screens/SalavatScreen';
 import SalavatIstatistikScreen from './src/screens/SalavatIstatistikScreen';
+import TesbihatScreen from './src/screens/TesbihatScreen';
 import ErisilebilirlikScreen from './src/screens/ErisilebilirlikScreen';
 
 import { colors } from './src/constants/colors';
@@ -105,6 +106,7 @@ export default function App() {
             <Stack.Screen name="SureDetay" component={SureDetayScreen} />
             <Stack.Screen name="Salavat" component={SalavatScreen} />
             <Stack.Screen name="SalavatIstatistik" component={SalavatIstatistikScreen} />
+            <Stack.Screen name="Tesbihat" component={TesbihatScreen} />
             <Stack.Screen name="Erisilebilirlik" component={ErisilebilirlikScreen} />
           </Stack.Navigator>
         </NavigationContainer>

@@ -211,7 +211,14 @@ export default function AnaEkran({ navigation }) {
       label: 'Salavat',
       onPress: () => navigation.navigate('Salavat'),
     };
+    const tesbihat = {
+      key: 'tesbihat',
+      emoji: '📿',
+      label: 'Tesbihat',
+      onPress: () => navigation.navigate('Tesbihat'),
+    };
     const digerleri = [
+      tesbihat,
       { key: 'kisaZikirler', emoji: '💎', label: 'Kısa Zikirler', onPress: () => navigation.navigate('KisaZikirler') },
       { key: 'anlikZikir', emoji: '🌟', label: 'Anlık Zikir', onPress: () => navigation.navigate('AnlikZikir') },
       { key: 'kible', emoji: '🧭', label: 'Kıble', onPress: () => navigation.navigate('Kible') },
@@ -220,7 +227,7 @@ export default function AnaEkran({ navigation }) {
       { key: 'dualar', emoji: '🤲', label: 'Dualar', onPress: () => navigation.navigate('Dualar') },
       { key: 'sureler', emoji: '📜', label: 'Kısa Sûreler', onPress: () => navigation.navigate('Sureler') },
       { key: 'aksamMuhasebe', emoji: '🌙', label: 'Akşam Muhasebesi', onPress: () => navigation.navigate('Aksam') },
-      { key: 'tumVakitler', emoji: '📿', label: 'Tüm Vakitler', onPress: () => navigation.navigate('TumVakitler') },
+      { key: 'tumVakitler', emoji: '🕐', label: 'Tüm Vakitler', onPress: () => navigation.navigate('TumVakitler') },
       { key: 'gecmis', emoji: '📊', label: 'Geçmiş', onPress: () => navigation.navigate('Gecmis') },
       { key: 'esmaBul', emoji: '🔍', label: 'Esma Bul', onPress: () => navigation.navigate('EsmaBul') },
     ];
