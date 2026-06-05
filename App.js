@@ -31,6 +31,7 @@ import EvradScreen from './src/screens/EvradScreen';
 import DualarScreen from './src/screens/DualarScreen';
 import SurelerScreen from './src/screens/SurelerScreen';
 import SureDetayScreen from './src/screens/SureDetayScreen';
+import ManeviSureDetayScreen from './src/screens/ManeviSureDetayScreen';
 import SalavatScreen from './src/screens/SalavatScreen';
 import SalavatIstatistikScreen from './src/screens/SalavatIstatistikScreen';
 import TesbihatScreen from './src/screens/TesbihatScreen';
@@ -106,6 +107,7 @@ export default function App() {
             <Stack.Screen name="Dualar" component={DualarScreen} />
             <Stack.Screen name="Sureler" component={SurelerScreen} />
             <Stack.Screen name="SureDetay" component={SureDetayScreen} />
+            <Stack.Screen name="ManeviSureDetay" component={ManeviSureDetayScreen} />
             <Stack.Screen name="Salavat" component={SalavatScreen} />
             <Stack.Screen name="SalavatIstatistik" component={SalavatIstatistikScreen} />
             <Stack.Screen name="Tesbihat" component={TesbihatScreen} />

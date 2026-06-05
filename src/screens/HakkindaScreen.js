@@ -152,7 +152,8 @@ export default function HakkindaScreen({ navigation }) {
             },
           ]}
         >
-          <Text style={[styles.lisansSatir, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>📖 Meal: Diyanet İşleri Başkanlığı</Text>
+          <Text style={[styles.lisansSatir, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>📖 Meal (kısa sûreler): Diyanet İşleri Başkanlığı</Text>
+          <Text style={[styles.lisansSatir, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>📖 Meal (manevi sûreler): Süleyman Ateş (alquran.cloud)</Text>
           <Text style={[styles.lisansSatir, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>📚 Hadisler: fawazahmed0/hadith-api (MIT)</Text>
           <Text style={[styles.lisansSatir, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>🕌 Namaz vakitleri: adhan-js</Text>
           <Text style={[styles.lisansSatir, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>🌟 Esma faziletleri: Klasik İslami kaynaklar (Bûnî, Gümüşhânevî, Nâzilî)</Text>

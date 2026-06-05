@@ -1,0 +1,2585 @@
+[
+  {
+    "no": 36,
+    "ad": "Yâsîn",
+    "arapca_ad": "يس",
+    "inis_yeri": "Mekki",
+    "ayet_sayisi": 83,
+    "kategori": "manevi",
+    "tilavet_dosya": null,
+    "tilavet_kari": "Saad al-Ghamdi",
+    "kisa_aciklama": "Kur'an'ın kalbi olarak anılan, hayat-ahiret muhasebesi yapan sure. Hastalık, vefat ve zorluk anlarında okunur.",
+    "fazilet": "Hz. Peygamber (s.a.v.) 'Her şeyin bir kalbi vardır, Kur'an'ın kalbi de Yâsîn'dir' buyurmuştur (Tirmizî, Fedâilü'l-Kur'ân 7). Cuma sabahları okunması, hastalara ve vefat etmek üzere olanlara okunması sünnettir (Ebû Dâvûd, Cenâiz 24). Halk arasında 'Yâsîn-i Şerif' olarak bilinir.",
+    "ayetler": [
+      {
+        "no": 1,
+        "arapca": "يسٓ",
+        "okunus": "",
+        "meal": "Yasin",
+        "ses_dosyasi": "036001"
+      },
+      {
+        "no": 2,
+        "arapca": "وَٱلْقُرْءَانِ ٱلْحَكِيمِ",
+        "okunus": "",
+        "meal": "Hikmetli Kur'an'a andolsun.",
+        "ses_dosyasi": "036002"
+      },
+      {
+        "no": 3,
+        "arapca": "إِنَّكَ لَمِنَ ٱلْمُرْسَلِينَ",
+        "okunus": "",
+        "meal": "Kuşkusuz sen gönderilmiş elçilerdensin.",
+        "ses_dosyasi": "036003"
+      },
+      {
+        "no": 4,
+        "arapca": "عَلَىٰ صِرَٰطٍۢ مُّسْتَقِيمٍۢ",
+        "okunus": "",
+        "meal": "Dosdoğru bir yol üzerinde,",
+        "ses_dosyasi": "036004"
+      },
+      {
+        "no": 5,
+        "arapca": "تَنزِيلَ ٱلْعَزِيزِ ٱلرَّحِيمِ",
+        "okunus": "",
+        "meal": "Yani üstün ve çok esirgeyen Allah'ın indirdiği (Kur'an yolu) üzerindesin.",
+        "ses_dosyasi": "036005"
+      },
+      {
+        "no": 6,
+        "arapca": "لِتُنذِرَ قَوْمًۭا مَّآ أُنذِرَ ءَابَآؤُهُمْ فَهُمْ غَٰفِلُونَ",
+        "okunus": "",
+        "meal": "Babaları uyarılmamış, bu yüzden kendileri de gaflet içinde kalmış bir toplumu uyarman için (seni gönderdik).",
+        "ses_dosyasi": "036006"
+      },
+      {
+        "no": 7,
+        "arapca": "لَقَدْ حَقَّ ٱلْقَوْلُ عَلَىٰٓ أَكْثَرِهِمْ فَهُمْ لَا يُؤْمِنُونَ",
+        "okunus": "",
+        "meal": "Andolsun onların çoğuna o söz (cinlerden ve insanlardan bir kısmını cehenneme dolduracağım, sözü) hak oldu; artık onlar inanmazlar.",
+        "ses_dosyasi": "036007"
+      },
+      {
+        "no": 8,
+        "arapca": "إِنَّا جَعَلْنَا فِىٓ أَعْنَٰقِهِمْ أَغْلَٰلًۭا فَهِىَ إِلَى ٱلْأَذْقَانِ فَهُم مُّقْمَحُونَ",
+        "okunus": "",
+        "meal": "Biz onların boyunlarına halkalar geçirdik. Çenelere kadar dayanan o halkalar yüzünden kafaları kalkıktır.",
+        "ses_dosyasi": "036008"
+      },
+      {
+        "no": 9,
+        "arapca": "وَجَعَلْنَا مِنۢ بَيْنِ أَيْدِيهِمْ سَدًّۭا وَمِنْ خَلْفِهِمْ سَدًّۭا فَأَغْشَيْنَٰهُمْ فَهُمْ لَا يُبْصِرُونَ",
+        "okunus": "",
+        "meal": "Önlerinden bir sed ve arkalarından bir sed çektik de onları kapattık; artık görmezler.",
+        "ses_dosyasi": "036009"
+      },
+      {
+        "no": 10,
+        "arapca": "وَسَوَآءٌ عَلَيْهِمْ ءَأَنذَرْتَهُمْ أَمْ لَمْ تُنذِرْهُمْ لَا يُؤْمِنُونَ",
+        "okunus": "",
+        "meal": "Onları uyarsan da uyarmasan da onlar için birdir, inanmazlar.",
+        "ses_dosyasi": "036010"
+      },
+      {
+        "no": 11,
+        "arapca": "إِنَّمَا تُنذِرُ مَنِ ٱتَّبَعَ ٱلذِّكْرَ وَخَشِىَ ٱلرَّحْمَٰنَ بِٱلْغَيْبِ ۖ فَبَشِّرْهُ بِمَغْفِرَةٍۢ وَأَجْرٍۢ كَرِيمٍ",
+        "okunus": "",
+        "meal": "Sen ancak Zikre uyan ve görmeden Rahman'dan korkan kimseyi uyarabilirsin. İşte öylesini bir mağfiret ve güzel bir mükafatla müjdele.",
+        "ses_dosyasi": "036011"
+      },
+      {
+        "no": 12,
+        "arapca": "إِنَّا نَحْنُ نُحْىِ ٱلْمَوْتَىٰ وَنَكْتُبُ مَا قَدَّمُوا۟ وَءَاثَٰرَهُمْ ۚ وَكُلَّ شَىْءٍ أَحْصَيْنَٰهُ فِىٓ إِمَامٍۢ مُّبِينٍۢ",
+        "okunus": "",
+        "meal": "Biziz, biz ki, ölüleri diriltiriz ve öne sürdükleri işleri ve bıraktıkları eserleri yazarız. Zaten biz, her şeyi apaçık bir kütüğe ayrıntılı olarak kaydetmişizdir.",
+        "ses_dosyasi": "036012"
+      },
+      {
+        "no": 13,
+        "arapca": "وَٱضْرِبْ لَهُم مَّثَلًا أَصْحَٰبَ ٱلْقَرْيَةِ إِذْ جَآءَهَا ٱلْمُرْسَلُونَ",
+        "okunus": "",
+        "meal": "Onlara elçilerin geldiği şu kent halkını misal olarak anlat:",
+        "ses_dosyasi": "036013"
+      },
+      {
+        "no": 14,
+        "arapca": "إِذْ أَرْسَلْنَآ إِلَيْهِمُ ٱثْنَيْنِ فَكَذَّبُوهُمَا فَعَزَّزْنَا بِثَالِثٍۢ فَقَالُوٓا۟ إِنَّآ إِلَيْكُم مُّرْسَلُونَ",
+        "okunus": "",
+        "meal": "Biz onlara iki elçi gönderdik, onları yalanladılar, biz de (elçileri) üçüncü biriyle destekledik. Dediler ki: \"Biz size gönderilen elçileriz.\"",
+        "ses_dosyasi": "036014"
+      },
+      {
+        "no": 15,
+        "arapca": "قَالُوا۟ مَآ أَنتُمْ إِلَّا بَشَرٌۭ مِّثْلُنَا وَمَآ أَنزَلَ ٱلرَّحْمَٰنُ مِن شَىْءٍ إِنْ أَنتُمْ إِلَّا تَكْذِبُونَ",
+        "okunus": "",
+        "meal": "(Kentliler) Dediler ki: \"Siz de bizim gibi insandan başka bir şey değilsiniz. Rahman bir şey indirmemiştir. Siz sadece yalan söylüyorsunuz.\"",
+        "ses_dosyasi": "036015"
+      },
+      {
+        "no": 16,
+        "arapca": "قَالُوا۟ رَبُّنَا يَعْلَمُ إِنَّآ إِلَيْكُمْ لَمُرْسَلُونَ",
+        "okunus": "",
+        "meal": "(Elçiler) Dediler ki: \"Rabbimiz bilir ki biz size gönderilmiş elçileriz.\"",
+        "ses_dosyasi": "036016"
+      },
+      {
+        "no": 17,
+        "arapca": "وَمَا عَلَيْنَآ إِلَّا ٱلْبَلَٰغُ ٱلْمُبِينُ",
+        "okunus": "",
+        "meal": "Bizim üzerimize düşen, yalnız açıkça duyurmaktır.",
+        "ses_dosyasi": "036017"
+      },
+      {
+        "no": 18,
+        "arapca": "قَالُوٓا۟ إِنَّا تَطَيَّرْنَا بِكُمْ ۖ لَئِن لَّمْ تَنتَهُوا۟ لَنَرْجُمَنَّكُمْ وَلَيَمَسَّنَّكُم مِّنَّا عَذَابٌ أَلِيمٌۭ",
+        "okunus": "",
+        "meal": "(Kentliler) Dediler ki: \"Doğrusu biz sizin yüzünüzden uğursuzluğa uğradık. Eğer bu işten vazgeçmezseniz sizi mutlaka taşlarız ve bizden size acı bir azab dokunur.\"",
+        "ses_dosyasi": "036018"
+      },
+      {
+        "no": 19,
+        "arapca": "قَالُوا۟ طَٰٓئِرُكُم مَّعَكُمْ ۚ أَئِن ذُكِّرْتُم ۚ بَلْ أَنتُمْ قَوْمٌۭ مُّسْرِفُونَ",
+        "okunus": "",
+        "meal": "(Elçiler) Dediler ki: \"Uğursuzluğunuz sizin kendinizdedir. Size öğüt verildiği için mi (uğursuzluğa uğruyorsunuz)? Hayır siz aşırı giden bir kavimsiniz.\"",
+        "ses_dosyasi": "036019"
+      },
+      {
+        "no": 20,
+        "arapca": "وَجَآءَ مِنْ أَقْصَا ٱلْمَدِينَةِ رَجُلٌۭ يَسْعَىٰ قَالَ يَٰقَوْمِ ٱتَّبِعُوا۟ ٱلْمُرْسَلِينَ",
+        "okunus": "",
+        "meal": "Kentin en uzak yerinden bir adam koşarak geldi: \"Ey kavmim, elçilere uyun.\" dedi.",
+        "ses_dosyasi": "036020"
+      },
+      {
+        "no": 21,
+        "arapca": "ٱتَّبِعُوا۟ مَن لَّا يَسْـَٔلُكُمْ أَجْرًۭا وَهُم مُّهْتَدُونَ",
+        "okunus": "",
+        "meal": "Sizden bir ücret istemeyenlere uyun, onlar doğru yoldadırlar.",
+        "ses_dosyasi": "036021"
+      },
+      {
+        "no": 22,
+        "arapca": "وَمَا لِىَ لَآ أَعْبُدُ ٱلَّذِى فَطَرَنِى وَإِلَيْهِ تُرْجَعُونَ",
+        "okunus": "",
+        "meal": "Ben niçin beni yaratana kulluk etmeyeyim? Siz de hep O'na döndürüleceksiniz.",
+        "ses_dosyasi": "036022"
+      },
+      {
+        "no": 23,
+        "arapca": "ءَأَتَّخِذُ مِن دُونِهِۦٓ ءَالِهَةً إِن يُرِدْنِ ٱلرَّحْمَٰنُ بِضُرٍّۢ لَّا تُغْنِ عَنِّى شَفَٰعَتُهُمْ شَيْـًۭٔا وَلَا يُنقِذُونِ",
+        "okunus": "",
+        "meal": "O'ndan başka tanrılar edinir miyim hiç? Eğer O çok esirgeyen, bana bir zarar vermek dilese, onların şefa'ati bana hiçbir yarar sağlamaz ve onlar beni kurtaramazlar.\"",
+        "ses_dosyasi": "036023"
+      },
+      {
+        "no": 24,
+        "arapca": "إِنِّىٓ إِذًۭا لَّفِى ضَلَٰلٍۢ مُّبِينٍ",
+        "okunus": "",
+        "meal": "O takdirde ben, apaçık bir sapıklık içinde olurum.",
+        "ses_dosyasi": "036024"
+      },
+      {
+        "no": 25,
+        "arapca": "إِنِّىٓ ءَامَنتُ بِرَبِّكُمْ فَٱسْمَعُونِ",
+        "okunus": "",
+        "meal": "Ben sizin Rabbinize inandım, (gelin) beni dinleyin.",
+        "ses_dosyasi": "036025"
+      },
+      {
+        "no": 26,
+        "arapca": "قِيلَ ٱدْخُلِ ٱلْجَنَّةَ ۖ قَالَ يَٰلَيْتَ قَوْمِى يَعْلَمُونَ",
+        "okunus": "",
+        "meal": "Ona: \"Cennete gir\" denilince: \"Keşke, dedi, kavmim bilseydi.",
+        "ses_dosyasi": "036026"
+      },
+      {
+        "no": 27,
+        "arapca": "بِمَا غَفَرَ لِى رَبِّى وَجَعَلَنِى مِنَ ٱلْمُكْرَمِينَ",
+        "okunus": "",
+        "meal": "Rabbimin beni bağışladığını ve beni ağırlananlardan kıldığını!\"",
+        "ses_dosyasi": "036027"
+      },
+      {
+        "no": 28,
+        "arapca": "۞ وَمَآ أَنزَلْنَا عَلَىٰ قَوْمِهِۦ مِنۢ بَعْدِهِۦ مِن جُندٍۢ مِّنَ ٱلسَّمَآءِ وَمَا كُنَّا مُنزِلِينَ",
+        "okunus": "",
+        "meal": "Ondan sonra biz, kavminin üzerine gökten bir ordu indirmedik, indirici de değildik, (buna gerek yoktu).",
+        "ses_dosyasi": "036028"
+      },
+      {
+        "no": 29,
+        "arapca": "إِن كَانَتْ إِلَّا صَيْحَةًۭ وَٰحِدَةًۭ فَإِذَا هُمْ خَٰمِدُونَ",
+        "okunus": "",
+        "meal": "Sadece korkunç bir gürültü oldu, hemen sönüverdiler.",
+        "ses_dosyasi": "036029"
+      },
+      {
+        "no": 30,
+        "arapca": "يَٰحَسْرَةً عَلَى ٱلْعِبَادِ ۚ مَا يَأْتِيهِم مِّن رَّسُولٍ إِلَّا كَانُوا۟ بِهِۦ يَسْتَهْزِءُونَ",
+        "okunus": "",
+        "meal": "Yazık şu kullara! Kendilerine gelen her elçi ile mutlaka alay ederlerdi.",
+        "ses_dosyasi": "036030"
+      },
+      {
+        "no": 31,
+        "arapca": "أَلَمْ يَرَوْا۟ كَمْ أَهْلَكْنَا قَبْلَهُم مِّنَ ٱلْقُرُونِ أَنَّهُمْ إِلَيْهِمْ لَا يَرْجِعُونَ",
+        "okunus": "",
+        "meal": "Görmediler mi kendilerinden önce nice nesilleri yok ettik; onlar bir daha kendilerine dönüp gelmezler?",
+        "ses_dosyasi": "036031"
+      },
+      {
+        "no": 32,
+        "arapca": "وَإِن كُلٌّۭ لَّمَّا جَمِيعٌۭ لَّدَيْنَا مُحْضَرُونَ",
+        "okunus": "",
+        "meal": "Ancak hepsi toplandığı zaman huzurumuza getirileceklerdir.",
+        "ses_dosyasi": "036032"
+      },
+      {
+        "no": 33,
+        "arapca": "وَءَايَةٌۭ لَّهُمُ ٱلْأَرْضُ ٱلْمَيْتَةُ أَحْيَيْنَٰهَا وَأَخْرَجْنَا مِنْهَا حَبًّۭا فَمِنْهُ يَأْكُلُونَ",
+        "okunus": "",
+        "meal": "Ölü toprak, onlar için bir ayettir, (ölüleri nasıl dirilteceğimize işarettir): Biz onu dirilttik, ondan dane çıkardık da ondan yiyorlar.",
+        "ses_dosyasi": "036033"
+      },
+      {
+        "no": 34,
+        "arapca": "وَجَعَلْنَا فِيهَا جَنَّٰتٍۢ مِّن نَّخِيلٍۢ وَأَعْنَٰبٍۢ وَفَجَّرْنَا فِيهَا مِنَ ٱلْعُيُونِ",
+        "okunus": "",
+        "meal": "Orada hurma ve üzüm bahçeleri yarattık; orada çeşmeler akıttık.",
+        "ses_dosyasi": "036034"
+      },
+      {
+        "no": 35,
+        "arapca": "لِيَأْكُلُوا۟ مِن ثَمَرِهِۦ وَمَا عَمِلَتْهُ أَيْدِيهِمْ ۖ أَفَلَا يَشْكُرُونَ",
+        "okunus": "",
+        "meal": "Ki o(suyun, yahut bahçe)nin ürününden ve ellerinin emeğinden yesinler. Hala şükretmiyorlar mı?",
+        "ses_dosyasi": "036035"
+      },
+      {
+        "no": 36,
+        "arapca": "سُبْحَٰنَ ٱلَّذِى خَلَقَ ٱلْأَزْوَٰجَ كُلَّهَا مِمَّا تُنۢبِتُ ٱلْأَرْضُ وَمِنْ أَنفُسِهِمْ وَمِمَّا لَا يَعْلَمُونَ",
+        "okunus": "",
+        "meal": "Ne yücedir O (Allah) ki toprağın bitirdiklerinden, kendilerinden ve daha bilmedikleri nice şeylerden olan bütün çiftleri yaratmıştır.",
+        "ses_dosyasi": "036036"
+      },
+      {
+        "no": 37,
+        "arapca": "وَءَايَةٌۭ لَّهُمُ ٱلَّيْلُ نَسْلَخُ مِنْهُ ٱلنَّهَارَ فَإِذَا هُم مُّظْلِمُونَ",
+        "okunus": "",
+        "meal": "Gece de onlar için bir ayettir. Gündüzü ondan soyup, alırız, birden onlar karanlıkta kalıverirler.",
+        "ses_dosyasi": "036037"
+      },
+      {
+        "no": 38,
+        "arapca": "وَٱلشَّمْسُ تَجْرِى لِمُسْتَقَرٍّۢ لَّهَا ۚ ذَٰلِكَ تَقْدِيرُ ٱلْعَزِيزِ ٱلْعَلِيمِ",
+        "okunus": "",
+        "meal": "Güneş de kendi müstekarrı (istikrarı veya istikrar bulacağı yer) için akıp gider. Bu, üstün ve bilen(Allah)ın takdiridir.",
+        "ses_dosyasi": "036038"
+      },
+      {
+        "no": 39,
+        "arapca": "وَٱلْقَمَرَ قَدَّرْنَٰهُ مَنَازِلَ حَتَّىٰ عَادَ كَٱلْعُرْجُونِ ٱلْقَدِيمِ",
+        "okunus": "",
+        "meal": "Aya da konaklar tayin ettik. Nihayet o, eski urcun(hurma salkımının sapın)a benzer bir hale geldi.",
+        "ses_dosyasi": "036039"
+      },
+      {
+        "no": 40,
+        "arapca": "لَا ٱلشَّمْسُ يَنۢبَغِى لَهَآ أَن تُدْرِكَ ٱلْقَمَرَ وَلَا ٱلَّيْلُ سَابِقُ ٱلنَّهَارِ ۚ وَكُلٌّۭ فِى فَلَكٍۢ يَسْبَحُونَ",
+        "okunus": "",
+        "meal": "Ne güneş aya erişebilir, ne de gece, gündüzün önüne geçebilir. Hepsi bir felekte (yörüngede) yüzmektedirler.",
+        "ses_dosyasi": "036040"
+      },
+      {
+        "no": 41,
+        "arapca": "وَءَايَةٌۭ لَّهُمْ أَنَّا حَمَلْنَا ذُرِّيَّتَهُمْ فِى ٱلْفُلْكِ ٱلْمَشْحُونِ",
+        "okunus": "",
+        "meal": "Onlar için bir ayet de, onların çoçuklarını dolu gemide taşımamız,",
+        "ses_dosyasi": "036041"
+      },
+      {
+        "no": 42,
+        "arapca": "وَخَلَقْنَا لَهُم مِّن مِّثْلِهِۦ مَا يَرْكَبُونَ",
+        "okunus": "",
+        "meal": "Ve kendilerine onun gibi binecekleri nice şeyler yaratmamızdır.",
+        "ses_dosyasi": "036042"
+      },
+      {
+        "no": 43,
+        "arapca": "وَإِن نَّشَأْ نُغْرِقْهُمْ فَلَا صَرِيخَ لَهُمْ وَلَا هُمْ يُنقَذُونَ",
+        "okunus": "",
+        "meal": "Dilesek onları (suda) boğarız, ne kendilerine imdad (eden) olur, ne de kurtarılırlar.",
+        "ses_dosyasi": "036043"
+      },
+      {
+        "no": 44,
+        "arapca": "إِلَّا رَحْمَةًۭ مِّنَّا وَمَتَٰعًا إِلَىٰ حِينٍۢ",
+        "okunus": "",
+        "meal": "Ancak bizden bir rahmet ve bir süreye kadar yaşatma vardır (acıyarak onları bir süre yaşatırız).",
+        "ses_dosyasi": "036044"
+      },
+      {
+        "no": 45,
+        "arapca": "وَإِذَا قِيلَ لَهُمُ ٱتَّقُوا۟ مَا بَيْنَ أَيْدِيكُمْ وَمَا خَلْفَكُمْ لَعَلَّكُمْ تُرْحَمُونَ",
+        "okunus": "",
+        "meal": "Onlara: \"Önünüzdeki ve arkanızdaki (yani sizden önce geçen ve ileride sizi bekleyen) olaylardan sakının ki, esirgenesiniz,\" dendiği zaman (aldırmazlar).",
+        "ses_dosyasi": "036045"
+      },
+      {
+        "no": 46,
+        "arapca": "وَمَا تَأْتِيهِم مِّنْ ءَايَةٍۢ مِّنْ ءَايَٰتِ رَبِّهِمْ إِلَّا كَانُوا۟ عَنْهَا مُعْرِضِينَ",
+        "okunus": "",
+        "meal": "Zaten, onlara Rabblerinin ayetlerinden hiçbir ayet gelmez ki ondan yüz çevirmiş olmasınlar.",
+        "ses_dosyasi": "036046"
+      },
+      {
+        "no": 47,
+        "arapca": "وَإِذَا قِيلَ لَهُمْ أَنفِقُوا۟ مِمَّا رَزَقَكُمُ ٱللَّهُ قَالَ ٱلَّذِينَ كَفَرُوا۟ لِلَّذِينَ ءَامَنُوٓا۟ أَنُطْعِمُ مَن لَّوْ يَشَآءُ ٱللَّهُ أَطْعَمَهُۥٓ إِنْ أَنتُمْ إِلَّا فِى ضَلَٰلٍۢ مُّبِينٍۢ",
+        "okunus": "",
+        "meal": "Onlara: \"Allah'ın size verdiği rızıktan (Allah için) verin!\" dendiği zaman, nankörler, inananlara: \"Allah'ın dilediği takdirde yedireceği bir kimseye biz mi yedirelim? Doğrusu siz, apaçık bir sapıklık içindesiniz.\" derler.",
+        "ses_dosyasi": "036047"
+      },
+      {
+        "no": 48,
+        "arapca": "وَيَقُولُونَ مَتَىٰ هَٰذَا ٱلْوَعْدُ إِن كُنتُمْ صَٰدِقِينَ",
+        "okunus": "",
+        "meal": "Ve: \"Eğer doğru söylüyorsanız bu tehdid (ettiğiniz azab) ne zaman (gelecek)?\" diyorlar.",
+        "ses_dosyasi": "036048"
+      },
+      {
+        "no": 49,
+        "arapca": "مَا يَنظُرُونَ إِلَّا صَيْحَةًۭ وَٰحِدَةًۭ تَأْخُذُهُمْ وَهُمْ يَخِصِّمُونَ",
+        "okunus": "",
+        "meal": "Onların işi sadece korkunç bir sese bakar. Çekişip dururlarken ansızın o, kendilerini yakalar.",
+        "ses_dosyasi": "036049"
+      },
+      {
+        "no": 50,
+        "arapca": "فَلَا يَسْتَطِيعُونَ تَوْصِيَةًۭ وَلَآ إِلَىٰٓ أَهْلِهِمْ يَرْجِعُونَ",
+        "okunus": "",
+        "meal": "Artık ne bir tavsiye yapabilirler, ne de ailelerine dönebilirler.",
+        "ses_dosyasi": "036050"
+      },
+      {
+        "no": 51,
+        "arapca": "وَنُفِخَ فِى ٱلصُّورِ فَإِذَا هُم مِّنَ ٱلْأَجْدَاثِ إِلَىٰ رَبِّهِمْ يَنسِلُونَ",
+        "okunus": "",
+        "meal": "Sur'a üflendi. İşte onlar kabirlerden Rablerine koşuyorlar.",
+        "ses_dosyasi": "036051"
+      },
+      {
+        "no": 52,
+        "arapca": "قَالُوا۟ يَٰوَيْلَنَا مَنۢ بَعَثَنَا مِن مَّرْقَدِنَا ۜ ۗ هَٰذَا مَا وَعَدَ ٱلرَّحْمَٰنُ وَصَدَقَ ٱلْمُرْسَلُونَ",
+        "okunus": "",
+        "meal": "Dediler: \"Vah bize, bizi yattığımız yerden kim kaldırdı? İşte Rahman'ın va'dettiği şey budur. Demek peygamberler doğru söylemiş!\"",
+        "ses_dosyasi": "036052"
+      },
+      {
+        "no": 53,
+        "arapca": "إِن كَانَتْ إِلَّا صَيْحَةًۭ وَٰحِدَةًۭ فَإِذَا هُمْ جَمِيعٌۭ لَّدَيْنَا مُحْضَرُونَ",
+        "okunus": "",
+        "meal": "Sadece bir tek gürültü olur, hemen onların hepsi huzurumuza getirilirler.",
+        "ses_dosyasi": "036053"
+      },
+      {
+        "no": 54,
+        "arapca": "فَٱلْيَوْمَ لَا تُظْلَمُ نَفْسٌۭ شَيْـًۭٔا وَلَا تُجْزَوْنَ إِلَّا مَا كُنتُمْ تَعْمَلُونَ",
+        "okunus": "",
+        "meal": "O gün, hiç kimseye bir haksızlık yapılmaz ve siz ancak yaptığınızın cezasını çekersiniz.",
+        "ses_dosyasi": "036054"
+      },
+      {
+        "no": 55,
+        "arapca": "إِنَّ أَصْحَٰبَ ٱلْجَنَّةِ ٱلْيَوْمَ فِى شُغُلٍۢ فَٰكِهُونَ",
+        "okunus": "",
+        "meal": "O gün cennet halkı, bir iş içinde eğlenirler.",
+        "ses_dosyasi": "036055"
+      },
+      {
+        "no": 56,
+        "arapca": "هُمْ وَأَزْوَٰجُهُمْ فِى ظِلَٰلٍ عَلَى ٱلْأَرَآئِكِ مُتَّكِـُٔونَ",
+        "okunus": "",
+        "meal": "Kendileri ve eşleri, gölgelerde, koltuklara yaslanmışlardır.",
+        "ses_dosyasi": "036056"
+      },
+      {
+        "no": 57,
+        "arapca": "لَهُمْ فِيهَا فَٰكِهَةٌۭ وَلَهُم مَّا يَدَّعُونَ",
+        "okunus": "",
+        "meal": "Orada onlar için meyvalar ve istedikleri her şey vardır.",
+        "ses_dosyasi": "036057"
+      },
+      {
+        "no": 58,
+        "arapca": "سَلَٰمٌۭ قَوْلًۭا مِّن رَّبٍّۢ رَّحِيمٍۢ",
+        "okunus": "",
+        "meal": "Çok esirgeyen Rabden (onlara) sözle selam (vardır).",
+        "ses_dosyasi": "036058"
+      },
+      {
+        "no": 59,
+        "arapca": "وَٱمْتَٰزُوا۟ ٱلْيَوْمَ أَيُّهَا ٱلْمُجْرِمُونَ",
+        "okunus": "",
+        "meal": "Ey suçlular, bugün şöyle ayrılın!",
+        "ses_dosyasi": "036059"
+      },
+      {
+        "no": 60,
+        "arapca": "۞ أَلَمْ أَعْهَدْ إِلَيْكُمْ يَٰبَنِىٓ ءَادَمَ أَن لَّا تَعْبُدُوا۟ ٱلشَّيْطَٰنَ ۖ إِنَّهُۥ لَكُمْ عَدُوٌّۭ مُّبِينٌۭ",
+        "okunus": "",
+        "meal": "Ey Adem oğulları, ben size and vermedim mi: Şeytana tapmayın o sizin apaçık düşmanınızdır. \tDid I not charge you, O ye sons of Adam, that ye worship not the devil - Lo! he is your open foe!",
+        "ses_dosyasi": "036060"
+      },
+      {
+        "no": 61,
+        "arapca": "وَأَنِ ٱعْبُدُونِى ۚ هَٰذَا صِرَٰطٌۭ مُّسْتَقِيمٌۭ",
+        "okunus": "",
+        "meal": "Bana tapın doğru yol budur diye?\"",
+        "ses_dosyasi": "036061"
+      },
+      {
+        "no": 62,
+        "arapca": "وَلَقَدْ أَضَلَّ مِنكُمْ جِبِلًّۭا كَثِيرًا ۖ أَفَلَمْ تَكُونُوا۟ تَعْقِلُونَ",
+        "okunus": "",
+        "meal": "O, sizden birçok kuşağı saptırmıştı. Düşünmüyor muydunuz?",
+        "ses_dosyasi": "036062"
+      },
+      {
+        "no": 63,
+        "arapca": "هَٰذِهِۦ جَهَنَّمُ ٱلَّتِى كُنتُمْ تُوعَدُونَ",
+        "okunus": "",
+        "meal": "İşte size söylenen cehennem!",
+        "ses_dosyasi": "036063"
+      },
+      {
+        "no": 64,
+        "arapca": "ٱصْلَوْهَا ٱلْيَوْمَ بِمَا كُنتُمْ تَكْفُرُونَ",
+        "okunus": "",
+        "meal": "İnkarınızdan dolayı bugün oraya girin!",
+        "ses_dosyasi": "036064"
+      },
+      {
+        "no": 65,
+        "arapca": "ٱلْيَوْمَ نَخْتِمُ عَلَىٰٓ أَفْوَٰهِهِمْ وَتُكَلِّمُنَآ أَيْدِيهِمْ وَتَشْهَدُ أَرْجُلُهُم بِمَا كَانُوا۟ يَكْسِبُونَ",
+        "okunus": "",
+        "meal": "O gün ağızlarını mühürleriz, elleri bize söyler, ayakları yaptıklarına şahidlik eder.",
+        "ses_dosyasi": "036065"
+      },
+      {
+        "no": 66,
+        "arapca": "وَلَوْ نَشَآءُ لَطَمَسْنَا عَلَىٰٓ أَعْيُنِهِمْ فَٱسْتَبَقُوا۟ ٱلصِّرَٰطَ فَأَنَّىٰ يُبْصِرُونَ",
+        "okunus": "",
+        "meal": "Dilesek gözlerini silerdik de yola dökülürlerdi, ama nasıl görecekler?",
+        "ses_dosyasi": "036066"
+      },
+      {
+        "no": 67,
+        "arapca": "وَلَوْ نَشَآءُ لَمَسَخْنَٰهُمْ عَلَىٰ مَكَانَتِهِمْ فَمَا ٱسْتَطَٰعُوا۟ مُضِيًّۭا وَلَا يَرْجِعُونَ",
+        "okunus": "",
+        "meal": "Dilesek kılıklarını değiştirip onları oldukları yerde dondururduk, ne ileri gidebilir, ne geri dönebilirlerdi.",
+        "ses_dosyasi": "036067"
+      },
+      {
+        "no": 68,
+        "arapca": "وَمَن نُّعَمِّرْهُ نُنَكِّسْهُ فِى ٱلْخَلْقِ ۖ أَفَلَا يَعْقِلُونَ",
+        "okunus": "",
+        "meal": "Kime uzun ömür versek, onun yaratılışını baş aşağı çevirir(gücünü azaltır)ız, (sonunda zayıflar, ihtiyarlar). Akıllarını kullanmıyorlar mı?",
+        "ses_dosyasi": "036068"
+      },
+      {
+        "no": 69,
+        "arapca": "وَمَا عَلَّمْنَٰهُ ٱلشِّعْرَ وَمَا يَنۢبَغِى لَهُۥٓ ۚ إِنْ هُوَ إِلَّا ذِكْرٌۭ وَقُرْءَانٌۭ مُّبِينٌۭ",
+        "okunus": "",
+        "meal": "Biz ona (Muhammed'e) şiir öğretmedik, (şiir) ona yakışmaz da. O(na vahyedilen) sadece bir öğüt ve apaçık bir Kur'an'dır.",
+        "ses_dosyasi": "036069"
+      },
+      {
+        "no": 70,
+        "arapca": "لِّيُنذِرَ مَن كَانَ حَيًّۭا وَيَحِقَّ ٱلْقَوْلُ عَلَى ٱلْكَٰفِرِينَ",
+        "okunus": "",
+        "meal": "(Bu Kur'an Muhammed'e vahyedilmiştir) Ki, diri olanları uyarsın ve inkar edenlere de (azab) söz(ü) hak olsun.",
+        "ses_dosyasi": "036070"
+      },
+      {
+        "no": 71,
+        "arapca": "أَوَلَمْ يَرَوْا۟ أَنَّا خَلَقْنَا لَهُم مِّمَّا عَمِلَتْ أَيْدِينَآ أَنْعَٰمًۭا فَهُمْ لَهَا مَٰلِكُونَ",
+        "okunus": "",
+        "meal": "Görmediler mi ellerimizin yaptıklarından kendilerine nice hayvanlar yarattık da kendileri onlara malik olmaktadırlar?",
+        "ses_dosyasi": "036071"
+      },
+      {
+        "no": 72,
+        "arapca": "وَذَلَّلْنَٰهَا لَهُمْ فَمِنْهَا رَكُوبُهُمْ وَمِنْهَا يَأْكُلُونَ",
+        "okunus": "",
+        "meal": "Onları kendilerine boyun eğdirdik, onlardan bazıları binekleridir, ve onlardan bazılarını da yerler.",
+        "ses_dosyasi": "036072"
+      },
+      {
+        "no": 73,
+        "arapca": "وَلَهُمْ فِيهَا مَنَٰفِعُ وَمَشَارِبُ ۖ أَفَلَا يَشْكُرُونَ",
+        "okunus": "",
+        "meal": "Kendileri için onlarda daha birçok yararlar ve içecekler var. Hala şükretmiyorlar mı?",
+        "ses_dosyasi": "036073"
+      },
+      {
+        "no": 74,
+        "arapca": "وَٱتَّخَذُوا۟ مِن دُونِ ٱللَّهِ ءَالِهَةًۭ لَّعَلَّهُمْ يُنصَرُونَ",
+        "okunus": "",
+        "meal": "Belki kendilerine yardım edilir diye Allah'tan başka tanrılar edindiler.",
+        "ses_dosyasi": "036074"
+      },
+      {
+        "no": 75,
+        "arapca": "لَا يَسْتَطِيعُونَ نَصْرَهُمْ وَهُمْ لَهُمْ جُندٌۭ مُّحْضَرُونَ",
+        "okunus": "",
+        "meal": "(O tanrılar) Kendilerine yardım edemezler. Tersine kendileri onlar için hazırlanmış askerlerdir (Onları korumaktadırlar).",
+        "ses_dosyasi": "036075"
+      },
+      {
+        "no": 76,
+        "arapca": "فَلَا يَحْزُنكَ قَوْلُهُمْ ۘ إِنَّا نَعْلَمُ مَا يُسِرُّونَ وَمَا يُعْلِنُونَ",
+        "okunus": "",
+        "meal": "Onların sözü seni üzmesin. Biz onların gizlediklerini de açığa vurduklarını da biliyoruz.",
+        "ses_dosyasi": "036076"
+      },
+      {
+        "no": 77,
+        "arapca": "أَوَلَمْ يَرَ ٱلْإِنسَٰنُ أَنَّا خَلَقْنَٰهُ مِن نُّطْفَةٍۢ فَإِذَا هُوَ خَصِيمٌۭ مُّبِينٌۭ",
+        "okunus": "",
+        "meal": "İnsan, bizim kendisini nasıl bir nutfe(sperm)den yarattığımızı görmedi mi ki, şimdi apaçık bir hasım kesildi?",
+        "ses_dosyasi": "036077"
+      },
+      {
+        "no": 78,
+        "arapca": "وَضَرَبَ لَنَا مَثَلًۭا وَنَسِىَ خَلْقَهُۥ ۖ قَالَ مَن يُحْىِ ٱلْعِظَٰمَ وَهِىَ رَمِيمٌۭ",
+        "okunus": "",
+        "meal": "Kendi yaratılışını unutarak bize bir mesel verdi: \"Şu çürümüş kemikleri kim diriltecek?\" dedi.",
+        "ses_dosyasi": "036078"
+      },
+      {
+        "no": 79,
+        "arapca": "قُلْ يُحْيِيهَا ٱلَّذِىٓ أَنشَأَهَآ أَوَّلَ مَرَّةٍۢ ۖ وَهُوَ بِكُلِّ خَلْقٍ عَلِيمٌ",
+        "okunus": "",
+        "meal": "De ki: \"Onları ilk defa yaratan diriltecek. O, her yaratmayı bilir.\"",
+        "ses_dosyasi": "036079"
+      },
+      {
+        "no": 80,
+        "arapca": "ٱلَّذِى جَعَلَ لَكُم مِّنَ ٱلشَّجَرِ ٱلْأَخْضَرِ نَارًۭا فَإِذَآ أَنتُم مِّنْهُ تُوقِدُونَ",
+        "okunus": "",
+        "meal": "O size yeşil ağaçtan ateş yaptı da siz ondan yakıyorsunuz.",
+        "ses_dosyasi": "036080"
+      },
+      {
+        "no": 81,
+        "arapca": "أَوَلَيْسَ ٱلَّذِى خَلَقَ ٱلسَّمَٰوَٰتِ وَٱلْأَرْضَ بِقَٰدِرٍ عَلَىٰٓ أَن يَخْلُقَ مِثْلَهُم ۚ بَلَىٰ وَهُوَ ٱلْخَلَّٰقُ ٱلْعَلِيمُ",
+        "okunus": "",
+        "meal": "Gökleri ve yeri yaratan, onların benzerlerini yaratamaz mı? Elbette yaratır. O, çok bilen yaratıcıdır.",
+        "ses_dosyasi": "036081"
+      },
+      {
+        "no": 82,
+        "arapca": "إِنَّمَآ أَمْرُهُۥٓ إِذَآ أَرَادَ شَيْـًٔا أَن يَقُولَ لَهُۥ كُن فَيَكُونُ",
+        "okunus": "",
+        "meal": "O'nun işi, bir şeyi(n olmasını) istedi mi ona, sadece \"ol!\" demektir, hemen oluverir.",
+        "ses_dosyasi": "036082"
+      },
+      {
+        "no": 83,
+        "arapca": "فَسُبْحَٰنَ ٱلَّذِى بِيَدِهِۦ مَلَكُوتُ كُلِّ شَىْءٍۢ وَإِلَيْهِ تُرْجَعُونَ",
+        "okunus": "",
+        "meal": "Yücedir O ki, her şeyin hükümranlığı O'nun elindedir ve siz O'na döndürüleceksiniz.",
+        "ses_dosyasi": "036083"
+      }
+    ]
+  },
+  {
+    "no": 55,
+    "ad": "Rahmân",
+    "arapca_ad": "الرَّحْمٰن",
+    "inis_yeri": "Medeni",
+    "ayet_sayisi": 78,
+    "kategori": "manevi",
+    "tilavet_dosya": null,
+    "tilavet_kari": "Saad al-Ghamdi",
+    "kisa_aciklama": "Allah'ın nimetlerini sıralayan, 'Hangi nimeti yalanlayabilirsiniz?' sorusunu 31 kere tekrar eden sure.",
+    "fazilet": "Hz. Peygamber (s.a.v.) Rahmân sûresi için 'Kur'an'ın gelini' lafzının da geçtiği rivayetler vardır (Beyhakî, Şuabu'l-Îmân). Allah'ın insana, cinne ve tabiata verdiği nimetler tek tek anılır. Cuma akşamları okumak âdetinde olanlar vardır.",
+    "ayetler": [
+      {
+        "no": 1,
+        "arapca": "ٱلرَّحْمَٰنُ",
+        "okunus": "",
+        "meal": "Çok merhametli (Allah),",
+        "ses_dosyasi": "055001"
+      },
+      {
+        "no": 2,
+        "arapca": "عَلَّمَ ٱلْقُرْءَانَ",
+        "okunus": "",
+        "meal": "Kur'an'ı öğretti.",
+        "ses_dosyasi": "055002"
+      },
+      {
+        "no": 3,
+        "arapca": "خَلَقَ ٱلْإِنسَٰنَ",
+        "okunus": "",
+        "meal": "İnsanı yarattı.",
+        "ses_dosyasi": "055003"
+      },
+      {
+        "no": 4,
+        "arapca": "عَلَّمَهُ ٱلْبَيَانَ",
+        "okunus": "",
+        "meal": "Ona beyanı (konuşup, düşüncelerini açıklamayı) öğretti.",
+        "ses_dosyasi": "055004"
+      },
+      {
+        "no": 5,
+        "arapca": "ٱلشَّمْسُ وَٱلْقَمَرُ بِحُسْبَانٍۢ",
+        "okunus": "",
+        "meal": "Güneş de, Ay da bir hesap ile(cereyan etmekte)dir.",
+        "ses_dosyasi": "055005"
+      },
+      {
+        "no": 6,
+        "arapca": "وَٱلنَّجْمُ وَٱلشَّجَرُ يَسْجُدَانِ",
+        "okunus": "",
+        "meal": "Necm (bitkiler, yıldızlar) ve ağaçlar (Allah'a) secde etmektedirler.",
+        "ses_dosyasi": "055006"
+      },
+      {
+        "no": 7,
+        "arapca": "وَٱلسَّمَآءَ رَفَعَهَا وَوَضَعَ ٱلْمِيزَانَ",
+        "okunus": "",
+        "meal": "Göğü yükseltti ve mizanı koydu.",
+        "ses_dosyasi": "055007"
+      },
+      {
+        "no": 8,
+        "arapca": "أَلَّا تَطْغَوْا۟ فِى ٱلْمِيزَانِ",
+        "okunus": "",
+        "meal": "Tartıda taşkınlık edip dengeyi bozmayın.",
+        "ses_dosyasi": "055008"
+      },
+      {
+        "no": 9,
+        "arapca": "وَأَقِيمُوا۟ ٱلْوَزْنَ بِٱلْقِسْطِ وَلَا تُخْسِرُوا۟ ٱلْمِيزَانَ",
+        "okunus": "",
+        "meal": "Tartıyı adaletle yapın, terazide eksiklik yapmayın.",
+        "ses_dosyasi": "055009"
+      },
+      {
+        "no": 10,
+        "arapca": "وَٱلْأَرْضَ وَضَعَهَا لِلْأَنَامِ",
+        "okunus": "",
+        "meal": "(Allah) Yeri halk için koydu.",
+        "ses_dosyasi": "055010"
+      },
+      {
+        "no": 11,
+        "arapca": "فِيهَا فَٰكِهَةٌۭ وَٱلنَّخْلُ ذَاتُ ٱلْأَكْمَامِ",
+        "okunus": "",
+        "meal": "Onda meyva(lar) ve salkımlı hurmalar var.",
+        "ses_dosyasi": "055011"
+      },
+      {
+        "no": 12,
+        "arapca": "وَٱلْحَبُّ ذُو ٱلْعَصْفِ وَٱلرَّيْحَانُ",
+        "okunus": "",
+        "meal": "Saplı ve yapraklı dane(ler) ve hoş kokulu bitkiler var.",
+        "ses_dosyasi": "055012"
+      },
+      {
+        "no": 13,
+        "arapca": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+        "okunus": "",
+        "meal": "(Ey cinler ve insanlar topluluğu) Şimdi Rabbinizin hangi ni'metlerini yalanlıyorsunuz?",
+        "ses_dosyasi": "055013"
+      },
+      {
+        "no": 14,
+        "arapca": "خَلَقَ ٱلْإِنسَٰنَ مِن صَلْصَٰلٍۢ كَٱلْفَخَّارِ",
+        "okunus": "",
+        "meal": "İnsanı kiremit gibi pişmiş çamurdan yarattı.",
+        "ses_dosyasi": "055014"
+      },
+      {
+        "no": 15,
+        "arapca": "وَخَلَقَ ٱلْجَآنَّ مِن مَّارِجٍۢ مِّن نَّارٍۢ",
+        "okunus": "",
+        "meal": "Cin'i de halis ateşten yarattı.",
+        "ses_dosyasi": "055015"
+      },
+      {
+        "no": 16,
+        "arapca": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+        "okunus": "",
+        "meal": "Şimdi Rabbinizin hangi ni'metlerini yalanlıyorsunuz?",
+        "ses_dosyasi": "055016"
+      },
+      {
+        "no": 17,
+        "arapca": "رَبُّ ٱلْمَشْرِقَيْنِ وَرَبُّ ٱلْمَغْرِبَيْنِ",
+        "okunus": "",
+        "meal": "İki doğunun ve iki batının Rabbidir.",
+        "ses_dosyasi": "055017"
+      },
+      {
+        "no": 18,
+        "arapca": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+        "okunus": "",
+        "meal": "Şimdi Rabbinizin hangi ni'metlerini yalanlıyorsunuz?",
+        "ses_dosyasi": "055018"
+      },
+      {
+        "no": 19,
+        "arapca": "مَرَجَ ٱلْبَحْرَيْنِ يَلْتَقِيَانِ",
+        "okunus": "",
+        "meal": "İki denizi salıverdi, birbirine kavuşuyorlar,",
+        "ses_dosyasi": "055019"
+      },
+      {
+        "no": 20,
+        "arapca": "بَيْنَهُمَا بَرْزَخٌۭ لَّا يَبْغِيَانِ",
+        "okunus": "",
+        "meal": "Aralarında bir engel vardır, birbirine geçip karışmıyorlar.",
+        "ses_dosyasi": "055020"
+      },
+      {
+        "no": 21,
+        "arapca": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+        "okunus": "",
+        "meal": "Şimdi Rabbinizin hangi ni'metlerini yalanlıyorsunuz?",
+        "ses_dosyasi": "055021"
+      },
+      {
+        "no": 22,
+        "arapca": "يَخْرُجُ مِنْهُمَا ٱللُّؤْلُؤُ وَٱلْمَرْجَانُ",
+        "okunus": "",
+        "meal": "İkisinden de inci ve mercan çıkar.",
+        "ses_dosyasi": "055022"
+      },
+      {
+        "no": 23,
+        "arapca": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+        "okunus": "",
+        "meal": "Şimdi Rabbinizin hangi ni'metlerini yalanlıyorsunuz?",
+        "ses_dosyasi": "055023"
+      },
+      {
+        "no": 24,
+        "arapca": "وَلَهُ ٱلْجَوَارِ ٱلْمُنشَـَٔاتُ فِى ٱلْبَحْرِ كَٱلْأَعْلَٰمِ",
+        "okunus": "",
+        "meal": "Denizde koca dağlar gibi akıp giden kocaman gemiler de O'nundur.",
+        "ses_dosyasi": "055024"
+      },
+      {
+        "no": 25,
+        "arapca": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+        "okunus": "",
+        "meal": "Şimdi Rabbinizin hangi ni'metlerini yalanlıyorsunuz?",
+        "ses_dosyasi": "055025"
+      },
+      {
+        "no": 26,
+        "arapca": "كُلُّ مَنْ عَلَيْهَا فَانٍۢ",
+        "okunus": "",
+        "meal": "(Yer) Üzerinde bulunan her şey yok olacaktır.",
+        "ses_dosyasi": "055026"
+      },
+      {
+        "no": 27,
+        "arapca": "وَيَبْقَىٰ وَجْهُ رَبِّكَ ذُو ٱلْجَلَٰلِ وَٱلْإِكْرَامِ",
+        "okunus": "",
+        "meal": "Yalnız Rabbinin celal ve ikram sahibi yüzü baki kalacaktır.",
+        "ses_dosyasi": "055027"
+      },
+      {
+        "no": 28,
+        "arapca": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+        "okunus": "",
+        "meal": "Şimdi Rabbinizin hangi ni'metlerini yalanlıyorsunuz?",
+        "ses_dosyasi": "055028"
+      },
+      {
+        "no": 29,
+        "arapca": "يَسْـَٔلُهُۥ مَن فِى ٱلسَّمَٰوَٰتِ وَٱلْأَرْضِ ۚ كُلَّ يَوْمٍ هُوَ فِى شَأْنٍۢ",
+        "okunus": "",
+        "meal": "Göklerde ve yerde bulunanlar (her şeyi) O'ndan isterler. O, her gün (her an) yeni bir iştedir.",
+        "ses_dosyasi": "055029"
+      },
+      {
+        "no": 30,
+        "arapca": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+        "okunus": "",
+        "meal": "Şimdi Rabbinizin hangi ni'metlerini yalanlıyorsunuz?",
+        "ses_dosyasi": "055030"
+      },
+      {
+        "no": 31,
+        "arapca": "سَنَفْرُغُ لَكُمْ أَيُّهَ ٱلثَّقَلَانِ",
+        "okunus": "",
+        "meal": "Ey iki sekal, sizin için de boş vaktimiz olacak (sizin de hesabınızı göreceğiz).",
+        "ses_dosyasi": "055031"
+      },
+      {
+        "no": 32,
+        "arapca": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+        "okunus": "",
+        "meal": "Şimdi Rabbinizin hangi ni'metlerini yalanlıyorsunuz?",
+        "ses_dosyasi": "055032"
+      },
+      {
+        "no": 33,
+        "arapca": "يَٰمَعْشَرَ ٱلْجِنِّ وَٱلْإِنسِ إِنِ ٱسْتَطَعْتُمْ أَن تَنفُذُوا۟ مِنْ أَقْطَارِ ٱلسَّمَٰوَٰتِ وَٱلْأَرْضِ فَٱنفُذُوا۟ ۚ لَا تَنفُذُونَ إِلَّا بِسُلْطَٰنٍۢ",
+        "okunus": "",
+        "meal": "Ey cinler ve insanlar topluluğu, göklerin ve yerin bucaklarından geçip gitmeğe gücünüz yeterse geçin gidin. Ancak kudretle geçebilirsiniz.",
+        "ses_dosyasi": "055033"
+      },
+      {
+        "no": 34,
+        "arapca": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+        "okunus": "",
+        "meal": "Şimdi Rabbinizin hangi ni'metlerini yalanlıyorsunuz?",
+        "ses_dosyasi": "055034"
+      },
+      {
+        "no": 35,
+        "arapca": "يُرْسَلُ عَلَيْكُمَا شُوَاظٌۭ مِّن نَّارٍۢ وَنُحَاسٌۭ فَلَا تَنتَصِرَانِ",
+        "okunus": "",
+        "meal": "İkinizin de üzerine, ateşten yalın alev ve kıpkızıl bir duman (yahut erimiş bakır) gönderilir, başaramazsınız.",
+        "ses_dosyasi": "055035"
+      },
+      {
+        "no": 36,
+        "arapca": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+        "okunus": "",
+        "meal": "Şimdi Rabbinizin hangi ni'metlerini yalanlıyorsunuz?",
+        "ses_dosyasi": "055036"
+      },
+      {
+        "no": 37,
+        "arapca": "فَإِذَا ٱنشَقَّتِ ٱلسَّمَآءُ فَكَانَتْ وَرْدَةًۭ كَٱلدِّهَانِ",
+        "okunus": "",
+        "meal": "Gök yarılıp da erimiş yağ gibi kıpkırmızı bir gül olduğu zaman...",
+        "ses_dosyasi": "055037"
+      },
+      {
+        "no": 38,
+        "arapca": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+        "okunus": "",
+        "meal": "Şimdi Rabbinizin hangi ni'metlerini yalanlıyorsunuz?",
+        "ses_dosyasi": "055038"
+      },
+      {
+        "no": 39,
+        "arapca": "فَيَوْمَئِذٍۢ لَّا يُسْـَٔلُ عَن ذَنۢبِهِۦٓ إِنسٌۭ وَلَا جَآنٌّۭ",
+        "okunus": "",
+        "meal": "O gün ne insana, ne de cin'e günahından sorulur.",
+        "ses_dosyasi": "055039"
+      },
+      {
+        "no": 40,
+        "arapca": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+        "okunus": "",
+        "meal": "Şimdi Rabbinizin hangi ni'metlerini yalanlıyorsunuz?",
+        "ses_dosyasi": "055040"
+      },
+      {
+        "no": 41,
+        "arapca": "يُعْرَفُ ٱلْمُجْرِمُونَ بِسِيمَٰهُمْ فَيُؤْخَذُ بِٱلنَّوَٰصِى وَٱلْأَقْدَامِ",
+        "okunus": "",
+        "meal": "Suçlular, simalarından tanınır, alınlar(ın)dan ve ayaklar(ın)dan tutulur.",
+        "ses_dosyasi": "055041"
+      },
+      {
+        "no": 42,
+        "arapca": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+        "okunus": "",
+        "meal": "Şimdi Rabbinizin hangi ni'metlerini yalanlıyorsunuz?",
+        "ses_dosyasi": "055042"
+      },
+      {
+        "no": 43,
+        "arapca": "هَٰذِهِۦ جَهَنَّمُ ٱلَّتِى يُكَذِّبُ بِهَا ٱلْمُجْرِمُونَ",
+        "okunus": "",
+        "meal": "İşte bu, suçluların yalanladığı cehennemdir!",
+        "ses_dosyasi": "055043"
+      },
+      {
+        "no": 44,
+        "arapca": "يَطُوفُونَ بَيْنَهَا وَبَيْنَ حَمِيمٍ ءَانٍۢ",
+        "okunus": "",
+        "meal": "Onunla kaynar su arasında dolaşırlar.",
+        "ses_dosyasi": "055044"
+      },
+      {
+        "no": 45,
+        "arapca": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+        "okunus": "",
+        "meal": "Şimdi Rabbinizin hangi ni'metlerini yalanlıyorsunuz?",
+        "ses_dosyasi": "055045"
+      },
+      {
+        "no": 46,
+        "arapca": "وَلِمَنْ خَافَ مَقَامَ رَبِّهِۦ جَنَّتَانِ",
+        "okunus": "",
+        "meal": "Rabbinin divanında dur(up hesap ver)mekten korkan kimseye iki cennet var.",
+        "ses_dosyasi": "055046"
+      },
+      {
+        "no": 47,
+        "arapca": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+        "okunus": "",
+        "meal": "Şimdi Rabbinizin hangi ni'metlerini yalanlıyorsunuz?",
+        "ses_dosyasi": "055047"
+      },
+      {
+        "no": 48,
+        "arapca": "ذَوَاتَآ أَفْنَانٍۢ",
+        "okunus": "",
+        "meal": "İkisinin de çeşitli ağaçları, meyvaları var.",
+        "ses_dosyasi": "055048"
+      },
+      {
+        "no": 49,
+        "arapca": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+        "okunus": "",
+        "meal": "Şimdi Rabbinizin hangi ni'metlerini yalanlıyorsunuz?",
+        "ses_dosyasi": "055049"
+      },
+      {
+        "no": 50,
+        "arapca": "فِيهِمَا عَيْنَانِ تَجْرِيَانِ",
+        "okunus": "",
+        "meal": "İkisinde de akıp giden iki kaynak var.",
+        "ses_dosyasi": "055050"
+      },
+      {
+        "no": 51,
+        "arapca": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+        "okunus": "",
+        "meal": "Şimdi Rabbinizin hangi ni'metlerini yalanlıyorsunuz?",
+        "ses_dosyasi": "055051"
+      },
+      {
+        "no": 52,
+        "arapca": "فِيهِمَا مِن كُلِّ فَٰكِهَةٍۢ زَوْجَانِ",
+        "okunus": "",
+        "meal": "İkisinde de her meyvadan iki çift var.",
+        "ses_dosyasi": "055052"
+      },
+      {
+        "no": 53,
+        "arapca": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+        "okunus": "",
+        "meal": "Şimdi Rabbinizin hangi ni'metlerini yalanlıyorsunuz?",
+        "ses_dosyasi": "055053"
+      },
+      {
+        "no": 54,
+        "arapca": "مُتَّكِـِٔينَ عَلَىٰ فُرُشٍۭ بَطَآئِنُهَا مِنْ إِسْتَبْرَقٍۢ ۚ وَجَنَى ٱلْجَنَّتَيْنِ دَانٍۢ",
+        "okunus": "",
+        "meal": "(Orada) Astarları kalın atlastan yataklara yaslanırlar. İki cennetin de devşirmesi yakındır.",
+        "ses_dosyasi": "055054"
+      },
+      {
+        "no": 55,
+        "arapca": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+        "okunus": "",
+        "meal": "Şimdi Rabbinizin hangi ni'metlerini yalanlıyorsunuz?",
+        "ses_dosyasi": "055055"
+      },
+      {
+        "no": 56,
+        "arapca": "فِيهِنَّ قَٰصِرَٰتُ ٱلطَّرْفِ لَمْ يَطْمِثْهُنَّ إِنسٌۭ قَبْلَهُمْ وَلَا جَآنٌّۭ",
+        "okunus": "",
+        "meal": "Onlarda bakışları kısa (yalnız kocalarına bakan) öyle dilberler de var ki, bunlardan önce onları ne insan, ne de cin kanatmamıştır.",
+        "ses_dosyasi": "055056"
+      },
+      {
+        "no": 57,
+        "arapca": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+        "okunus": "",
+        "meal": "Şimdi Rabbinizin hangi ni'metlerini yalanlıyorsunuz?",
+        "ses_dosyasi": "055057"
+      },
+      {
+        "no": 58,
+        "arapca": "كَأَنَّهُنَّ ٱلْيَاقُوتُ وَٱلْمَرْجَانُ",
+        "okunus": "",
+        "meal": "Sanki onlar yakut ve mercandırlar.",
+        "ses_dosyasi": "055058"
+      },
+      {
+        "no": 59,
+        "arapca": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+        "okunus": "",
+        "meal": "Şimdi Rabbinizin hangi ni'metlerini yalanlıyorsunuz?",
+        "ses_dosyasi": "055059"
+      },
+      {
+        "no": 60,
+        "arapca": "هَلْ جَزَآءُ ٱلْإِحْسَٰنِ إِلَّا ٱلْإِحْسَٰنُ",
+        "okunus": "",
+        "meal": "İyiliğin karşılığı, yalnız iyilik değil midir?",
+        "ses_dosyasi": "055060"
+      },
+      {
+        "no": 61,
+        "arapca": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+        "okunus": "",
+        "meal": "Şimdi Rabbinizin hangi ni'metlerini yalanlıyorsunuz?",
+        "ses_dosyasi": "055061"
+      },
+      {
+        "no": 62,
+        "arapca": "وَمِن دُونِهِمَا جَنَّتَانِ",
+        "okunus": "",
+        "meal": "Bu ikisinin ötesinde iki cennet daha var.",
+        "ses_dosyasi": "055062"
+      },
+      {
+        "no": 63,
+        "arapca": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+        "okunus": "",
+        "meal": "Şimdi Rabbinizin hangi ni'metlerini yalanlıyorsunuz?",
+        "ses_dosyasi": "055063"
+      },
+      {
+        "no": 64,
+        "arapca": "مُدْهَآمَّتَانِ",
+        "okunus": "",
+        "meal": "Yemyeşildirler.",
+        "ses_dosyasi": "055064"
+      },
+      {
+        "no": 65,
+        "arapca": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+        "okunus": "",
+        "meal": "Şimdi Rabbinizin hangi ni'metlerini yalanlıyorsunuz?",
+        "ses_dosyasi": "055065"
+      },
+      {
+        "no": 66,
+        "arapca": "فِيهِمَا عَيْنَانِ نَضَّاخَتَانِ",
+        "okunus": "",
+        "meal": "İkisinde de fışkıran iki kaynak var.",
+        "ses_dosyasi": "055066"
+      },
+      {
+        "no": 67,
+        "arapca": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+        "okunus": "",
+        "meal": "Şimdi Rabbinizin hangi ni'metlerini yalanlıyorsunuz?",
+        "ses_dosyasi": "055067"
+      },
+      {
+        "no": 68,
+        "arapca": "فِيهِمَا فَٰكِهَةٌۭ وَنَخْلٌۭ وَرُمَّانٌۭ",
+        "okunus": "",
+        "meal": "İkisinde de meyva, hurma ve nar var.",
+        "ses_dosyasi": "055068"
+      },
+      {
+        "no": 69,
+        "arapca": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+        "okunus": "",
+        "meal": "Şimdi Rabbinizin hangi ni'metlerini yalanlıyorsunuz?",
+        "ses_dosyasi": "055069"
+      },
+      {
+        "no": 70,
+        "arapca": "فِيهِنَّ خَيْرَٰتٌ حِسَانٌۭ",
+        "okunus": "",
+        "meal": "Onlarda da iyi huylu, güzel kadınlar var.",
+        "ses_dosyasi": "055070"
+      },
+      {
+        "no": 71,
+        "arapca": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+        "okunus": "",
+        "meal": "Şimdi Rabbinizin hangi ni'metlerini yalanlıyorsunuz?",
+        "ses_dosyasi": "055071"
+      },
+      {
+        "no": 72,
+        "arapca": "حُورٌۭ مَّقْصُورَٰتٌۭ فِى ٱلْخِيَامِ",
+        "okunus": "",
+        "meal": "Çadırlara kapanmış huriler.",
+        "ses_dosyasi": "055072"
+      },
+      {
+        "no": 73,
+        "arapca": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+        "okunus": "",
+        "meal": "Şimdi Rabbinizin hangi ni'metlerini yalanlıyorsunuz?",
+        "ses_dosyasi": "055073"
+      },
+      {
+        "no": 74,
+        "arapca": "لَمْ يَطْمِثْهُنَّ إِنسٌۭ قَبْلَهُمْ وَلَا جَآنٌّۭ",
+        "okunus": "",
+        "meal": "Bunlardan önce onları ne insan, ne de cin kanatmamıştır.",
+        "ses_dosyasi": "055074"
+      },
+      {
+        "no": 75,
+        "arapca": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+        "okunus": "",
+        "meal": "Şimdi Rabbinizin hangi ni'metlerini yalanlıyorsunuz?",
+        "ses_dosyasi": "055075"
+      },
+      {
+        "no": 76,
+        "arapca": "مُتَّكِـِٔينَ عَلَىٰ رَفْرَفٍ خُضْرٍۢ وَعَبْقَرِىٍّ حِسَانٍۢ",
+        "okunus": "",
+        "meal": "(Cennettekiler) Yeşil yastıklara ve harikulade güzel işlemeli döşeklere yaslanırlar.",
+        "ses_dosyasi": "055076"
+      },
+      {
+        "no": 77,
+        "arapca": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+        "okunus": "",
+        "meal": "Şimdi Rabbinizin hangi ni'metlerini yalanlıyorsunuz?",
+        "ses_dosyasi": "055077"
+      },
+      {
+        "no": 78,
+        "arapca": "تَبَٰرَكَ ٱسْمُ رَبِّكَ ذِى ٱلْجَلَٰلِ وَٱلْإِكْرَامِ",
+        "okunus": "",
+        "meal": "Büyüklük ve ikram sahibi Rabbinin adı ne yücedir!",
+        "ses_dosyasi": "055078"
+      }
+    ]
+  },
+  {
+    "no": 56,
+    "ad": "Vâkıa",
+    "arapca_ad": "الْوَاقِعَة",
+    "inis_yeri": "Mekki",
+    "ayet_sayisi": 96,
+    "kategori": "manevi",
+    "tilavet_dosya": null,
+    "tilavet_kari": "Saad al-Ghamdi",
+    "kisa_aciklama": "Kıyamet gününün hadiselerini ve üç sınıf insanı (öncekiler / sağdakiler / soldakiler) anlatır.",
+    "fazilet": "Halk arasında 'rızık sûresi' olarak bilinir. Her gece okuyana fakirliğin uğramayacağına dair rivayet edilmiştir (Beyhakî, Şuab); ancak bu rivayetin sıhhati hakkında tartışmalar vardır. Yine de gece okumak müminler arasında köklü bir gelenek olmuştur.",
+    "ayetler": [
+      {
+        "no": 1,
+        "arapca": "إِذَا وَقَعَتِ ٱلْوَاقِعَةُ",
+        "okunus": "",
+        "meal": "Olacak vak'a olduğu (kıyamet koptuğu) zaman,",
+        "ses_dosyasi": "056001"
+      },
+      {
+        "no": 2,
+        "arapca": "لَيْسَ لِوَقْعَتِهَا كَاذِبَةٌ",
+        "okunus": "",
+        "meal": "Onun oluşunu yalanlayacak yoktur.",
+        "ses_dosyasi": "056002"
+      },
+      {
+        "no": 3,
+        "arapca": "خَافِضَةٌۭ رَّافِعَةٌ",
+        "okunus": "",
+        "meal": "O alçaltıcı, yükselticidir (yerleri alt üst eder),",
+        "ses_dosyasi": "056003"
+      },
+      {
+        "no": 4,
+        "arapca": "إِذَا رُجَّتِ ٱلْأَرْضُ رَجًّۭا",
+        "okunus": "",
+        "meal": "Yer şiddetliesarsıldığı,",
+        "ses_dosyasi": "056004"
+      },
+      {
+        "no": 5,
+        "arapca": "وَبُسَّتِ ٱلْجِبَالُ بَسًّۭا",
+        "okunus": "",
+        "meal": "Dağlar serpildikçe serpildiği,",
+        "ses_dosyasi": "056005"
+      },
+      {
+        "no": 6,
+        "arapca": "فَكَانَتْ هَبَآءًۭ مُّنۢبَثًّۭا",
+        "okunus": "",
+        "meal": "Dağılan toz duman haline geldiği",
+        "ses_dosyasi": "056006"
+      },
+      {
+        "no": 7,
+        "arapca": "وَكُنتُمْ أَزْوَٰجًۭا ثَلَٰثَةًۭ",
+        "okunus": "",
+        "meal": "Ve sizler üç sınıf olduğunuz zaman;",
+        "ses_dosyasi": "056007"
+      },
+      {
+        "no": 8,
+        "arapca": "فَأَصْحَٰبُ ٱلْمَيْمَنَةِ مَآ أَصْحَٰبُ ٱلْمَيْمَنَةِ",
+        "okunus": "",
+        "meal": "Sağın adamları (amel defterleri sağ tarafından verilenler), ne uğurlulardır onlar!",
+        "ses_dosyasi": "056008"
+      },
+      {
+        "no": 9,
+        "arapca": "وَأَصْحَٰبُ ٱلْمَشْـَٔمَةِ مَآ أَصْحَٰبُ ٱلْمَشْـَٔمَةِ",
+        "okunus": "",
+        "meal": "Solun adamları (amel defterleri sol tarafından verilenler), ne uğursuzlardır onlar!",
+        "ses_dosyasi": "056009"
+      },
+      {
+        "no": 10,
+        "arapca": "وَٱلسَّٰبِقُونَ ٱلسَّٰبِقُونَ",
+        "okunus": "",
+        "meal": "Ve o sabıklar, sabıklar!",
+        "ses_dosyasi": "056010"
+      },
+      {
+        "no": 11,
+        "arapca": "أُو۟لَٰٓئِكَ ٱلْمُقَرَّبُونَ",
+        "okunus": "",
+        "meal": "İşte, onlardır (Allah'a) yaklaştırılanlar,",
+        "ses_dosyasi": "056011"
+      },
+      {
+        "no": 12,
+        "arapca": "فِى جَنَّٰتِ ٱلنَّعِيمِ",
+        "okunus": "",
+        "meal": "Ni'met cennetlerinde.",
+        "ses_dosyasi": "056012"
+      },
+      {
+        "no": 13,
+        "arapca": "ثُلَّةٌۭ مِّنَ ٱلْأَوَّلِينَ",
+        "okunus": "",
+        "meal": "Çoğu öncekilerden,",
+        "ses_dosyasi": "056013"
+      },
+      {
+        "no": 14,
+        "arapca": "وَقَلِيلٌۭ مِّنَ ٱلْءَاخِرِينَ",
+        "okunus": "",
+        "meal": "Birazı da sonrakilerden (olan bu insanlar),",
+        "ses_dosyasi": "056014"
+      },
+      {
+        "no": 15,
+        "arapca": "عَلَىٰ سُرُرٍۢ مَّوْضُونَةٍۢ",
+        "okunus": "",
+        "meal": "Altın ve cevahirle işlenmiş tahtlar üzerindedirler.",
+        "ses_dosyasi": "056015"
+      },
+      {
+        "no": 16,
+        "arapca": "مُّتَّكِـِٔينَ عَلَيْهَا مُتَقَٰبِلِينَ",
+        "okunus": "",
+        "meal": "Onların üzerinde karşılıklı yaslanırlar.",
+        "ses_dosyasi": "056016"
+      },
+      {
+        "no": 17,
+        "arapca": "يَطُوفُ عَلَيْهِمْ وِلْدَٰنٌۭ مُّخَلَّدُونَ",
+        "okunus": "",
+        "meal": "Çevrelerinde, ebedi yaşamağa erdirilmiş gençler dolaşır;",
+        "ses_dosyasi": "056017"
+      },
+      {
+        "no": 18,
+        "arapca": "بِأَكْوَابٍۢ وَأَبَارِيقَ وَكَأْسٍۢ مِّن مَّعِينٍۢ",
+        "okunus": "",
+        "meal": "Akıp giden şarap kaynağından doldurulmuş testiler, ibrikler ve kadehlerle.",
+        "ses_dosyasi": "056018"
+      },
+      {
+        "no": 19,
+        "arapca": "لَّا يُصَدَّعُونَ عَنْهَا وَلَا يُنزِفُونَ",
+        "okunus": "",
+        "meal": "(Bir şarap ki) Ondan ne başları ağrıtılır, ne de akılları giderilir.",
+        "ses_dosyasi": "056019"
+      },
+      {
+        "no": 20,
+        "arapca": "وَفَٰكِهَةٍۢ مِّمَّا يَتَخَيَّرُونَ",
+        "okunus": "",
+        "meal": "Beğendikleri meyva(lar),",
+        "ses_dosyasi": "056020"
+      },
+      {
+        "no": 21,
+        "arapca": "وَلَحْمِ طَيْرٍۢ مِّمَّا يَشْتَهُونَ",
+        "okunus": "",
+        "meal": "Canlarının çektiği kuş et(ler)i,",
+        "ses_dosyasi": "056021"
+      },
+      {
+        "no": 22,
+        "arapca": "وَحُورٌ عِينٌۭ",
+        "okunus": "",
+        "meal": "İri gözlü huriler,",
+        "ses_dosyasi": "056022"
+      },
+      {
+        "no": 23,
+        "arapca": "كَأَمْثَٰلِ ٱللُّؤْلُؤِ ٱلْمَكْنُونِ",
+        "okunus": "",
+        "meal": "Saklı inciler gibi;",
+        "ses_dosyasi": "056023"
+      },
+      {
+        "no": 24,
+        "arapca": "جَزَآءًۢ بِمَا كَانُوا۟ يَعْمَلُونَ",
+        "okunus": "",
+        "meal": "Yaptıklarına karşılık olarak.",
+        "ses_dosyasi": "056024"
+      },
+      {
+        "no": 25,
+        "arapca": "لَا يَسْمَعُونَ فِيهَا لَغْوًۭا وَلَا تَأْثِيمًا",
+        "okunus": "",
+        "meal": "Orada ne boş bir söz ve ne de günaha sokan bir laf işitirler.",
+        "ses_dosyasi": "056025"
+      },
+      {
+        "no": 26,
+        "arapca": "إِلَّا قِيلًۭا سَلَٰمًۭا سَلَٰمًۭا",
+        "okunus": "",
+        "meal": "Duydukları söz, yalnız \"Selam, selam\" dır.",
+        "ses_dosyasi": "056026"
+      },
+      {
+        "no": 27,
+        "arapca": "وَأَصْحَٰبُ ٱلْيَمِينِ مَآ أَصْحَٰبُ ٱلْيَمِينِ",
+        "okunus": "",
+        "meal": "Sağın adamları, nedir o sağın adamları!",
+        "ses_dosyasi": "056027"
+      },
+      {
+        "no": 28,
+        "arapca": "فِى سِدْرٍۢ مَّخْضُودٍۢ",
+        "okunus": "",
+        "meal": "(Onlar) Dikensiz kirazlar,",
+        "ses_dosyasi": "056028"
+      },
+      {
+        "no": 29,
+        "arapca": "وَطَلْحٍۢ مَّنضُودٍۢ",
+        "okunus": "",
+        "meal": "(Kökünden tepesine kadar) meyva dizili muzlar,",
+        "ses_dosyasi": "056029"
+      },
+      {
+        "no": 30,
+        "arapca": "وَظِلٍّۢ مَّمْدُودٍۢ",
+        "okunus": "",
+        "meal": "Uzamış gölge(ler),",
+        "ses_dosyasi": "056030"
+      },
+      {
+        "no": 31,
+        "arapca": "وَمَآءٍۢ مَّسْكُوبٍۢ",
+        "okunus": "",
+        "meal": "Fışkıran sular,",
+        "ses_dosyasi": "056031"
+      },
+      {
+        "no": 32,
+        "arapca": "وَفَٰكِهَةٍۢ كَثِيرَةٍۢ",
+        "okunus": "",
+        "meal": "Pek çok mevya arasında;",
+        "ses_dosyasi": "056032"
+      },
+      {
+        "no": 33,
+        "arapca": "لَّا مَقْطُوعَةٍۢ وَلَا مَمْنُوعَةٍۢ",
+        "okunus": "",
+        "meal": "Tükenmeyen ve yasaklanmayan!",
+        "ses_dosyasi": "056033"
+      },
+      {
+        "no": 34,
+        "arapca": "وَفُرُشٍۢ مَّرْفُوعَةٍ",
+        "okunus": "",
+        "meal": "Ve yükseltilmiş döşekler üstündedirler.",
+        "ses_dosyasi": "056034"
+      },
+      {
+        "no": 35,
+        "arapca": "إِنَّآ أَنشَأْنَٰهُنَّ إِنشَآءًۭ",
+        "okunus": "",
+        "meal": "Biz (oradaki) kadınları da yeniden bir güzel inşa' etmişiz,",
+        "ses_dosyasi": "056035"
+      },
+      {
+        "no": 36,
+        "arapca": "فَجَعَلْنَٰهُنَّ أَبْكَارًا",
+        "okunus": "",
+        "meal": "Onları bakireler yapmışızdır.",
+        "ses_dosyasi": "056036"
+      },
+      {
+        "no": 37,
+        "arapca": "عُرُبًا أَتْرَابًۭا",
+        "okunus": "",
+        "meal": "Hep yaşıt sevgililer;",
+        "ses_dosyasi": "056037"
+      },
+      {
+        "no": 38,
+        "arapca": "لِّأَصْحَٰبِ ٱلْيَمِينِ",
+        "okunus": "",
+        "meal": "Sağın adamları için.",
+        "ses_dosyasi": "056038"
+      },
+      {
+        "no": 39,
+        "arapca": "ثُلَّةٌۭ مِّنَ ٱلْأَوَّلِينَ",
+        "okunus": "",
+        "meal": "(Bu sağcıların) Bir bölümü öncekilerdendir,",
+        "ses_dosyasi": "056039"
+      },
+      {
+        "no": 40,
+        "arapca": "وَثُلَّةٌۭ مِّنَ ٱلْءَاخِرِينَ",
+        "okunus": "",
+        "meal": "Bir bölümü de sonrakilerdendir.",
+        "ses_dosyasi": "056040"
+      },
+      {
+        "no": 41,
+        "arapca": "وَأَصْحَٰبُ ٱلشِّمَالِ مَآ أَصْحَٰبُ ٱلشِّمَالِ",
+        "okunus": "",
+        "meal": "Solun adamları (amel defterleri, sol tarafından verilenler), nedir o solcular!",
+        "ses_dosyasi": "056041"
+      },
+      {
+        "no": 42,
+        "arapca": "فِى سَمُومٍۢ وَحَمِيمٍۢ",
+        "okunus": "",
+        "meal": "(Onlar) Delikçiklere işleyen bir ateş ve kaynar su içinde,",
+        "ses_dosyasi": "056042"
+      },
+      {
+        "no": 43,
+        "arapca": "وَظِلٍّۢ مِّن يَحْمُومٍۢ",
+        "okunus": "",
+        "meal": "Kara dumandan bir gölge altında,",
+        "ses_dosyasi": "056043"
+      },
+      {
+        "no": 44,
+        "arapca": "لَّا بَارِدٍۢ وَلَا كَرِيمٍ",
+        "okunus": "",
+        "meal": "Ki ne serindir, ne faydalı.",
+        "ses_dosyasi": "056044"
+      },
+      {
+        "no": 45,
+        "arapca": "إِنَّهُمْ كَانُوا۟ قَبْلَ ذَٰلِكَ مُتْرَفِينَ",
+        "okunus": "",
+        "meal": "Çünkü onlar bundan önce varlık içinde şımartılmışlardı.",
+        "ses_dosyasi": "056045"
+      },
+      {
+        "no": 46,
+        "arapca": "وَكَانُوا۟ يُصِرُّونَ عَلَى ٱلْحِنثِ ٱلْعَظِيمِ",
+        "okunus": "",
+        "meal": "Büyük günahı işlemekte ısrar ediyorlardı.",
+        "ses_dosyasi": "056046"
+      },
+      {
+        "no": 47,
+        "arapca": "وَكَانُوا۟ يَقُولُونَ أَئِذَا مِتْنَا وَكُنَّا تُرَابًۭا وَعِظَٰمًا أَءِنَّا لَمَبْعُوثُونَ",
+        "okunus": "",
+        "meal": "Ve diyorlardı ki: \"Biz öldükten, toprak ve kemik yığını olduktan sonra, biz mi bir daha diriltileceğiz?\"",
+        "ses_dosyasi": "056047"
+      },
+      {
+        "no": 48,
+        "arapca": "أَوَءَابَآؤُنَا ٱلْأَوَّلُونَ",
+        "okunus": "",
+        "meal": "Önceki atalarımız da mı?",
+        "ses_dosyasi": "056048"
+      },
+      {
+        "no": 49,
+        "arapca": "قُلْ إِنَّ ٱلْأَوَّلِينَ وَٱلْءَاخِرِينَ",
+        "okunus": "",
+        "meal": "De ki: \"Öncekiler de sonrakiler de.\"",
+        "ses_dosyasi": "056049"
+      },
+      {
+        "no": 50,
+        "arapca": "لَمَجْمُوعُونَ إِلَىٰ مِيقَٰتِ يَوْمٍۢ مَّعْلُومٍۢ",
+        "okunus": "",
+        "meal": "Belli bir günün buluşma vakti için mutlaka toplanacaklardır.",
+        "ses_dosyasi": "056050"
+      },
+      {
+        "no": 51,
+        "arapca": "ثُمَّ إِنَّكُمْ أَيُّهَا ٱلضَّآلُّونَ ٱلْمُكَذِّبُونَ",
+        "okunus": "",
+        "meal": "Sonra siz de, ey sapık yalanlayıcılar (o zaman toplanacaksınız).",
+        "ses_dosyasi": "056051"
+      },
+      {
+        "no": 52,
+        "arapca": "لَءَاكِلُونَ مِن شَجَرٍۢ مِّن زَقُّومٍۢ",
+        "okunus": "",
+        "meal": "(Suçlular) Mutlaka bir Zakkum ağacından yiyecekler,",
+        "ses_dosyasi": "056052"
+      },
+      {
+        "no": 53,
+        "arapca": "فَمَالِـُٔونَ مِنْهَا ٱلْبُطُونَ",
+        "okunus": "",
+        "meal": "Onunla karınları(nı) dolduracaklar,",
+        "ses_dosyasi": "056053"
+      },
+      {
+        "no": 54,
+        "arapca": "فَشَٰرِبُونَ عَلَيْهِ مِنَ ٱلْحَمِيمِ",
+        "okunus": "",
+        "meal": "Üzerine de kaynar su içeceklerdir.",
+        "ses_dosyasi": "056054"
+      },
+      {
+        "no": 55,
+        "arapca": "فَشَٰرِبُونَ شُرْبَ ٱلْهِيمِ",
+        "okunus": "",
+        "meal": "Susuzluk hastalığına tutulmuş develerin içişi gibi içeceklerdir!",
+        "ses_dosyasi": "056055"
+      },
+      {
+        "no": 56,
+        "arapca": "هَٰذَا نُزُلُهُمْ يَوْمَ ٱلدِّينِ",
+        "okunus": "",
+        "meal": "İşte ceza gününde onların ağırlanışı böyledir.",
+        "ses_dosyasi": "056056"
+      },
+      {
+        "no": 57,
+        "arapca": "نَحْنُ خَلَقْنَٰكُمْ فَلَوْلَا تُصَدِّقُونَ",
+        "okunus": "",
+        "meal": "Biz sizi yarattık; doğrulamanız gerekmez mi?",
+        "ses_dosyasi": "056057"
+      },
+      {
+        "no": 58,
+        "arapca": "أَفَرَءَيْتُم مَّا تُمْنُونَ",
+        "okunus": "",
+        "meal": "Akıttığınız meniyi gördünüz mü?",
+        "ses_dosyasi": "056058"
+      },
+      {
+        "no": 59,
+        "arapca": "ءَأَنتُمْ تَخْلُقُونَهُۥٓ أَمْ نَحْنُ ٱلْخَٰلِقُونَ",
+        "okunus": "",
+        "meal": "Siz mi onu yaratıyorsunuz, yoksa yaratıcılar biz miyiz?",
+        "ses_dosyasi": "056059"
+      },
+      {
+        "no": 60,
+        "arapca": "نَحْنُ قَدَّرْنَا بَيْنَكُمُ ٱلْمَوْتَ وَمَا نَحْنُ بِمَسْبُوقِينَ",
+        "okunus": "",
+        "meal": "Aranızda ölümü takdir eden biziz ve bizim önümüze geçilmiş değildir (kimse ölüme engel olamaz).",
+        "ses_dosyasi": "056060"
+      },
+      {
+        "no": 61,
+        "arapca": "عَلَىٰٓ أَن نُّبَدِّلَ أَمْثَٰلَكُمْ وَنُنشِئَكُمْ فِى مَا لَا تَعْلَمُونَ",
+        "okunus": "",
+        "meal": "(Size böyle ölümü takdir ettik) Ki sizin yerinize benzerlerinizi getirelim ve sizi, bilmediğiniz bir biçimde yeniden inşa' edelim.",
+        "ses_dosyasi": "056061"
+      },
+      {
+        "no": 62,
+        "arapca": "وَلَقَدْ عَلِمْتُمُ ٱلنَّشْأَةَ ٱلْأُولَىٰ فَلَوْلَا تَذَكَّرُونَ",
+        "okunus": "",
+        "meal": "Andolsun, ilk yaratmayı bildiniz, (bunu) düşünüp ibret almanız gerekmez mi?",
+        "ses_dosyasi": "056062"
+      },
+      {
+        "no": 63,
+        "arapca": "أَفَرَءَيْتُم مَّا تَحْرُثُونَ",
+        "okunus": "",
+        "meal": "Ektiğinizi gördünüz mü?",
+        "ses_dosyasi": "056063"
+      },
+      {
+        "no": 64,
+        "arapca": "ءَأَنتُمْ تَزْرَعُونَهُۥٓ أَمْ نَحْنُ ٱلزَّٰرِعُونَ",
+        "okunus": "",
+        "meal": "Siz mi onu bitiyorsunuz, yoksa bitirenler biz miyiz?",
+        "ses_dosyasi": "056064"
+      },
+      {
+        "no": 65,
+        "arapca": "لَوْ نَشَآءُ لَجَعَلْنَٰهُ حُطَٰمًۭا فَظَلْتُمْ تَفَكَّهُونَ",
+        "okunus": "",
+        "meal": "Dileseydik, onu kuru bir çöp yapardık, sızlanıp dururdunuz:",
+        "ses_dosyasi": "056065"
+      },
+      {
+        "no": 66,
+        "arapca": "إِنَّا لَمُغْرَمُونَ",
+        "okunus": "",
+        "meal": "Biz borçlandık, (yaptığmız masraflar boşa gitti)!",
+        "ses_dosyasi": "056066"
+      },
+      {
+        "no": 67,
+        "arapca": "بَلْ نَحْنُ مَحْرُومُونَ",
+        "okunus": "",
+        "meal": "Doğrusu, biz yoksun bırakıldık! (derdiniz).",
+        "ses_dosyasi": "056067"
+      },
+      {
+        "no": 68,
+        "arapca": "أَفَرَءَيْتُمُ ٱلْمَآءَ ٱلَّذِى تَشْرَبُونَ",
+        "okunus": "",
+        "meal": "İçtiğiniz suya baktınız mı?",
+        "ses_dosyasi": "056068"
+      },
+      {
+        "no": 69,
+        "arapca": "ءَأَنتُمْ أَنزَلْتُمُوهُ مِنَ ٱلْمُزْنِ أَمْ نَحْنُ ٱلْمُنزِلُونَ",
+        "okunus": "",
+        "meal": "Siz mi onu buluttan indirdiniz, yoksa indirenler biz miyiz?",
+        "ses_dosyasi": "056069"
+      },
+      {
+        "no": 70,
+        "arapca": "لَوْ نَشَآءُ جَعَلْنَٰهُ أُجَاجًۭا فَلَوْلَا تَشْكُرُونَ",
+        "okunus": "",
+        "meal": "Dileseydik onu tuzlu yapardık. Şüketmeniz gerekmez mi?",
+        "ses_dosyasi": "056070"
+      },
+      {
+        "no": 71,
+        "arapca": "أَفَرَءَيْتُمُ ٱلنَّارَ ٱلَّتِى تُورُونَ",
+        "okunus": "",
+        "meal": "(İki dalı birbirine sürterek) Çıkardığınız ateşi gördünüz mü?",
+        "ses_dosyasi": "056071"
+      },
+      {
+        "no": 72,
+        "arapca": "ءَأَنتُمْ أَنشَأْتُمْ شَجَرَتَهَآ أَمْ نَحْنُ ٱلْمُنشِـُٔونَ",
+        "okunus": "",
+        "meal": "Onun ağacını siz mi yarattınız, yoksa yaratanlar biz miyiz?",
+        "ses_dosyasi": "056072"
+      },
+      {
+        "no": 73,
+        "arapca": "نَحْنُ جَعَلْنَٰهَا تَذْكِرَةًۭ وَمَتَٰعًۭا لِّلْمُقْوِينَ",
+        "okunus": "",
+        "meal": "Biz onu bir ibret ve çölden gelip geçenlere bir fayda yaptık.",
+        "ses_dosyasi": "056073"
+      },
+      {
+        "no": 74,
+        "arapca": "فَسَبِّحْ بِٱسْمِ رَبِّكَ ٱلْعَظِيمِ",
+        "okunus": "",
+        "meal": "Öyleyse büyük Rabbinin adını yücelt.",
+        "ses_dosyasi": "056074"
+      },
+      {
+        "no": 75,
+        "arapca": "۞ فَلَآ أُقْسِمُ بِمَوَٰقِعِ ٱلنُّجُومِ",
+        "okunus": "",
+        "meal": "Yoo, yıldızların yerlerine yemin ederim,",
+        "ses_dosyasi": "056075"
+      },
+      {
+        "no": 76,
+        "arapca": "وَإِنَّهُۥ لَقَسَمٌۭ لَّوْ تَعْلَمُونَ عَظِيمٌ",
+        "okunus": "",
+        "meal": "Bilirseniz, bu büyük bir yemindir.",
+        "ses_dosyasi": "056076"
+      },
+      {
+        "no": 77,
+        "arapca": "إِنَّهُۥ لَقُرْءَانٌۭ كَرِيمٌۭ",
+        "okunus": "",
+        "meal": "O, elbette değerli bir Kur'an'dır,",
+        "ses_dosyasi": "056077"
+      },
+      {
+        "no": 78,
+        "arapca": "فِى كِتَٰبٍۢ مَّكْنُونٍۢ",
+        "okunus": "",
+        "meal": "Saklı bir Kitaptadır.",
+        "ses_dosyasi": "056078"
+      },
+      {
+        "no": 79,
+        "arapca": "لَّا يَمَسُّهُۥٓ إِلَّا ٱلْمُطَهَّرُونَ",
+        "okunus": "",
+        "meal": "Ki ona temizlerden başkası dokunmaz.",
+        "ses_dosyasi": "056079"
+      },
+      {
+        "no": 80,
+        "arapca": "تَنزِيلٌۭ مِّن رَّبِّ ٱلْعَٰلَمِينَ",
+        "okunus": "",
+        "meal": "(O), Alemlerin Rabbinden indirilmiştir.",
+        "ses_dosyasi": "056080"
+      },
+      {
+        "no": 81,
+        "arapca": "أَفَبِهَٰذَا ٱلْحَدِيثِ أَنتُم مُّدْهِنُونَ",
+        "okunus": "",
+        "meal": "Şimdi siz, bu sözü mü küçümsüyorsunuz?",
+        "ses_dosyasi": "056081"
+      },
+      {
+        "no": 82,
+        "arapca": "وَتَجْعَلُونَ رِزْقَكُمْ أَنَّكُمْ تُكَذِّبُونَ",
+        "okunus": "",
+        "meal": "(Kur'an'dan istifade edeceğiniz yerde) Rızkınızı, yalanlamanızdan ibaret mi kılıyorsunuz (sizin ondan elde ettiğiniz nasib, sadece onu yalanlamanız mıdır)?",
+        "ses_dosyasi": "056082"
+      },
+      {
+        "no": 83,
+        "arapca": "فَلَوْلَآ إِذَا بَلَغَتِ ٱلْحُلْقُومَ",
+        "okunus": "",
+        "meal": "Ya can boğaza dayandığı zaman?",
+        "ses_dosyasi": "056083"
+      },
+      {
+        "no": 84,
+        "arapca": "وَأَنتُمْ حِينَئِذٍۢ تَنظُرُونَ",
+        "okunus": "",
+        "meal": "Ki siz de o zaman (can çekişen kimseye) bakıp durursunuz.",
+        "ses_dosyasi": "056084"
+      },
+      {
+        "no": 85,
+        "arapca": "وَنَحْنُ أَقْرَبُ إِلَيْهِ مِنكُمْ وَلَٰكِن لَّا تُبْصِرُونَ",
+        "okunus": "",
+        "meal": "Biz ona sizden daha yakınız, fakat siz görmezsiniz.",
+        "ses_dosyasi": "056085"
+      },
+      {
+        "no": 86,
+        "arapca": "فَلَوْلَآ إِن كُنتُمْ غَيْرَ مَدِينِينَ",
+        "okunus": "",
+        "meal": "Eğer (öldükten sonra) cezalandırılmayacaksanız",
+        "ses_dosyasi": "056086"
+      },
+      {
+        "no": 87,
+        "arapca": "تَرْجِعُونَهَآ إِن كُنتُمْ صَٰدِقِينَ",
+        "okunus": "",
+        "meal": "(Bu sözünüzde doğru iseniz) o(çıkmakta olan ca)nı geri döndürsenize!",
+        "ses_dosyasi": "056087"
+      },
+      {
+        "no": 88,
+        "arapca": "فَأَمَّآ إِن كَانَ مِنَ ٱلْمُقَرَّبِينَ",
+        "okunus": "",
+        "meal": "(O can, Allah'a) Yaklaştırılanlardan ise,",
+        "ses_dosyasi": "056088"
+      },
+      {
+        "no": 89,
+        "arapca": "فَرَوْحٌۭ وَرَيْحَانٌۭ وَجَنَّتُ نَعِيمٍۢ",
+        "okunus": "",
+        "meal": "O'na rahatlık, güzel rızık ve ni'met cenneti var.",
+        "ses_dosyasi": "056089"
+      },
+      {
+        "no": 90,
+        "arapca": "وَأَمَّآ إِن كَانَ مِنْ أَصْحَٰبِ ٱلْيَمِينِ",
+        "okunus": "",
+        "meal": "Eğer sağcılardan (amel defteri sağ tarafından verilenlerden) ise,",
+        "ses_dosyasi": "056090"
+      },
+      {
+        "no": 91,
+        "arapca": "فَسَلَٰمٌۭ لَّكَ مِنْ أَصْحَٰبِ ٱلْيَمِينِ",
+        "okunus": "",
+        "meal": "(Ey sağcı) Sana sağcılardan selam var!",
+        "ses_dosyasi": "056091"
+      },
+      {
+        "no": 92,
+        "arapca": "وَأَمَّآ إِن كَانَ مِنَ ٱلْمُكَذِّبِينَ ٱلضَّآلِّينَ",
+        "okunus": "",
+        "meal": "Ama yalanlayıcı sapıklardan ise;",
+        "ses_dosyasi": "056092"
+      },
+      {
+        "no": 93,
+        "arapca": "فَنُزُلٌۭ مِّنْ حَمِيمٍۢ",
+        "okunus": "",
+        "meal": "Kaynar sudan bir ziyafet,",
+        "ses_dosyasi": "056093"
+      },
+      {
+        "no": 94,
+        "arapca": "وَتَصْلِيَةُ جَحِيمٍ",
+        "okunus": "",
+        "meal": "Ve cehenneme atılma var.",
+        "ses_dosyasi": "056094"
+      },
+      {
+        "no": 95,
+        "arapca": "إِنَّ هَٰذَا لَهُوَ حَقُّ ٱلْيَقِينِ",
+        "okunus": "",
+        "meal": "Kesin gerçek budur işte.",
+        "ses_dosyasi": "056095"
+      },
+      {
+        "no": 96,
+        "arapca": "فَسَبِّحْ بِٱسْمِ رَبِّكَ ٱلْعَظِيمِ",
+        "okunus": "",
+        "meal": "Öyleyse büyük Rabbinin adını tesbih et (O'nu, kendisine layık olmayan sıfatlardan tenzih eyle).",
+        "ses_dosyasi": "056096"
+      }
+    ]
+  },
+  {
+    "no": 67,
+    "ad": "Mülk",
+    "arapca_ad": "الْمُلْك",
+    "inis_yeri": "Mekki",
+    "ayet_sayisi": 30,
+    "kategori": "manevi",
+    "tilavet_dosya": null,
+    "tilavet_kari": "Saad al-Ghamdi",
+    "kisa_aciklama": "'Tebâreke' diye de anılır. Her gece yatmadan önce okunduğunda kabir azabına karşı koruyucu olduğu rivayet edilir.",
+    "fazilet": "Hz. Peygamber (s.a.v.) 'Kur'an'da otuz ayetli bir sûre vardır ki, sahibine şefaat eder ve günahları affedilinceye kadar onun için affedilmesini ister; o Tebâreke (Mülk) sûresidir' buyurmuştur (Tirmizî, Fedâilü'l-Kur'ân 9; Ebû Dâvûd, Tatavvu 21). Her gece yatmadan önce okunması sünnettir.",
+    "ayetler": [
+      {
+        "no": 1,
+        "arapca": "تَبَٰرَكَ ٱلَّذِى بِيَدِهِ ٱلْمُلْكُ وَهُوَ عَلَىٰ كُلِّ شَىْءٍۢ قَدِيرٌ",
+        "okunus": "",
+        "meal": "Mülk (mutlak hükümranlık ve yönetim), elinde bulunan yüce Allah, kutludur. O'nun herşeye gücü yeter.",
+        "ses_dosyasi": "067001"
+      },
+      {
+        "no": 2,
+        "arapca": "ٱلَّذِى خَلَقَ ٱلْمَوْتَ وَٱلْحَيَوٰةَ لِيَبْلُوَكُمْ أَيُّكُمْ أَحْسَنُ عَمَلًۭا ۚ وَهُوَ ٱلْعَزِيزُ ٱلْغَفُورُ",
+        "okunus": "",
+        "meal": "O, hanginizin daha güzel iş yapacağınızı denemek için ölümü ve hayatı yarattı. O, üstündür, bağışlayandır.",
+        "ses_dosyasi": "067002"
+      },
+      {
+        "no": 3,
+        "arapca": "ٱلَّذِى خَلَقَ سَبْعَ سَمَٰوَٰتٍۢ طِبَاقًۭا ۖ مَّا تَرَىٰ فِى خَلْقِ ٱلرَّحْمَٰنِ مِن تَفَٰوُتٍۢ ۖ فَٱرْجِعِ ٱلْبَصَرَ هَلْ تَرَىٰ مِن فُطُورٍۢ",
+        "okunus": "",
+        "meal": "O, yedi göğü, birbiri üzerinde tabaka, tabaka yarattı, Rahman'ın yaratmasında bir aykırılık, uygunsuzluk görmezsin. Gözü(nü) döndür de bak, bir bozukluk görüyor musun?",
+        "ses_dosyasi": "067003"
+      },
+      {
+        "no": 4,
+        "arapca": "ثُمَّ ٱرْجِعِ ٱلْبَصَرَ كَرَّتَيْنِ يَنقَلِبْ إِلَيْكَ ٱلْبَصَرُ خَاسِئًۭا وَهُوَ حَسِيرٌۭ",
+        "okunus": "",
+        "meal": "Sonra gözü(nü) iki kez daha döndür (bak). Göz (aradığı bozukluğu bulmaktan) umudu keserek hor ve bitkin bir halde sana döner.",
+        "ses_dosyasi": "067004"
+      },
+      {
+        "no": 5,
+        "arapca": "وَلَقَدْ زَيَّنَّا ٱلسَّمَآءَ ٱلدُّنْيَا بِمَصَٰبِيحَ وَجَعَلْنَٰهَا رُجُومًۭا لِّلشَّيَٰطِينِ ۖ وَأَعْتَدْنَا لَهُمْ عَذَابَ ٱلسَّعِيرِ",
+        "okunus": "",
+        "meal": "Andolsun biz, en yakın göğü lambalarla donattık ve onları, şeytanlar için taşlamalar yaptık. Ve o(şeyta)nlara da çılgın ateş azabını hazırladık.",
+        "ses_dosyasi": "067005"
+      },
+      {
+        "no": 6,
+        "arapca": "وَلِلَّذِينَ كَفَرُوا۟ بِرَبِّهِمْ عَذَابُ جَهَنَّمَ ۖ وَبِئْسَ ٱلْمَصِيرُ",
+        "okunus": "",
+        "meal": "Rablerine nankörlük edenler için cehennem azabı vardır. Ne kötü gidilecek sonuçtur o!",
+        "ses_dosyasi": "067006"
+      },
+      {
+        "no": 7,
+        "arapca": "إِذَآ أُلْقُوا۟ فِيهَا سَمِعُوا۟ لَهَا شَهِيقًۭا وَهِىَ تَفُورُ",
+        "okunus": "",
+        "meal": "Oraya atıldıkları zaman onun öfkeli homurtusunu işitirler, kaynıyor:",
+        "ses_dosyasi": "067007"
+      },
+      {
+        "no": 8,
+        "arapca": "تَكَادُ تَمَيَّزُ مِنَ ٱلْغَيْظِ ۖ كُلَّمَآ أُلْقِىَ فِيهَا فَوْجٌۭ سَأَلَهُمْ خَزَنَتُهَآ أَلَمْ يَأْتِكُمْ نَذِيرٌۭ",
+        "okunus": "",
+        "meal": "Neredeyse öfkeden çatlayacak. Her topluluk onun içine atıldıkça onun bekçileri, onlara: \"Size bir uyarıcı gelmedi mi?\" diye sordu(lar).",
+        "ses_dosyasi": "067008"
+      },
+      {
+        "no": 9,
+        "arapca": "قَالُوا۟ بَلَىٰ قَدْ جَآءَنَا نَذِيرٌۭ فَكَذَّبْنَا وَقُلْنَا مَا نَزَّلَ ٱللَّهُ مِن شَىْءٍ إِنْ أَنتُمْ إِلَّا فِى ضَلَٰلٍۢ كَبِيرٍۢ",
+        "okunus": "",
+        "meal": "Dediler: \"Evet, bize uyarıcı geldi ama biz yalanladık ve: 'Allah hiçbirşey indirmedi, siz ancak büyük bir sapıklık içindesiniz' dedik.\"",
+        "ses_dosyasi": "067009"
+      },
+      {
+        "no": 10,
+        "arapca": "وَقَالُوا۟ لَوْ كُنَّا نَسْمَعُ أَوْ نَعْقِلُ مَا كُنَّا فِىٓ أَصْحَٰبِ ٱلسَّعِيرِ",
+        "okunus": "",
+        "meal": "Ve dediler ki: \"Eğer söz dinleseydik, yahut düşünseydik, şu çılgın ateşin halkı arasında bulunmazdık!\"",
+        "ses_dosyasi": "067010"
+      },
+      {
+        "no": 11,
+        "arapca": "فَٱعْتَرَفُوا۟ بِذَنۢبِهِمْ فَسُحْقًۭا لِّأَصْحَٰبِ ٱلسَّعِيرِ",
+        "okunus": "",
+        "meal": "Günahlarını itiraf ettiler. O çılgın ateş halkına (Allah'ın acımasından) uzak olup ezilmek yaraşır!",
+        "ses_dosyasi": "067011"
+      },
+      {
+        "no": 12,
+        "arapca": "إِنَّ ٱلَّذِينَ يَخْشَوْنَ رَبَّهُم بِٱلْغَيْبِ لَهُم مَّغْفِرَةٌۭ وَأَجْرٌۭ كَبِيرٌۭ",
+        "okunus": "",
+        "meal": "Fakat gizlide Rablerine saygılı olanlara gelince, onlar için bağış(lama) ve büyük mükafat vardır.",
+        "ses_dosyasi": "067012"
+      },
+      {
+        "no": 13,
+        "arapca": "وَأَسِرُّوا۟ قَوْلَكُمْ أَوِ ٱجْهَرُوا۟ بِهِۦٓ ۖ إِنَّهُۥ عَلِيمٌۢ بِذَاتِ ٱلصُّدُورِ",
+        "okunus": "",
+        "meal": "Sözünüzü ister gizleyin, ister onu açığa vurun (farketmez) çünkü O, göğüslerin özünü bilir.",
+        "ses_dosyasi": "067013"
+      },
+      {
+        "no": 14,
+        "arapca": "أَلَا يَعْلَمُ مَنْ خَلَقَ وَهُوَ ٱللَّطِيفُ ٱلْخَبِيرُ",
+        "okunus": "",
+        "meal": "Yaratan bilmez mi? O latiftir (bilgisi herşeyin içine geçen, herşeyi) haber alandır.",
+        "ses_dosyasi": "067014"
+      },
+      {
+        "no": 15,
+        "arapca": "هُوَ ٱلَّذِى جَعَلَ لَكُمُ ٱلْأَرْضَ ذَلُولًۭا فَٱمْشُوا۟ فِى مَنَاكِبِهَا وَكُلُوا۟ مِن رِّزْقِهِۦ ۖ وَإِلَيْهِ ٱلنُّشُورُ",
+        "okunus": "",
+        "meal": "O size yeri boyun eğer yaptı. Haydi onun omuzlarında yürüyün ve Allah'ın rızkından yeyin. (Sonunda) Dönüş O'nadır (size verdiği ni'metlere karşı şükredip etmediğinizi sizden soracak, sizi hesaba çekecektir).",
+        "ses_dosyasi": "067015"
+      },
+      {
+        "no": 16,
+        "arapca": "ءَأَمِنتُم مَّن فِى ٱلسَّمَآءِ أَن يَخْسِفَ بِكُمُ ٱلْأَرْضَ فَإِذَا هِىَ تَمُورُ",
+        "okunus": "",
+        "meal": "Gökte olanın, sizi yere batırmayacağından emin misiniz? O zaman yer, birden sallanmağa başlar (ve siz yerin dibine geçersiniz).",
+        "ses_dosyasi": "067016"
+      },
+      {
+        "no": 17,
+        "arapca": "أَمْ أَمِنتُم مَّن فِى ٱلسَّمَآءِ أَن يُرْسِلَ عَلَيْكُمْ حَاصِبًۭا ۖ فَسَتَعْلَمُونَ كَيْفَ نَذِيرِ",
+        "okunus": "",
+        "meal": "Yoksa siz, gökte olanın, üzerine taş yağdıran (bir fırtına) göndermeyeceğinden emin misiniz? (O zaman) tehdidimin nasıl olduğunu bileceksiniz.",
+        "ses_dosyasi": "067017"
+      },
+      {
+        "no": 18,
+        "arapca": "وَلَقَدْ كَذَّبَ ٱلَّذِينَ مِن قَبْلِهِمْ فَكَيْفَ كَانَ نَكِيرِ",
+        "okunus": "",
+        "meal": "Andolsun, onlardan öncekiler de yalanladılar. Ama benim (onların yaptıklarını) inkarım nasıl oldu?",
+        "ses_dosyasi": "067018"
+      },
+      {
+        "no": 19,
+        "arapca": "أَوَلَمْ يَرَوْا۟ إِلَى ٱلطَّيْرِ فَوْقَهُمْ صَٰٓفَّٰتٍۢ وَيَقْبِضْنَ ۚ مَا يُمْسِكُهُنَّ إِلَّا ٱلرَّحْمَٰنُ ۚ إِنَّهُۥ بِكُلِّ شَىْءٍۭ بَصِيرٌ",
+        "okunus": "",
+        "meal": "Üstlerinde (kanatlarını) açıp yumarak uçan kuşları görmüyorlar mı? Onları (havada) Rahman'dan başkası tutmuyor. Doğrusu O, herşeyi görmektedir.",
+        "ses_dosyasi": "067019"
+      },
+      {
+        "no": 20,
+        "arapca": "أَمَّنْ هَٰذَا ٱلَّذِى هُوَ جُندٌۭ لَّكُمْ يَنصُرُكُم مِّن دُونِ ٱلرَّحْمَٰنِ ۚ إِنِ ٱلْكَٰفِرُونَ إِلَّا فِى غُرُورٍ",
+        "okunus": "",
+        "meal": "Yahut Rahman'dan başka size yardım ed(ip sizi O'nun azabından kurtar)acak askeriniz kimdir? Kafirler derin bir gaflet ve aldanma içindedirler.",
+        "ses_dosyasi": "067020"
+      },
+      {
+        "no": 21,
+        "arapca": "أَمَّنْ هَٰذَا ٱلَّذِى يَرْزُقُكُمْ إِنْ أَمْسَكَ رِزْقَهُۥ ۚ بَل لَّجُّوا۟ فِى عُتُوٍّۢ وَنُفُورٍ",
+        "okunus": "",
+        "meal": "Yahut Allah, rızkını tutacak olursa size rızık verecek kimdir? Doğrusu onlar, azgınlık ve nefret içinde direnmektedirler.",
+        "ses_dosyasi": "067021"
+      },
+      {
+        "no": 22,
+        "arapca": "أَفَمَن يَمْشِى مُكِبًّا عَلَىٰ وَجْهِهِۦٓ أَهْدَىٰٓ أَمَّن يَمْشِى سَوِيًّا عَلَىٰ صِرَٰطٍۢ مُّسْتَقِيمٍۢ",
+        "okunus": "",
+        "meal": "Şimdi, yüzüstü kapanarak yürüyen mi doğru gider, yoksa yolda düzgün yürüyen mi?",
+        "ses_dosyasi": "067022"
+      },
+      {
+        "no": 23,
+        "arapca": "قُلْ هُوَ ٱلَّذِىٓ أَنشَأَكُمْ وَجَعَلَ لَكُمُ ٱلسَّمْعَ وَٱلْأَبْصَٰرَ وَٱلْأَفْـِٔدَةَ ۖ قَلِيلًۭا مَّا تَشْكُرُونَ",
+        "okunus": "",
+        "meal": "De ki: \"Sizi yaratan, size işitme (duyusu), gözler ve gönüller veren O'dur. Ne kadar az şükrediyorsunuz?",
+        "ses_dosyasi": "067023"
+      },
+      {
+        "no": 24,
+        "arapca": "قُلْ هُوَ ٱلَّذِى ذَرَأَكُمْ فِى ٱلْأَرْضِ وَإِلَيْهِ تُحْشَرُونَ",
+        "okunus": "",
+        "meal": "De ki: \"Sizi yerde üreten O'dur ve toplanıp O'na götürüleceksiniz.\"",
+        "ses_dosyasi": "067024"
+      },
+      {
+        "no": 25,
+        "arapca": "وَيَقُولُونَ مَتَىٰ هَٰذَا ٱلْوَعْدُ إِن كُنتُمْ صَٰدِقِينَ",
+        "okunus": "",
+        "meal": "Doğru (söylüyor) iseniz bu tehdid(ettiğiniz azab) ne zaman gelecek? diyorlar.",
+        "ses_dosyasi": "067025"
+      },
+      {
+        "no": 26,
+        "arapca": "قُلْ إِنَّمَا ٱلْعِلْمُ عِندَ ٱللَّهِ وَإِنَّمَآ أَنَا۠ نَذِيرٌۭ مُّبِينٌۭ",
+        "okunus": "",
+        "meal": "De ki: (Ona ait) Bilgi, Allah'ın yanındadır. Ben ancak apaçık bir uyarıcıyım.\"",
+        "ses_dosyasi": "067026"
+      },
+      {
+        "no": 27,
+        "arapca": "فَلَمَّا رَأَوْهُ زُلْفَةًۭ سِيٓـَٔتْ وُجُوهُ ٱلَّذِينَ كَفَرُوا۟ وَقِيلَ هَٰذَا ٱلَّذِى كُنتُم بِهِۦ تَدَّعُونَ",
+        "okunus": "",
+        "meal": "Onu yakın görünce inkar edenlerin yüzleri kötüleşti. Ve: \"İşte çağırıp durduğunuz şey budur!\" dendi.",
+        "ses_dosyasi": "067027"
+      },
+      {
+        "no": 28,
+        "arapca": "قُلْ أَرَءَيْتُمْ إِنْ أَهْلَكَنِىَ ٱللَّهُ وَمَن مَّعِىَ أَوْ رَحِمَنَا فَمَن يُجِيرُ ٱلْكَٰفِرِينَ مِنْ عَذَابٍ أَلِيمٍۢ",
+        "okunus": "",
+        "meal": "De ki: \"Baksanıza, eğer Allah beni ve benimle beraber olanları öldürse de yahut bize acısa da (fark etmez,) kafirleri acı azabdan kim kurtarabilir?\"",
+        "ses_dosyasi": "067028"
+      },
+      {
+        "no": 29,
+        "arapca": "قُلْ هُوَ ٱلرَّحْمَٰنُ ءَامَنَّا بِهِۦ وَعَلَيْهِ تَوَكَّلْنَا ۖ فَسَتَعْلَمُونَ مَنْ هُوَ فِى ضَلَٰلٍۢ مُّبِينٍۢ",
+        "okunus": "",
+        "meal": "De ki: \"O, çok merhametlidir. O'na inanmış, O'na dayanmışızdır. Yakında kimin apaçık bir sapıklık içinde olduğunu bileceksiniz.\"",
+        "ses_dosyasi": "067029"
+      },
+      {
+        "no": 30,
+        "arapca": "قُلْ أَرَءَيْتُمْ إِنْ أَصْبَحَ مَآؤُكُمْ غَوْرًۭا فَمَن يَأْتِيكُم بِمَآءٍۢ مَّعِينٍۭ",
+        "okunus": "",
+        "meal": "De ki: \"Baksanıza, eğer suyunuz çekilse, size kim bir akar su getirebilir?\"",
+        "ses_dosyasi": "067030"
+      }
+    ]
+  },
+  {
+    "no": 73,
+    "ad": "Müzzemmil",
+    "arapca_ad": "الْمُزَّمِّل",
+    "inis_yeri": "Mekki",
+    "ayet_sayisi": 20,
+    "kategori": "manevi",
+    "tilavet_dosya": null,
+    "tilavet_kari": "Saad al-Ghamdi",
+    "kisa_aciklama": "Hz. Peygamber'e gece kalkıp namaz kılmayı emreden, ihlas ve sabır mesajları içeren sure.",
+    "fazilet": "Gece namazına (teheccüd) çağrı içeren sûredir. Sıkıntı, gam ve hüzün anlarında okunması tavsiye edilmiştir. İsmi 'örtüsüne bürünen' anlamına gelir, vahyin ilk geliş anına gönderme yapar.",
+    "ayetler": [
+      {
+        "no": 1,
+        "arapca": "يَٰٓأَيُّهَا ٱلْمُزَّمِّلُ",
+        "okunus": "",
+        "meal": "Ey örtüsüne bürünen,",
+        "ses_dosyasi": "073001"
+      },
+      {
+        "no": 2,
+        "arapca": "قُمِ ٱلَّيْلَ إِلَّا قَلِيلًۭا",
+        "okunus": "",
+        "meal": "Geceleyin kalk (namaz kıl); yalnız gecenin birazında (uyu).",
+        "ses_dosyasi": "073002"
+      },
+      {
+        "no": 3,
+        "arapca": "نِّصْفَهُۥٓ أَوِ ٱنقُصْ مِنْهُ قَلِيلًا",
+        "okunus": "",
+        "meal": "Gecenin yarısında (kalk) yahut bundan biraz eksilt.",
+        "ses_dosyasi": "073003"
+      },
+      {
+        "no": 4,
+        "arapca": "أَوْ زِدْ عَلَيْهِ وَرَتِّلِ ٱلْقُرْءَانَ تَرْتِيلًا",
+        "okunus": "",
+        "meal": "Veya bunu artır ve ağır ağır Kur'an oku.",
+        "ses_dosyasi": "073004"
+      },
+      {
+        "no": 5,
+        "arapca": "إِنَّا سَنُلْقِى عَلَيْكَ قَوْلًۭا ثَقِيلًا",
+        "okunus": "",
+        "meal": "Doğrusu biz, senin üzerine ağır bir söz bırakacağız.",
+        "ses_dosyasi": "073005"
+      },
+      {
+        "no": 6,
+        "arapca": "إِنَّ نَاشِئَةَ ٱلَّيْلِ هِىَ أَشَدُّ وَطْـًۭٔا وَأَقْوَمُ قِيلًا",
+        "okunus": "",
+        "meal": "Gerçekten gece kalk(ıp ibadet et)mek daha oturaklı ve (geceleyin) söz (du'a) daha etkilidir.",
+        "ses_dosyasi": "073006"
+      },
+      {
+        "no": 7,
+        "arapca": "إِنَّ لَكَ فِى ٱلنَّهَارِ سَبْحًۭا طَوِيلًۭا",
+        "okunus": "",
+        "meal": "Çünkü gündüz, senin uzun süre uğraşacağın şeyler vardır.",
+        "ses_dosyasi": "073007"
+      },
+      {
+        "no": 8,
+        "arapca": "وَٱذْكُرِ ٱسْمَ رَبِّكَ وَتَبَتَّلْ إِلَيْهِ تَبْتِيلًۭا",
+        "okunus": "",
+        "meal": "Rabbinin adını an ve bütün gönlünle O'na yönel.",
+        "ses_dosyasi": "073008"
+      },
+      {
+        "no": 9,
+        "arapca": "رَّبُّ ٱلْمَشْرِقِ وَٱلْمَغْرِبِ لَآ إِلَٰهَ إِلَّا هُوَ فَٱتَّخِذْهُ وَكِيلًۭا",
+        "okunus": "",
+        "meal": "(O) Doğunun ve batının Rabbidir. O'ndan başka tanrı yoktur. Yalnız O'nu vekil tut.",
+        "ses_dosyasi": "073009"
+      },
+      {
+        "no": 10,
+        "arapca": "وَٱصْبِرْ عَلَىٰ مَا يَقُولُونَ وَٱهْجُرْهُمْ هَجْرًۭا جَمِيلًۭا",
+        "okunus": "",
+        "meal": "Onların dediklerine sabret ve güzelce onlardan ayrıl.",
+        "ses_dosyasi": "073010"
+      },
+      {
+        "no": 11,
+        "arapca": "وَذَرْنِى وَٱلْمُكَذِّبِينَ أُو۟لِى ٱلنَّعْمَةِ وَمَهِّلْهُمْ قَلِيلًا",
+        "okunus": "",
+        "meal": "Beni ve o ni'met sahibi yalanlayıcıları yalnız bırak ve onlara biraz mühlet ver.",
+        "ses_dosyasi": "073011"
+      },
+      {
+        "no": 12,
+        "arapca": "إِنَّ لَدَيْنَآ أَنكَالًۭا وَجَحِيمًۭا",
+        "okunus": "",
+        "meal": "Doğrusu, bizim yanımızda bukağılar ve cehennem var.",
+        "ses_dosyasi": "073012"
+      },
+      {
+        "no": 13,
+        "arapca": "وَطَعَامًۭا ذَا غُصَّةٍۢ وَعَذَابًا أَلِيمًۭا",
+        "okunus": "",
+        "meal": "(Dikenli) Boğazı tırmalayan bir yiyecek ve acı veren bir azab var.",
+        "ses_dosyasi": "073013"
+      },
+      {
+        "no": 14,
+        "arapca": "يَوْمَ تَرْجُفُ ٱلْأَرْضُ وَٱلْجِبَالُ وَكَانَتِ ٱلْجِبَالُ كَثِيبًۭا مَّهِيلًا",
+        "okunus": "",
+        "meal": "O gün yer ve dağlar sarsılır ve dağlar, dağılan kum yığınları olur.",
+        "ses_dosyasi": "073014"
+      },
+      {
+        "no": 15,
+        "arapca": "إِنَّآ أَرْسَلْنَآ إِلَيْكُمْ رَسُولًۭا شَٰهِدًا عَلَيْكُمْ كَمَآ أَرْسَلْنَآ إِلَىٰ فِرْعَوْنَ رَسُولًۭا",
+        "okunus": "",
+        "meal": "(Ey insanlar,) Doğrusu biz size, aleyhinize tanıklık edecek bir elçi gönderdik; nasıl ki Fir'avn'a da bir elçi göndermiştik.",
+        "ses_dosyasi": "073015"
+      },
+      {
+        "no": 16,
+        "arapca": "فَعَصَىٰ فِرْعَوْنُ ٱلرَّسُولَ فَأَخَذْنَٰهُ أَخْذًۭا وَبِيلًۭا",
+        "okunus": "",
+        "meal": "Fir'avn, elçiye karşı geldi. Biz de onu ağır bir yakalayışla yakaladık.",
+        "ses_dosyasi": "073016"
+      },
+      {
+        "no": 17,
+        "arapca": "فَكَيْفَ تَتَّقُونَ إِن كَفَرْتُمْ يَوْمًۭا يَجْعَلُ ٱلْوِلْدَٰنَ شِيبًا",
+        "okunus": "",
+        "meal": "Peki inkar ederseniz, çocukları ihtiyarlatan o günden kendinizi nasıl kurtaracaksınız?",
+        "ses_dosyasi": "073017"
+      },
+      {
+        "no": 18,
+        "arapca": "ٱلسَّمَآءُ مُنفَطِرٌۢ بِهِۦ ۚ كَانَ وَعْدُهُۥ مَفْعُولًا",
+        "okunus": "",
+        "meal": "Gök (bile) onun dehşetinden yarılır. Allah'ın va'di mutlaka yapılmıştır.",
+        "ses_dosyasi": "073018"
+      },
+      {
+        "no": 19,
+        "arapca": "إِنَّ هَٰذِهِۦ تَذْكِرَةٌۭ ۖ فَمَن شَآءَ ٱتَّخَذَ إِلَىٰ رَبِّهِۦ سَبِيلًا",
+        "okunus": "",
+        "meal": "Bu bir öğüttür. Dileyen, Rabbine varan bir yol tutar.",
+        "ses_dosyasi": "073019"
+      },
+      {
+        "no": 20,
+        "arapca": "۞ إِنَّ رَبَّكَ يَعْلَمُ أَنَّكَ تَقُومُ أَدْنَىٰ مِن ثُلُثَىِ ٱلَّيْلِ وَنِصْفَهُۥ وَثُلُثَهُۥ وَطَآئِفَةٌۭ مِّنَ ٱلَّذِينَ مَعَكَ ۚ وَٱللَّهُ يُقَدِّرُ ٱلَّيْلَ وَٱلنَّهَارَ ۚ عَلِمَ أَن لَّن تُحْصُوهُ فَتَابَ عَلَيْكُمْ ۖ فَٱقْرَءُوا۟ مَا تَيَسَّرَ مِنَ ٱلْقُرْءَانِ ۚ عَلِمَ أَن سَيَكُونُ مِنكُم مَّرْضَىٰ ۙ وَءَاخَرُونَ يَضْرِبُونَ فِى ٱلْأَرْضِ يَبْتَغُونَ مِن فَضْلِ ٱللَّهِ ۙ وَءَاخَرُونَ يُقَٰتِلُونَ فِى سَبِيلِ ٱللَّهِ ۖ فَٱقْرَءُوا۟ مَا تَيَسَّرَ مِنْهُ ۚ وَأَقِيمُوا۟ ٱلصَّلَوٰةَ وَءَاتُوا۟ ٱلزَّكَوٰةَ وَأَقْرِضُوا۟ ٱللَّهَ قَرْضًا حَسَنًۭا ۚ وَمَا تُقَدِّمُوا۟ لِأَنفُسِكُم مِّنْ خَيْرٍۢ تَجِدُوهُ عِندَ ٱللَّهِ هُوَ خَيْرًۭا وَأَعْظَمَ أَجْرًۭا ۚ وَٱسْتَغْفِرُوا۟ ٱللَّهَ ۖ إِنَّ ٱللَّهَ غَفُورٌۭ رَّحِيمٌۢ",
+        "okunus": "",
+        "meal": "Rabbin senin gecenin üçte ikisinden daha azında, yarısında ve üçte birinde kalktığını; Seninle beraber bulunanlardan bir topluluğun da böyle yaptığını biliyor. Geceyi ve gündüzü takdir eden Allah, sizin onu sayamayacağınızı (zamanı hesabedip gecenin belli sa'atlerinde kalkamayacağınızı) bildiği için sizi affetti. Artık (belli bir sa'at gözetmeden) Kur'an'dan kolayınıza geleni okuyun (ne miktar kolayınıza gelirse o kadar gece namazı kılın, kendinizi zorlamayın.) Allah, içinizden hastalar, yeryüzünde gezip Allah'ın lutfunu arayan başka kimseler ve Allah yolunda savaşan daha başka insanlar bulunacağını bilmiştir. Onun için Kur'an'dan kolayınıza geldiği kadar okuyun. Namazı kılın, zekatı verin ve Allah'a güzel bir borç verin. Kendiniz için verdiğiniz hayırları, Allah katında verdiğinizden daha hayırlı ve mükafatça daha büyük bulacaksınız. Allah'tan mağfiret dileyin. Şüphesiz Allah, çok bağışlayan, çok esirgeyendir.",
+        "ses_dosyasi": "073020"
+      }
+    ]
+  },
+  {
+    "no": 78,
+    "ad": "Nebe",
+    "arapca_ad": "النَّبَأ",
+    "inis_yeri": "Mekki",
+    "ayet_sayisi": 40,
+    "kategori": "manevi",
+    "tilavet_dosya": null,
+    "tilavet_kari": "Saad al-Ghamdi",
+    "kisa_aciklama": "Amme cüzünün ilk sûresi. Mahşer gününün dehşeti, cennet ve cehennem manzaraları anlatılır.",
+    "fazilet": "Halk arasında 'Amme sûresi' olarak bilinir; cüzün baş sûresidir. Mahşer sorgusuna, kıyamet alâmetlerine ve âhirete iman pekiştirmesine vesile olur. Sabah-akşam zikir vakitlerinde okumak gelenektir.",
+    "ayetler": [
+      {
+        "no": 1,
+        "arapca": "عَمَّ يَتَسَآءَلُونَ",
+        "okunus": "",
+        "meal": "Birbirlerine hangi şeyden soruyorlar?",
+        "ses_dosyasi": "078001"
+      },
+      {
+        "no": 2,
+        "arapca": "عَنِ ٱلنَّبَإِ ٱلْعَظِيمِ",
+        "okunus": "",
+        "meal": "O büyük haberden mi?",
+        "ses_dosyasi": "078002"
+      },
+      {
+        "no": 3,
+        "arapca": "ٱلَّذِى هُمْ فِيهِ مُخْتَلِفُونَ",
+        "okunus": "",
+        "meal": "Ki onlar onda ayrılığa düşmektedirler.",
+        "ses_dosyasi": "078003"
+      },
+      {
+        "no": 4,
+        "arapca": "كَلَّا سَيَعْلَمُونَ",
+        "okunus": "",
+        "meal": "Hayır (dedikleri gibi değil), yakında bilecekler.",
+        "ses_dosyasi": "078004"
+      },
+      {
+        "no": 5,
+        "arapca": "ثُمَّ كَلَّا سَيَعْلَمُونَ",
+        "okunus": "",
+        "meal": "Sonra hayır (dedikleri gibi değil), yakında bilecekler.",
+        "ses_dosyasi": "078005"
+      },
+      {
+        "no": 6,
+        "arapca": "أَلَمْ نَجْعَلِ ٱلْأَرْضَ مِهَٰدًۭا",
+        "okunus": "",
+        "meal": "Yapmadık mı biz, Arzı bir beşik,",
+        "ses_dosyasi": "078006"
+      },
+      {
+        "no": 7,
+        "arapca": "وَٱلْجِبَالَ أَوْتَادًۭا",
+        "okunus": "",
+        "meal": "Dağları birer kazık?",
+        "ses_dosyasi": "078007"
+      },
+      {
+        "no": 8,
+        "arapca": "وَخَلَقْنَٰكُمْ أَزْوَٰجًۭا",
+        "okunus": "",
+        "meal": "Ve sizi çift çift yarattık.",
+        "ses_dosyasi": "078008"
+      },
+      {
+        "no": 9,
+        "arapca": "وَجَعَلْنَا نَوْمَكُمْ سُبَاتًۭا",
+        "okunus": "",
+        "meal": "Uykunuzu dinlenme yaptık.",
+        "ses_dosyasi": "078009"
+      },
+      {
+        "no": 10,
+        "arapca": "وَجَعَلْنَا ٱلَّيْلَ لِبَاسًۭا",
+        "okunus": "",
+        "meal": "Geceyi (sizi sarıp örten) bir giysi yaptık.",
+        "ses_dosyasi": "078010"
+      },
+      {
+        "no": 11,
+        "arapca": "وَجَعَلْنَا ٱلنَّهَارَ مَعَاشًۭا",
+        "okunus": "",
+        "meal": "Gündüzü de geçim zamanı yaptık.",
+        "ses_dosyasi": "078011"
+      },
+      {
+        "no": 12,
+        "arapca": "وَبَنَيْنَا فَوْقَكُمْ سَبْعًۭا شِدَادًۭا",
+        "okunus": "",
+        "meal": "Üstünüzde yedi sağlam (gök) bina ettik.",
+        "ses_dosyasi": "078012"
+      },
+      {
+        "no": 13,
+        "arapca": "وَجَعَلْنَا سِرَاجًۭا وَهَّاجًۭا",
+        "okunus": "",
+        "meal": "Ve (orada) parıl parıl parlayan bir lamba yarattık.",
+        "ses_dosyasi": "078013"
+      },
+      {
+        "no": 14,
+        "arapca": "وَأَنزَلْنَا مِنَ ٱلْمُعْصِرَٰتِ مَآءًۭ ثَجَّاجًۭا",
+        "okunus": "",
+        "meal": "Sıkışan(bulut)lardan şarıl şarıl su indirdik,",
+        "ses_dosyasi": "078014"
+      },
+      {
+        "no": 15,
+        "arapca": "لِّنُخْرِجَ بِهِۦ حَبًّۭا وَنَبَاتًۭا",
+        "okunus": "",
+        "meal": "Ki onunla çıkaralım: Dane(ler), bitki(ler),",
+        "ses_dosyasi": "078015"
+      },
+      {
+        "no": 16,
+        "arapca": "وَجَنَّٰتٍ أَلْفَافًا",
+        "okunus": "",
+        "meal": "Ve (ağaçları) birbirine sarmaş dolaş bahçeler.",
+        "ses_dosyasi": "078016"
+      },
+      {
+        "no": 17,
+        "arapca": "إِنَّ يَوْمَ ٱلْفَصْلِ كَانَ مِيقَٰتًۭا",
+        "okunus": "",
+        "meal": "Muhakkak ki (haklının, haksızın ayırdedileceği) hüküm günü, belirlenmiş bir vakittir.",
+        "ses_dosyasi": "078017"
+      },
+      {
+        "no": 18,
+        "arapca": "يَوْمَ يُنفَخُ فِى ٱلصُّورِ فَتَأْتُونَ أَفْوَاجًۭا",
+        "okunus": "",
+        "meal": "O gün Sur'a üflenir, bölük bölük gelirsiniz.",
+        "ses_dosyasi": "078018"
+      },
+      {
+        "no": 19,
+        "arapca": "وَفُتِحَتِ ٱلسَّمَآءُ فَكَانَتْ أَبْوَٰبًۭا",
+        "okunus": "",
+        "meal": "Gök açılmış, kapı kapı olmuştur.",
+        "ses_dosyasi": "078019"
+      },
+      {
+        "no": 20,
+        "arapca": "وَسُيِّرَتِ ٱلْجِبَالُ فَكَانَتْ سَرَابًا",
+        "okunus": "",
+        "meal": "Dağlar yürütülmüş, bir serab olmuştur.",
+        "ses_dosyasi": "078020"
+      },
+      {
+        "no": 21,
+        "arapca": "إِنَّ جَهَنَّمَ كَانَتْ مِرْصَادًۭا",
+        "okunus": "",
+        "meal": "Cehennem de gözetleme yeri olmuş(suçluları gözetleyip durmakta)dır.",
+        "ses_dosyasi": "078021"
+      },
+      {
+        "no": 22,
+        "arapca": "لِّلطَّٰغِينَ مَـَٔابًۭا",
+        "okunus": "",
+        "meal": "Azgınların varacağı yerdir.",
+        "ses_dosyasi": "078022"
+      },
+      {
+        "no": 23,
+        "arapca": "لَّٰبِثِينَ فِيهَآ أَحْقَابًۭا",
+        "okunus": "",
+        "meal": "Orada çağlar boyu kalacalardır.",
+        "ses_dosyasi": "078023"
+      },
+      {
+        "no": 24,
+        "arapca": "لَّا يَذُوقُونَ فِيهَا بَرْدًۭا وَلَا شَرَابًا",
+        "okunus": "",
+        "meal": "Orada ne bir serinlik, ne de içilecek bir şey tadarlar,",
+        "ses_dosyasi": "078024"
+      },
+      {
+        "no": 25,
+        "arapca": "إِلَّا حَمِيمًۭا وَغَسَّاقًۭا",
+        "okunus": "",
+        "meal": "Yalnız kaynar su ve irin (içerler);",
+        "ses_dosyasi": "078025"
+      },
+      {
+        "no": 26,
+        "arapca": "جَزَآءًۭ وِفَاقًا",
+        "okunus": "",
+        "meal": "Yaptıklarına uygun bir ceza olarak.",
+        "ses_dosyasi": "078026"
+      },
+      {
+        "no": 27,
+        "arapca": "إِنَّهُمْ كَانُوا۟ لَا يَرْجُونَ حِسَابًۭا",
+        "okunus": "",
+        "meal": "Çünkü onlar bir hesap (görüleceğini) ummuyorlardı.",
+        "ses_dosyasi": "078027"
+      },
+      {
+        "no": 28,
+        "arapca": "وَكَذَّبُوا۟ بِـَٔايَٰتِنَا كِذَّابًۭا",
+        "okunus": "",
+        "meal": "Ayetlerimizi de tamamen yalanlamışlardı.",
+        "ses_dosyasi": "078028"
+      },
+      {
+        "no": 29,
+        "arapca": "وَكُلَّ شَىْءٍ أَحْصَيْنَٰهُ كِتَٰبًۭا",
+        "okunus": "",
+        "meal": "Biz de her şeyi sayıp yazmıştık.",
+        "ses_dosyasi": "078029"
+      },
+      {
+        "no": 30,
+        "arapca": "فَذُوقُوا۟ فَلَن نَّزِيدَكُمْ إِلَّا عَذَابًا",
+        "okunus": "",
+        "meal": "Şimdi tadın (yaptıklarınızın tadını), artık size azabdan başka bir şey artırmayacağız! \tSo taste (of that which ye have earned). No increase do We give you save of torment.",
+        "ses_dosyasi": "078030"
+      },
+      {
+        "no": 31,
+        "arapca": "إِنَّ لِلْمُتَّقِينَ مَفَازًا",
+        "okunus": "",
+        "meal": "Korunanlar için de başarı ödülü vardır.",
+        "ses_dosyasi": "078031"
+      },
+      {
+        "no": 32,
+        "arapca": "حَدَآئِقَ وَأَعْنَٰبًۭا",
+        "okunus": "",
+        "meal": "Bahçeler, bağlar,",
+        "ses_dosyasi": "078032"
+      },
+      {
+        "no": 33,
+        "arapca": "وَكَوَاعِبَ أَتْرَابًۭا",
+        "okunus": "",
+        "meal": "Göğüsleri tomurcuklanmış yaşıt kızlar.",
+        "ses_dosyasi": "078033"
+      },
+      {
+        "no": 34,
+        "arapca": "وَكَأْسًۭا دِهَاقًۭا",
+        "okunus": "",
+        "meal": "Ve dolu kadeh(ler).",
+        "ses_dosyasi": "078034"
+      },
+      {
+        "no": 35,
+        "arapca": "لَّا يَسْمَعُونَ فِيهَا لَغْوًۭا وَلَا كِذَّٰبًۭا",
+        "okunus": "",
+        "meal": "Orada ne boş söz ne de yalan işitirler;",
+        "ses_dosyasi": "078035"
+      },
+      {
+        "no": 36,
+        "arapca": "جَزَآءًۭ مِّن رَّبِّكَ عَطَآءً حِسَابًۭا",
+        "okunus": "",
+        "meal": "Rabbinden bir karşılık, yeterli bir bağış olarak.",
+        "ses_dosyasi": "078036"
+      },
+      {
+        "no": 37,
+        "arapca": "رَّبِّ ٱلسَّمَٰوَٰتِ وَٱلْأَرْضِ وَمَا بَيْنَهُمَا ٱلرَّحْمَٰنِ ۖ لَا يَمْلِكُونَ مِنْهُ خِطَابًۭا",
+        "okunus": "",
+        "meal": "Göklerin, yerin ve ikisi arasında bulunanların Rabbi, çok merhametli (Rab). O'nun (izni olmadan) huzurunda konuşamazlar.",
+        "ses_dosyasi": "078037"
+      },
+      {
+        "no": 38,
+        "arapca": "يَوْمَ يَقُومُ ٱلرُّوحُ وَٱلْمَلَٰٓئِكَةُ صَفًّۭا ۖ لَّا يَتَكَلَّمُونَ إِلَّا مَنْ أَذِنَ لَهُ ٱلرَّحْمَٰنُ وَقَالَ صَوَابًۭا",
+        "okunus": "",
+        "meal": "O gün Ruh ve melekler, sıra sıra dururlar. Ancak Rahman'ın izin verdiği konuşabilir, o da doğruyu söyler.",
+        "ses_dosyasi": "078038"
+      },
+      {
+        "no": 39,
+        "arapca": "ذَٰلِكَ ٱلْيَوْمُ ٱلْحَقُّ ۖ فَمَن شَآءَ ٱتَّخَذَ إِلَىٰ رَبِّهِۦ مَـَٔابًا",
+        "okunus": "",
+        "meal": "İşte bu, hak günüdür. Artık dileyen, Rabbine varan bir yol tutar.",
+        "ses_dosyasi": "078039"
+      },
+      {
+        "no": 40,
+        "arapca": "إِنَّآ أَنذَرْنَٰكُمْ عَذَابًۭا قَرِيبًۭا يَوْمَ يَنظُرُ ٱلْمَرْءُ مَا قَدَّمَتْ يَدَاهُ وَيَقُولُ ٱلْكَافِرُ يَٰلَيْتَنِى كُنتُ تُرَٰبًۢا",
+        "okunus": "",
+        "meal": "Biz sizi yakın bir azab ile uyardık. O gün kişi, ellerinin (yapıp) öne sürdüğü işlere bakar ve kafir: \"Keşke ben, toprak olsaydım!\" der.",
+        "ses_dosyasi": "078040"
+      }
+    ]
+  },
+  {
+    "no": 94,
+    "ad": "İnşirâh",
+    "arapca_ad": "الْإِنْشِرَاح",
+    "inis_yeri": "Mekki",
+    "ayet_sayisi": 8,
+    "kategori": "manevi",
+    "tilavet_dosya": null,
+    "tilavet_kari": "Saad al-Ghamdi",
+    "kisa_aciklama": "Sıkıntı anlarında okunan, 'her zorlukla beraber bir kolaylık vardır' müjdesini içeren sûre.",
+    "fazilet": "Hz. Peygamber'in (s.a.v.) göğsünün açılıp ferahlatılmasının anıldığı sûredir. Sıkıntı, daralma ve zorluk anlarında okumak gönle ferahlık verir. 'Şüphesiz güçlükle beraber bir kolaylık vardır' (5-6) ayetleri sıkıntı anlarında en çok hatırlanan ilahi müjdedir.",
+    "ayetler": [
+      {
+        "no": 1,
+        "arapca": "أَلَمْ نَشْرَحْ لَكَ صَدْرَكَ",
+        "okunus": "",
+        "meal": "Biz senin (bunalan) göğsünü açmadık mı (ondaki bunalımları, sıkıntıları giderip, onu ilim, hikmet ve huzur ile genişletmedik mi)?",
+        "ses_dosyasi": "094001"
+      },
+      {
+        "no": 2,
+        "arapca": "وَوَضَعْنَا عَنكَ وِزْرَكَ",
+        "okunus": "",
+        "meal": "Ve atmadık mı senin üzerinden yükünü?",
+        "ses_dosyasi": "094002"
+      },
+      {
+        "no": 3,
+        "arapca": "ٱلَّذِىٓ أَنقَضَ ظَهْرَكَ",
+        "okunus": "",
+        "meal": "Ki (o, ağırlığından) sırtını çatırdatmıştı!",
+        "ses_dosyasi": "094003"
+      },
+      {
+        "no": 4,
+        "arapca": "وَرَفَعْنَا لَكَ ذِكْرَكَ",
+        "okunus": "",
+        "meal": "Senin şanını yükseltmedik mi?",
+        "ses_dosyasi": "094004"
+      },
+      {
+        "no": 5,
+        "arapca": "فَإِنَّ مَعَ ٱلْعُسْرِ يُسْرًا",
+        "okunus": "",
+        "meal": "Muhakkak her güçlükle beraber bir kolaylık vardır.",
+        "ses_dosyasi": "094005"
+      },
+      {
+        "no": 6,
+        "arapca": "إِنَّ مَعَ ٱلْعُسْرِ يُسْرًۭا",
+        "okunus": "",
+        "meal": "Evet, her güçlükle beraber bir kolaylık vardır.",
+        "ses_dosyasi": "094006"
+      },
+      {
+        "no": 7,
+        "arapca": "فَإِذَا فَرَغْتَ فَٱنصَبْ",
+        "okunus": "",
+        "meal": "O halde (işlerinden) boşaldığın zaman (ibadete) dur.",
+        "ses_dosyasi": "094007"
+      },
+      {
+        "no": 8,
+        "arapca": "وَإِلَىٰ رَبِّكَ فَٱرْغَب",
+        "okunus": "",
+        "meal": "Rabb'ine niyaz et, yalvar.",
+        "ses_dosyasi": "094008"
+      }
+    ]
+  }
+]
