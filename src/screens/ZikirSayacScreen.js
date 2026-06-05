@@ -50,6 +50,8 @@ export default function ZikirSayacScreen({ route, navigation }) {
   const baslik = esma ? `Yâ ${esma.esma}` : zikir ? zikir.ad : 'Zikir';
   const arapca = esma?.arapca || zikir?.arapca || '';
   const altYazi = esma?.anlam || zikir?.meal || '';
+  // Sayacin ustunde gosterilen okunus — esma icin "Ya X", zikir icin tam okunus.
+  const okunus = esma ? `Yâ ${esma.esma}` : zikir?.okunus || '';
   const tesirler = Array.isArray(esma?.tesir) ? esma.tesir : [];
 
   const hedef = useMemo(() => {
@@ -349,6 +351,16 @@ export default function ZikirSayacScreen({ route, navigation }) {
           ]}
         />
         <Animated.View style={[styles.sayiKutusu, { transform: [{ scale: birlesikScale }] }]}>
+          {!!okunus && (
+            <Text
+              style={[
+                styles.okunusYazi,
+                { fontSize: tip.lg.fontSize, lineHeight: tip.lg.lineHeight },
+              ]}
+            >
+              {okunus}
+            </Text>
+          )}
           <Animated.Text style={[styles.sayi, { opacity: sayiFlashAnim }]}>
             {sayim}
           </Animated.Text>
@@ -444,6 +456,13 @@ const styles = StyleSheet.create({
   },
   tikAlani: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   sayiKutusu: { alignItems: 'center', paddingHorizontal: 24 },
+  okunusYazi: {
+    color: colors.anaMetin,
+    textAlign: 'center',
+    fontWeight: '600',
+    marginBottom: 14,
+    paddingHorizontal: 8,
+  },
   sayi: { fontSize: type.count, color: colors.anaYesil, fontWeight: '300' },
   altYazi: {
     color: colors.ikincilMetin,
