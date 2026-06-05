@@ -26,7 +26,7 @@ export default function SurelerScreen({ navigation }) {
   const translateY = useRef(new Animated.Value(16)).current;
 
   useEffect(() => {
-    Animated.parallel([
+    const anim = Animated.parallel([
       Animated.timing(opacity, {
         toValue: 1,
         duration: 420,
@@ -39,7 +39,9 @@ export default function SurelerScreen({ navigation }) {
         easing: Easing.out(Easing.cubic),
         useNativeDriver: true,
       }),
-    ]).start();
+    ]);
+    anim.start();
+    return () => anim.stop();
   }, [opacity, translateY]);
 
   return (
