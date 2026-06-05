@@ -25,7 +25,21 @@ import GradientArkaPlan from '../components/GradientArkaPlan';
 
 // Metro bundler require'lari dinamik kabul etmez — sure_no -> require eslemesi.
 const TILAVET_DOSYALARI = {
+  fatiha:  require('../../assets/sounds/sureler/fatiha.mp3'),
+  duha:    require('../../assets/sounds/sureler/duha.mp3'),
   insirah: require('../../assets/sounds/sureler/insirah.mp3'),
+  kadir:   require('../../assets/sounds/sureler/kadir.mp3'),
+  asr:     require('../../assets/sounds/sureler/asr.mp3'),
+  fil:     require('../../assets/sounds/sureler/fil.mp3'),
+  kureys:  require('../../assets/sounds/sureler/kureys.mp3'),
+  maun:    require('../../assets/sounds/sureler/maun.mp3'),
+  kevser:  require('../../assets/sounds/sureler/kevser.mp3'),
+  kafirun: require('../../assets/sounds/sureler/kafirun.mp3'),
+  nasr:    require('../../assets/sounds/sureler/nasr.mp3'),
+  tebbet:  require('../../assets/sounds/sureler/tebbet.mp3'),
+  ihlas:   require('../../assets/sounds/sureler/ihlas.mp3'),
+  felak:   require('../../assets/sounds/sureler/felak.mp3'),
+  nas:     require('../../assets/sounds/sureler/nas.mp3'),
 };
 
 function dakSn(sn) {
