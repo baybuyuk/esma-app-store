@@ -20,10 +20,11 @@ import { useTipScale } from '../context/YaziKademesiContext';
 import { esmaById } from '../lib/esma';
 import { kisaZikirler } from '../lib/data';
 import { zikirKaydet, bugunkuToplamSayim, toplamSayimArtir } from '../db/db';
-import { tasbihCal, tasbihAyari, tasbihAyariOku } from '../lib/ses';
+import { tasbihCal, tasbihAyari, tasbihAyariOku, ortamCal, ortamDur, ortamAyariOku, ortamAyariKaydet } from '../lib/ses';
 import GradientArkaPlan from '../components/GradientArkaPlan';
 import NurHalesi from '../components/NurHalesi';
 import Partikullar from '../components/Partikullar';
+import OrtamSesiSecici from '../components/OrtamSesiSecici';
 
 const MIN_ARALIK_MS = 200;
 const GUNLUK_MAX = 10000;
@@ -67,6 +68,9 @@ export default function ZikirSayacScreen({ route, navigation }) {
   const [efektAktif, setEfektAktif] = useState(false);
   // Tasbih ses ayari — Ayarlar ekraniyla senkron, header'dan anlik toggle.
   const [sesAcik, setSesAcik] = useState(true);
+  // Ortam sesi (yagmur/deniz/orman) — bagiamsal olarak bu ekranda secilebilir.
+  const [ortamAyar, setOrtamAyar] = useState({ id: null, seviye: 'orta' });
+  const [ortamSecVisible, setOrtamSecVisible] = useState(false);
   const sonTikRef = useRef(0);
   const dakikalikTiklarRef = useRef([]);
   const baslangicRef = useRef(new Date().toISOString());
@@ -91,6 +95,11 @@ export default function ZikirSayacScreen({ route, navigation }) {
         const a = await tasbihAyariOku();
         setSesAcik(!!a);
       } catch (e) {}
+      // Ortam sesi ayarini yukle
+      try {
+        const o = await ortamAyariOku();
+        if (o) setOrtamAyar(o);
+      } catch (e) {}
     })();
     return () => {
       if (alertTimeoutRef.current) {
@@ -101,6 +110,7 @@ export default function ZikirSayacScreen({ route, navigation }) {
   }, []);
 
   // Ayarlar ekranindan donulunce ses ayarini tazele (focus senkronu).
+  // Ortam sesi: ekrana girince calistir, ekrandan cikinca durdur.
   useFocusEffect(
     useCallback(() => {
       let iptal = false;
@@ -109,9 +119,20 @@ export default function ZikirSayacScreen({ route, navigation }) {
           const a = await tasbihAyariOku();
           if (!iptal) setSesAcik(!!a);
         } catch (e) {}
+        try {
+          const o = await ortamAyariOku();
+          if (iptal) return;
+          if (o) {
+            setOrtamAyar(o);
+            if (o.id) {
+              try { ortamCal(o.id, o.seviye); } catch (e) {}
+            }
+          }
+        } catch (e) {}
       })();
       return () => {
         iptal = true;
+        try { ortamDur(); } catch (e) {}
       };
     }, [])
   );
@@ -259,6 +280,21 @@ export default function ZikirSayacScreen({ route, navigation }) {
     navigation.goBack();
   };
 
+  // Ortam sesi secimini uygula + storage'a yaz + anlik calistir/durdur.
+  const handleOrtamKaydet = useCallback(async ({ id, seviye }) => {
+    setOrtamAyar({ id, seviye });
+    try {
+      await ortamAyariKaydet({ id, seviye });
+    } catch (e) {}
+    try {
+      if (id) {
+        ortamCal(id, seviye);
+      } else {
+        ortamDur();
+      }
+    } catch (e) {}
+  }, []);
+
   // Header ses toggle — anlik susturma. AsyncStorage'a yazar, cache senkronlanir.
   const sesToggle = async () => {
     const yeni = !sesAcik;
@@ -308,6 +344,17 @@ export default function ZikirSayacScreen({ route, navigation }) {
           accessibilityLabel={sesAcik ? 'Tasbih sesi acik, kapatmak icin dokun' : 'Tasbih sesi kapali, acmak icin dokun'}
         >
           <Text style={styles.sesIkon}>{sesAcik ? '🔊' : '🔇'}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => setOrtamSecVisible(true)}
+          style={styles.ortamBtn}
+          hitSlop={8}
+          accessibilityRole="button"
+          accessibilityLabel="Arka plan sesi"
+        >
+          <Text style={styles.ortamIkon}>
+            {ortamAyar.id ? (ortamAyar.id === 'yagmur' ? '🌧️' : ortamAyar.id === 'deniz' ? '🌊' : '🐦') : '🔇'}
+          </Text>
         </TouchableOpacity>
       </View>
 
@@ -392,6 +439,13 @@ export default function ZikirSayacScreen({ route, navigation }) {
 
       <NurHalesi aktif={efektAktif} boyut={Math.min(ekranEn * 0.95, 420)} />
       <Partikullar aktif={efektAktif} alan={{ en: Math.min(ekranEn * 0.85, 360), boy: 320 }} adet={12} />
+
+      <OrtamSesiSecici
+        visible={ortamSecVisible}
+        onClose={() => setOrtamSecVisible(false)}
+        mevcut={ortamAyar}
+        onKaydet={handleOrtamKaydet}
+      />
     </SafeAreaView>
     </GradientArkaPlan>
   );
@@ -423,6 +477,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   sesIkon: { fontSize: 22 },
+  ortamBtn: {
+    width: 50,
+    minHeight: 44,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  ortamIkon: { fontSize: 22 },
   baslik: { color: colors.anaYesil, fontWeight: '600' },
   arapca: { color: colors.anaMetin, marginTop: 2 },
   ustBilgi: {

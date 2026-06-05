@@ -149,6 +149,7 @@ export default function HakkindaScreen({ navigation }) {
           <Text style={[styles.lisansSatir, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>🌟 Esma faziletleri: Klasik İslami kaynaklar (Bûnî, Gümüşhânevî, Nâzilî)</Text>
           <Text style={[styles.lisansSatir, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>🔔 Ezan sesi: Wikimedia Commons / Aaqib Azeez (CC BY-SA 4.0)</Text>
           <Text style={[styles.lisansSatir, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>🪵 Tasbih sesi: OpenGameArt / rubberduck "80 CC0 RPG SFX" (CC0)</Text>
+          <Text style={[styles.lisansSatir, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>🌧️ Ortam sesleri: Internet Archive Nature Sounds (CC0)</Text>
           <Text style={[styles.lisansSatir, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>📜 Sûre tilâvetleri: Şeyh Saad al-Ghamdi</Text>
         </Animated.View>
 

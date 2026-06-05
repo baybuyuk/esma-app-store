@@ -28,9 +28,10 @@ import {
   salavatSayacOku,
   salavatSayacArtir,
 } from '../lib/salavat';
-import { tasbihCal, tasbihAyari, tasbihAyariOku } from '../lib/ses';
+import { tasbihCal, tasbihAyari, tasbihAyariOku, ortamCal, ortamDur, ortamAyariOku, ortamAyariKaydet } from '../lib/ses';
 import GradientArkaPlan from '../components/GradientArkaPlan';
 import IsinPatlamasi from '../components/IsinPatlamasi';
+import OrtamSesiSecici from '../components/OrtamSesiSecici';
 
 const MIN_ARALIK_MS = 200;
 const SEKMELER = [
@@ -82,6 +83,9 @@ export default function SalavatScreen({ navigation }) {
   const [kutlama, setKutlama] = useState(false);
   // Tasbih ses ayari — Ayarlar ile senkron, header'dan anlik toggle.
   const [sesAcik, setSesAcik] = useState(true);
+  // Ortam sesi (yagmur/deniz/orman) — bagiamsal olarak bu ekranda secilebilir.
+  const [ortamAyar, setOrtamAyar] = useState({ id: null, seviye: 'orta' });
+  const [ortamSecVisible, setOrtamSecVisible] = useState(false);
   const kutlandiRef = useRef(false);
   const sonTikRef = useRef(0);
   // Unmount sonrasi setTimeout/Alert leak'ini engellemek icin mount guard
@@ -96,6 +100,10 @@ export default function SalavatScreen({ navigation }) {
       try {
         const a = await tasbihAyariOku();
         if (mountedRef.current) setSesAcik(!!a);
+      } catch (e) {}
+      try {
+        const o = await ortamAyariOku();
+        if (mountedRef.current && o) setOrtamAyar(o);
       } catch (e) {}
     })();
     return () => {
@@ -112,6 +120,7 @@ export default function SalavatScreen({ navigation }) {
   }, []);
 
   // Ayarlar ekranindan donulunce ses ayarini tazele.
+  // Ortam sesi: ekrana girince calistir, ekrandan cikinca durdur.
   useFocusEffect(
     useCallback(() => {
       let iptal = false;
@@ -120,9 +129,20 @@ export default function SalavatScreen({ navigation }) {
           const a = await tasbihAyariOku();
           if (!iptal) setSesAcik(!!a);
         } catch (e) {}
+        try {
+          const o = await ortamAyariOku();
+          if (iptal) return;
+          if (o) {
+            setOrtamAyar(o);
+            if (o.id) {
+              try { ortamCal(o.id, o.seviye); } catch (e) {}
+            }
+          }
+        } catch (e) {}
       })();
       return () => {
         iptal = true;
+        try { ortamDur(); } catch (e) {}
       };
     }, [])
   );
@@ -262,6 +282,21 @@ export default function SalavatScreen({ navigation }) {
     }
   }, [aktifId, bugunSayim, toplamSayim, hedef, butonScale, sayiFlash]);
 
+  // Ortam sesi secimini uygula + storage'a yaz + anlik calistir/durdur.
+  const handleOrtamKaydet = useCallback(async ({ id, seviye }) => {
+    setOrtamAyar({ id, seviye });
+    try {
+      await ortamAyariKaydet({ id, seviye });
+    } catch (e) {}
+    try {
+      if (id) {
+        ortamCal(id, seviye);
+      } else {
+        ortamDur();
+      }
+    } catch (e) {}
+  }, []);
+
   // Header ses toggle — anlik susturma. AsyncStorage'a yazar, cache senkronlanir.
   const sesToggle = useCallback(async () => {
     const yeni = !sesAcik;
@@ -335,6 +370,17 @@ export default function SalavatScreen({ navigation }) {
               accessibilityLabel={sesAcik ? 'Tasbih sesi acik, kapatmak icin dokun' : 'Tasbih sesi kapali, acmak icin dokun'}
             >
               <Text style={styles.sesIkon}>{sesAcik ? '🔊' : '🔇'}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => setOrtamSecVisible(true)}
+              hitSlop={8}
+              style={styles.ortamBtn}
+              accessibilityRole="button"
+              accessibilityLabel="Arka plan sesi"
+            >
+              <Text style={styles.ortamIkon}>
+                {ortamAyar.id ? (ortamAyar.id === 'yagmur' ? '🌧️' : ortamAyar.id === 'deniz' ? '🌊' : '🐦') : '🔇'}
+              </Text>
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => navigation.navigate('SalavatIstatistik')}
@@ -472,6 +518,13 @@ export default function SalavatScreen({ navigation }) {
             ))}
           </View>
         </ScrollView>
+
+        <OrtamSesiSecici
+          visible={ortamSecVisible}
+          onClose={() => setOrtamSecVisible(false)}
+          mevcut={ortamAyar}
+          onKaydet={handleOrtamKaydet}
+        />
       </SafeAreaView>
     </GradientArkaPlan>
   );
@@ -520,7 +573,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-end',
-    width: 100,
+    width: 144,
     minHeight: 44,
   },
   sesBtn: {
@@ -530,6 +583,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   sesIkon: { fontSize: 22 },
+  ortamBtn: {
+    width: 44,
+    minHeight: 44,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  ortamIkon: { fontSize: 22 },
   istatistikBtn: {
     minWidth: 44,
     minHeight: 44,

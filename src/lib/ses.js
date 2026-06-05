@@ -1,15 +1,23 @@
-// Hu — tasbih ses katmani
+// Hu — tasbih + ortam ses katmani
 // Sayac (zikir/salavat) tiklarinda kisa bir tahta tik sesi calar.
+// Ayrica zikir/salavat ekranlarinda arkaplanda dogadan loop ses calabilir.
 //
 // AsyncStorage anahtari : @hu/ayar/tasbihSesi
 // Deger formati         : string. '0' = kapali. Diger her sey (undefined dahil) = acik.
 // Default               : acik (true)
 // Ses dosyasi           : assets/sounds/tasbih.mp3 (CC0, ~180ms)
 //
-// Dis API:
+// Dis API (tasbih):
 //   tasbihCal()             -> void, fire-and-forget. Ayar kapali ise sessizce doner.
 //   tasbihAyari(acik:bool)  -> Promise<void>. Storage'a yazar + cache'i gunceller.
 //   tasbihAyariOku()        -> Promise<boolean>. Storage'tan okur, cache'i besler.
+//
+// Dis API (ortam — loop nature sesi):
+//   ortamCal(id, seviye)         -> void. id: 'yagmur'|'deniz'|'orman'|null,
+//                                   seviye: 'kisik'|'orta'|'yuksek'. null id durdurur.
+//   ortamDur()                   -> void. Aktif loop'u durdurur.
+//   ortamAyariOku()              -> Promise<{id, seviye}>. Default {id: null, seviye: 'orta'}.
+//   ortamAyariKaydet({id, seviye}) -> Promise<void>. Storage'a yazar.
 //
 // Tasarim notlari:
 // - expo-audio v54: createAudioPlayer (imperatif). Hook degil cunku UI disindan da
@@ -134,5 +142,160 @@ export function tasbihCal() {
     } catch (_) {}
   } catch (e) {
     // Tum yutucu — sayac UI'i hicbir sekilde etkilenmesin.
+  }
+}
+
+// ============================================================
+// ORTAM SES (loop nature)
+// ============================================================
+// Zikir/salavat ekraninda arka planda dogal ortam sesi (yagmur/deniz/orman kusu)
+// loop'ta calar. Yasli kullanici dusunulerek max volume %60'ta kapali — kulagi yormasin.
+//
+// AsyncStorage:
+//   @hu/ortam/sec     : 'yagmur'|'deniz'|'orman' veya yazilmamis (null)
+//   @hu/ortam/seviye  : 'kisik'|'orta'|'yuksek', default 'orta'
+//
+// Static require map — Metro dinamik require almiyor, hepsi build zamaninda
+// resolve edilmeli. Dosyalar henuz yoksa Metro warning verir ama crash etmez
+// (try/catch sariyoruz).
+
+const ORTAM_KEY_SEC = '@hu/ortam/sec';
+const ORTAM_KEY_SEVIYE = '@hu/ortam/seviye';
+
+const ORTAM_DOSYALARI = {
+  yagmur: require('../../assets/sounds/ortam/yagmur.mp3'),
+  deniz:  require('../../assets/sounds/ortam/deniz.mp3'),
+  orman:  require('../../assets/sounds/ortam/orman.mp3'),
+};
+
+const SEVIYE_NUMERIK = {
+  kisik:  0.15,
+  orta:   0.35,
+  yuksek: 0.6,
+};
+
+const ORTAM_VARSAYILAN = { id: null, seviye: 'orta' };
+
+// Tek global ortam player'i. Aktif id'yi de takip et — degisirse release.
+let ortamPlayer = null;
+let ortamAktifId = null;
+let ortamHataliIdler = {}; // id -> true. Bir kez basarisiz olursa tekrar deneme.
+
+function seviyeyiYorumla(s) {
+  return SEVIYE_NUMERIK.hasOwnProperty(s) ? s : 'orta';
+}
+
+function idYorumla(i) {
+  if (i === 'yagmur' || i === 'deniz' || i === 'orman') return i;
+  return null;
+}
+
+function ortamPlayerKur(id) {
+  if (ortamHataliIdler[id]) return null;
+  const kaynak = ORTAM_DOSYALARI[id];
+  if (!kaynak) {
+    ortamHataliIdler[id] = true;
+    return null;
+  }
+  try {
+    const p = createAudioPlayer(
+      kaynak,
+      { updateInterval: 1000, downloadFirst: true, keepAudioSessionActive: false }
+    );
+    // expo-audio 1.1.1: loop property olarak set ediliyor.
+    try { p.loop = true; } catch (_) {}
+    return p;
+  } catch (e) {
+    ortamHataliIdler[id] = true;
+    return null;
+  }
+}
+
+function ortamPlayerSerbestBirak() {
+  if (!ortamPlayer) return;
+  try { ortamPlayer.pause(); } catch (_) {}
+  try { ortamPlayer.remove(); } catch (_) {}
+  ortamPlayer = null;
+  ortamAktifId = null;
+}
+
+// Disa acik: ortam sesi baslat / degistir. id null ise durdurur.
+// seviye opsiyonel; verilmezse 'orta' kullanilir.
+export function ortamCal(id, seviye) {
+  try {
+    const yeniId = idYorumla(id);
+    if (yeniId === null) {
+      ortamDur();
+      return;
+    }
+
+    const yeniSeviye = seviyeyiYorumla(seviye);
+    const numerikSeviye = SEVIYE_NUMERIK[yeniSeviye];
+
+    // Tasbih ile ayni iOS ses modunu paylas (mixWithOthers) — tekrar set etme.
+    if (!sesModuKuruldu) {
+      sesModunuKur(); // fire-and-forget
+    }
+
+    // Id degisti mi? Degistiyse eski player'i temizle, yenisini kur.
+    if (ortamAktifId !== yeniId) {
+      ortamPlayerSerbestBirak();
+      const p = ortamPlayerKur(yeniId);
+      if (!p) return; // dosya yok / init basarisiz — sessiz fail
+      ortamPlayer = p;
+      ortamAktifId = yeniId;
+    }
+
+    if (!ortamPlayer) return;
+
+    // Volume her cagrida guncellenebilir (release/recreate gerekmez).
+    try { ortamPlayer.volume = numerikSeviye; } catch (_) {}
+    try { ortamPlayer.play(); } catch (_) {}
+  } catch (e) {
+    // Sessiz fail — ortam sesi olmazsa app etkilenmesin.
+  }
+}
+
+// Disa acik: aktif ortam sesini durdurur ve basa sarar.
+export function ortamDur() {
+  try {
+    if (!ortamPlayer) return;
+    try { ortamPlayer.pause(); } catch (_) {}
+    try { ortamPlayer.seekTo(0); } catch (_) {}
+  } catch (e) {
+    // Yutucu
+  }
+}
+
+// Disa acik: ortam ayarlarini okur. Yazilmamissa default doner — exception atmaz.
+export async function ortamAyariOku() {
+  try {
+    const [hamId, hamSeviye] = await Promise.all([
+      AsyncStorage.getItem(ORTAM_KEY_SEC),
+      AsyncStorage.getItem(ORTAM_KEY_SEVIYE),
+    ]);
+    return {
+      id: idYorumla(hamId),
+      seviye: hamSeviye ? seviyeyiYorumla(hamSeviye) : ORTAM_VARSAYILAN.seviye,
+    };
+  } catch (e) {
+    return { ...ORTAM_VARSAYILAN };
+  }
+}
+
+// Disa acik: ortam ayarlarini AsyncStorage'a yazar.
+// id null ise key silinir (default'a doner).
+export async function ortamAyariKaydet({ id, seviye } = {}) {
+  const yeniId = idYorumla(id);
+  const yeniSeviye = seviyeyiYorumla(seviye);
+  try {
+    if (yeniId === null) {
+      await AsyncStorage.removeItem(ORTAM_KEY_SEC);
+    } else {
+      await AsyncStorage.setItem(ORTAM_KEY_SEC, yeniId);
+    }
+    await AsyncStorage.setItem(ORTAM_KEY_SEVIYE, yeniSeviye);
+  } catch (e) {
+    // Yazma hatasinda sessizce gec — bir sonraki cagride tekrar denenir.
   }
 }
