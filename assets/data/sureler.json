@@ -1,0 +1,689 @@
+[
+  {
+    "no": 1,
+    "ad": "Fâtiha",
+    "arapca_ad": "الفاتحة",
+    "inis_yeri": "Mekki",
+    "ayet_sayisi": 7,
+    "tilavet_dosya": null,
+    "tilavet_kari": null,
+    "kisa_aciklama": "Kur'an'ın açılış sûresi, namazın her rekâtında okunan, kulun Rabbine yönelişini özetleyen ana duâ.",
+    "fazilet": "Hz. Peygamber (s.a.v.) 'Fâtihasız namaz olmaz' buyurmuştur (Buhârî, Ezân 95; Müslim, Salât 34). Kur'an'ın en büyük sûresi sayılır ve 'Ümmü'l-Kitâb' (Kitab'ın anası) adıyla bilinir (Buhârî, Tefsîr 1). Hastaya okunduğunda şifâ vesilesi olduğu rivayet edilir (Buhârî, Tıbb 33).",
+    "ayetler": [
+      {
+        "no": 1,
+        "arapca": "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
+        "okunus": "Bismillâhi'r-Rahmâni'r-Rahîm",
+        "meal": "Rahmân ve Rahîm olan Allah'ın adıyla."
+      },
+      {
+        "no": 2,
+        "arapca": "الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ",
+        "okunus": "Elhamdü lillâhi Rabbi'l-âlemîn",
+        "meal": "Hamd, âlemlerin Rabbi olan Allah'a mahsustur."
+      },
+      {
+        "no": 3,
+        "arapca": "الرَّحْمَٰنِ الرَّحِيمِ",
+        "okunus": "Er-Rahmâni'r-Rahîm",
+        "meal": "O, Rahmân'dır, Rahîm'dir."
+      },
+      {
+        "no": 4,
+        "arapca": "مَالِكِ يَوْمِ الدِّينِ",
+        "okunus": "Mâliki yevmi'd-dîn",
+        "meal": "Din (hesap) gününün sahibidir."
+      },
+      {
+        "no": 5,
+        "arapca": "إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ",
+        "okunus": "İyyâke na'büdü ve iyyâke nesteîn",
+        "meal": "Yalnız sana kulluk eder, yalnız senden yardım dileriz."
+      },
+      {
+        "no": 6,
+        "arapca": "اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ",
+        "okunus": "İhdina's-sırâta'l-müstakîm",
+        "meal": "Bizi doğru yola ilet."
+      },
+      {
+        "no": 7,
+        "arapca": "صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ",
+        "okunus": "Sırâta'llezîne en'amte aleyhim ğayri'l-mağdûbi aleyhim ve le'd-dâllîn",
+        "meal": "Kendilerine nimet verdiklerinin yoluna; gazaba uğramışların ve sapmışların yoluna değil."
+      }
+    ]
+  },
+  {
+    "no": 93,
+    "ad": "Duhâ",
+    "arapca_ad": "الضحى",
+    "inis_yeri": "Mekki",
+    "ayet_sayisi": 11,
+    "tilavet_dosya": null,
+    "tilavet_kari": null,
+    "kisa_aciklama": "Vahyin bir süre kesilmesi üzerine Peygamberimize teselli ve müjde olarak inen, sabah aydınlığına yemin edilen sûre.",
+    "fazilet": "Sıkıntı, üzüntü ve yalnızlık hissedildiğinde okunması tavsiye edilir; çünkü Rabbinin kulunu terk etmediğini, âhiretin dünyadan hayırlı olduğunu müjdeler. Yetime ve isteyene karşı şefkati emrettiği için sadaka niyetiyle de okunur. Sabah vakitlerinde tilâveti gönle huzur verir.",
+    "ayetler": [
+      {
+        "no": 1,
+        "arapca": "وَالضُّحَىٰ",
+        "okunus": "Ved-duhâ",
+        "meal": "Kuşluk vaktine andolsun."
+      },
+      {
+        "no": 2,
+        "arapca": "وَاللَّيْلِ إِذَا سَجَىٰ",
+        "okunus": "Vel-leyli izâ secâ",
+        "meal": "Sükûna erdiğinde geceye andolsun ki,"
+      },
+      {
+        "no": 3,
+        "arapca": "مَا وَدَّعَكَ رَبُّكَ وَمَا قَلَىٰ",
+        "okunus": "Mâ vedde'ake Rabbüke ve mâ kalâ",
+        "meal": "Rabbin seni terk etmedi, sana darılmadı da."
+      },
+      {
+        "no": 4,
+        "arapca": "وَلَلْآخِرَةُ خَيْرٌ لَكَ مِنَ الْأُولَىٰ",
+        "okunus": "Ve lel-âhiratü hayrun leke mine'l-ûlâ",
+        "meal": "Muhakkak ki âhiret senin için dünyadan daha hayırlıdır."
+      },
+      {
+        "no": 5,
+        "arapca": "وَلَسَوْفَ يُعْطِيكَ رَبُّكَ فَتَرْضَىٰ",
+        "okunus": "Ve lesevfe yu'tîke Rabbüke feterdâ",
+        "meal": "Şüphesiz Rabbin sana verecek ve sen de hoşnut olacaksın."
+      },
+      {
+        "no": 6,
+        "arapca": "أَلَمْ يَجِدْكَ يَتِيمًا فَآوَىٰ",
+        "okunus": "Elem yecidke yetîmen feâvâ",
+        "meal": "O, seni yetim bulup barındırmadı mı?"
+      },
+      {
+        "no": 7,
+        "arapca": "وَوَجَدَكَ ضَالًّا فَهَدَىٰ",
+        "okunus": "Ve vecedeke dâllen fehedâ",
+        "meal": "Seni yol bilmez bulup yola iletmedi mi?"
+      },
+      {
+        "no": 8,
+        "arapca": "وَوَجَدَكَ عَائِلًا فَأَغْنَىٰ",
+        "okunus": "Ve vecedeke âilen feağnâ",
+        "meal": "Seni ihtiyaç içinde bulup zengin etmedi mi?"
+      },
+      {
+        "no": 9,
+        "arapca": "فَأَمَّا الْيَتِيمَ فَلَا تَقْهَرْ",
+        "okunus": "Fe emme'l-yetîme felâ takhar",
+        "meal": "Öyleyse sakın yetimi ezme."
+      },
+      {
+        "no": 10,
+        "arapca": "وَأَمَّا السَّائِلَ فَلَا تَنْهَرْ",
+        "okunus": "Ve emme's-sâile felâ tenher",
+        "meal": "İsteyeni azarlama."
+      },
+      {
+        "no": 11,
+        "arapca": "وَأَمَّا بِنِعْمَةِ رَبِّكَ فَحَدِّثْ",
+        "okunus": "Ve emmâ bi-ni'meti Rabbike fehaddis",
+        "meal": "Rabbinin nimetini ise anlat da anlat."
+      }
+    ]
+  },
+  {
+    "no": 94,
+    "ad": "İnşirah",
+    "arapca_ad": "الإنشراح",
+    "inis_yeri": "Mekki",
+    "ayet_sayisi": 8,
+    "tilavet_dosya": "insirah",
+    "tilavet_kari": "Saad al-Ghamdi",
+    "kisa_aciklama": "Sıkıntı anlarında okunan, 'her zorlukla beraber bir kolaylık vardır' müjdesini içeren sûre.",
+    "fazilet": "Hz. Peygamber'e (s.a.v.) gönülferahlığı ve müjde verilen sûredir. Sıkıntıyla karşılaşıldığında okumak gönle ferahlık verir. Müminun 1-2 ve Bakara 286'da olduğu gibi, kulun yükünü Allah'ın hafiflettiğini hatırlatır.",
+    "ayetler": [
+      {
+        "no": 1,
+        "arapca": "أَلَمْ نَشْرَحْ لَكَ صَدْرَكَ",
+        "okunus": "Elem neşrah leke sadrek",
+        "meal": "Biz senin göğsünü açıp genişletmedik mi?"
+      },
+      {
+        "no": 2,
+        "arapca": "وَوَضَعْنَا عَنْكَ وِزْرَكَ",
+        "okunus": "Ve veda'nâ anke vizrek",
+        "meal": "Yükünü senden indirmedik mi?"
+      },
+      {
+        "no": 3,
+        "arapca": "الَّذِي أَنْقَضَ ظَهْرَكَ",
+        "okunus": "Ellezî enkada zahrek",
+        "meal": "O ki belini büküyordu."
+      },
+      {
+        "no": 4,
+        "arapca": "وَرَفَعْنَا لَكَ ذِكْرَكَ",
+        "okunus": "Ve rafa'nâ leke zikrek",
+        "meal": "Senin şânını yüceltmedik mi?"
+      },
+      {
+        "no": 5,
+        "arapca": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+        "okunus": "Fe inne mea'l-usri yusrâ",
+        "meal": "Şüphesiz güçlükle beraber bir kolaylık vardır."
+      },
+      {
+        "no": 6,
+        "arapca": "إِنَّ مَعَ الْعُسْرِ يُسْرًا",
+        "okunus": "İnne mea'l-usri yusrâ",
+        "meal": "Gerçekten, güçlükle beraber bir kolaylık vardır."
+      },
+      {
+        "no": 7,
+        "arapca": "فَإِذَا فَرَغْتَ فَانْصَبْ",
+        "okunus": "Fe izâ ferağte fensab",
+        "meal": "Öyleyse, bir işten boşaldığında hemen başka bir işe koyul."
+      },
+      {
+        "no": 8,
+        "arapca": "وَإِلَىٰ رَبِّكَ فَارْغَبْ",
+        "okunus": "Ve ilâ rabbike fergab",
+        "meal": "Ve yalnız Rabbine yönel."
+      }
+    ]
+  },
+  {
+    "no": 97,
+    "ad": "Kadir",
+    "arapca_ad": "القدر",
+    "inis_yeri": "Mekki",
+    "ayet_sayisi": 5,
+    "tilavet_dosya": null,
+    "tilavet_kari": null,
+    "kisa_aciklama": "Kur'an'ın indirildiği, bin aydan hayırlı olan Kadir Gecesi'ni anlatan sûre.",
+    "fazilet": "Hz. Peygamber (s.a.v.) 'Kim Kadir Gecesi'ni îmân ederek ve sevabını umarak ihyâ ederse geçmiş günahları bağışlanır' buyurmuştur (Buhârî, Îmân 25; Müslim, Salâtü'l-Müsâfirîn 175). Özellikle Ramazan'ın son on gününde, tek gecelerde okunması teşvik edilir. Hz. Âişe'nin Kadir Gecesi'nde okuduğu duâ: 'Allâhümme inneke afüvvün tühibbü'l-afve fa'fü annî' (Tirmizî, Daavât 84).",
+    "ayetler": [
+      {
+        "no": 1,
+        "arapca": "إِنَّا أَنْزَلْنَاهُ فِي لَيْلَةِ الْقَدْرِ",
+        "okunus": "İnnâ enzelnâhü fî leyleti'l-Kadr",
+        "meal": "Şüphesiz biz onu (Kur'an'ı) Kadir Gecesi'nde indirdik."
+      },
+      {
+        "no": 2,
+        "arapca": "وَمَا أَدْرَاكَ مَا لَيْلَةُ الْقَدْرِ",
+        "okunus": "Ve mâ edrâke mâ leyletü'l-Kadr",
+        "meal": "Kadir Gecesi'nin ne olduğunu sen ne bileceksin?"
+      },
+      {
+        "no": 3,
+        "arapca": "لَيْلَةُ الْقَدْرِ خَيْرٌ مِنْ أَلْفِ شَهْرٍ",
+        "okunus": "Leyletü'l-Kadri hayrun min elfi şehr",
+        "meal": "Kadir Gecesi bin aydan daha hayırlıdır."
+      },
+      {
+        "no": 4,
+        "arapca": "تَنَزَّلُ الْمَلَائِكَةُ وَالرُّوحُ فِيهَا بِإِذْنِ رَبِّهِمْ مِنْ كُلِّ أَمْرٍ",
+        "okunus": "Tenezzelü'l-melâiketü ve'r-rûhu fîhâ bi-izni Rabbihim min külli emr",
+        "meal": "Melekler ve Rûh (Cebrail) o gecede Rablerinin izniyle her iş için inerler."
+      },
+      {
+        "no": 5,
+        "arapca": "سَلَامٌ هِيَ حَتَّىٰ مَطْلَعِ الْفَجْرِ",
+        "okunus": "Selâmün hiye hattâ matla'i'l-fecr",
+        "meal": "O gece, tan yeri ağarıncaya kadar bir esenliktir."
+      }
+    ]
+  },
+  {
+    "no": 103,
+    "ad": "Asr",
+    "arapca_ad": "العصر",
+    "inis_yeri": "Mekki",
+    "ayet_sayisi": 3,
+    "tilavet_dosya": null,
+    "tilavet_kari": null,
+    "kisa_aciklama": "İnsanın hüsranda olduğunu, ancak îmân, sâlih amel, hakkı ve sabrı tavsiye edenlerin kurtulacağını bildiren kısa fakat kapsamlı sûre.",
+    "fazilet": "İmam Şâfiî 'İnsanlar bu sûreyi düşünseler, onlara yeterdi' demiştir. Sahâbeden iki kişi karşılaştıklarında, biri diğerine bu sûreyi okumadan ayrılmazdı (Taberânî, Mu'cemü'l-Evsat). Üç ayette îmân, amel, sabır ve hakkı tavsiye olmak üzere dinin özünü kapsar. Kısa olduğu için ezberlenmesi ve günlük tilâveti kolaydır.",
+    "ayetler": [
+      {
+        "no": 1,
+        "arapca": "وَالْعَصْرِ",
+        "okunus": "Vel-asr",
+        "meal": "Asra (zamana) andolsun."
+      },
+      {
+        "no": 2,
+        "arapca": "إِنَّ الْإِنْسَانَ لَفِي خُسْرٍ",
+        "okunus": "İnne'l-insâne lefî husr",
+        "meal": "Şüphesiz insan ziyandadır."
+      },
+      {
+        "no": 3,
+        "arapca": "إِلَّا الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ وَتَوَاصَوْا بِالْحَقِّ وَتَوَاصَوْا بِالصَّبْرِ",
+        "okunus": "İlle'llezîne âmenû ve amilü's-sâlihâti ve tevâsav bi'l-hakkı ve tevâsav bi's-sabr",
+        "meal": "Ancak îmân edip sâlih ameller işleyen, birbirine hakkı ve sabrı tavsiye edenler müstesnâ."
+      }
+    ]
+  },
+  {
+    "no": 105,
+    "ad": "Fîl",
+    "arapca_ad": "الفيل",
+    "inis_yeri": "Mekki",
+    "ayet_sayisi": 5,
+    "tilavet_dosya": null,
+    "tilavet_kari": null,
+    "kisa_aciklama": "Kâbe'yi yıkmaya gelen Ebrehe'nin fil ordusunun Allah tarafından nasıl helâk edildiğini anlatan sûre.",
+    "fazilet": "Zâlim ve güçlü görünenlerin Allah'ın kudreti karşısında ne kadar âciz olduğunu hatırlatır. Korkulan kimselerden ve zulümden Allah'a sığınma niyetiyle okunduğu rivayet edilir. Çocuklara Kâbe'nin ve Peygamberimizin doğum yılının (Fil Yılı) anlatımında okunması tavsiye edilir.",
+    "ayetler": [
+      {
+        "no": 1,
+        "arapca": "أَلَمْ تَرَ كَيْفَ فَعَلَ رَبُّكَ بِأَصْحَابِ الْفِيلِ",
+        "okunus": "Elem tera keyfe fe'ale Rabbüke bi-ashâbi'l-fîl",
+        "meal": "Rabbinin fil sahiplerine ne yaptığını görmedin mi?"
+      },
+      {
+        "no": 2,
+        "arapca": "أَلَمْ يَجْعَلْ كَيْدَهُمْ فِي تَضْلِيلٍ",
+        "okunus": "Elem yec'al keydehüm fî tadlîl",
+        "meal": "Onların tuzaklarını boşa çıkarmadı mı?"
+      },
+      {
+        "no": 3,
+        "arapca": "وَأَرْسَلَ عَلَيْهِمْ طَيْرًا أَبَابِيلَ",
+        "okunus": "Ve ersele aleyhim tayran ebâbîl",
+        "meal": "Üzerlerine sürü sürü kuşlar gönderdi."
+      },
+      {
+        "no": 4,
+        "arapca": "تَرْمِيهِمْ بِحِجَارَةٍ مِنْ سِجِّيلٍ",
+        "okunus": "Termîhim bi-hicâratin min siccîl",
+        "meal": "Onlara pişmiş çamurdan taşlar atıyorlardı."
+      },
+      {
+        "no": 5,
+        "arapca": "فَجَعَلَهُمْ كَعَصْفٍ مَأْكُولٍ",
+        "okunus": "Fece'alehüm ke'asfin me'kûl",
+        "meal": "Sonunda onları yenilmiş ekin yaprağı gibi yapıverdi."
+      }
+    ]
+  },
+  {
+    "no": 106,
+    "ad": "Kureyş",
+    "arapca_ad": "قريش",
+    "inis_yeri": "Mekki",
+    "ayet_sayisi": 4,
+    "tilavet_dosya": null,
+    "tilavet_kari": null,
+    "kisa_aciklama": "Kureyş kabilesine verilen kış-yaz ticaret yolculuğu nimetini hatırlatıp Kâbe'nin Rabbine ibadeti emreden sûre.",
+    "fazilet": "Yolculuğa çıkarken, rızık darlığında ve emniyet duâsı niyetiyle okunması Peygamberimizden gelen rivayetlerde tavsiye edilmiştir. Açlığı doyuran, korkudan emin kılan Allah'a şükrü hatırlatır; bu yönüyle sofrada ve yolculukta güzel düşer.",
+    "ayetler": [
+      {
+        "no": 1,
+        "arapca": "لِإِيلَافِ قُرَيْشٍ",
+        "okunus": "Liîlâfi Kureyş",
+        "meal": "Kureyş'in alıştırılması (ülfeti) için,"
+      },
+      {
+        "no": 2,
+        "arapca": "إِيلَافِهِمْ رِحْلَةَ الشِّتَاءِ وَالصَّيْفِ",
+        "okunus": "Îlâfihim rıhlete'ş-şitâi ve's-sayf",
+        "meal": "Kış ve yaz yolculuklarına alıştırılmaları için,"
+      },
+      {
+        "no": 3,
+        "arapca": "فَلْيَعْبُدُوا رَبَّ هَٰذَا الْبَيْتِ",
+        "okunus": "Felya'büdû Rabbe hâze'l-beyt",
+        "meal": "Bu Beyt'in (Kâbe'nin) Rabbine kulluk etsinler."
+      },
+      {
+        "no": 4,
+        "arapca": "الَّذِي أَطْعَمَهُمْ مِنْ جُوعٍ وَآمَنَهُمْ مِنْ خَوْفٍ",
+        "okunus": "Ellezî at'amehüm min cû'in ve âmenehüm min havf",
+        "meal": "O ki onları açlıktan doyurdu ve korkudan emin kıldı."
+      }
+    ]
+  },
+  {
+    "no": 107,
+    "ad": "Mâûn",
+    "arapca_ad": "الماعون",
+    "inis_yeri": "Mekki",
+    "ayet_sayisi": 7,
+    "tilavet_dosya": null,
+    "tilavet_kari": null,
+    "kisa_aciklama": "Yetimi iten, yoksulu doyurmaya teşvik etmeyen, namazından gafil olanların hâlini anlatan sûre.",
+    "fazilet": "Dinin sadece namazla değil, yetime şefkat ve komşuya yardımla tamam olduğunu öğretir. Cimrilik ve gösteriş hastalığına karşı kalbi uyandırır. Yaşlılarımızın torunlarına ve komşularına karşı şefkat vazifesini hatırlamak için sık okuması tavsiye edilir.",
+    "ayetler": [
+      {
+        "no": 1,
+        "arapca": "أَرَأَيْتَ الَّذِي يُكَذِّبُ بِالدِّينِ",
+        "okunus": "Eraeyte'llezî yükezzibü bi'd-dîn",
+        "meal": "Dini yalanlayanı gördün mü?"
+      },
+      {
+        "no": 2,
+        "arapca": "فَذَٰلِكَ الَّذِي يَدُعُّ الْيَتِيمَ",
+        "okunus": "Fe zâlike'llezî yedu'l-yetîm",
+        "meal": "İşte o, yetimi itip kakar."
+      },
+      {
+        "no": 3,
+        "arapca": "وَلَا يَحُضُّ عَلَىٰ طَعَامِ الْمِسْكِينِ",
+        "okunus": "Ve lâ yehuddu alâ ta'âmi'l-miskîn",
+        "meal": "Yoksulu doyurmaya teşvik etmez."
+      },
+      {
+        "no": 4,
+        "arapca": "فَوَيْلٌ لِلْمُصَلِّينَ",
+        "okunus": "Fe veylün lil-musallîn",
+        "meal": "Yazıklar olsun o namaz kılanlara ki,"
+      },
+      {
+        "no": 5,
+        "arapca": "الَّذِينَ هُمْ عَنْ صَلَاتِهِمْ سَاهُونَ",
+        "okunus": "Ellezîne hüm an salâtihim sâhûn",
+        "meal": "Onlar namazlarından gâfildirler."
+      },
+      {
+        "no": 6,
+        "arapca": "الَّذِينَ هُمْ يُرَاءُونَ",
+        "okunus": "Ellezîne hüm yürâûn",
+        "meal": "Onlar gösteriş yaparlar."
+      },
+      {
+        "no": 7,
+        "arapca": "وَيَمْنَعُونَ الْمَاعُونَ",
+        "okunus": "Ve yemne'ûne'l-mâûn",
+        "meal": "Ufak bir yardımı (komşuya verilen kap kacağı bile) esirgerler."
+      }
+    ]
+  },
+  {
+    "no": 108,
+    "ad": "Kevser",
+    "arapca_ad": "الكوثر",
+    "inis_yeri": "Mekki",
+    "ayet_sayisi": 3,
+    "tilavet_dosya": null,
+    "tilavet_kari": null,
+    "kisa_aciklama": "Kur'an'ın en kısa sûresi; Peygamberimize verilen sonsuz hayır (Kevser) müjdesini bildirir.",
+    "fazilet": "Hz. Peygamber (s.a.v.) Kevser'in cennette kendisine verilen bir nehir olduğunu bildirmiştir (Müslim, Salât 53). Bayram ve kurban niyetiyle okunması tavsiye edilir. Çocukları, evlâdı veya nesli kesik kalmaktan korkanlar için 'ebter (nesli kesik) olan, sana buğzedendir' müjdesi tesellîdir. Kısa olduğu için namazda sık tercih edilir.",
+    "ayetler": [
+      {
+        "no": 1,
+        "arapca": "إِنَّا أَعْطَيْنَاكَ الْكَوْثَرَ",
+        "okunus": "İnnâ a'taynâke'l-kevser",
+        "meal": "Şüphesiz biz sana Kevser'i verdik."
+      },
+      {
+        "no": 2,
+        "arapca": "فَصَلِّ لِرَبِّكَ وَانْحَرْ",
+        "okunus": "Fesalli li-Rabbike venhar",
+        "meal": "O hâlde Rabbin için namaz kıl ve kurban kes."
+      },
+      {
+        "no": 3,
+        "arapca": "إِنَّ شَانِئَكَ هُوَ الْأَبْتَرُ",
+        "okunus": "İnne şânieke hüve'l-ebter",
+        "meal": "Doğrusu sana buğzeden, asıl soyu kesik olandır."
+      }
+    ]
+  },
+  {
+    "no": 109,
+    "ad": "Kâfirûn",
+    "arapca_ad": "الكافرون",
+    "inis_yeri": "Mekki",
+    "ayet_sayisi": 6,
+    "tilavet_dosya": null,
+    "tilavet_kari": null,
+    "kisa_aciklama": "Tevhîdin en açık beyanı; inançta uzlaşma olmayacağını, 'sizin dininiz size, benim dinim bana' diyerek bildirir.",
+    "fazilet": "Hz. Peygamber (s.a.v.) yatağa girerken Kâfirûn sûresini okumayı tavsiye etmiş ve 'Bu, şirkten beraettir' buyurmuştur (Ebû Dâvûd, Edeb 98; Tirmizî, Daavât 21). Sabah-akşam okunması inancı korur. Kur'an'ın dörtte birine denk sayıldığına dair rivayet vardır (Tirmizî, Fedâilü'l-Kur'ân 11).",
+    "ayetler": [
+      {
+        "no": 1,
+        "arapca": "قُلْ يَا أَيُّهَا الْكَافِرُونَ",
+        "okunus": "Kul yâ eyyühe'l-kâfirûn",
+        "meal": "De ki: Ey kâfirler!"
+      },
+      {
+        "no": 2,
+        "arapca": "لَا أَعْبُدُ مَا تَعْبُدُونَ",
+        "okunus": "Lâ a'büdü mâ ta'büdûn",
+        "meal": "Ben sizin taptıklarınıza tapmam."
+      },
+      {
+        "no": 3,
+        "arapca": "وَلَا أَنْتُمْ عَابِدُونَ مَا أَعْبُدُ",
+        "okunus": "Ve lâ entüm âbidûne mâ a'büd",
+        "meal": "Siz de benim taptığıma tapacak değilsiniz."
+      },
+      {
+        "no": 4,
+        "arapca": "وَلَا أَنَا عَابِدٌ مَا عَبَدْتُمْ",
+        "okunus": "Ve lâ ene âbidün mâ abedtüm",
+        "meal": "Ben sizin taptıklarınıza tapacak değilim."
+      },
+      {
+        "no": 5,
+        "arapca": "وَلَا أَنْتُمْ عَابِدُونَ مَا أَعْبُدُ",
+        "okunus": "Ve lâ entüm âbidûne mâ a'büd",
+        "meal": "Siz de benim taptığıma tapacak değilsiniz."
+      },
+      {
+        "no": 6,
+        "arapca": "لَكُمْ دِينُكُمْ وَلِيَ دِينِ",
+        "okunus": "Leküm dînüküm ve liye dîn",
+        "meal": "Sizin dininiz size, benim dinim banadır."
+      }
+    ]
+  },
+  {
+    "no": 110,
+    "ad": "Nasr",
+    "arapca_ad": "النصر",
+    "inis_yeri": "Medeni",
+    "ayet_sayisi": 3,
+    "tilavet_dosya": null,
+    "tilavet_kari": null,
+    "kisa_aciklama": "Allah'ın yardımı ve fethin gelmesiyle insanların bölük bölük dine girişini müjdeleyen, Peygamberimize inen son sûrelerden biri.",
+    "fazilet": "Hz. Âişe'den nakledildiğine göre Hz. Peygamber (s.a.v.) bu sûre indikten sonra namazlarında ve secdelerinde 'Sübhâneke'llâhümme Rabbenâ ve bi-hamdike Allâhümme'ğfir lî' duâsını çokça okumuştur (Buhârî, Tefsîr 110; Müslim, Salât 218). Tövbe ve istiğfar niyetiyle, bir hayrın tamamlandığında şükür için okunması güzeldir.",
+    "ayetler": [
+      {
+        "no": 1,
+        "arapca": "إِذَا جَاءَ نَصْرُ اللَّهِ وَالْفَتْحُ",
+        "okunus": "İzâ câe nasrullâhi vel-feth",
+        "meal": "Allah'ın yardımı ve fetih geldiğinde,"
+      },
+      {
+        "no": 2,
+        "arapca": "وَرَأَيْتَ النَّاسَ يَدْخُلُونَ فِي دِينِ اللَّهِ أَفْوَاجًا",
+        "okunus": "Ve raeyte'n-nâse yedhulûne fî dîni'llâhi efvâcâ",
+        "meal": "İnsanların bölük bölük Allah'ın dinine girdiklerini gördüğünde,"
+      },
+      {
+        "no": 3,
+        "arapca": "فَسَبِّحْ بِحَمْدِ رَبِّكَ وَاسْتَغْفِرْهُ ۚ إِنَّهُ كَانَ تَوَّابًا",
+        "okunus": "Fesebbih bi-hamdi Rabbike vestağfirh, innehû kâne tevvâbâ",
+        "meal": "Rabbini hamd ile tesbîh et ve O'ndan bağışlanma dile. Şüphesiz O, tövbeleri çok kabul edendir."
+      }
+    ]
+  },
+  {
+    "no": 111,
+    "ad": "Tebbet",
+    "arapca_ad": "المسد",
+    "inis_yeri": "Mekki",
+    "ayet_sayisi": 5,
+    "tilavet_dosya": null,
+    "tilavet_kari": null,
+    "kisa_aciklama": "Peygamberimize ve İslâm'a düşmanlık eden Ebû Leheb ile karısının âkıbetini bildiren sûre.",
+    "fazilet": "Hakka düşmanlık edenlerin malının ve mevkiinin onlara fayda vermeyeceğini hatırlatır. Hak yolda zulme uğrayan müminlere sabır ve metanet aşılar. Allah'ın âdil hükmünün eninde sonunda tecellî edeceğine îmânı güçlendirir.",
+    "ayetler": [
+      {
+        "no": 1,
+        "arapca": "تَبَّتْ يَدَا أَبِي لَهَبٍ وَتَبَّ",
+        "okunus": "Tebbet yedâ Ebî Lehebin ve tebb",
+        "meal": "Ebû Leheb'in iki eli kurusun, kurudu da!"
+      },
+      {
+        "no": 2,
+        "arapca": "مَا أَغْنَىٰ عَنْهُ مَالُهُ وَمَا كَسَبَ",
+        "okunus": "Mâ ağnâ anhü mâlühû ve mâ keseb",
+        "meal": "Ona ne malı fayda verdi, ne de kazandığı."
+      },
+      {
+        "no": 3,
+        "arapca": "سَيَصْلَىٰ نَارًا ذَاتَ لَهَبٍ",
+        "okunus": "Seyaslâ nâran zâte leheb",
+        "meal": "O, alevli bir ateşe girecektir."
+      },
+      {
+        "no": 4,
+        "arapca": "وَامْرَأَتُهُ حَمَّالَةَ الْحَطَبِ",
+        "okunus": "Vemraetühû hammâlete'l-hatab",
+        "meal": "Karısı da, odun hamalı olarak."
+      },
+      {
+        "no": 5,
+        "arapca": "فِي جِيدِهَا حَبْلٌ مِنْ مَسَدٍ",
+        "okunus": "Fî cîdihâ hablün min mesed",
+        "meal": "Boynunda bükülmüş liften bir ip olduğu hâlde."
+      }
+    ]
+  },
+  {
+    "no": 112,
+    "ad": "İhlâs",
+    "arapca_ad": "الإخلاص",
+    "inis_yeri": "Mekki",
+    "ayet_sayisi": 4,
+    "tilavet_dosya": null,
+    "tilavet_kari": null,
+    "kisa_aciklama": "Allah'ın birliğini ve eşsizliğini en özlü şekilde anlatan, Kur'an'ın üçte biri sayılan sûre.",
+    "fazilet": "Hz. Peygamber (s.a.v.) 'İhlâs sûresi Kur'an'ın üçte birine denktir' buyurmuştur (Buhârî, Fedâilü'l-Kur'ân 13; Müslim, Salâtü'l-Müsâfirîn 259). Sabah-akşam üçer defa Felâk ve Nâs ile birlikte okunması tavsiye edilir (Tirmizî, Daavât 116; Ebû Dâvûd, Edeb 101). Yatmadan önce avuca okunup vücuda sürmek sünnettir (Buhârî, Fedâilü'l-Kur'ân 14).",
+    "ayetler": [
+      {
+        "no": 1,
+        "arapca": "قُلْ هُوَ اللَّهُ أَحَدٌ",
+        "okunus": "Kul hüvellâhü ehad",
+        "meal": "De ki: O Allah, birdir."
+      },
+      {
+        "no": 2,
+        "arapca": "اللَّهُ الصَّمَدُ",
+        "okunus": "Allâhü's-Samed",
+        "meal": "Allah Samed'dir (her şey O'na muhtaç, O hiçbir şeye muhtaç değildir)."
+      },
+      {
+        "no": 3,
+        "arapca": "لَمْ يَلِدْ وَلَمْ يُولَدْ",
+        "okunus": "Lem yelid ve lem yûled",
+        "meal": "O, doğurmamış ve doğurulmamıştır."
+      },
+      {
+        "no": 4,
+        "arapca": "وَلَمْ يَكُنْ لَهُ كُفُوًا أَحَدٌ",
+        "okunus": "Ve lem yekün lehû küfüven ehad",
+        "meal": "Hiçbir şey O'nun dengi değildir."
+      }
+    ]
+  },
+  {
+    "no": 113,
+    "ad": "Felâk",
+    "arapca_ad": "الفلق",
+    "inis_yeri": "Mekki",
+    "ayet_sayisi": 5,
+    "tilavet_dosya": null,
+    "tilavet_kari": null,
+    "kisa_aciklama": "Yaratılmışların şerrinden, karanlığın ve hasedin kötülüğünden sabahın Rabbine sığınma sûresi.",
+    "fazilet": "Nâs sûresi ile birlikte 'Muavvizeteyn' (iki sığınma sûresi) diye anılır. Hz. Peygamber (s.a.v.) her gece yatmadan önce Felâk, Nâs ve İhlâs'ı üçer defa okuyup avuçlarına üfler, vücuduna sürerdi (Buhârî, Fedâilü'l-Kur'ân 14; Ebû Dâvûd, Edeb 110). Sabah-akşam üç defa okuyana o gün hiçbir şey zarar vermez (Tirmizî, Daavât 116). Nazar ve sihirden korunmak için okunur.",
+    "ayetler": [
+      {
+        "no": 1,
+        "arapca": "قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ",
+        "okunus": "Kul eûzü bi-Rabbi'l-felak",
+        "meal": "De ki: Sabahın Rabbine sığınırım."
+      },
+      {
+        "no": 2,
+        "arapca": "مِنْ شَرِّ مَا خَلَقَ",
+        "okunus": "Min şerri mâ halak",
+        "meal": "Yarattığı şeylerin şerrinden,"
+      },
+      {
+        "no": 3,
+        "arapca": "وَمِنْ شَرِّ غَاسِقٍ إِذَا وَقَبَ",
+        "okunus": "Ve min şerri ğâsikın izâ vekab",
+        "meal": "Karanlığı çöktüğü zaman gecenin şerrinden,"
+      },
+      {
+        "no": 4,
+        "arapca": "وَمِنْ شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ",
+        "okunus": "Ve min şerri'n-neffâsâti fi'l-ukad",
+        "meal": "Düğümlere üfleyenlerin şerrinden,"
+      },
+      {
+        "no": 5,
+        "arapca": "وَمِنْ شَرِّ حَاسِدٍ إِذَا حَسَدَ",
+        "okunus": "Ve min şerri hâsidin izâ hased",
+        "meal": "Ve haset ettiği zaman hasetçinin şerrinden Allah'a sığınırım."
+      }
+    ]
+  },
+  {
+    "no": 114,
+    "ad": "Nâs",
+    "arapca_ad": "الناس",
+    "inis_yeri": "Mekki",
+    "ayet_sayisi": 6,
+    "tilavet_dosya": null,
+    "tilavet_kari": null,
+    "kisa_aciklama": "İnsanların kalbine vesvese veren sinsi şerden insanların Rabbine sığınma sûresi.",
+    "fazilet": "Felâk sûresi ile birlikte 'Muavvizeteyn'in ikincisidir. Hz. Peygamber (s.a.v.) hastalandığında bu iki sûreyi okuyup kendine üfler, son hastalığında Hz. Âişe de ellerine okuyup mübarek bedenine sürerdi (Buhârî, Fedâilü'l-Kur'ân 14; Müslim, Selâm 51). Vesvese, korku ve nazardan korunmak için sabah-akşam okunur (Tirmizî, Daavât 116). Çocukların korkulu uykusunda da tavsiye edilen sûrelerdendir.",
+    "ayetler": [
+      {
+        "no": 1,
+        "arapca": "قُلْ أَعُوذُ بِرَبِّ النَّاسِ",
+        "okunus": "Kul eûzü bi-Rabbi'n-nâs",
+        "meal": "De ki: İnsanların Rabbine sığınırım."
+      },
+      {
+        "no": 2,
+        "arapca": "مَلِكِ النَّاسِ",
+        "okunus": "Meliki'n-nâs",
+        "meal": "İnsanların Melik'ine (mutlak hükümdarına),"
+      },
+      {
+        "no": 3,
+        "arapca": "إِلَٰهِ النَّاسِ",
+        "okunus": "İlâhi'n-nâs",
+        "meal": "İnsanların İlâhına;"
+      },
+      {
+        "no": 4,
+        "arapca": "مِنْ شَرِّ الْوَسْوَاسِ الْخَنَّاسِ",
+        "okunus": "Min şerri'l-vesvâsi'l-hannâs",
+        "meal": "O sinsi vesvesecinin şerrinden,"
+      },
+      {
+        "no": 5,
+        "arapca": "الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ",
+        "okunus": "Ellezî yüvesvisü fî sudûri'n-nâs",
+        "meal": "O ki insanların göğüslerine vesvese verir;"
+      },
+      {
+        "no": 6,
+        "arapca": "مِنَ الْجِنَّةِ وَالنَّاسِ",
+        "okunus": "Mine'l-cinneti ve'n-nâs",
+        "meal": "Cinlerden ve insanlardan."
+      }
+    ]
+  }
+]

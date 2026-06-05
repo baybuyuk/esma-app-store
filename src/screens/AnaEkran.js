@@ -218,6 +218,7 @@ export default function AnaEkran({ navigation }) {
       { key: 'sabahEvrad', emoji: '🌅', label: 'Sabah Evrâdı', onPress: () => navigation.navigate('Evrad', { tip: 'sabah' }) },
       { key: 'aksamEvrad', emoji: '🌆', label: 'Akşam Evrâdı', onPress: () => navigation.navigate('Evrad', { tip: 'aksam' }) },
       { key: 'dualar', emoji: '🤲', label: 'Dualar', onPress: () => navigation.navigate('Dualar') },
+      { key: 'sureler', emoji: '📜', label: 'Kısa Sûreler', onPress: () => navigation.navigate('Sureler') },
       { key: 'aksamMuhasebe', emoji: '🌙', label: 'Akşam Muhasebesi', onPress: () => navigation.navigate('Aksam') },
       { key: 'tumVakitler', emoji: '📿', label: 'Tüm Vakitler', onPress: () => navigation.navigate('TumVakitler') },
       { key: 'gecmis', emoji: '📊', label: 'Geçmiş', onPress: () => navigation.navigate('Gecmis') },

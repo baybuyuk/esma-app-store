@@ -28,6 +28,8 @@ import HakkindaScreen from './src/screens/HakkindaScreen';
 import KibleScreen from './src/screens/KibleScreen';
 import EvradScreen from './src/screens/EvradScreen';
 import DualarScreen from './src/screens/DualarScreen';
+import SurelerScreen from './src/screens/SurelerScreen';
+import SureDetayScreen from './src/screens/SureDetayScreen';
 import SalavatScreen from './src/screens/SalavatScreen';
 import SalavatIstatistikScreen from './src/screens/SalavatIstatistikScreen';
 import ErisilebilirlikScreen from './src/screens/ErisilebilirlikScreen';
@@ -99,6 +101,8 @@ export default function App() {
             <Stack.Screen name="Kible" component={KibleScreen} />
             <Stack.Screen name="Evrad" component={EvradScreen} />
             <Stack.Screen name="Dualar" component={DualarScreen} />
+            <Stack.Screen name="Sureler" component={SurelerScreen} />
+            <Stack.Screen name="SureDetay" component={SureDetayScreen} />
             <Stack.Screen name="Salavat" component={SalavatScreen} />
             <Stack.Screen name="SalavatIstatistik" component={SalavatIstatistikScreen} />
             <Stack.Screen name="Erisilebilirlik" component={ErisilebilirlikScreen} />
