@@ -113,13 +113,13 @@ export default function OnboardingNotificationScreen({ navigation }) {
         await namazBildirimleriniKur(vakitler);
       }
     } finally {
-      navigation.navigate('OnboardingEsma');
+      navigation.navigate('OnboardingEsmaAciklama');
     }
   };
 
   const hayir = async () => {
     await AsyncStorage.setItem('bildirimAcik', '0');
-    navigation.navigate('OnboardingEsma');
+    navigation.navigate('OnboardingEsmaAciklama');
   };
 
   return (

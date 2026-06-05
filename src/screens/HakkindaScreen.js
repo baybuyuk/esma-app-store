@@ -134,6 +134,15 @@ export default function HakkindaScreen({ navigation }) {
           </Text>
         </View>
 
+        <View style={styles.bilgiKutu}>
+          <Text style={[styles.bilgiBaslik, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>
+            Esma Hesabı Hakkında
+          </Text>
+          <Text style={[styles.bilgiMetin, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>
+            İsmindeki harflerin sayısal değerleri klasik Ebced hesabıyla toplanır ve seni Allah'ın 99 isminden birine yönlendirir. Bu eşleme rastgele değildir — sende doğuştan en çok ihtiyaç duyulan ilahi nitelik üzerinedir. Zikrettikçe Allah'ın bu sıfatından nasibin artar. Bu yöntem Bûnî (Şemsü'l-Maârif), Gümüşhânevî (Mecmûâtü'l-Ahzâb) ve Nâzilî (Hizbü'l-Bahr) gibi klasik havas kaynaklarında anlatılan bir gelenektir. Bilgi amaçlıdır, dini bir vecibe içermez.
+          </Text>
+        </View>
+
         <Animated.View
           style={[
             styles.lisansKutu,

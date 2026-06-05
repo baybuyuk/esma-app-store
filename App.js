@@ -10,6 +10,7 @@ import OnboardingNameScreen from './src/screens/OnboardingNameScreen';
 import OnboardingYaziBoyutuScreen from './src/screens/OnboardingYaziBoyutuScreen';
 import OnboardingLocationScreen from './src/screens/OnboardingLocationScreen';
 import OnboardingNotificationScreen from './src/screens/OnboardingNotificationScreen';
+import OnboardingEsmaAciklamaScreen from './src/screens/OnboardingEsmaAciklamaScreen';
 import OnboardingEsmaScreen from './src/screens/OnboardingEsmaScreen';
 import AnaEkran from './src/screens/AnaEkran';
 import ZikirSayacScreen from './src/screens/ZikirSayacScreen';
@@ -84,6 +85,7 @@ export default function App() {
             <Stack.Screen name="OnboardingYaziBoyutu" component={OnboardingYaziBoyutuScreen} />
             <Stack.Screen name="OnboardingLocation" component={OnboardingLocationScreen} />
             <Stack.Screen name="OnboardingNotification" component={OnboardingNotificationScreen} />
+            <Stack.Screen name="OnboardingEsmaAciklama" component={OnboardingEsmaAciklamaScreen} />
             <Stack.Screen name="OnboardingEsma" component={OnboardingEsmaScreen} />
             <Stack.Screen name="AnaEkran" component={AnaEkran} />
             <Stack.Screen name="ZikirSayac" component={ZikirSayacScreen} />
