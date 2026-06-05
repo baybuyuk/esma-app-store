@@ -45,6 +45,12 @@ yarn-error.*
 
 # build artifacts
 files.zip
+build-output.log
+crash.log
+
+# ikon/grafik kaynak dosyalari (sadece islenmis cikti assets/'a girer)
+icon/
+icon.zip
 
 # yedek dosyalar (git zaten versiyonluyor)
 *.bak
