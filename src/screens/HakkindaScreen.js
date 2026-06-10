@@ -143,6 +143,15 @@ export default function HakkindaScreen({ navigation }) {
           </Text>
         </View>
 
+        <View style={styles.bilgiKutu}>
+          <Text style={[styles.bilgiBaslik, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>
+            Manevi Sûre Tilâveti Hakkında
+          </Text>
+          <Text style={[styles.bilgiMetin, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>
+            Manevi sûreler bölümünde (Yâsîn, Rahmân, Vâkıa, Mülk, Müzzemmil, Nebe ve İnşirâh) tilâvet, kelime kelime senkronludur. Şeyh Mishary Râşid el-Afâsî hocanın okuyuşu çalarken o anda okunan kelime sarı renkle işaretlenir; böylece mushaftan parmakla takip eder gibi gözle izleyebilirsiniz. Hemen altındaki kartta âyetin meâli de aynı anda görünür — Arapça bilmeseniz dahi nereden geçildiğini rahatça takip edebilirsiniz.
+          </Text>
+        </View>
+
         <Animated.View
           style={[
             styles.lisansKutu,
