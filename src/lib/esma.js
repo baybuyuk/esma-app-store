@@ -1,28 +1,69 @@
 import { esmalar, isimler } from './data';
+import { algoritmikEbced, asciiNormalize } from './translit';
 
-const VARSAYILAN_ESMA_NO = 19;
+// Sozluk key'lerinin diakritik-temiz indexi.
+// Modul yuklendiginde bir kez kurulur. "Omer" / "Ömer" / "ömer" hepsi ayni key'e duser.
+// Cakisma durumunda son giris kazanir — kalibrasyon scripti cakismalari ayrica raporluyor.
+const NORMALIZED_INDEX = {};
+for (const key of Object.keys(isimler)) {
+  const norm = asciiNormalize(key);
+  if (norm.length > 0) {
+    NORMALIZED_INDEX[norm] = isimler[key];
+  }
+}
 
+// Isimden esma bulma — HIBRIT:
+//  1) Sozlukte (assets/data/isimler.json) varsa: klasik dogruluk (Omer=310, Ali=110...)
+//     Lookup ASCII-normalize index uzerinden — diakritiksiz yazilan isim (Omer, Huseyin)
+//     da sozlukten bulunur. Yasli kullanici Turkce karakter koyamayabilir, kritik.
+//  2) Sozlukte yoksa: turkceToArapca + harf-bazli Ebced algoritmasi.
+//     ASLA "bulunamadi" donmez — her isim icin bir esma bulunur.
 export function isimdenEsma(turkceIsim) {
-  if (!turkceIsim || typeof turkceIsim !== 'string') {
-    return getVarsayilan('');
+  if (!turkceIsim || typeof turkceIsim !== 'string' || turkceIsim.trim().length === 0) {
+    // Bos/gecersiz input: yine de bir sonuc don, ama bos isim icin sembolik.
+    return {
+      bulundu: false,
+      kaynak: 'bos',
+      isim_turkce: '',
+      isim_arapca: null,
+      isim_ebced: null,
+      cinsiyet: 'u',
+      esma: null,
+      fark: null,
+    };
   }
 
-  const isim = turkceIsim.toLocaleLowerCase('tr-TR').trim();
-  const isimVerisi = isimler[isim];
+  const normIsim = asciiNormalize(turkceIsim);
+  const isimVerisi = NORMALIZED_INDEX[normIsim];
 
-  if (!isimVerisi) {
-    return getVarsayilan(turkceIsim);
+  if (isimVerisi) {
+    // Sozluk yolu
+    const enYakin = enYakinEsma(isimVerisi.ebced);
+    return {
+      bulundu: true,
+      kaynak: 'sozluk',
+      isim_turkce: turkceIsim,
+      isim_arapca: isimVerisi.arapca,
+      isim_ebced: isimVerisi.ebced,
+      cinsiyet: isimVerisi.cinsiyet,
+      esma: enYakin,
+      fark: Math.abs(isimVerisi.ebced - enYakin.ebced),
+    };
   }
 
-  const enYakin = enYakinEsma(isimVerisi.ebced);
+  // Algoritmik yol
+  const { arapca, ebced } = algoritmikEbced(turkceIsim);
+  const enYakin = enYakinEsma(ebced);
   return {
     bulundu: true,
+    kaynak: 'algoritma',
     isim_turkce: turkceIsim,
-    isim_arapca: isimVerisi.arapca,
-    isim_ebced: isimVerisi.ebced,
-    cinsiyet: isimVerisi.cinsiyet,
+    isim_arapca: arapca,
+    isim_ebced: ebced,
+    cinsiyet: 'u',
     esma: enYakin,
-    fark: Math.abs(isimVerisi.ebced - enYakin.ebced),
+    fark: enYakin ? Math.abs(ebced - enYakin.ebced) : null,
+    not: 'Adın Ebced harf hesabıyla çıkarıldı.',
   };
 }
 
@@ -51,20 +92,6 @@ export function tesireGoreEsma(kategori) {
 
 export function guneGoreEsma(gun) {
   return esmalar.filter((e) => e.gun === gun);
-}
-
-function getVarsayilan(turkceIsim) {
-  const varsayilan = esmaById(VARSAYILAN_ESMA_NO);
-  return {
-    bulundu: false,
-    isim_turkce: turkceIsim,
-    isim_arapca: null,
-    isim_ebced: null,
-    cinsiyet: 'u',
-    esma: varsayilan,
-    fark: null,
-    not: 'Isim sozlugumuzde bulunamadi, sana en faydali esmalardan biri olan Fettah atandi.',
-  };
 }
 
 // Tum esmalari no'ya gore artan sirada guvenli kopya olarak dondurur.
