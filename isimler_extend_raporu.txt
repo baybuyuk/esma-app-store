@@ -1,0 +1,440 @@
+=== ISIMLER.JSON GENISLETME DETAYLI RAPOR ===
+Onceki: 246, Sonraki: 632
+Eklenen: 386 (E:191 K:174 U:21)
+Klasik etymon: 202, Algoritmik: 184
+
+=== EKLENEN ISIMLER (alfabetik) ===
+key | arapca | ebced | cinsiyet | kaynak
+abdullatif | عبد اللطيف | 236 | e | klasik-etymon
+abdülbasit | عبد الباسط | 179 | e | klasik-etymon
+abdülcebbar | عبد الجبار | 313 | e | klasik-etymon
+abdülgaffar | عبد الغفار | 1388 | e | klasik-etymon
+abdülgani | عبد الغني | 1167 | e | klasik-etymon
+abdülhalim | عبد الحليم | 195 | e | klasik-etymon
+abdülmecit | عبد المجيد | 164 | e | klasik-etymon
+abdülmelik | عبد الملك | 197 | e | klasik-etymon
+abdülvahit | عبد الواحد | 126 | e | klasik-etymon
+abdüsselam | عبد السلام | 238 | e | klasik-etymon
+ada | ادا | 6 | k | algoritmik
+adem | آدم | 45 | e | klasik-etymon
+afet | آفت | 481 | k | klasik-etymon
+ahmed | أحمد | 53 | e | klasik-etymon
+ahmet kerim | اهماتكاريم | 718 | e | algoritmik
+ahmet yusuf | اهماتيوسوف | 609 | e | algoritmik
+akif | عاكف | 171 | e | klasik-etymon
+alp | الب | 33 | e | algoritmik
+alpay | الباي | 44 | e | algoritmik
+altan | التان | 482 | e | algoritmik
+altay | التاي | 442 | e | algoritmik
+arda | اردا | 206 | e | algoritmik
+aren | اران | 252 | e | algoritmik
+arif | عارف | 351 | e | klasik-etymon
+arzu | ارزو | 214 | k | algoritmik
+asaf | آصف | 171 | e | klasik-etymon
+asım | عاصم | 201 | e | klasik-etymon
+aslan | اسلان | 142 | e | algoritmik
+asu | اسو | 67 | k | algoritmik
+ata | اتا | 402 | e | algoritmik
+ataberk | اتابارك | 625 | e | algoritmik
+atakan | اتاكان | 473 | e | algoritmik
+atalay | اتالاي | 443 | e | algoritmik
+atıf | عاطف | 160 | e | klasik-etymon
+atıl | اتل | 431 | e | algoritmik
+atlas | اتلاس | 492 | e | algoritmik
+aybike | ايبيكا | 44 | k | algoritmik
+ayda | آيدا | 16 | k | klasik-etymon
+aydanur | ايدانور | 272 | k | algoritmik
+ayfer | آيفر | 291 | k | klasik-etymon
+ayhan | آيخان | 662 | e | klasik-etymon
+ayla | ايلا | 42 | k | algoritmik
+aylin | آيلين | 101 | k | klasik-etymon
+aysel | آيسل | 101 | k | klasik-etymon
+aysima | آيسيما | 122 | k | klasik-etymon
+aysun | آيسون | 127 | k | klasik-etymon
+ayşen | عائشن | 431 | k | klasik-etymon
+azime | عظيمة | 1025 | k | klasik-etymon
+azize | عزيزة | 99 | k | klasik-etymon
+azra | ازرا | 209 | k | algoritmik
+bahaeddin | بهاء الدين | 104 | e | klasik-etymon
+baran | باران | 254 | e | algoritmik
+barkın | باركن | 273 | e | algoritmik
+barlas | بارلاس | 294 | e | algoritmik
+başak | باشاك | 324 | k | algoritmik
+batu | باتو | 409 | e | algoritmik
+batuhan | باتوهان | 465 | e | algoritmik
+bedirhan | باديرهان | 273 | e | algoritmik
+bedrettin | بدر الدين | 301 | e | klasik-etymon
+bedri | بدري | 216 | e | klasik-etymon
+begüm | باكوم | 69 | k | algoritmik
+behçet | بهجت | 410 | e | klasik-etymon
+behiye | بهية | 22 | k | klasik-etymon
+belin | بالين | 93 | k | algoritmik
+belinay | باليناي | 104 | k | algoritmik
+belkıs | بلقيس | 202 | k | klasik-etymon
+berat | بارات | 604 | e | algoritmik
+berfin | بارفين | 343 | k | algoritmik
+beril | باريل | 243 | k | algoritmik
+berk | بارك | 223 | e | algoritmik
+berke | باركا | 224 | e | algoritmik
+berker | باركار | 424 | e | algoritmik
+berra | بارا | 204 | k | algoritmik
+berrak | باراك | 224 | k | algoritmik
+beste | باستا | 464 | k | algoritmik
+bilge | بيلكا | 63 | u | algoritmik
+bilgehan | بلگه خان | 688 | e | klasik-etymon
+birsen | بيرسان | 323 | k | algoritmik
+bora | بورا | 209 | e | algoritmik
+boran | بوران | 259 | e | algoritmik
+bozkurt | بوزكورت | 641 | e | algoritmik
+bulut | بولوت | 444 | u | algoritmik
+cafer | جعفر | 353 | e | klasik-etymon
+cansu | جانسو | 120 | k | algoritmik
+casim | جاسم | 104 | e | klasik-etymon
+cemile | جميلة | 88 | k | klasik-etymon
+cengizhan | جانكيزهان | 147 | e | algoritmik
+cevriye | جوريه | 224 | k | klasik-etymon
+ceylan | جايلان | 95 | k | algoritmik
+çağan | جاغان | 1055 | e | algoritmik
+çağatay | جاغاتاي | 1416 | e | algoritmik
+çağla | جاغلا | 1035 | k | algoritmik
+çağrı | جاغر | 1204 | u | algoritmik
+çelik | جاليك | 64 | e | algoritmik
+çetin | جاتين | 464 | e | algoritmik
+çınar | جنار | 254 | e | algoritmik
+çiğdem | جيغدام | 1058 | k | algoritmik
+çilem | جيلام | 84 | k | algoritmik
+çisem | جيسام | 114 | k | algoritmik
+davud | داود | 15 | e | klasik-etymon
+defne | دافنا | 136 | k | algoritmik
+demir | دامير | 255 | e | algoritmik
+deniz can | دانيزجان | 126 | u | algoritmik
+deren | داران | 256 | k | algoritmik
+derin | دارين | 265 | u | algoritmik
+dilan | ديلان | 95 | k | algoritmik
+dilay | ديلاي | 55 | k | algoritmik
+dilek | ديلك | 64 | k | klasik-etymon
+dilruba | ديلروبا | 253 | k | algoritmik
+dilşad | دلشاد | 339 | k | klasik-etymon
+doğa | دوغا | 1011 | u | algoritmik
+doruk | دوروك | 236 | e | algoritmik
+ebrar | ابرار | 404 | k | algoritmik
+eda | ادا | 6 | k | algoritmik
+eflin | افلين | 171 | k | algoritmik
+egemen | اكامان | 113 | e | algoritmik
+ekin | اكين | 81 | u | algoritmik
+eliz | اليز | 48 | k | algoritmik
+elvan | الوان | 88 | u | algoritmik
+elvin | الوين | 97 | k | algoritmik
+emel | أمل | 71 | k | klasik-etymon
+emirhan | اميرهان | 307 | e | algoritmik
+enes | أنس | 111 | e | klasik-etymon
+enise | أنيسة | 126 | k | klasik-etymon
+eralp | ارالب | 234 | e | algoritmik
+ergun | اركون | 277 | e | algoritmik
+ersin | ارسين | 321 | e | algoritmik
+ertekin | ارتاكين | 682 | e | algoritmik
+esen | اسان | 112 | u | algoritmik
+esila | اسيلا | 102 | k | klasik-etymon
+esin | اسين | 121 | k | algoritmik
+esma nur | أسماء نور | 359 | k | klasik-etymon
+esmanur | أسماء نور | 359 | k | klasik-etymon
+eylül | ايلول | 77 | k | algoritmik
+eyüp | أيوب | 19 | e | klasik-etymon
+ezgi | ازكي | 38 | k | algoritmik
+fadıl | فاضل | 911 | e | klasik-etymon
+faik | فائق | 191 | e | klasik-etymon
+fatma nur | فاطمة نور | 391 | k | klasik-etymon
+fatmanur | فاطمة نور | 391 | k | klasik-etymon
+fazıl | فاضل | 911 | e | klasik-etymon
+fevziye | فوزية | 108 | k | klasik-etymon
+feyzi | فيضي | 900 | e | klasik-etymon
+fitnat | فطنت | 539 | k | klasik-etymon
+fulya | فوليا | 127 | k | algoritmik
+gıyasettin | غياث الدين | 1606 | e | klasik-etymon
+gökçe | كوكجا | 50 | k | algoritmik
+göktuğ | كوكتوغ | 1452 | e | algoritmik
+görkem | كوركام | 287 | u | algoritmik
+gözde | كوزدا | 38 | k | algoritmik
+güçlü | كوجلو | 65 | e | algoritmik
+güler | كولار | 257 | k | algoritmik
+gülnaz | گلناز | 88 | k | klasik-etymon
+gülnur | گل نور | 286 | k | klasik-etymon
+gülsen | كولسان | 167 | k | algoritmik
+gülsüm | كلثوم | 596 | k | klasik-etymon
+habib | حبيب | 22 | e | klasik-etymon
+habibe | حبيبة | 27 | k | klasik-etymon
+habil | هابيل | 48 | e | klasik-etymon
+hadice | خديجة | 622 | k | klasik-etymon
+hafız | حافظ | 989 | e | klasik-etymon
+hakanalp | هاكانالب | 110 | e | algoritmik
+hakkı | حقي | 118 | e | klasik-etymon
+halide | خالدة | 640 | k | klasik-etymon
+hamide | حميدة | 67 | k | klasik-etymon
+hanım | خانم | 691 | k | klasik-etymon
+hayrunisa | خير النساء | 953 | k | klasik-etymon
+hızır | خضر | 1600 | e | klasik-etymon
+hilmi | حلمي | 88 | e | klasik-etymon
+hudai | هدائي | 30 | e | klasik-etymon
+hulusi | خلوصي | 736 | e | klasik-etymon
+humeyra | حميراء | 260 | k | klasik-etymon
+hürrem | خرم | 840 | k | klasik-etymon
+iclal | يجلال | 74 | k | algoritmik
+idil | يديل | 54 | k | algoritmik
+ihsan | إحسان | 120 | e | klasik-etymon
+ilayda | يلايدا | 56 | k | algoritmik
+ilgin | يلكين | 120 | k | algoritmik
+ilkay | يلكاي | 71 | u | algoritmik
+ilke | يلكا | 61 | u | algoritmik
+ilkim | يلكيم | 110 | k | algoritmik
+ilkin | يلكين | 120 | k | algoritmik
+ilknur | إيلك نور | 317 | k | klasik-etymon
+ilyas | إلياس | 102 | e | klasik-etymon
+imam | إمام | 82 | e | klasik-etymon
+imran | عمران | 361 | e | klasik-etymon
+inci | ينجي | 73 | k | algoritmik
+irmak | يرماك | 271 | u | algoritmik
+ishak | إسحاق | 170 | e | klasik-etymon
+ismet | عصمت | 600 | e | klasik-etymon
+işıl | يشل | 340 | k | algoritmik
+işın | يشن | 360 | k | algoritmik
+kamil | كامل | 91 | e | klasik-etymon
+kasım | قاسم | 201 | e | klasik-etymon
+kaya | قايا | 112 | e | klasik-etymon
+kenan | كنعان | 191 | e | klasik-etymon
+kerime | كريمة | 275 | k | klasik-etymon
+kıvılcım | كولجم | 99 | k | algoritmik
+korkut | قورقوت | 812 | e | klasik-etymon
+kuzey | كوزاي | 44 | u | algoritmik
+lamia | لامعة | 146 | k | klasik-etymon
+lara | لارا | 232 | k | algoritmik
+latife | لطيفة | 134 | k | klasik-etymon
+lütfi | لطفي | 129 | e | klasik-etymon
+mahinur | ماه نور | 302 | k | klasik-etymon
+mahir | ماهر | 246 | e | klasik-etymon
+mansur | منصور | 386 | e | klasik-etymon
+masum | معصوم | 246 | e | klasik-etymon
+mavi | ماوي | 57 | u | algoritmik
+mecit | مجيد | 57 | e | klasik-etymon
+mehdi | مهدي | 59 | e | klasik-etymon
+mehlika | مه ليقا | 186 | k | klasik-etymon
+mehmet ali | محمد علي | 202 | e | klasik-etymon
+mehtap | ماهتاب | 449 | k | algoritmik
+melis | ماليس | 141 | k | algoritmik
+melisa | ماليسا | 142 | k | algoritmik
+meltem | مالتام | 512 | k | algoritmik
+mercan | مارجان | 295 | k | algoritmik
+mete han | ماتاهان | 498 | e | algoritmik
+mihriban | مهربان | 298 | k | klasik-etymon
+mira | ميرا | 251 | k | algoritmik
+miraç | معراج | 314 | e | klasik-etymon
+miray | ميراي | 261 | k | algoritmik
+mithat | ميتهات | 856 | e | algoritmik
+mualla | معلى | 150 | k | klasik-etymon
+muammer | معمر | 350 | e | klasik-etymon
+muazzez | معززة | 129 | k | klasik-etymon
+muhittin | محيي الدين | 163 | e | klasik-etymon
+muhsin | محسن | 158 | e | klasik-etymon
+muhyiddin | محيي الدين | 163 | e | klasik-etymon
+mübeccel | مبجلة | 80 | k | klasik-etymon
+mücahit | مجاهد | 53 | e | klasik-etymon
+müjdat | مژدات | 445 | e | klasik-etymon
+mümin | مؤمن | 136 | e | klasik-etymon
+münevver | منورة | 301 | k | klasik-etymon
+münir | منير | 300 | e | klasik-etymon
+müzeyyen | مزينة | 112 | k | klasik-etymon
+nail | نائل | 91 | e | klasik-etymon
+naim | نعيم | 170 | e | klasik-etymon
+naz | ناز | 58 | k | algoritmik
+nazan | نازان | 109 | k | algoritmik
+nazif | نظيف | 1040 | e | klasik-etymon
+nazife | نظيفة | 1045 | k | klasik-etymon
+nebi | نبي | 62 | e | klasik-etymon
+nedim | نديم | 104 | e | klasik-etymon
+nehir | ناهير | 266 | k | algoritmik
+nejat | نجاة | 59 | e | klasik-etymon
+nida | نيدا | 65 | k | algoritmik
+nil | نيل | 90 | k | algoritmik
+nilay | نيلاي | 101 | k | algoritmik
+nimet | نعمة | 165 | k | klasik-etymon
+nisa | نيسا | 121 | k | algoritmik
+niyazi | نيازي | 78 | e | klasik-etymon
+nuh | نوح | 64 | e | klasik-etymon
+numan | نعمان | 211 | e | klasik-etymon
+nuray | نور آي | 267 | k | klasik-etymon
+nurettin | نور الدين | 351 | e | klasik-etymon
+nurgül | نور گل | 286 | k | klasik-etymon
+nurhan | نور خان | 907 | k | klasik-etymon
+nuriye | نورية | 271 | k | klasik-etymon
+nurten | نور تن | 706 | k | klasik-etymon
+nurullah | نور الله | 322 | e | klasik-etymon
+nusret | نصرت | 740 | e | klasik-etymon
+oğuzhan | وغوزهان | 1075 | e | algoritmik
+onur can | ونورجان | 316 | e | algoritmik
+orkun | وركون | 282 | e | algoritmik
+osman ali | وسمانالي | 198 | e | algoritmik
+öykü | ويكو | 42 | k | algoritmik
+özge | وزكا | 34 | k | algoritmik
+pelinsu | بالينسو | 159 | k | algoritmik
+pervin | باروين | 269 | k | algoritmik
+petek | باتاك | 424 | k | algoritmik
+pırıl | برل | 232 | k | algoritmik
+pırlanta | برلانتا | 684 | k | algoritmik
+polat | بولات | 439 | e | algoritmik
+poyraz | بويراز | 226 | e | algoritmik
+rahmi | رحمي | 258 | e | klasik-etymon
+raif | رائف | 291 | e | klasik-etymon
+ramadan | رمضان | 1091 | e | klasik-etymon
+rana | رعنا | 321 | k | klasik-etymon
+raşit | راشد | 505 | e | klasik-etymon
+rauf | رؤوف | 292 | e | klasik-etymon
+ravza | روضة | 1011 | k | klasik-etymon
+refik | رفيق | 390 | e | klasik-etymon
+remzi | رمزي | 257 | e | klasik-etymon
+reşit | رشيد | 514 | e | klasik-etymon
+reyhan | ريحان | 269 | k | klasik-etymon
+ruhi | روحي | 224 | e | klasik-etymon
+rüstem | رستم | 700 | e | klasik-etymon
+rüveyda | رويدا | 221 | k | klasik-etymon
+rüya | رويا | 217 | k | algoritmik
+rüzgar | روزكار | 434 | u | algoritmik
+saffet | صفوت | 576 | e | klasik-etymon
+safiye | صفية | 185 | k | klasik-etymon
+sait | سعيد | 144 | e | klasik-etymon
+salim | سالم | 131 | e | klasik-etymon
+saniye | ثانية | 566 | k | klasik-etymon
+sarp | سارب | 263 | e | algoritmik
+seda | سادا | 66 | k | algoritmik
+sedat | سداد | 69 | e | klasik-etymon
+sedef | ساداف | 146 | k | algoritmik
+selçuk | سالجوك | 120 | e | algoritmik
+sevcan | ساوجان | 121 | k | algoritmik
+sevde | سودة | 75 | k | klasik-etymon
+sevil | ساويل | 107 | k | algoritmik
+sevtap | ساوتاب | 470 | k | algoritmik
+seyfettin | سيف الدين | 245 | e | klasik-etymon
+seyit | سيد | 74 | e | klasik-etymon
+sezer | سازار | 269 | e | algoritmik
+sıddık | صديق | 204 | e | klasik-etymon
+sıdıka | صديقة | 209 | k | klasik-etymon
+sıla | سلا | 91 | u | algoritmik
+sıtkı | صدقي | 204 | e | klasik-etymon
+simay | سيماي | 121 | k | algoritmik
+simge | سيمكا | 131 | k | algoritmik
+sinem | سينام | 161 | k | algoritmik
+su | سو | 66 | k | algoritmik
+suat | سؤاد | 71 | e | klasik-etymon
+subhi | صبحي | 110 | e | klasik-etymon
+sude | سودا | 71 | k | algoritmik
+suheyla | سهيلا | 106 | k | klasik-etymon
+sungur | سونغور | 1322 | e | klasik-etymon
+suzan | سوزان | 124 | k | algoritmik
+sümeyra | سميراء | 312 | k | klasik-etymon
+şebnem | شابنام | 394 | k | algoritmik
+şefik | شفيق | 490 | e | klasik-etymon
+şefika | شفيقة | 495 | k | klasik-etymon
+şefkat | شفقت | 880 | k | klasik-etymon
+şeref | شرف | 580 | e | klasik-etymon
+şevval | شوال | 337 | k | klasik-etymon
+şeyma | شيماء | 352 | k | klasik-etymon
+şinasi | شناسي | 421 | e | klasik-etymon
+şuayp | شعيب | 382 | e | klasik-etymon
+taha | تاها | 407 | e | algoritmik
+tahir | طاهر | 215 | e | klasik-etymon
+talat | طلعت | 509 | e | klasik-etymon
+talip | طالب | 42 | e | klasik-etymon
+tara | تارا | 602 | k | algoritmik
+tarkan | تاركان | 672 | e | algoritmik
+tayyar | تايار | 612 | e | algoritmik
+tekin | تاكين | 481 | e | algoritmik
+tevfik | توفيق | 596 | e | klasik-etymon
+tolgahan | تولكاهان | 513 | e | algoritmik
+toprak | توبراك | 629 | u | algoritmik
+tuana | توانا | 458 | k | algoritmik
+tuba | توبا | 409 | k | algoritmik
+tuğba | توغبا | 1409 | k | algoritmik
+tuğra | توغرا | 1607 | e | algoritmik
+tuna | تونا | 457 | u | algoritmik
+turan | طوران | 266 | e | klasik-etymon
+turgut | طورغوت | 1621 | e | klasik-etymon
+tülay | تولاي | 447 | k | algoritmik
+tülin | تولين | 496 | k | algoritmik
+türkan | توركان | 677 | k | algoritmik
+ubeyd | عبيد | 86 | e | klasik-etymon
+ulaş | ولاش | 337 | e | algoritmik
+uras | وراس | 267 | e | algoritmik
+ümmü | أم | 41 | k | klasik-etymon
+ümmühan | أم خان | 692 | k | klasik-etymon
+ümran | عمران | 361 | k | klasik-etymon
+vahdet | وحدت | 418 | e | klasik-etymon
+vasfi | وصفي | 186 | e | klasik-etymon
+vasıf | وصاف | 177 | e | klasik-etymon
+vehbi | وهبي | 23 | e | klasik-etymon
+vesile | وسيلة | 111 | k | klasik-etymon
+veysel | ويسل | 106 | e | klasik-etymon
+veysi | ويسي | 86 | e | klasik-etymon
+yağız | ياغز | 1018 | e | algoritmik
+yağmur | ياغمور | 1257 | u | algoritmik
+yahşi | ياخشي | 921 | e | klasik-etymon
+yaman | يامان | 102 | e | algoritmik
+yaren | ياران | 262 | u | algoritmik
+yaşar | ياشار | 512 | e | klasik-etymon
+yelda | يالدا | 46 | k | algoritmik
+yıldırım | يلدرم | 284 | e | klasik-etymon
+yıldız | يلدز | 51 | k | algoritmik
+yiğit | يغيت | 1420 | e | algoritmik
+zeren | زاران | 259 | k | algoritmik
+zerrin | زرين | 267 | k | klasik-etymon
+zeyd | زيد | 21 | e | klasik-etymon
+zihni | ذهني | 765 | e | klasik-etymon
+zübeyir | زبير | 219 | e | klasik-etymon
+zühal | زحل | 45 | k | klasik-etymon
+zühre | زهرة | 217 | k | klasik-etymon
+züleyha | زليخا | 648 | k | klasik-etymon
+zümra | زمراء | 249 | k | klasik-etymon
+
+=== ATLANAN CAKISMALAR ===
+Toplam: 31
+  halid (sebep: mevcut-norm, liste: klasik)
+  hamza (sebep: mevcut-norm, liste: klasik)
+  kazım (sebep: mevcut-norm, liste: klasik)
+  nazım (sebep: mevcut-norm, liste: klasik)
+  nizamettin (sebep: mevcut-norm, liste: klasik)
+  rifat (sebep: mevcut-norm, liste: klasik)
+  şaban (sebep: mevcut-norm, liste: klasik)
+  yakup (sebep: mevcut-norm, liste: klasik)
+  emine (sebep: mevcut-norm, liste: klasik)
+  fadime (sebep: mevcut-norm, liste: klasik)
+  hediye (sebep: mevcut-norm, liste: klasik)
+  hümeyra (sebep: liste-ici-mukerrer, liste: klasik)
+  rahime (sebep: mevcut-norm, liste: klasik)
+  aysima (sebep: liste-ici-mukerrer, liste: turkce)
+  ceyda (sebep: mevcut-norm, liste: turkce)
+  cemre (sebep: mevcut-norm, liste: turkce)
+  dilara (sebep: mevcut-norm, liste: turkce)
+  ece (sebep: mevcut-norm, liste: turkce)
+  ela (sebep: mevcut-norm, liste: turkce)
+  gizem (sebep: mevcut-norm, liste: turkce)
+  hilal (sebep: mevcut-norm, liste: turkce)
+  ilkim (sebep: liste-ici-mukerrer, liste: turkce)
+  zerrin (sebep: liste-ici-mukerrer, liste: turkce)
+  ediz (sebep: mevcut-norm, liste: turkce)
+  ege (sebep: mevcut-norm, liste: turkce)
+  gökay (sebep: mevcut-norm, liste: turkce)
+  kağan (sebep: mevcut-norm, liste: turkce)
+  kayhan (sebep: mevcut-norm, liste: turkce)
+  kemal (sebep: mevcut-norm, liste: turkce)
+  ozan (sebep: mevcut-norm, liste: turkce)
+  utku (sebep: mevcut-norm, liste: turkce)
+
+=== 10 ORNEK ISIM (UTF-8 detay) ===
+isim | kaynak | arapca | ebced | esma | fark
+Cagla | sozluk | جاغلا | 1035 | Azîm (no:34) | 15
+Berke | sozluk | باركا | 224 | Kebîr (no:38) | 8
+Defne | sozluk | دافنا | 136 | Mü'min (no:7) | 1
+Eylul | sozluk | ايلول | 77 | Hakîm (no:47) | 1
+Kuzey | sozluk | كوزاي | 44 | Veliyy (no:56) | 2
+Asaf | sozluk | آصف | 171 | Kuddûs (no:5) | 1
+Beste | sozluk | باستا | 464 | Fettâh (no:19) | 25
+Mert | sozluk | مرت | 640 | Müntakim (no:82) | 10
+Sila | sozluk | سلا | 91 | Melik (no:4) | 1
+Toprak | sozluk | توبراك | 629 | Müntakim (no:82) | 1
