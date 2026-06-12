@@ -200,39 +200,24 @@ export default function AnaEkran({ navigation }) {
     return null;
   }, [simdi]);
 
-  // Grid kisayollari — Cuma gunu Salavat 1. siraya cikar.
-  // simdi.getDay() bagimliligi yerine sadece gun degerine bagla; 30sn'lik tik
-  // her dakika kisaYollar referansini degistirmesin.
-  const cumaMi = useMemo(() => simdi.getDay() === 5, [simdi]);
-  const kisaYollar = useMemo(() => {
-    const salavat = {
-      key: 'salavat',
-      emoji: '🌹',
-      label: 'Salavat',
-      onPress: () => navigation.navigate('Salavat'),
-    };
-    const tesbihat = {
-      key: 'tesbihat',
-      emoji: '📿',
-      label: 'Tesbihat',
-      onPress: () => navigation.navigate('Tesbihat'),
-    };
-    const digerleri = [
-      tesbihat,
-      { key: 'kisaZikirler', emoji: '💎', label: 'Kısa Zikirler', onPress: () => navigation.navigate('KisaZikirler') },
-      { key: 'anlikZikir', emoji: '🌟', label: 'Anlık Zikir', onPress: () => navigation.navigate('AnlikZikir') },
-      { key: 'kible', emoji: '🧭', label: 'Kıble', onPress: () => navigation.navigate('Kible') },
-      { key: 'sabahEvrad', emoji: '🌅', label: 'Sabah Evrâdı', onPress: () => navigation.navigate('Evrad', { tip: 'sabah' }) },
-      { key: 'aksamEvrad', emoji: '🌆', label: 'Akşam Evrâdı', onPress: () => navigation.navigate('Evrad', { tip: 'aksam' }) },
-      { key: 'dualar', emoji: '🤲', label: 'Dualar', onPress: () => navigation.navigate('Dualar') },
-      { key: 'sureler', emoji: '📜', label: 'Kısa Sûreler', onPress: () => navigation.navigate('Sureler') },
-      { key: 'aksamMuhasebe', emoji: '🌙', label: 'Akşam Muhasebesi', onPress: () => navigation.navigate('Aksam') },
-      { key: 'tumVakitler', emoji: '🕐', label: 'Tüm Vakitler', onPress: () => navigation.navigate('TumVakitler') },
-      { key: 'gecmis', emoji: '📊', label: 'Geçmiş', onPress: () => navigation.navigate('Gecmis') },
-      { key: 'esmaBul', emoji: '🔍', label: 'Esma Bul', onPress: () => navigation.navigate('EsmaBul') },
-    ];
-    return cumaMi ? [salavat, ...digerleri] : [...digerleri, salavat];
-  }, [cumaMi, navigation]);
+  // Grid kisayollari — Salavat + Tesbihat sabit ust sirada (Cuma bagimsiz).
+  // Esma Bul grid'den cikarildi, gunun hadisi altinda banner olarak yer aliyor.
+  // Sira: Salavat, Tesbihat, Dualar, Sureler, Zikirler, Evrad, Muhasebe, Vakit,
+  // Gecmis, Kible (en alt).
+  const kisaYollar = useMemo(() => [
+    { key: 'salavat', emoji: '🌹', label: 'Salavat', onPress: () => navigation.navigate('Salavat') },
+    { key: 'tesbihat', emoji: '📿', label: 'Tesbihat', onPress: () => navigation.navigate('Tesbihat') },
+    { key: 'dualar', emoji: '🤲', label: 'Dualar', onPress: () => navigation.navigate('Dualar') },
+    { key: 'sureler', emoji: '📜', label: 'Sûreler', onPress: () => navigation.navigate('Sureler') },
+    { key: 'kisaZikirler', emoji: '💎', label: 'Kısa Zikirler', onPress: () => navigation.navigate('KisaZikirler') },
+    { key: 'anlikZikir', emoji: '🌟', label: 'Anlık Zikir', onPress: () => navigation.navigate('AnlikZikir') },
+    { key: 'sabahEvrad', emoji: '🌅', label: 'Sabah Evrâdı', onPress: () => navigation.navigate('Evrad', { tip: 'sabah' }) },
+    { key: 'aksamEvrad', emoji: '🌆', label: 'Akşam Evrâdı', onPress: () => navigation.navigate('Evrad', { tip: 'aksam' }) },
+    { key: 'aksamMuhasebe', emoji: '🌙', label: 'Akşam Muhasebesi', onPress: () => navigation.navigate('Aksam') },
+    { key: 'tumVakitler', emoji: '🕐', label: 'Tüm Vakitler', onPress: () => navigation.navigate('TumVakitler') },
+    { key: 'gecmis', emoji: '📊', label: 'Geçmiş', onPress: () => navigation.navigate('Gecmis') },
+    { key: 'kible', emoji: '🧭', label: 'Kıble', onPress: () => navigation.navigate('Kible') },
+  ], [navigation]);
 
   const onRefresh = useCallback(async () => {
     setRefreshing(true);
@@ -450,6 +435,22 @@ export default function AnaEkran({ navigation }) {
               )}
             </View>
           )}
+
+          <PressKart
+            style={styles.isminSirriKart}
+            onPress={() => navigation.navigate('EsmaBul')}
+          >
+            <Text style={styles.isminSirriIkon}>🔍</Text>
+            <View style={styles.isminSirriOrta}>
+              <Text style={[styles.isminSirriBaslik, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>
+                İsmin Sırrını Bul
+              </Text>
+              <Text style={[styles.isminSirriAlt, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>
+                Ebced harf hesabıyla esma uyumun
+              </Text>
+            </View>
+            <Text style={styles.isminSirriOk}>›</Text>
+          </PressKart>
 
           <View style={styles.grid}>
             {kisaYollar.map((k) => (
@@ -673,6 +674,38 @@ const styles = StyleSheet.create({
     marginTop: 2,
   },
   tumEsmalarOk: {
+    color: colors.kremAlt,
+    fontSize: 24,
+    marginLeft: 8,
+  },
+
+  // "Ismin Sirrini Bul" — gunun hadisi altinda full-width banner.
+  // Tum Esmalar karti ile ayni gorsel dil (yesil zemin, ayni olculer).
+  isminSirriKart: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: colors.anaYesil,
+    paddingVertical: 14,
+    paddingHorizontal: 16,
+    borderRadius: 16,
+    marginBottom: 12,
+  },
+  isminSirriIkon: {
+    fontSize: type.xl,
+    marginRight: 12,
+  },
+  isminSirriOrta: { flex: 1 },
+  isminSirriBaslik: {
+    color: '#fff',
+    fontSize: type.base,
+    fontWeight: '700',
+  },
+  isminSirriAlt: {
+    color: colors.kremAlt,
+    fontSize: type.xs,
+    marginTop: 2,
+  },
+  isminSirriOk: {
     color: colors.kremAlt,
     fontSize: 24,
     marginLeft: 8,
