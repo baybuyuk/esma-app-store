@@ -103,7 +103,7 @@ export default function EsmaBulScreen({ navigation }) {
         {!sonuc && (
           <View style={styles.bilgiBlok}>
             <Text style={[styles.bilgiBaslik, { fontSize: tip.lg.fontSize, lineHeight: tip.lg.lineHeight }]}>
-              Adın Sırrı
+              Adın Mührü
             </Text>
             <Text style={[styles.bilgiParaf, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight + 6 }]}>
               Hz. Peygamber (s.a.v.) buyurdu:{' '}

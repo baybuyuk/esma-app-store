@@ -23,6 +23,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useFocusEffect } from '@react-navigation/native';
 import { useAudioPlayer, useAudioPlayerStatus, setAudioModeAsync } from 'expo-audio';
+import { activateKeepAwakeAsync, deactivateKeepAwake } from 'expo-keep-awake';
 import { colors } from '../constants/colors';
 import { radii } from '../constants/radii';
 import { useTipScale } from '../context/YaziKademesiContext';
@@ -138,25 +139,28 @@ export default function ManeviSureDetayScreen({ navigation, route }) {
     }, [player])
   );
 
-  // iOS sessiz mod override — tilavet ekraninda telefon sessiz switch ON olsa bile
-  // sure okunsun (yasli kullanici donanim switch'i unutabilir). Tasbih/ortam ses.js
-  // global ayari mixWithOthers + playsInSilentMode:false. Burada sadece bu ekran
-  // suresince override edip, blur olunca eski hale geri donuyoruz. ses.js global
-  // sesModuKuruldu state'i etkilenmiyor.
+  // iOS sessiz mod override + arka plan oynatma — tilavet ekraninda:
+  //  1) Telefon sessiz switch ON olsa bile sure okunsun (yasli kullanici donanim
+  //     switch'i unutabilir).
+  //  2) Ekran kapansa veya app arka plana alinsa ses DEVAM etsin (Yasin gibi uzun
+  //     sureler — kullanici cebine koyup dinleyebilsin). iOS icin app.json
+  //     UIBackgroundModes:['audio'] gerekli.
+  //  3) Aktif tilavet sirasinda ekran otomatik kilitlenmesin — karaoke takibi
+  //     icin (expo-keep-awake).
+  // Blur'da: ses.js global ayara (playsInSilentMode:false, mixWithOthers) geri don,
+  // ekran kilit serbest birak.
   useFocusEffect(
     useCallback(() => {
-      let iptal = false;
       (async () => {
         try {
           await setAudioModeAsync({
             playsInSilentMode: true,
-            shouldPlayInBackground: false,
+            shouldPlayInBackground: true,
             interruptionMode: 'duckOthers',
           });
         } catch (_) {}
       })();
       return () => {
-        iptal = true;
         (async () => {
           try {
             await setAudioModeAsync({
@@ -169,6 +173,19 @@ export default function ManeviSureDetayScreen({ navigation, route }) {
       };
     }, [])
   );
+
+  // Aktif oynatma sirasinda ekran kilitlenmesin (karaoke takip edilebilsin).
+  // Pause/duraklat/blur'da serbest birakilir.
+  useEffect(() => {
+    if (oynaniyor) {
+      activateKeepAwakeAsync('manevi-sure').catch(() => {});
+    } else {
+      deactivateKeepAwake('manevi-sure');
+    }
+    return () => {
+      deactivateKeepAwake('manevi-sure');
+    };
+  }, [oynaniyor]);
 
   const oynatDurdur = useCallback(() => {
     if (!player || !sesVar) return;

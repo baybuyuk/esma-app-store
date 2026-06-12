@@ -7,7 +7,7 @@
 // Ses calmasi: expo-audio'nun hook API'si (useAudioPlayer + useAudioPlayerStatus)
 // Ekran kapanirken player otomatik temizlenir.
 
-import { useMemo, useCallback } from 'react';
+import { useMemo, useCallback, useEffect } from 'react';
 import {
   View,
   Text,
@@ -16,7 +16,9 @@ import {
   StyleSheet,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useAudioPlayer, useAudioPlayerStatus } from 'expo-audio';
+import { useFocusEffect } from '@react-navigation/native';
+import { useAudioPlayer, useAudioPlayerStatus, setAudioModeAsync } from 'expo-audio';
+import { activateKeepAwakeAsync, deactivateKeepAwake } from 'expo-keep-awake';
 import { colors } from '../constants/colors';
 import { radii } from '../constants/radii';
 import { useTipScale } from '../context/YaziKademesiContext';
@@ -80,6 +82,48 @@ export default function SureDetayScreen({ navigation, route }) {
       }
     } catch (_) {}
   }, [player, oynaniyor, bitti]);
+
+  // iOS sessiz mod override + arka plan oynatma — kisa sure ekraninda:
+  //  1) Sessiz switch ON olsa bile sure okunsun.
+  //  2) Ekran kapansa/app arka plana alinsa ses DEVAM etsin (iOS UIBackgroundModes
+  //     ['audio'] app.json'da tanimli).
+  //  3) Aktif oynatma sirasinda ekran otomatik kilitlenmesin (karaoke takibi).
+  // Blur'da ses.js global ayarina geri don.
+  useFocusEffect(
+    useCallback(() => {
+      (async () => {
+        try {
+          await setAudioModeAsync({
+            playsInSilentMode: true,
+            shouldPlayInBackground: true,
+            interruptionMode: 'duckOthers',
+          });
+        } catch (_) {}
+      })();
+      return () => {
+        (async () => {
+          try {
+            await setAudioModeAsync({
+              playsInSilentMode: false,
+              shouldPlayInBackground: false,
+              interruptionMode: 'mixWithOthers',
+            });
+          } catch (_) {}
+        })();
+      };
+    }, [])
+  );
+
+  useEffect(() => {
+    if (oynaniyor) {
+      activateKeepAwakeAsync('sure-detay').catch(() => {});
+    } else {
+      deactivateKeepAwake('sure-detay');
+    }
+    return () => {
+      deactivateKeepAwake('sure-detay');
+    };
+  }, [oynaniyor]);
 
   if (!sure) {
     return (
