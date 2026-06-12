@@ -1,5 +1,5 @@
 import { esmalar, isimler } from './data';
-import { algoritmikEbced, asciiNormalize } from './translit';
+import { algoritmikEbced, asciiNormalize, etymolojikTahmin } from './translit';
 
 // Sozluk key'lerinin diakritik-temiz indexi.
 // Modul yuklendiginde bir kez kurulur. "Omer" / "Ömer" / "ömer" hepsi ayni key'e duser.
@@ -12,12 +12,22 @@ for (const key of Object.keys(isimler)) {
   }
 }
 
-// Isimden esma bulma — HIBRIT:
-//  1) Sozlukte (assets/data/isimler.json) varsa: klasik dogruluk (Omer=310, Ali=110...)
-//     Lookup ASCII-normalize index uzerinden — diakritiksiz yazilan isim (Omer, Huseyin)
-//     da sozlukten bulunur. Yasli kullanici Turkce karakter koyamayabilir, kritik.
-//  2) Sozlukte yoksa: turkceToArapca + harf-bazli Ebced algoritmasi.
-//     ASLA "bulunamadi" donmez — her isim icin bir esma bulunur.
+// Isimden esma bulma — UC ASAMALI HIBRIT FALLBACK:
+//  1) Sozluk (assets/data/isimler.json) — en yuksek dogruluk
+//     Klasik isimler (Omer=310, Ali=110, Hakan=752). ASCII-normalize index
+//     uzerinden — diakritiksiz yazilan isim de bulunur. Yasli kullanici
+//     Turkce karakter koyamayabilir, kritik.
+//
+//  2) Etymolojik tahmin (translit.etymolojikTahmin) — orta dogruluk
+//     Morfem havuzundan greedy longest-match decompose. Sozlukte olmayan
+//     bilesik isimler (Sukrettin, Abdulvelid, Necmettin) icin kok+ek
+//     parcalarindan dogru ebced uretir. Klasik fonetik fallback'ten cok
+//     daha tutarli — Bahaeddin algoritmik 152 yerine etymon 103 (dogru)
+//     verir.
+//
+//  3) Algoritmik fonetik — son care
+//     turkceToArapca + harf-bazli Ebced. Pure Turkce isimler (Cagla,
+//     Defne, Kuzey) icin tek yol. ASLA "bulunamadi" donmez.
 export function isimdenEsma(turkceIsim) {
   if (!turkceIsim || typeof turkceIsim !== 'string' || turkceIsim.trim().length === 0) {
     // Bos/gecersiz input: yine de bir sonuc don, ama bos isim icin sembolik.
@@ -51,7 +61,24 @@ export function isimdenEsma(turkceIsim) {
     };
   }
 
-  // Algoritmik yol
+  // Etymolojik yol (morfem havuzu) — bilesik isimler icin kok+ek decompose
+  const etymon = etymolojikTahmin(turkceIsim);
+  if (etymon) {
+    const enYakin = enYakinEsma(etymon.ebced);
+    return {
+      bulundu: true,
+      kaynak: 'etymon',
+      isim_turkce: turkceIsim,
+      isim_arapca: etymon.arapca,
+      isim_ebced: etymon.ebced,
+      cinsiyet: 'u',
+      esma: enYakin,
+      fark: enYakin ? Math.abs(etymon.ebced - enYakin.ebced) : null,
+      not: 'Adın kök ve eklerinden Ebced hesabıyla çıkarıldı.',
+    };
+  }
+
+  // Algoritmik yol (saf fonetik) — son care
   const { arapca, ebced } = algoritmikEbced(turkceIsim);
   const enYakin = enYakinEsma(ebced);
   return {

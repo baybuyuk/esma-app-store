@@ -1,0 +1,139 @@
+=== ETYMOLOJIK ALGORITMA TEST RAPORU ===
+Test isim sayisi: 71
+
+isim | norm | sozluk | etymon | algo | nihai kaynak | nihai ebced | esma
+--------------------------------------------------------------------------------------------------------------
+sukrettin       | sukrettin     | -        | EB:615   | EB:747   | etymon     | 615    | 82. Müntakim
+sukreddin       | sukreddin     | -        | EB:615   | EB:351   | etymon     | 615    | 82. Müntakim
+serafettin      | serafettin    | -        | EB:675   | EB:803   | etymon     | 675    | 11. Mütekebbir
+serafeddin      | serafeddin    | -        | EB:675   | EB:407   | etymon     | 675    | 11. Mütekebbir
+nizameddin      | nizameddin    | -        | EB:1086  | EB:173   | etymon     | 1086   | 86. Zü'l-Celâli ve'l-İkrâm
+nizamettin      | nizamettin    | EB:1086  | EB:1086  | EB:569   | sozluk     | 1086   | 86. Zü'l-Celâli ve'l-İkrâm
+imadeddin       | imadeddin     | -        | EB:210   | EB:120   | etymon     | 210    | 87. Muksit
+imadettin       | imadettin     | -        | EB:210   | EB:516   | etymon     | 210    | 87. Muksit
+sefereddin      | sefereddin    | -        | EB:435   | EB:407   | etymon     | 435    | 81. Tevvâb
+taceddin        | taceddin      | -        | EB:499   | EB:469   | etymon     | 499    | 55. Metîn
+tacettin        | tacettin      | -        | EB:499   | EB:865   | etymon     | 499    | 55. Metîn
+rukneddin       | rukneddin     | -        | EB:365   | EB:341   | etymon     | 365    | 24. Râfi'
+ruknettin       | ruknettin     | -        | EB:365   | EB:737   | etymon     | 365    | 24. Râfi'
+zeyneddin       | zeyneddin     | -        | EB:162   | EB:133   | etymon     | 162    | 91. Mâni'
+zeynettin       | zeynettin     | -        | EB:162   | EB:529   | etymon     | 162    | 91. Mâni'
+aziziddin       | aziziddin     | -        | -        | EB:99    | algoritma  | 99     | 9. Azîz
+azizettin       | azizettin     | -        | EB:189   | EB:486   | etymon     | 189    | 72. Mukaddim
+celalettin      | celalettin    | -        | EB:159   | EB:526   | etymon     | 159    | 91. Mâni'
+celaleddin      | celaleddin    | -        | EB:159   | EB:130   | etymon     | 159    | 91. Mâni'
+abdulkadir      | abdulkadir    | EB:410   | EB:412   | EB:278   | sozluk     | 410    | 81. Tevvâb
+abdulkerim      | abdulkerim    | -        | EB:377   | EB:314   | etymon     | 377    | 24. Râfi'
+abdulhamid      | abdulhamid    | -        | EB:169   | EB:103   | etymon     | 169    | 5. Kuddûs
+abdulhalim      | abdulhalim    | EB:195   | EB:195   | EB:129   | sozluk     | 195    | 93. Nâfi'
+abdulhakim      | abdulhakim    | -        | EB:185   | EB:119   | etymon     | 185    | 72. Mukaddim
+abdulvedud      | abdulvedud    | -        | EB:127   | EB:64    | etymon     | 127    | 31. Latîf
+abdulvedut      | abdulvedut    | -        | EB:127   | EB:460   | etymon     | 127    | 31. Latîf
+abdurresid      | abdurresid    | -        | EB:621   | EB:288   | etymon     | 621    | 82. Müntakim
+abdurrezzak     | abdurrezzak   | EB:413   | EB:415   | EB:242   | sozluk     | 413    | 81. Tevvâb
+abdurrauf       | abdurrauf     | -        | EB:399   | EB:300   | etymon     | 399    | 81. Tevvâb
+abdulazim       | abdulazim     | -        | EB:1127  | EB:101   | etymon     | 1127   | 76. Zâhir
+abdulmuhsin     | abdulmuhsin   | -        | EB:265   | EB:214   | etymon     | 265    | 43. Kerîm
+abdusselam      | abdusselam    | EB:238   | EB:238   | EB:145   | sozluk     | 238    | 38. Kebîr
+abdussamed      | abdussamed    | -        | EB:241   | EB:119   | etymon     | 241    | 38. Kebîr
+mukerrem        | mukerrem      | -        | EB:300   | EB:308   | etymon     | 300    | 2. Rahmân
+rahime          | rahime        | EB:263   | EB:263   | EB:257   | sozluk     | 263    | 3. Rahîm
+kerime          | kerime        | EB:275   | EB:275   | EB:272   | sozluk     | 275    | 43. Kerîm
+halime          | halime        | EB:93    | EB:93    | EB:87    | sozluk     | 93     | 9. Azîz
+selime          | selime        | -        | EB:145   | EB:142   | etymon     | 145    | 8. Müheymin
+munir           | munir         | EB:300   | EB:300   | EB:306   | sozluk     | 300    | 2. Rahmân
+munire          | munire        | -        | EB:305   | EB:307   | etymon     | 305    | 70. Kâdir
+enver           | enver         | -        | EB:257   | EB:258   | etymon     | 257    | 3. Rahîm
+ekrem           | ekrem         | -        | EB:261   | EB:262   | etymon     | 261    | 3. Rahîm
+aziziye         | aziziye       | -        | EB:109   | EB:36    | etymon     | 109    | 37. Aliyy
+mualla          | mualla        | EB:150   | EB:150   | EB:78    | sozluk     | 150    | 20. Alîm
+nuriye          | nuriye        | EB:271   | EB:271   | EB:267   | sozluk     | 271    | 43. Kerîm
+nurullah        | nurullah      | EB:322   | EB:322   | EB:298   | sozluk     | 322    | 51. Şehîd
+rahmiye         | rahmiye       | -        | EB:263   | EB:257   | etymon     | 263    | 3. Rahîm
+sukriye         | sukriye       | -        | EB:535   | EB:297   | etymon     | 535    | 36. Şekûr
+mansur          | mansur        | EB:386   | EB:386   | EB:357   | sozluk     | 386    | 81. Tevvâb
+mensur          | mensur        | -        | EB:386   | EB:357   | etymon     | 386    | 81. Tevvâb
+nusret          | nusret        | EB:740   | EB:345   | EB:717   | sozluk     | 740    | 71. Muktedir
+nasir           | nasir         | -        | EB:341   | EB:321   | etymon     | 341    | 14. Musavvir
+talha           | talha         | EB:44    | EB:52    | EB:437   | sozluk     | 44     | 56. Veliyy
+ammar           | ammar         | -        | EB:311   | EB:242   | etymon     | 311    | 44. Rakîb
+bilal           | bilal         | EB:64    | EB:63    | EB:73    | sozluk     | 64     | 1. Allah
+hasan           | hasan         | EB:118   | EB:118   | EB:117   | sozluk     | 118    | 25. Muiz
+huseyin         | huseyin       | EB:128   | EB:128   | EB:132   | sozluk     | 128    | 31. Latîf
+hasbullah       | hasbullah     | -        | EB:136   | EB:110   | etymon     | 136    | 7. Mü'min
+lutfullah       | lutfullah     | -        | EB:185   | EB:558   | etymon     | 185    | 72. Mukaddim
+fethullah       | fethullah     | -        | EB:554   | EB:528   | etymon     | 554    | 79. Müteâlî
+ayetullah       | ayetullah     | -        | EB:82    | EB:454   | etymon     | 82     | 41. Hasîb
+cagla           | cagla         | EB:1035  | -        | EB:55    | sozluk     | 1035   | 34. Azîm
+defne           | defne         | EB:136   | -        | EB:136   | sozluk     | 136    | 7. Mü'min
+kuzey           | kuzey         | EB:44    | -        | EB:44    | sozluk     | 44     | 56. Veliyy
+eylul           | eylul         | EB:77    | -        | EB:77    | sozluk     | 77     | 47. Hakîm
+asya            | asya          | -        | -        | EB:72    | algoritma  | 72     | 22. Bâsit
+mert            | mert          | EB:640   | -        | EB:641   | sozluk     | 640    | 82. Müntakim
+berke           | berke         | EB:224   | -        | EB:224   | sozluk     | 224    | 38. Kebîr
+doruk           | doruk         | EB:236   | -        | EB:236   | sozluk     | 236    | 38. Kebîr
+toprak          | toprak        | EB:629   | -        | EB:629   | sozluk     | 629    | 82. Müntakim
+ela             | ela           | EB:32    | -        | EB:32    | sozluk     | 32     | 74. Evvel
+
+=== OZET ===
+Sozluk yolu: 27
+Etymon yolu: 42  (algoritmadan farkli: 42)
+Algoritma yolu (puro fonetik): 2
+
+=== ETYMON DUZELTME DETAYI (etymon != algoritma) ===
+isim | etymon (ar=ebced) | algoritma (ar=ebced) | morfem# | fonetik doldurma#
+--------------------------------------------------------------------------------------------------------------
+sukrettin       | شكر الدين = 615  vs  سوكراتين = 747  | morfem:2 fonetik:undefined
+sukreddin       | شكر الدين = 615  vs  سوكرادين = 351  | morfem:2 fonetik:undefined
+serafettin      | شرف الدين = 675  vs  سارافاتين = 803  | morfem:2 fonetik:undefined
+serafeddin      | شرف الدين = 675  vs  سارافادين = 407  | morfem:2 fonetik:undefined
+nizameddin      | نظام الدين = 1086  vs  نيزامادين = 173  | morfem:2 fonetik:undefined
+imadeddin       | عماد الدين = 210  vs  يمادادين = 120  | morfem:2 fonetik:undefined
+imadettin       | عماد الدين = 210  vs  يماداتين = 516  | morfem:2 fonetik:undefined
+sefereddin      | سفر الدين = 435  vs  سافارادين = 407  | morfem:2 fonetik:undefined
+taceddin        | تاج الدين = 499  vs  تاجادين = 469  | morfem:2 fonetik:undefined
+tacettin        | تاج الدين = 499  vs  تاجاتين = 865  | morfem:2 fonetik:undefined
+rukneddin       | ركن الدين = 365  vs  روكنادين = 341  | morfem:2 fonetik:undefined
+ruknettin       | ركن الدين = 365  vs  روكناتين = 737  | morfem:2 fonetik:undefined
+zeyneddin       | زين الدين = 162  vs  زاينادين = 133  | morfem:2 fonetik:undefined
+zeynettin       | زين الدين = 162  vs  زايناتين = 529  | morfem:2 fonetik:undefined
+azizettin       | عزيز الدين = 189  vs  ازيزاتين = 486  | morfem:2 fonetik:undefined
+celalettin      | جلال الدين = 159  vs  جالالاتين = 526  | morfem:1 fonetik:undefined
+celaleddin      | جلال الدين = 159  vs  جالالادين = 130  | morfem:1 fonetik:undefined
+abdulkerim      | عبد الكريم = 377  vs  ابدولكاريم = 314  | morfem:1 fonetik:undefined
+abdulhamid      | عبد الحميد = 169  vs  ابدولهاميد = 103  | morfem:1 fonetik:undefined
+abdulhakim      | عبد الحكيم = 185  vs  ابدولهاكيم = 119  | morfem:1 fonetik:undefined
+abdulvedud      | عبد الودود = 127  vs  ابدولوادود = 64  | morfem:1 fonetik:undefined
+abdulvedut      | عبد الودود = 127  vs  ابدولوادوت = 460  | morfem:1 fonetik:undefined
+abdurresid      | عبد الرشيد = 621  vs  ابدوراسيد = 288  | morfem:1 fonetik:undefined
+abdurrauf       | عبد الرؤوف = 399  vs  ابدوراوف = 300  | morfem:1 fonetik:undefined
+abdulazim       | عبد العظيم = 1127  vs  ابدولازيم = 101  | morfem:1 fonetik:undefined
+abdulmuhsin     | عبد المحسن = 265  vs  ابدولموهسين = 214  | morfem:1 fonetik:undefined
+abdussamed      | عبد الصمد = 241  vs  ابدوساماد = 119  | morfem:1 fonetik:undefined
+mukerrem        | مكرم = 300  vs  موكارام = 308  | morfem:1 fonetik:undefined
+selime          | سليمة = 145  vs  ساليما = 142  | morfem:1 fonetik:undefined
+munire          | منيرة = 305  vs  مونيرا = 307  | morfem:1 fonetik:undefined
+enver           | أنور = 257  vs  انوار = 258  | morfem:1 fonetik:undefined
+ekrem           | أكرم = 261  vs  اكرام = 262  | morfem:1 fonetik:undefined
+aziziye         | عزيز ية = 109  vs  ازيزيا = 36  | morfem:2 fonetik:undefined
+rahmiye         | رحمية = 263  vs  راهميا = 257  | morfem:1 fonetik:undefined
+sukriye         | شكرية = 535  vs  سوكريا = 297  | morfem:1 fonetik:undefined
+mensur          | منصور = 386  vs  مانسور = 357  | morfem:1 fonetik:undefined
+nasir           | ناصر = 341  vs  ناسير = 321  | morfem:1 fonetik:undefined
+ammar           | عمار = 311  vs  امار = 242  | morfem:1 fonetik:undefined
+hasbullah       | حسب الله = 136  vs  هاسبولاه = 110  | morfem:1 fonetik:undefined
+lutfullah       | لطف الله = 185  vs  لوتفولاه = 558  | morfem:1 fonetik:undefined
+fethullah       | فتح الله = 554  vs  فاتهولاه = 528  | morfem:1 fonetik:undefined
+ayetullah       | آية الله = 82  vs  اياتولاه = 454  | morfem:1 fonetik:undefined
+
+=== PURE TURKISH SANITY (etymon NULL donmeli) ===
+  cagla      -> null (OK, fonetik)
+  defne      -> null (OK, fonetik)
+  kuzey      -> null (OK, fonetik)
+  eylul      -> null (OK, fonetik)
+  asya       -> null (OK, fonetik)
+  mert       -> null (OK, fonetik)
+  berke      -> null (OK, fonetik)
+  doruk      -> null (OK, fonetik)
+  toprak     -> null (OK, fonetik)
+  ela        -> null (OK, fonetik)

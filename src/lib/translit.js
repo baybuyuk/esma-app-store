@@ -178,3 +178,437 @@ export function algoritmikEbced(turkceIsim) {
   const ebced = kelimeEbced(arapca);
   return { arapca, ebced };
 }
+
+// ============================================================================
+// ETYMOLOJIK MORFEM HAVUZU (kok + ek tabanli)
+// ============================================================================
+// Sozlukten BAGIMSIZ — sozlukte olmayan bilesik isimleri (Sukrettin, Abdulvelid
+// gibi) kok+ek parcalarindan dogru ebced ile hesaplar. Yapi:
+//
+//   [ascii_normalize_pattern, arapca_yazim]
+//
+// Ebced kelimeEbced(arapca) ile otomatik turetilir (hareke sayilmaz).
+// Algoritma asagidaki etymolojikTahmin() icinde "greedy longest match"
+// kullanir — en uzun morfem ilk denenir, yenmesi gerekenler erken biter.
+//
+// Havuzdaki morfem turleri:
+//   - Bilesik isimler (abdurrahman, semseddin, bahaeddin) — tam isim
+//   - Compound prefix (abd-, abdul-) + esma — ayri morfem olarak
+//   - Compound suffix (-eddin, -ullah) — kelime sonu eki
+//   - Sik kullanilan kok isimler (kerim, rahim, nur, sems...) — tek morfem
+//   - Kadin varyantlari (-e, -iye suffixli formlar) — tam form olarak yazilir
+//
+// Sozlukle CAKISMA: Sozlukte zaten bulunan isimler icin etymon devreye girmez
+// (esma.js fallback chain'i: sozluk > etymon > algoritmik). Bu yuzden ayni
+// pattern hem sozlukte hem havuzda olabilir — sorun cikmaz.
+const MORFEM_ARAY = [
+  // === Compound Abdul-X (longest-first, prefix overlap'i onlemek icin) ===
+  ['abdurrahman',   'عبد الرحمن'],
+  ['abdurrahim',    'عبد الرحيم'],
+  ['abdurrezzak',   'عبد الرزاق'],
+  ['abdurresid',    'عبد الرشيد'],
+  ['abdurrauf',     'عبد الرؤوف'],
+  ['abdulkadir',    'عبد القادر'],
+  ['abdulkerim',    'عبد الكريم'],
+  ['abdulhakim',    'عبد الحكيم'],
+  ['abdulhamid',    'عبد الحميد'],
+  ['abdulhamit',    'عبد الحميد'],
+  ['abdulhalim',    'عبد الحليم'],
+  ['abdulhalik',    'عبد الخالق'],
+  ['abdullatif',    'عبد اللطيف'],
+  ['abdulmuhsin',   'عبد المحسن'],
+  ['abdulmecit',    'عبد المجيد'],
+  ['abdulmecid',    'عبد المجيد'],
+  ['abdulmelik',    'عبد الملك'],
+  ['abdulmumin',    'عبد المؤمن'],
+  ['abdulvahit',    'عبد الواحد'],
+  ['abdulvahid',    'عبد الواحد'],
+  ['abdulvedud',    'عبد الودود'],
+  ['abdulvedut',    'عبد الودود'],
+  ['abdulaziz',     'عبد العزيز'],
+  ['abdulazim',     'عبد العظيم'],
+  ['abdulgani',     'عبد الغني'],
+  ['abdulbasit',    'عبد الباسط'],
+  ['abdulcebbar',   'عبد الجبار'],
+  ['abdulgaffar',   'عبد الغفار'],
+  ['abdullah',      'عبد الله'],
+  ['abdusselam',    'عبد السلام'],
+  ['abdussamed',    'عبد الصمد'],
+  ['abdussamet',    'عبد الصمد'],
+
+  // === Compound *-eddin (din ile bitenler — tam isim) ===
+  ['siraceddin',    'سراج الدين'],
+  ['saadettin',     'سعد الدين'],
+  ['kemaleddin',    'كمال الدين'],
+  ['kemalettin',    'كمال الدين'],
+  ['necmeddin',     'نجم الدين'],
+  ['necmettin',     'نجم الدين'],
+  ['nureddin',      'نور الدين'],
+  ['nurettin',      'نور الدين'],
+  ['semseddin',     'شمس الدين'],
+  ['semsettin',     'شمس الدين'],
+  ['alaeddin',      'علاء الدين'],
+  ['alaettin',      'علاء الدين'],
+  ['bedreddin',     'بدر الدين'],
+  ['bedrettin',     'بدر الدين'],
+  ['bahaeddin',     'بهاء الدين'],
+  ['bahattin',      'بهاء الدين'],
+  ['hayreddin',     'خير الدين'],
+  ['hayrettin',     'خير الدين'],
+  ['fahreddin',     'فخر الدين'],
+  ['fahrettin',     'فخر الدين'],
+  ['seyfeddin',     'سيف الدين'],
+  ['seyfettin',     'سيف الدين'],
+  ['gibyaseddin',   'غياث الدين'],
+  ['giyaseddin',    'غياث الدين'],
+  ['takiyyeddin',   'تقي الدين'],
+  ['safiyyeddin',   'صفي الدين'],
+  ['siheabeddin',   'شهاب الدين'],
+  ['sihabeddin',    'شهاب الدين'],
+  ['sihabettin',    'شهاب الدين'],
+
+  // === Suffix patterns (kelime sonu eki) ===
+  // Algoritma onceki morfemi yer, sonra suffix'i eklerse cogalir
+  ['eddin',         'الدين'],
+  ['ettin',         'الدين'],
+  ['uddin',         'الدين'],
+  ['ullah',         'الله'],
+  ['ullahi',        'اللهي'],
+  ['iye',           'ية'],
+  ['iyye',          'ية'],
+
+  // === Sahabe / Peygamber / Klasik Islami isimler (tam form) ===
+  ['muhammed',      'محمد'],
+  ['mehmed',        'محمد'],
+  ['ahmed',         'أحمد'],
+  ['mahmud',        'محمود'],
+  ['mahmut',        'محمود'],
+  ['mustafa',       'مصطفى'],
+  ['yusuf',         'يوسف'],
+  ['ibrahim',       'إبراهيم'],
+  ['ismail',        'إسماعيل'],
+  ['ishak',         'إسحاق'],
+  ['yakup',         'يعقوب'],
+  ['yakub',         'يعقوب'],
+  ['davud',         'داود'],
+  ['davut',         'داود'],
+  ['suleyman',      'سليمان'],
+  ['eyyub',         'أيوب'],
+  ['eyup',          'أيوب'],
+  ['yahya',         'يحيى'],
+  ['zekeriya',      'زكريا'],
+  ['idris',         'إدريس'],
+  ['hud',           'هود'],
+  ['nuh',           'نوح'],
+  ['salih',         'صالح'],
+  ['saliha',        'صالحة'],
+  ['lokman',        'لقمان'],
+  ['adem',          'آدم'],
+
+  // === Sahabe ===
+  ['hasan',         'حسن'],
+  ['huseyin',       'حسين'],
+  ['huseyn',        'حسين'],
+  ['enes',          'أنس'],
+  ['bilal',         'بلال'],
+  ['talha',         'طلحة'],
+  ['ammar',         'عمار'],
+  ['hamza',         'حمزة'],
+  ['halid',         'خالد'],
+  ['halit',         'خالد'],
+  ['cafer',         'جعفر'],
+  ['casim',         'جاسم'],
+  ['osman',         'عثمان'],
+  ['omar',          'عمر'],
+  ['hatice',        'خديجة'],
+  ['fatma',         'فاطمة'],
+  ['ayse',          'عائشة'],
+  ['meryem',        'مريم'],
+  ['zeynep',        'زينب'],
+  ['zeyneb',        'زينب'],
+  ['safiye',        'صفية'],
+  ['hafsa',         'حفصة'],
+  ['rukiye',        'رقية'],
+  ['ummhani',       'أم هاني'],
+
+  // === Esma turevi (popüler İslami kök isimler — sik karsilasilan) ===
+  ['rahman',        'رحمن'],
+  ['rahim',         'رحيم'],
+  ['rahime',        'رحيمة'],
+  ['rahmi',         'رحمي'],
+  ['rahmiye',       'رحمية'],
+  ['kerim',         'كريم'],
+  ['kerime',        'كريمة'],
+  ['ekrem',         'أكرم'],
+  ['mukerrem',      'مكرم'],
+  ['halim',         'حليم'],
+  ['halime',        'حليمة'],
+  ['selim',         'سليم'],
+  ['selime',        'سليمة'],
+  ['salim',         'سالم'],
+  ['salime',        'سالمة'],
+  ['selman',        'سلمان'],
+  ['selma',         'سلمى'],
+  ['islam',         'إسلام'],
+  ['hakim',         'حكيم'],
+  ['hakime',        'حكيمة'],
+  ['latif',         'لطيف'],
+  ['latife',        'لطيفة'],
+  ['azim',          'عظيم'],
+  ['azime',         'عظيمة'],
+  ['aziz',          'عزيز'],
+  ['azize',         'عزيزة'],
+  ['gani',          'غني'],
+  ['hadi',          'هادي'],
+  ['hidayet',       'هداية'],
+  ['vahid',         'واحد'],
+  ['vahit',         'واحد'],
+  ['mecit',         'مجيد'],
+  ['mecid',         'مجيد'],
+  ['melik',         'ملك'],
+  ['melike',        'ملكة'],
+  ['vekil',         'وكيل'],
+  ['vedud',         'ودود'],
+  ['vedut',         'ودود'],
+  ['mansur',        'منصور'],
+  ['mensur',        'منصور'],
+  ['nasir',         'ناصر'],
+  ['naser',         'ناصر'],
+  ['nasr',          'نصر'],
+  ['nusret',        'نصرة'],
+  ['nusrettin',     'نصرة الدين'],
+  ['sukur',         'شكور'],
+  ['sakir',         'شاكر'],
+  ['sukru',         'شكري'],
+  ['sukran',        'شكران'],
+  ['sukriye',       'شكرية'],
+  ['ali',           'علي'],
+  ['aliye',         'علية'],
+  ['ala',           'علاء'],
+  ['mualla',        'معلى'],
+  ['nur',           'نور'],
+  ['nuri',          'نوري'],
+  ['nuriye',        'نورية'],
+  ['nurullah',      'نور الله'],
+  ['nurcihan',      'نور جهان'],
+  ['munir',         'منير'],
+  ['munire',        'منيرة'],
+  ['enver',         'أنور'],
+  ['sems',          'شمس'],
+  ['semsi',         'شمسي'],
+  ['semsiye',       'شمسية'],
+  ['kemal',         'كمال'],
+  ['kamil',         'كامل'],
+  ['kamile',        'كاملة'],
+  ['cemal',         'جمال'],
+  ['cemil',         'جميل'],
+  ['cemile',        'جميلة'],
+  ['celal',         'جلال'],
+  ['celalettin',    'جلال الدين'],
+  ['celaleddin',    'جلال الدين'],
+  ['necm',          'نجم'],
+  ['necmi',         'نجمي'],
+  ['necmiye',       'نجمية'],
+  ['bedr',          'بدر'],
+  ['bedri',         'بدري'],
+  ['bedriye',       'بدرية'],
+  ['baha',          'بهاء'],
+  ['fethi',         'فتحي'],
+  ['fethiye',       'فتحية'],
+  ['fatih',         'فاتح'],
+  ['feth',          'فتح'],
+  ['muhsin',        'محسن'],
+  ['muhsine',       'محسنة'],
+  ['sadik',         'صادق'],
+  ['sadika',        'صادقة'],
+  ['siddik',        'صديق'],
+  ['siddika',       'صديقة'],
+  ['hamid',         'حامد'],
+  ['hamide',        'حامدة'],
+  ['hamdi',         'حمدي'],
+  ['hamdiye',       'حمدية'],
+  ['ihsan',         'إحسان'],
+  ['mubarek',       'مبارك'],
+  ['mubareke',      'مباركة'],
+  ['safa',          'صفاء'],
+  ['saadet',        'سعادة'],
+  ['saad',          'سعد'],
+  ['halil',         'خليل'],
+  ['halile',        'خليلة'],
+  ['halife',        'خليفة'],
+  ['hafiz',         'حافظ'],
+  ['hafize',        'حافظة'],
+  ['hakki',         'حقي'],
+  ['lutfi',         'لطفي'],
+  ['lutfiye',       'لطفية'],
+  ['ferit',         'فريد'],
+  ['ferid',         'فريد'],
+  ['feride',        'فريدة'],
+  ['saban',         'شعبان'],
+  ['ramazan',       'رمضان'],
+  ['recep',         'رجب'],
+  ['receb',         'رجب'],
+  ['muharrem',      'محرم'],
+  ['safer',         'صفر'],
+  ['rabia',         'رابعة'],
+  ['rabbiye',       'رابعة'],
+  ['hayriye',       'خيرية'],
+  ['hayri',         'خيري'],
+  ['huriye',        'حورية'],
+  ['hayrunnisa',    'خير النساء'],
+  ['nisa',          'نساء'],
+
+  // === Compound kok parcalari (suffix ile birleserek isim olusturur) ===
+  // Bu kokler tek basina kullanilmaz; "-eddin/-ettin/-ullah" ile birleserek
+  // Sukrettin, Lutfullah, Ayetullah gibi isimleri olusturur.
+  ['sukr',          'شكر'],
+  ['lutf',          'لطف'],
+  ['hasb',          'حسب'],
+  ['ayet',          'آية'],
+  ['seref',         'شرف'],
+  ['seraf',         'شرف'],
+  ['serif',         'شريف'],
+  ['serife',        'شريفة'],
+  ['nizam',         'نظام'],
+  ['imad',          'عماد'],
+  ['tac',           'تاج'],
+  ['sefer',         'سفر'],
+  ['rukn',          'ركن'],
+  ['zeyn',          'زين'],
+  ['sirac',         'سراج'],
+  ['izz',           'عز'],
+  ['izzet',         'عزت'],
+  ['izzettin',      'عز الدين'],
+  ['izzeddin',      'عز الدين'],
+  ['vahdettin',     'وحدة الدين'],
+  ['vahdeddin',     'وحدة الدين'],
+  ['safi',          'صفي'],
+  ['fahr',          'فخر'],
+  ['hayr',          'خير'],
+  ['seyf',          'سيف'],
+  ['takiyy',        'تقي'],
+  ['takiy',         'تقي'],
+  ['cemaleddin',    'جمال الدين'],
+  ['cemalettin',    'جمال الدين'],
+  ['mubareke',      'مباركة'],
+
+  // Compound *-ullah (her bir spesifik form)
+  ['fethullah',     'فتح الله'],
+  ['ayetullah',     'آية الله'],
+  ['hasbullah',     'حسب الله'],
+  ['lutfullah',     'لطف الله'],
+  ['nasrullah',     'نصر الله'],
+  ['rahmetullah',   'رحمة الله'],
+  ['necmullah',     'نجم الله'],
+  ['hayrullah',     'خير الله'],
+  ['ubeydullah',    'عبيد الله'],
+  ['emrullah',      'أمر الله'],
+];
+
+// Once tum patterleri ebced ile decorate et, sonra UZUNLUGA gore azalan siraya
+// koy. Longest-first eslestirme dogru ayristirma icin sart (aksi halde "sems"
+// 'semseddin' icin once eslesir, 'eddin' kalir; ama bu zaten dogru sonuc verir
+// — yine de uzun morfem one cikarsa az hesaplama yapilir).
+const MORFEM_LIST = MORFEM_ARAY
+  .map(([p, ar]) => ({ pattern: p, ar, eb: kelimeEbced(ar) }))
+  .sort((a, b) => b.pattern.length - a.pattern.length);
+
+// Etymolojik tahmin: ASCII-normalize girdi uzerinde DP en-iyi-decompose.
+// Donus: { arapca, ebced, kaynak, morfemSayisi, etymonKapsam } | null
+//
+// Algoritma: her pozisyon icin (i) "kalan substring'in optimal parcalanmasi"
+// memoize edilir. Her adimda secenekler:
+//   - Pozisyondan baslayan tum morfemleri dene (longest-first ZORUNLU DEGIL —
+//     DP en iyi kapsam veren secenegi bulur)
+//   - Veya tek harfi fonetik fallback olarak tuket (etymon kapsami artmaz)
+// En iyi seceneği etymon karakter kapsami maksimum, esitlikte morfem sayisi
+// minimum (daha az bolunmus daha temiz okumadır).
+//
+// Filtre kararlari:
+//  - En az 1 morfem eslesmesi sart — yoksa salt fonetik, null
+//  - Etymon karakter kapsami >= 60% olmali — fonetik agirlikli sonuc etymon
+//    yanli olur (lutfullah'da sadece 'ullah' eslesip lutf yanlissa kabul edilmez)
+//  - Sozluk yolu zaten esma.js'de oncelikli — bu fonksiyona ulasilirsa sozlukte
+//    yok demektir
+export function etymolojikTahmin(turkceIsim) {
+  if (typeof turkceIsim !== 'string') return null;
+  const norm = asciiNormalize(turkceIsim);
+  if (norm.length < 3) return null;
+
+  // DP: memo[i] = { parts, etymonChars, morfemSayisi } — norm[i..]'nin en iyi parcalanmasi
+  const memo = new Array(norm.length + 1);
+
+  function cozum(start) {
+    if (start >= norm.length) return { parts: [], etymonChars: 0, morfemSayisi: 0 };
+    if (memo[start]) return memo[start];
+
+    let best = null;
+
+    // Secenek 1: pozisyondan baslayan tum morfemleri dene
+    for (const m of MORFEM_LIST) {
+      const plen = m.pattern.length;
+      if (plen > norm.length - start) continue;
+      if (norm.substr(start, plen) !== m.pattern) continue;
+      const sub = cozum(start + plen);
+      const etymonChars = plen + sub.etymonChars;
+      const morfemSayisi = 1 + sub.morfemSayisi;
+      if (
+        !best ||
+        etymonChars > best.etymonChars ||
+        (etymonChars === best.etymonChars && morfemSayisi < best.morfemSayisi)
+      ) {
+        best = {
+          parts: [{ ar: m.ar, eb: m.eb, etymon: true }, ...sub.parts],
+          etymonChars,
+          morfemSayisi,
+        };
+      }
+    }
+
+    // Secenek 2: tek harfi fonetik fallback olarak tuket
+    const ch = norm[start];
+    const ar = TURKCE_HARF_AR[ch];
+    const sub = cozum(start + 1);
+    const fonetikPart = (ar === undefined || ar === '')
+      ? sub.parts
+      : [{ ar, eb: arapcaHarfEbced(ar), etymon: false }, ...sub.parts];
+    if (
+      !best ||
+      sub.etymonChars > best.etymonChars ||
+      (sub.etymonChars === best.etymonChars && sub.morfemSayisi < best.morfemSayisi)
+    ) {
+      best = {
+        parts: fonetikPart,
+        etymonChars: sub.etymonChars,
+        morfemSayisi: sub.morfemSayisi,
+      };
+    }
+
+    memo[start] = best;
+    return best;
+  }
+
+  const sonuc = cozum(0);
+  if (!sonuc || sonuc.morfemSayisi === 0) return null;
+  const kapsam = sonuc.etymonChars / norm.length;
+  if (kapsam < 0.6) return null;
+
+  // Onceki Arapca harfi tekrar ediyorsa pespese (idgam) birlestir
+  const arapcaParts = [];
+  let oncekiSon = '';
+  for (const p of sonuc.parts) {
+    if (p.ar === oncekiSon) continue;
+    arapcaParts.push(p.ar);
+    oncekiSon = p.ar.length === 1 ? p.ar : '';
+  }
+  const arapca = arapcaParts.join(' ').trim();
+  const ebced = sonuc.parts.reduce((s, p) => s + p.eb, 0);
+
+  return {
+    arapca,
+    ebced,
+    kaynak: 'etymon',
+    morfemSayisi: sonuc.morfemSayisi,
+    etymonKapsam: kapsam,
+  };
+}
