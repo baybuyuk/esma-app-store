@@ -7,11 +7,19 @@
       "distribution": "internal",
       "android": {
         "buildType": "apk"
+      },
+      "ios": {
+        "simulator": true,
+        "resourceClass": "m-medium"
       }
     },
     "production": {
       "android": {
         "buildType": "app-bundle"
+      },
+      "ios": {
+        "autoIncrement": true,
+        "resourceClass": "m-medium"
       }
     }
   }

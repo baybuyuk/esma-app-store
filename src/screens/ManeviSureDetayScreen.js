@@ -22,7 +22,7 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useFocusEffect } from '@react-navigation/native';
-import { useAudioPlayer, useAudioPlayerStatus } from 'expo-audio';
+import { useAudioPlayer, useAudioPlayerStatus, setAudioModeAsync } from 'expo-audio';
 import { colors } from '../constants/colors';
 import { radii } from '../constants/radii';
 import { useTipScale } from '../context/YaziKademesiContext';
@@ -136,6 +136,38 @@ export default function ManeviSureDetayScreen({ navigation, route }) {
         try { player?.pause(); } catch (_) {}
       };
     }, [player])
+  );
+
+  // iOS sessiz mod override — tilavet ekraninda telefon sessiz switch ON olsa bile
+  // sure okunsun (yasli kullanici donanim switch'i unutabilir). Tasbih/ortam ses.js
+  // global ayari mixWithOthers + playsInSilentMode:false. Burada sadece bu ekran
+  // suresince override edip, blur olunca eski hale geri donuyoruz. ses.js global
+  // sesModuKuruldu state'i etkilenmiyor.
+  useFocusEffect(
+    useCallback(() => {
+      let iptal = false;
+      (async () => {
+        try {
+          await setAudioModeAsync({
+            playsInSilentMode: true,
+            shouldPlayInBackground: false,
+            interruptionMode: 'duckOthers',
+          });
+        } catch (_) {}
+      })();
+      return () => {
+        iptal = true;
+        (async () => {
+          try {
+            await setAudioModeAsync({
+              playsInSilentMode: false,
+              shouldPlayInBackground: false,
+              interruptionMode: 'mixWithOthers',
+            });
+          } catch (_) {}
+        })();
+      };
+    }, [])
   );
 
   const oynatDurdur = useCallback(() => {

@@ -41,6 +41,7 @@ import { colors } from './src/constants/colors';
 import { type } from './src/constants/type';
 import { getDb } from './src/db/db';
 import { YaziKademesiProvider } from './src/context/YaziKademesiContext';
+import ErrorBoundary from './src/components/ErrorBoundary';
 
 const Stack = createNativeStackNavigator();
 
@@ -75,9 +76,10 @@ export default function App() {
   }
 
   return (
-    <YaziKademesiProvider>
-      <SafeAreaProvider>
-        <NavigationContainer>
+    <ErrorBoundary>
+      <YaziKademesiProvider>
+        <SafeAreaProvider>
+          <NavigationContainer>
           <Stack.Navigator
             initialRouteName={baslangic}
             screenOptions={{ headerShown: false, animation: 'fade_from_bottom', animationDuration: 380 }}
@@ -89,7 +91,7 @@ export default function App() {
             <Stack.Screen name="OnboardingEsmaAciklama" component={OnboardingEsmaAciklamaScreen} />
             <Stack.Screen name="OnboardingEsma" component={OnboardingEsmaScreen} />
             <Stack.Screen name="AnaEkran" component={AnaEkran} />
-            <Stack.Screen name="ZikirSayac" component={ZikirSayacScreen} />
+            <Stack.Screen name="ZikirSayac" component={ZikirSayacScreen} options={{ gestureEnabled: false }} />
             <Stack.Screen name="EsmaDetay" component={EsmaDetayScreen} />
             <Stack.Screen name="EsmaListesi" component={EsmalarListScreen} />
             <Stack.Screen name="EsmaIstatistik" component={EsmaIstatistikScreen} />
@@ -108,15 +110,16 @@ export default function App() {
             <Stack.Screen name="Sureler" component={SurelerScreen} />
             <Stack.Screen name="SureDetay" component={SureDetayScreen} />
             <Stack.Screen name="ManeviSureDetay" component={ManeviSureDetayScreen} />
-            <Stack.Screen name="Salavat" component={SalavatScreen} />
+            <Stack.Screen name="Salavat" component={SalavatScreen} options={{ gestureEnabled: false }} />
             <Stack.Screen name="SalavatIstatistik" component={SalavatIstatistikScreen} />
-            <Stack.Screen name="Tesbihat" component={TesbihatScreen} />
+            <Stack.Screen name="Tesbihat" component={TesbihatScreen} options={{ gestureEnabled: false }} />
             <Stack.Screen name="Erisilebilirlik" component={ErisilebilirlikScreen} />
-          </Stack.Navigator>
-        </NavigationContainer>
-        <StatusBar style="dark" />
-      </SafeAreaProvider>
-    </YaziKademesiProvider>
+            </Stack.Navigator>
+          </NavigationContainer>
+          <StatusBar style="dark" />
+        </SafeAreaProvider>
+      </YaziKademesiProvider>
+    </ErrorBoundary>
   );
 }
 

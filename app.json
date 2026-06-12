@@ -13,10 +13,13 @@
       "backgroundColor": "#F8F5EE"
     },
     "ios": {
-      "supportsTablet": true,
+      "bundleIdentifier": "com.baybuyukk.huapp",
+      "buildNumber": "1",
+      "supportsTablet": false,
       "infoPlist": {
-        "NSLocationWhenInUseUsageDescription": "Namaz vakitlerini hesaplayabilmek icin konum bilgine ihtiyacimiz var.",
-        "NSUserNotificationsUsageDescription": "Namaz vakitlerini ve aksam muhasebesini sefkatli bir tonla hatirlatabilmemiz icin bildirim izni gerekli."
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSLocationWhenInUseUsageDescription": "Namaz vakitlerini ve kıble yönünü konumunuza göre hesaplamak için kullanılır.",
+        "NSMotionUsageDescription": "Kıble yönünü gösterebilmek için pusula sensörü kullanılır."
       }
     },
     "android": {
@@ -46,7 +49,7 @@
       [
         "expo-location",
         {
-          "locationAlwaysAndWhenInUsePermission": "Namaz vakitlerini hesaplayabilmek icin konum bilgine ihtiyacimiz var."
+          "locationWhenInUsePermission": "Namaz vakitlerini ve kıble yönünü konumunuza göre hesaplamak için kullanılır."
         }
       ],
       [
