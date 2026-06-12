@@ -100,6 +100,27 @@ export default function EsmaBulScreen({ navigation }) {
           </View>
         </View>
 
+        {!sonuc && (
+          <View style={styles.bilgiBlok}>
+            <Text style={[styles.bilgiBaslik, { fontSize: tip.lg.fontSize, lineHeight: tip.lg.lineHeight }]}>
+              Adın Sırrı
+            </Text>
+            <Text style={[styles.bilgiParaf, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight + 6 }]}>
+              Hz. Peygamber (s.a.v.) buyurdu:{' '}
+              <Text style={styles.bilgiItalik}>
+                "Sizler kıyamet günü isimlerinizle çağrılırsınız. O halde çocuklarınıza güzel isim koyun."
+              </Text>{' '}
+              (Ebû Dâvûd)
+            </Text>
+            <Text style={[styles.bilgiParaf, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight + 6 }]}>
+              İsim sadece bir çağrı değildir. Klasik İslam ilmi geleneğinde — Bûnî, Gümüşhânevî, Nâzilî gibi büyük zatların kayıtlarında — ismin harflerinin sayısal değeri (Ebced), sahibinin fıtrî eğilimlerine işaret eder.
+            </Text>
+            <Text style={[styles.bilgiParaf, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight + 6 }]}>
+              Buradan çıkan esmâ rastgele değildir; ismindeki harflerin toplamı, Allah'ın 99 isminden seninle en çok uyumlu olanına yönlendirir. O esmâyı zikrettikçe nasibin artar, fıtratınla barışırsın.
+            </Text>
+          </View>
+        )}
+
         {sonuc && (
           <Animated.View
             style={[
@@ -208,6 +229,28 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   temizleYazi: { color: colors.ikincilMetin },
+
+  // "Adin Sirri" bilgi blogu — sonuc yokken altta gosterilir, eski
+  // bos alani doldurur ve ogretici icerik sunar.
+  bilgiBlok: {
+    marginTop: 12,
+    paddingHorizontal: 4,
+  },
+  bilgiBaslik: {
+    color: colors.anaYesil,
+    fontWeight: '700',
+    textAlign: 'center',
+    marginBottom: 18,
+  },
+  bilgiParaf: {
+    color: colors.anaMetin,
+    marginBottom: 16,
+    textAlign: 'left',
+  },
+  bilgiItalik: {
+    fontStyle: 'italic',
+    color: colors.altin,
+  },
 
   sonucKart: {
     backgroundColor: '#fff',
