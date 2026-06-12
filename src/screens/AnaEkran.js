@@ -202,8 +202,8 @@ export default function AnaEkran({ navigation }) {
 
   // Grid kisayollari — Salavat + Tesbihat sabit ust sirada (Cuma bagimsiz).
   // Esma Bul grid'den cikarildi, gunun hadisi altinda banner olarak yer aliyor.
-  // Sira: Salavat, Tesbihat, Dualar, Sureler, Zikirler, Evrad, Muhasebe, Vakit,
-  // Gecmis, Kible (en alt).
+  // Sira: Salavat, Tesbihat, Dualar, Sureler, Zikirler, Evrad, Kible (9),
+  // Muhasebe, Vakit, Gecmis.
   const kisaYollar = useMemo(() => [
     { key: 'salavat', emoji: '🌹', label: 'Salavat', onPress: () => navigation.navigate('Salavat') },
     { key: 'tesbihat', emoji: '📿', label: 'Tesbihat', onPress: () => navigation.navigate('Tesbihat') },
@@ -213,10 +213,10 @@ export default function AnaEkran({ navigation }) {
     { key: 'anlikZikir', emoji: '🌟', label: 'Anlık Zikir', onPress: () => navigation.navigate('AnlikZikir') },
     { key: 'sabahEvrad', emoji: '🌅', label: 'Sabah Evrâdı', onPress: () => navigation.navigate('Evrad', { tip: 'sabah' }) },
     { key: 'aksamEvrad', emoji: '🌆', label: 'Akşam Evrâdı', onPress: () => navigation.navigate('Evrad', { tip: 'aksam' }) },
+    { key: 'kible', emoji: '🧭', label: 'Kıble', onPress: () => navigation.navigate('Kible') },
     { key: 'aksamMuhasebe', emoji: '🌙', label: 'Akşam Muhasebesi', onPress: () => navigation.navigate('Aksam') },
     { key: 'tumVakitler', emoji: '🕐', label: 'Tüm Vakitler', onPress: () => navigation.navigate('TumVakitler') },
     { key: 'gecmis', emoji: '📊', label: 'Geçmiş', onPress: () => navigation.navigate('Gecmis') },
-    { key: 'kible', emoji: '🧭', label: 'Kıble', onPress: () => navigation.navigate('Kible') },
   ], [navigation]);
 
   const onRefresh = useCallback(async () => {
