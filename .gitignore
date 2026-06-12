@@ -62,3 +62,12 @@ tmp/
 
 # kaynak materyal (esma havas PDF'leri — repoyu şişirir)
 esma-pdf/
+
+# kapak/referans gorseller (root'a birakilan, repoya gitmesin)
+/*.JPG
+/*.jpg
+/*.jpeg
+/maxresdefault.*
+
+# kisisel multi-agent prompts (her gelistirici kendi seti)
+hu-agents/
