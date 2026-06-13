@@ -1,0 +1,73 @@
+# Hu app — Fastlane Supply config
+# Play Store metadata + AAB upload (Windows-friendly, Mac gerekmez)
+#
+# Kullanim:
+#   fastlane android validate     # config dogru mu, metadata sinirlar tutuyor mu (upload YAPMAZ)
+#   fastlane android metadata     # sadece store listing (baslik, aciklama, screenshots) upload
+#   fastlane android beta         # AAB + metadata internal testing'e upload
+#   fastlane android production   # AAB + metadata production'a (kademeli rollout)
+#
+# Onkosul:
+#   - fastlane/play-key.json — Play Console > Setup > API access > Service account JSON
+#   - Production build: eas build -p android --profile production --output app.aab
+#   - app.aab proje root'unda (veya `aab_path` arg ile yol ver)
+
+default_platform(:android)
+
+platform :android do
+  desc "Metadata + AAB sinir/format kontrolu (upload YAPMAZ)"
+  lane :validate do
+    supply(
+      validate_only: true,
+      skip_upload_apk: true,
+      skip_upload_aab: true,
+      skip_upload_metadata: false,
+      skip_upload_changelogs: false,
+      skip_upload_images: false,
+      skip_upload_screenshots: false
+    )
+  end
+
+  desc "Sadece store listing (baslik, aciklama, ss, feature graphic) upload"
+  lane :metadata do
+    supply(
+      skip_upload_apk: true,
+      skip_upload_aab: true,
+      skip_upload_metadata: false,
+      skip_upload_changelogs: false,
+      skip_upload_images: false,
+      skip_upload_screenshots: false,
+      track: "production"
+    )
+  end
+
+  desc "AAB + metadata internal testing'e upload"
+  lane :beta do |options|
+    aab = options[:aab_path] || "app.aab"
+    UI.user_error!("AAB bulunamadi: #{aab}. Once `eas build -p android --profile production --output app.aab` calistir.") unless File.exist?(aab)
+    supply(
+      aab: aab,
+      track: "internal",
+      skip_upload_metadata: false,
+      skip_upload_changelogs: false,
+      skip_upload_images: false,
+      skip_upload_screenshots: false,
+      release_status: "draft"
+    )
+  end
+
+  desc "AAB + metadata production'a (kademeli %5 rollout)"
+  lane :production do |options|
+    aab = options[:aab_path] || "app.aab"
+    UI.user_error!("AAB bulunamadi: #{aab}. Once `eas build -p android --profile production --output app.aab` calistir.") unless File.exist?(aab)
+    supply(
+      aab: aab,
+      track: "production",
+      rollout: "0.05",   # %5 kademeli
+      skip_upload_metadata: false,
+      skip_upload_changelogs: false,
+      skip_upload_images: false,
+      skip_upload_screenshots: false
+    )
+  end
+end

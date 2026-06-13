@@ -1,0 +1,2 @@
+json_key_file("fastlane/play-key.json") # path to the json secret file - Yusuf indirir, gitignored
+package_name("com.baybuyukk.huapp") # e.g. com.krausefx.app

@@ -1,0 +1,47 @@
+Hu is a calm daily companion for Muslim spiritual practice. Big type, few buttons, no clutter. It is designed so an older user can open the screen and know what to do in two or three seconds.
+
+WHAT IS INSIDE
+
+99 Names of Allah
+The meaning, virtues and counter for each name, all on one screen. You also get a personal name prescription calculated from your own name with the classical abjad method — the names most suited to you, with short explanations.
+
+Prayer Times
+Computed for your location. The five prayers are visible at a glance, and the time remaining to the next prayer is shown below. A gentle adhan notification at each prayer time — never loud or jarring.
+
+Qibla Compass
+A plain arrow using the phone's magnetic sensor. No shaking or calibration dances required. A small haptic tap when it locks onto the qibla.
+
+Tasbihat
+Post-prayer 33 subhanallah, 33 alhamdulillah, 33 allahu akbar, tahlil and Ayat al-Kursi in one flow. Each part moves to the next on its own.
+
+Salawat Counters
+Eight well-known salawat, each with its own counter. On Friday the Salat al-Munjiyah is placed at the top of the list.
+
+15 Short Surahs
+From al-Fatiha to an-Nas, the short surahs in a large readable font.
+
+7 Spiritual Surahs (Audio Recitation)
+Yaseen, ar-Rahman, al-Waqi'ah, al-Mulk, al-Muzzammil, an-Naba and al-Inshirah — read aloud in listening mode. The screen stays awake while the surah plays.
+
+Dhikr Counter
+A quiet finger counter, with optional ambient sound (rain, sea, forest).
+
+Morning and Evening Awrad
+A short spiritual routine for the two ends of the day.
+
+Hijri/Gregorian Calendar and Holy Night Reminders
+A gentle reminder before each mubarak night.
+
+DESIGN
+
+Hu is built with older users in mind. Large type, high contrast, wide tap targets. No pop-ups, no flashy animation, no distracting noise.
+
+PRIVACY
+
+Hu collects no personal data, sends nothing to any server, shows no ads. Your location stays on your device and is only used to compute prayer times. No account, no sign-in, no subscription.
+
+USAGE
+
+• Completely free.
+• No ads.
+• Works offline. Only the first launch needs your location once.

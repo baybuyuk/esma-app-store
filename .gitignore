@@ -71,3 +71,12 @@ esma-pdf/
 
 # kisisel multi-agent prompts (her gelistirici kendi seti)
 hu-agents/
+
+# Fastlane gizlileri (Play Console service account, asla commit etme!)
+fastlane/play-key.json
+fastlane/report.xml
+fastlane/README.md
+
+# Build aab/apk (build artifact)
+*.aab
+*.apk

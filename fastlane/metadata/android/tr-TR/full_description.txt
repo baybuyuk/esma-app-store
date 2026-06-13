@@ -1,0 +1,47 @@
+Hu, günlük manevi rutininizi sade ve telaşsız tutmak için hazırlanmış bir uygulamadır. Ekranlar büyük yazıyla, az düğmeyle tasarlandı. Gözünüzü yormaz, parmağınızı şaşırtmaz.
+
+NE BULURSUNUZ
+
+99 Esma-i Hüsna
+Her ismin anlamı, faziletleri ve sayaç ekranı yan yana. Açtığınız anda ne yapacağınızı görürsünüz. Ayrıca isminizden ebced hesabıyla size özel bir esma reçetesi sunulur — sizin için en uygun isimler ve kısa açıklamaları.
+
+Namaz Vakitleri
+Konumunuza göre hesaplanır. Beş vakit tek bakışta görünür, bir sonraki vakte ne kadar kaldığı altta yazar. Ezan vaktinde nazik bir bildirim gelir; gürültülü değil.
+
+Kıble Yönü
+Telefonun pusulası ile sade bir ok. Sallamayın, çevirmeyin — ok kıbleyi gösterince hafifçe titrer.
+
+Tesbihat
+Namaz sonrası 33 sübhanallah, 33 elhamdülillah, 33 Allahuekber, tehlil ve Ayet'el Kürsi tek akışta. Her bölüm bitince kendiliğinden ilerler; parmağınızı sayfada saymanız gerekmez.
+
+Salavat Sayaçları
+Sekiz meşhur salavat ayrı ayrı sayaçlarla. Cuma günü Salât-ı Münciye listenin başında durur, hatırlatmaya gerek kalmaz.
+
+15 Kısa Sure
+Fatiha'dan Nâs'a kadar Amme cüzü sureleri, büyük punto ile.
+
+7 Manevi Sure (Sesli Tilavet)
+Yâsîn, Rahmân, Vâkıa, Mülk, Müzzemmil, Nebe, İnşirâh — dinleme modunda sesli okunur. Telefon ekranı kapanmaz, okuma kesilmez.
+
+Zikir Sayacı
+Sade bir parmak sayacı. İsterseniz yağmur, deniz veya orman ortam sesi eşlik eder.
+
+Sabah ve Akşam Evradı
+Günün iki ucunda kısa bir manevi rutin.
+
+Hicri/Miladi Takvim ve Kandil Uyarıları
+Mübarek geceler yaklaşınca uygulama nazikçe hatırlatır.
+
+TASARIM ANLAYIŞI
+
+Hu yaşlı kullanıcı düşünülerek tasarlandı. Büyük yazı, yüksek kontrast, geniş tuş alanı. Açılır pencere, abartılı animasyon, dikkat dağıtıcı bildirim yoktur. Bir ekran açıldığında ne yapacağınızı 2-3 saniyede anlarsınız.
+
+GİZLİLİK
+
+Hu hiçbir kişisel veri toplamaz, sunucuya göndermez, reklam göstermez. Konum bilgisi yalnızca cihazınızda kalır ve sadece namaz vakti hesabı için kullanılır. Hesap açma yoktur, üyelik yoktur, abonelik yoktur.
+
+KULLANIM
+
+• Tamamen ücretsiz.
+• Reklam yok.
+• İnternet gerekmez. Sadece ilk açılışta konumunuzu bir kez alır, sonrası çevrimdışı çalışır.
