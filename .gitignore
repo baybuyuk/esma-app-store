@@ -49,7 +49,7 @@ build-output.log
 crash.log
 
 # ikon/grafik kaynak dosyalari (sadece islenmis cikti assets/'a girer)
-icon/
+/icon/
 icon.zip
 
 # yedek dosyalar (git zaten versiyonluyor)
@@ -58,7 +58,7 @@ icon.zip
 *_bak
 
 # gecici cikti dizini (ajan/refactor outputs)
-tmp/
+/tmp/
 
 # kaynak materyal (esma havas PDF'leri — repoyu şişirir)
 esma-pdf/
