@@ -9,7 +9,10 @@
 // Notlar:
 // - useAudioPlayer tek kaynak — tum sure tek mp3. Source degisimi YOK.
 // - Aktif kelime = currentTime'dan binary search ile turetilir, ayri state degil.
-// - Auto-scroll YOK — mushaf gorseli butun ekran, kullanici manuel kaydiriyor (klasik mushaf his).
+// - Mushaf sabit-yukseklik (360px) inner-scroll. Aktif kelime degistikce
+//   mushafScrollRef.scrollTo ile yaklasik konuma kaydirilir (kelime index /
+//   toplam kelime lineer). Hassas degil ama kullanici karaoke takipte ekrandan
+//   cikan kelimeyi kaybetmez.
 // - useFocusEffect blur'da player.pause().
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
@@ -122,6 +125,28 @@ export default function ManeviSureDetayScreen({ navigation, route }) {
     const yeni = aktifKelimeBul(tumKelimeler, suMs);
     if (yeni !== aktifIdx) setAktifIdx(yeni);
   }, [suMs, sesVar, oynaniyor, tumKelimeler, aktifIdx]);
+
+  // Mushaf inner-scroll auto-tracking — aktif kelime degistikce mushaf
+  // penceresini kelime'nin yaklasik konumuna kaydirir (lineer index oranlama).
+  // Hassas degil ama karaoke sirasinda aktif kelime hep ekrandadir.
+  const mushafScrollRef = useRef(null);
+  const mushafContentH = useRef(0);
+  const mushafViewH = useRef(0);
+  useEffect(() => {
+    if (aktifIdx < 0 || !mushafScrollRef.current) return;
+    if (!tumKelimeler.length) return;
+    const overflow = Math.max(0, mushafContentH.current - mushafViewH.current);
+    if (overflow <= 0) return;
+    const oran = aktifIdx / Math.max(1, tumKelimeler.length - 1);
+    // Aktif kelime'yi pencerenin ~%30 ust noktasina yerlestir
+    const hedef = Math.max(
+      0,
+      Math.min(overflow, mushafContentH.current * oran - mushafViewH.current * 0.3)
+    );
+    try {
+      mushafScrollRef.current.scrollTo({ y: hedef, animated: true });
+    } catch (_) {}
+  }, [aktifIdx, tumKelimeler.length]);
 
   // Pause/stop edildiginde highlight kaybolsun — kullanici neyi okudugunu unutmasin
   // diye SON aktif kelimeyi tutuyoruz (sifirlamiyoruz).
@@ -292,47 +317,65 @@ export default function ManeviSureDetayScreen({ navigation, route }) {
             </View>
           </View>
 
-          {/* 3. Mushaf blok — tek akiskan Arapca metin */}
-          <View style={styles.mushafKart}>
-            <Text
-              style={[
-                styles.mushafMetin,
-                { fontSize: arapcaFontSize, lineHeight: arapcaLineHeight },
-              ]}
+          {/* 3a. Besmele banner — manevi sureler ust sabit */}
+          <View style={styles.besmeleBanner}>
+            <Text style={styles.besmeleArapca}>بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</Text>
+            <Text style={styles.besmeleTurkce}>Bismillâhirrahmânirrahîm</Text>
+          </View>
+
+          {/* 3b. Mushaf — sabit yukseklik, inner-scroll, aktif kelime auto-tracking */}
+          <View
+            style={styles.mushafKart}
+            onLayout={({ nativeEvent }) => {
+              mushafViewH.current = nativeEvent.layout.height;
+            }}
+          >
+            <ScrollView
+              ref={mushafScrollRef}
+              onContentSizeChange={(_w, h) => {
+                mushafContentH.current = h;
+              }}
+              showsVerticalScrollIndicator={false}
+              nestedScrollEnabled
             >
-              {ayetler.map((ayet, ai) => {
-                const kls = Array.isArray(ayet.kelimeler) ? ayet.kelimeler : [];
-                // Kelimeler zaman damgali geldiyse — kelime kelime render et.
-                // Damga yoksa (henuz timing yok) — ayet butun metni tek parca yaz.
-                if (kls.length === 0) {
+              <Text
+                style={[
+                  styles.mushafMetin,
+                  { fontSize: arapcaFontSize, lineHeight: arapcaLineHeight },
+                ]}
+              >
+                {ayetler.map((ayet, ai) => {
+                  const kls = Array.isArray(ayet.kelimeler) ? ayet.kelimeler : [];
+                  if (kls.length === 0) {
+                    return (
+                      <Text key={`a-${ai}`}>
+                        <Text>{ayet.arapca} </Text>
+                        <Text style={styles.ayetNoIc}> ﴿{ayet.no}﴾ </Text>
+                      </Text>
+                    );
+                  }
                   return (
                     <Text key={`a-${ai}`}>
-                      <Text>{ayet.arapca} </Text>
+                      {kls.map((k, ki) => {
+                        const aktif =
+                          aktifKelime &&
+                          aktifKelime.ai === ai &&
+                          aktifKelime.ki === ki;
+                        return (
+                          <Text
+                            key={`k-${ai}-${ki}`}
+                            style={aktif ? styles.kelimeAktif : null}
+                          >
+                            {k.arapca}{' '}
+                          </Text>
+                        );
+                      })}
                       <Text style={styles.ayetNoIc}> ﴿{ayet.no}﴾ </Text>
                     </Text>
                   );
-                }
-                return (
-                  <Text key={`a-${ai}`}>
-                    {kls.map((k, ki) => {
-                      const aktif =
-                        aktifKelime &&
-                        aktifKelime.ai === ai &&
-                        aktifKelime.ki === ki;
-                      return (
-                        <Text
-                          key={`k-${ai}-${ki}`}
-                          style={aktif ? styles.kelimeAktif : null}
-                        >
-                          {k.arapca}{' '}
-                        </Text>
-                      );
-                    })}
-                    <Text style={styles.ayetNoIc}> ﴿{ayet.no}﴾ </Text>
-                  </Text>
-                );
-              })}
-            </Text>
+                })}
+              </Text>
+            </ScrollView>
           </View>
 
           {/* 4. Meal kartı — aktif ayetin meali */}
@@ -490,13 +533,49 @@ const styles = StyleSheet.create({
     fontStyle: 'italic',
   },
 
-  // Mushaf blok — tek akiskan Arapca metin (klasik Diyanet mushaf hissi)
+  // Besmele banner — manevi sureler ust sabit
+  besmeleBanner: {
+    backgroundColor: '#FFFDF6',
+    marginHorizontal: 16,
+    marginTop: 12,
+    borderRadius: radii.md,
+    paddingVertical: 14,
+    paddingHorizontal: 18,
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: colors.cizgi,
+    elevation: 1,
+    shadowColor: '#000',
+    shadowOpacity: 0.04,
+    shadowRadius: 4,
+    shadowOffset: { width: 0, height: 1 },
+  },
+  besmeleArapca: {
+    fontSize: 26,
+    lineHeight: 44,
+    color: colors.anaYesil,
+    fontWeight: '600',
+    textAlign: 'center',
+    writingDirection: 'rtl',
+  },
+  besmeleTurkce: {
+    fontSize: 13,
+    lineHeight: 18,
+    color: colors.altin,
+    fontStyle: 'italic',
+    marginTop: 4,
+    letterSpacing: 0.3,
+  },
+
+  // Mushaf blok — sabit yukseklik, inner-scroll (klasik Diyanet mushaf hissi).
+  // Height: 360px = ~7-8 satir Arapca, yasli kullaniciya rahat ayetler.
   mushafKart: {
+    height: 360,
     backgroundColor: '#FFFDF6', // hafif kremsi sayfa rengi
     marginHorizontal: 16,
     marginTop: 12,
     borderRadius: radii.md,
-    paddingVertical: 22,
+    paddingVertical: 16,
     paddingHorizontal: 18,
     borderWidth: 1,
     borderColor: colors.cizgi,
