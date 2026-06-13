@@ -61,7 +61,7 @@ export default function EsmaBulScreen({ navigation }) {
         <TouchableOpacity onPress={() => navigation.goBack()} accessibilityLabel="Geri">
           <Text style={[styles.geri, { fontSize: tip.geri.fontSize, lineHeight: tip.geri.lineHeight }]}>‹ Geri</Text>
         </TouchableOpacity>
-        <Text style={[styles.baslik, { fontSize: tip.lg.fontSize, lineHeight: tip.lg.lineHeight }]}>Esma Bul</Text>
+        <Text style={[styles.baslik, { fontSize: tip.lg.fontSize, lineHeight: tip.lg.lineHeight }]}>İsmin Sırrını Bul</Text>
         <View style={{ width: 60 }} />
       </View>
 
