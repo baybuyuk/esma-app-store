@@ -15,7 +15,7 @@ import { colors } from '../constants/colors';
 import { radii } from '../constants/radii';
 import { type } from '../constants/type';
 import { useTipScale } from '../context/YaziKademesiContext';
-import { isimdenEsma } from '../lib/esma';
+import { isimdenEsma, temizIsimGirdisi, gecerliIsimMi } from '../lib/esma';
 import GradientArkaPlan from '../components/GradientArkaPlan';
 
 export default function EsmaBulScreen({ navigation }) {
@@ -27,9 +27,13 @@ export default function EsmaBulScreen({ navigation }) {
 
   const hesapla = () => {
     const temiz = isim.trim();
-    if (!temiz) return;
-    Keyboard.dismiss();
+    if (!gecerliIsimMi(temiz)) return;
     const s = isimdenEsma(temiz);
+    // Savunma hatti: gecersiz (esma:null) sonucu render etme. Giris filtresi +
+    // buton kapisi normalde buraya birakmaz; bu, sonuc.esma.* erisimlerini
+    // olasi bir uc durumda crash'ten korur.
+    if (!s.esma) return;
+    Keyboard.dismiss();
     setSonuc(s);
     sonucOpacity.setValue(0);
     sonucTranslateY.setValue(12);
@@ -74,7 +78,7 @@ export default function EsmaBulScreen({ navigation }) {
           <TextInput
             style={[styles.input, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}
             value={isim}
-            onChangeText={setIsim}
+            onChangeText={(t) => setIsim(temizIsimGirdisi(t))}
             placeholder="Örn: Ayşe, Mehmet, Fatma..."
             placeholderTextColor={colors.ikincilMetin}
             autoCapitalize="words"
@@ -85,9 +89,9 @@ export default function EsmaBulScreen({ navigation }) {
 
           <View style={styles.butonSatir}>
             <TouchableOpacity
-              style={[styles.buton, !isim.trim() && styles.butonDisabled]}
+              style={[styles.buton, !gecerliIsimMi(isim) && styles.butonDisabled]}
               onPress={hesapla}
-              disabled={!isim.trim()}
+              disabled={!gecerliIsimMi(isim)}
               activeOpacity={0.85}
             >
               <Text style={[styles.butonYazi, { fontSize: tip.lg.fontSize, lineHeight: tip.lg.lineHeight }]}>🔍 Esmayı Bul</Text>

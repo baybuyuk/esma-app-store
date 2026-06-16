@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { View, ActivityIndicator, StyleSheet, Text } from 'react-native';
+import { View, ActivityIndicator, StyleSheet, Text, AppState } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -40,6 +40,7 @@ import ErisilebilirlikScreen from './src/screens/ErisilebilirlikScreen';
 import { colors } from './src/constants/colors';
 import { type } from './src/constants/type';
 import { getDb } from './src/db/db';
+import { bildirimleriGunlukTazele } from './src/lib/bildirim';
 import { YaziKademesiProvider } from './src/context/YaziKademesiContext';
 import ErrorBoundary from './src/components/ErrorBoundary';
 
@@ -61,6 +62,17 @@ export default function App() {
         setHazir(true);
       }
     })();
+  }, []);
+
+  // Namaz bildirimleri yerel ve cok-gunlu kayan pencere ile kurulur (iOS 64
+  // limiti nedeniyle sinirli). Pencere tukenmeden once her on-plana geliste
+  // (ve mount'ta) gunluk tazeleme tetiklenir; gun degismediyse no-op olur.
+  useEffect(() => {
+    bildirimleriGunlukTazele();
+    const sub = AppState.addEventListener('change', (state) => {
+      if (state === 'active') bildirimleriGunlukTazele();
+    });
+    return () => sub.remove();
   }, []);
 
   if (!hazir) {

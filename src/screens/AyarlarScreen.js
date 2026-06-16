@@ -21,7 +21,6 @@ import { type } from '../constants/type';
 import { sehirler } from '../constants/sehirler';
 import { useYaziKademesi, useTipScale } from '../context/YaziKademesiContext';
 import { izinIste, namazBildirimleriniKur, tumBildirimleriIptal } from '../lib/bildirim';
-import { gunlukVakitler } from '../lib/namaz';
 import { tasbihAyari, tasbihAyariOku } from '../lib/ses';
 import GradientArkaPlan from '../components/GradientArkaPlan';
 
@@ -131,10 +130,9 @@ export default function AyarlarScreen({ navigation }) {
         Alert.alert('İzin verilmedi', 'Bildirimleri açmak için sistem ayarlarından izin ver.');
         return;
       }
-      const en = parseFloat((await AsyncStorage.getItem('enlem')) || '41');
-      const bo = parseFloat((await AsyncStorage.getItem('boylam')) || '29');
-      const vakitler = gunlukVakitler(en, bo);
-      await namazBildirimleriniKur(vakitler);
+      const en = parseFloat(await AsyncStorage.getItem('enlem'));
+      const bo = parseFloat(await AsyncStorage.getItem('boylam'));
+      await namazBildirimleriniKur(en, bo);
     } else {
       await tumBildirimleriIptal();
     }
@@ -147,8 +145,7 @@ export default function AyarlarScreen({ navigation }) {
     await AsyncStorage.setItem('enlem', String(s.enlem));
     await AsyncStorage.setItem('boylam', String(s.boylam));
     if (bildirimAcik) {
-      const vakitler = gunlukVakitler(s.enlem, s.boylam);
-      await namazBildirimleriniKur(vakitler);
+      await namazBildirimleriniKur(s.enlem, s.boylam);
     }
   };
 

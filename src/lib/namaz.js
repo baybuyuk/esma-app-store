@@ -21,6 +21,12 @@ const VAKIT_ETIKETLERI = {
 function buildTimes(enlem, boylam, tarih) {
   const coords = new Coordinates(enlem, boylam);
   const params = CalculationMethod.Turkey();
+  // DIKKAT: Bu Madhab.Shafi BILEREK secildi, "duzeltmeyin".
+  // Diyanet, Ikindi vaktini "asr-i evvel" yontemiyle yayinlar (golge = cisim
+  // boyu, faktor 1). adhan kutuphanesinde asr-i evvel = Madhab.Shafi.
+  // Madhab.Hanafi (asr-i sani, faktor 2) Ikindi'yi ~30-40 dk GECE kaydirir ve
+  // Diyanet takvimiyle uyusmaz. Turkiye kitlesi Hanefi olsa da resmi vakit
+  // asr-i evvel'dir; o yuzden Shafi dogru esleme.
   params.madhab = Madhab.Shafi;
   return new PrayerTimes(coords, tarih, params);
 }

@@ -12,6 +12,23 @@ for (const key of Object.keys(isimler)) {
   }
 }
 
+// Isim girisi temizleme — TextInput'larda harf disi (rakam, sembol, emoji,
+// noktalama) karakterleri suzer. Izin verilenler: Turkce dahil harfler,
+// bosluk, tire ve kesme isareti. Boylece ebced=0 ureten cop girdi daha
+// klavyede olusmadan engellenir; isimdenEsma'daki guard son savunma hattidir.
+const IZINSIZ_KARAKTER = /[^A-Za-zçÇğĞıİöÖşŞüÜ\s'-]/g;
+export function temizIsimGirdisi(ham) {
+  if (typeof ham !== 'string') return '';
+  return ham.replace(IZINSIZ_KARAKTER, '');
+}
+
+// En az bir harf iceriyor mu? Buton aktifligi icin: tek basina '-' veya bosluk
+// "gecerli isim" sayilmaz (onlar da ebced=0 uretirdi).
+const HARF_VAR = /[A-Za-zçÇğĞıİöÖşŞüÜ]/;
+export function gecerliIsimMi(metin) {
+  return typeof metin === 'string' && HARF_VAR.test(metin);
+}
+
 // Isimden esma bulma — UC ASAMALI HIBRIT FALLBACK:
 //  1) Sozluk (assets/data/isimler.json) — en yuksek dogruluk
 //     Klasik isimler (Omer=310, Ali=110, Hakan=752). ASCII-normalize index
@@ -80,6 +97,26 @@ export function isimdenEsma(turkceIsim) {
 
   // Algoritmik yol (saf fonetik) — son care
   const { arapca, ebced } = algoritmikEbced(turkceIsim);
+
+  // Cop girdi koruması (#4): rakam/sembol/emoji gibi hicbir Arap harfine
+  // eslenmeyen input ebced=0 / bos arapca uretir. Eskiden enYakinEsma(0) en
+  // yakin esma olan Ahad'i "bulundu:true" + bos arapca ile donuyordu —
+  // kendinden emin YANLIS eslesme, ustelik onboarding'de kalici kaydediliyordu.
+  // Bunun yerine acik bir "okunamadi" durumu don (esma:null).
+  if (!arapca || ebced === 0) {
+    return {
+      bulundu: false,
+      kaynak: 'gecersiz',
+      isim_turkce: turkceIsim,
+      isim_arapca: null,
+      isim_ebced: null,
+      cinsiyet: 'u',
+      esma: null,
+      fark: null,
+      not: 'Bu adı okuyamadık. Lütfen harflerden oluşan bir ad gir.',
+    };
+  }
+
   const enYakin = enYakinEsma(ebced);
   return {
     bulundu: true,

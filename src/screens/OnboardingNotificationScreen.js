@@ -14,7 +14,6 @@ import { colors } from '../constants/colors';
 import { type } from '../constants/type';
 import { useTipScale } from '../context/YaziKademesiContext';
 import { izinIste, namazBildirimleriniKur } from '../lib/bildirim';
-import { gunlukVakitler } from '../lib/namaz';
 import GradientArkaPlan from '../components/GradientArkaPlan';
 
 const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
@@ -107,10 +106,12 @@ export default function OnboardingNotificationScreen({ navigation }) {
       const izin = await izinIste();
       await AsyncStorage.setItem('bildirimAcik', izin ? '1' : '0');
       if (izin) {
-        const enlem = parseFloat((await AsyncStorage.getItem('enlem')) || '41');
-        const boylam = parseFloat((await AsyncStorage.getItem('boylam')) || '29');
-        const vakitler = gunlukVakitler(enlem, boylam);
-        await namazBildirimleriniKur(vakitler);
+        // Konum onboarding'de bu ekrandan once alinir. Yoksa (kullanici atladi/
+        // reddetti) namazBildirimleriniKur namaz vaktini atlar, sessizce
+        // Istanbul'a dusmez; muhasebe + cuma yine kurulur.
+        const enlem = parseFloat(await AsyncStorage.getItem('enlem'));
+        const boylam = parseFloat(await AsyncStorage.getItem('boylam'));
+        await namazBildirimleriniKur(enlem, boylam);
       }
     } finally {
       navigation.navigate('OnboardingEsmaAciklama');

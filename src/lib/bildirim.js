@@ -1,5 +1,7 @@
 import * as Notifications from 'expo-notifications';
 import { Platform } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { gunlukVakitler } from './namaz';
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
@@ -16,6 +18,19 @@ const CH_MUHASEBE = 'muhasebe';
 
 // Cross-platform custom ses (Android: kanal sound, iOS: notification sound dosya adi)
 const EZAN_SESI = 'ezan.mp3';
+
+// iOS'ta ayni anda en fazla 64 bekleyen bildirim tutulur; fazlasi SESSIZCE
+// dusurulur. Vakit basina 3 bildirim (t30, t15, vakit) x 5 vakit = 15/gun.
+//   iOS:     4 gun x 15 = 60, + gunluk muhasebe (1) + cuma (1) = 62 < 64 (pay var).
+//   Android: pratik limit cok daha yuksek, daha genis pencere kullanilir.
+// Yerel bildirimin dogasi geregi pencere SINIRLIDIR: kullanici uygulamayi en az
+// birkac gunde bir acmazsa pencere tukenir. App.js her on-plana gelisle (gun
+// degisince) bildirimleriGunlukTazele() cagirarak yeniden kurar; pencere kayar.
+const PENCERE_GUN_IOS = 4;
+const PENCERE_GUN_ANDROID = 7;
+
+// App.js'in "bugun zaten kuruldu mu" gunluk-tazeleme kontrolu icin damga.
+const KURULUM_GUN_ANAHTAR = 'bildirimKurulumGun';
 
 // Bildirim metin havuzlari — Yusuf geri bildirimi: "bildirim gunu baglayalim
 // mi yerine 'bugun Allah icin ne yaptin' gibi seyler yazalim, daha etkili".
@@ -178,61 +193,109 @@ async function planla(baslik, govde, tarih, ekstra = {}, opts = {}) {
   }
 }
 
-export async function namazBildirimleriniKur(vakitler) {
-  if (!vakitler) return [];
+// Damga: bugun namaz bildirimleri kuruldu. App.js gunluk-tazeleme bunu okur.
+async function kurulumDamgala() {
+  try {
+    await AsyncStorage.setItem(KURULUM_GUN_ANAHTAR, new Date().toDateString());
+  } catch (e) {}
+}
+
+// Namaz vakti bildirimlerini KAYAN COK-GUNLU pencere ile kurar.
+//
+// enlem/boylam verilmezse (konum yok) namaz-vakti bildirimleri KURULMAZ — eski
+// davranis sessizce Istanbul'a (41,29) dusuyordu; yanlis sehir = yanlis vakit
+// demekti. Konumdan bagimsiz aksam muhasebesi + cuma bildirimi yine kurulur.
+//
+// Cagiranlar: OnboardingNotification (onboarding), Ayarlar (toggle + sehir
+// degisimi), App.js (gunluk tazeleme). Her cagri once tum bildirimleri iptal
+// edip bastan kurar (idempotent).
+export async function namazBildirimleriniKur(enlem, boylam) {
   await tumBildirimleriIptal();
 
   const idler = [];
-  const sira = [
-    ['imsak', 'İmsak'],
-    ['ogle', 'Öğle'],
-    ['ikindi', 'İkindi'],
-    ['aksam', 'Akşam'],
-    ['yatsi', 'Yatsı'],
-  ];
+  const konumVar = Number.isFinite(enlem) && Number.isFinite(boylam);
 
-  for (let i = 0; i < sira.length; i++) {
-    const [anahtar, ad] = sira[i];
-    const zaman = vakitler[anahtar];
-    if (!zaman) continue;
+  if (konumVar) {
+    const gunSayisi = Platform.OS === 'ios' ? PENCERE_GUN_IOS : PENCERE_GUN_ANDROID;
+    const bugun = new Date();
+    const sira = [
+      ['imsak', 'İmsak'],
+      ['ogle', 'Öğle'],
+      ['ikindi', 'İkindi'],
+      ['aksam', 'Akşam'],
+      ['yatsi', 'Yatsı'],
+    ];
 
-    const t30 = new Date(zaman.getTime() - 30 * 60 * 1000);
-    const t15 = new Date(zaman.getTime() - 15 * 60 * 1000);
-    const ayet = ayetSec(zaman, i);
+    for (let g = 0; g < gunSayisi; g++) {
+      // Gun ofsetini takvim gunu uzerinden uygula (saat 12:00 secildi; DST
+      // gecislerinde gun kaymasini onler). gunlukVakitler o takvim gununun
+      // vakitlerini dondurur; gecmiste kalan vakitleri planla() zaten atlar.
+      const tarih = new Date(bugun.getFullYear(), bugun.getMonth(), bugun.getDate() + g, 12, 0, 0);
+      const vakitler = gunlukVakitler(enlem, boylam, tarih);
 
-    // 30 dk once — havuzdan rotasyon, daha dusunduren prompt
-    const id30 = await planla(
-      'Hu',
-      OTUZ_DK_METNI(ad, zaman, i),
-      t30,
-      { tip: 'namaz_oncesi_30', vakit: anahtar },
-      { ses: true, kanal: CH_MUHASEBE }
-    );
-    // 15 dk once — havuzdan rotasyon (farkli indeks)
-    const id15 = await planla(
-      'Hu',
-      ONBES_DK_METNI(ad, zaman, i + 7),
-      t15,
-      { tip: 'namaz_oncesi_15', vakit: anahtar },
-      { ses: true, kanal: CH_MUHASEBE }
-    );
-    // Vakit girdi — ezan sesi + ayet
-    const idVakit = await planla(
-      ad,
-      GIRDI_METNI(ad, ayet),
-      zaman,
-      { tip: 'namaz_vakti', vakit: anahtar, ayetKaynak: ayet.kaynak },
-      { ses: EZAN_SESI, kanal: CH_NAMAZ }
-    );
+      for (let i = 0; i < sira.length; i++) {
+        const [anahtar, ad] = sira[i];
+        const zaman = vakitler[anahtar];
+        // Yuksek enlemde adhan Invalid Date donebilir — guvenli atla.
+        if (!zaman || !(zaman instanceof Date) || isNaN(zaman.getTime())) continue;
 
-    if (id30) idler.push(id30);
-    if (id15) idler.push(id15);
-    if (idVakit) idler.push(idVakit);
+        const t30 = new Date(zaman.getTime() - 30 * 60 * 1000);
+        const t15 = new Date(zaman.getTime() - 15 * 60 * 1000);
+        const ayet = ayetSec(zaman, i);
+
+        // 30 dk once — havuzdan rotasyon, daha dusunduren prompt
+        const id30 = await planla(
+          'Hu',
+          OTUZ_DK_METNI(ad, zaman, i),
+          t30,
+          { tip: 'namaz_oncesi_30', vakit: anahtar },
+          { ses: true, kanal: CH_MUHASEBE }
+        );
+        // 15 dk once — havuzdan rotasyon (farkli indeks)
+        const id15 = await planla(
+          'Hu',
+          ONBES_DK_METNI(ad, zaman, i + 7),
+          t15,
+          { tip: 'namaz_oncesi_15', vakit: anahtar },
+          { ses: true, kanal: CH_MUHASEBE }
+        );
+        // Vakit girdi — ezan sesi + ayet
+        const idVakit = await planla(
+          ad,
+          GIRDI_METNI(ad, ayet),
+          zaman,
+          { tip: 'namaz_vakti', vakit: anahtar, ayetKaynak: ayet.kaynak },
+          { ses: EZAN_SESI, kanal: CH_NAMAZ }
+        );
+
+        if (id30) idler.push(id30);
+        if (id15) idler.push(id15);
+        if (idVakit) idler.push(idVakit);
+      }
+    }
   }
 
   await aksamMuhasabesiBildirimi();
   await cumaBildirimi();
+  await kurulumDamgala();
   return idler;
+}
+
+// App.js mount + on-plana gelis (AppState 'active') buradan cagirir.
+// bildirimAcik degilse ya da bugun zaten kurulduysa is yapmaz; boylece her
+// foreground'da cancel+reschedule thrash'i olmaz, sadece gun degisince pencere
+// bir kez kayar. Konum (enlem/boylam) yoksa namazBildirimleriniKur namaz
+// kismini atlar, muhasebe + cuma yine kurulur.
+export async function bildirimleriGunlukTazele() {
+  try {
+    const acik = await AsyncStorage.getItem('bildirimAcik');
+    if (acik !== '1') return;
+    const sonGun = await AsyncStorage.getItem(KURULUM_GUN_ANAHTAR);
+    if (sonGun === new Date().toDateString()) return;
+    const en = parseFloat(await AsyncStorage.getItem('enlem'));
+    const bo = parseFloat(await AsyncStorage.getItem('boylam'));
+    await namazBildirimleriniKur(en, bo);
+  } catch (e) {}
 }
 
 export async function aksamMuhasabesiBildirimi() {

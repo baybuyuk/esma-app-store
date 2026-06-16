@@ -17,7 +17,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { colors } from '../constants/colors';
 import { type } from '../constants/type';
 import { useTipScale } from '../context/YaziKademesiContext';
-import { isimdenEsma } from '../lib/esma';
+import { isimdenEsma, temizIsimGirdisi, gecerliIsimMi } from '../lib/esma';
 import GradientArkaPlan from '../components/GradientArkaPlan';
 
 const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
@@ -26,12 +26,13 @@ export default function OnboardingNameScreen({ navigation }) {
   const tip = useTipScale();
   const [isim, setIsim] = useState('');
   const [yukleniyor, setYukleniyor] = useState(false);
+  const [hata, setHata] = useState('');
   const butonOpacity = useRef(new Animated.Value(0.5)).current;
   const butonScale = useRef(new Animated.Value(0.96)).current;
   const oncekiDoluRef = useRef(false);
 
   useEffect(() => {
-    const dolu = isim.trim().length > 0 && !yukleniyor;
+    const dolu = gecerliIsimMi(isim) && !yukleniyor;
     if (dolu === oncekiDoluRef.current) return;
     oncekiDoluRef.current = dolu;
     Animated.parallel([
@@ -52,10 +53,20 @@ export default function OnboardingNameScreen({ navigation }) {
 
   const devamEt = async () => {
     const temiz = isim.trim();
-    if (!temiz) return;
+    if (!gecerliIsimMi(temiz)) {
+      setHata('Lütfen harflerden oluşan bir ad gir.');
+      return;
+    }
+    setHata('');
     try {
       setYukleniyor(true);
       const sonuc = isimdenEsma(temiz);
+      if (!sonuc.esma) {
+        // Savunma hatti: giris filtresi + buton kapisi normalde buraya birakmaz.
+        setHata('Bu adı okuyamadık. Lütfen tekrar dener misin?');
+        setYukleniyor(false);
+        return;
+      }
       await AsyncStorage.setItem('userName', temiz);
       await AsyncStorage.setItem('userEsma', JSON.stringify(sonuc));
       navigation.navigate('OnboardingYaziBoyutu');
@@ -69,7 +80,7 @@ export default function OnboardingNameScreen({ navigation }) {
     <SafeAreaView style={styles.container}>
       <KeyboardAvoidingView
         style={{ flex: 1 }}
-        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       >
         <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
           <View style={styles.inner}>
@@ -78,7 +89,7 @@ export default function OnboardingNameScreen({ navigation }) {
             <TextInput
               style={[styles.input, { fontSize: tip.xl.fontSize, lineHeight: tip.xl.lineHeight }]}
               value={isim}
-              onChangeText={setIsim}
+              onChangeText={(t) => { setIsim(temizIsimGirdisi(t)); setHata(''); }}
               placeholder="İsmin"
               placeholderTextColor={colors.ikincilMetin}
               autoFocus
@@ -87,6 +98,9 @@ export default function OnboardingNameScreen({ navigation }) {
               onSubmitEditing={devamEt}
               maxLength={40}
             />
+            {hata ? (
+              <Text style={[styles.hata, { fontSize: tip.sm.fontSize, lineHeight: tip.sm.lineHeight }]}>{hata}</Text>
+            ) : null}
             <AnimatedTouchable
               style={[
                 styles.buton,
@@ -96,7 +110,7 @@ export default function OnboardingNameScreen({ navigation }) {
                 },
               ]}
               onPress={devamEt}
-              disabled={!isim.trim() || yukleniyor}
+              disabled={!gecerliIsimMi(isim) || yukleniyor}
               accessibilityLabel="Devam Et"
             >
               <Text style={[styles.butonYazi, { fontSize: tip.lg.fontSize, lineHeight: tip.lg.lineHeight }]}>Devam Et</Text>
@@ -137,4 +151,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   butonYazi: { color: '#fff', fontWeight: '600' },
+  hata: {
+    color: '#B3261E',
+    textAlign: 'center',
+    marginTop: -24,
+    marginBottom: 20,
+  },
 });

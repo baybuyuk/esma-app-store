@@ -19,8 +19,7 @@
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false,
         "NSLocationWhenInUseUsageDescription": "Namaz vakitlerini ve kıble yönünü konumunuza göre hesaplamak için kullanılır.",
-        "NSMotionUsageDescription": "Kıble yönünü gösterebilmek için pusula sensörü kullanılır.",
-        "UIBackgroundModes": ["audio"]
+        "NSMotionUsageDescription": "Kıble yönünü gösterebilmek için pusula sensörü kullanılır."
       }
     },
     "android": {
