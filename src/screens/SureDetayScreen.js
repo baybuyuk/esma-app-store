@@ -311,14 +311,15 @@ const styles = StyleSheet.create({
   },
   tilavetBilgi: { flex: 1, marginLeft: 14 },
   barArka: {
-    height: 6,
-    backgroundColor: '#EFE9D8',
-    borderRadius: 3,
+    height: 4,
+    backgroundColor: '#ECE6D6',
+    borderRadius: 2,
     overflow: 'hidden',
   },
   barDolu: {
     height: '100%',
     backgroundColor: colors.altin,
+    borderRadius: 2,
   },
   zamanSatir: {
     flexDirection: 'row',

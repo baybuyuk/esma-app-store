@@ -22,6 +22,7 @@ import {
   TouchableOpacity,
   ScrollView,
   StyleSheet,
+  Modal,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useFocusEffect } from '@react-navigation/native';
@@ -119,6 +120,8 @@ export default function ManeviSureDetayScreen({ navigation, route }) {
 
   // Aktif kelime — currentTime'dan turet. State sadece son bulunan idx (re-render azaltir).
   const [aktifIdx, setAktifIdx] = useState(-1);
+  // ÂYET N/M rozetine dokununca acilan meal popup'i icin secili ayet.
+  const [secilenAyet, setSecilenAyet] = useState(null);
   useEffect(() => {
     if (!sesVar || !oynaniyor) return;
     if (!tumKelimeler.length) return;
@@ -227,6 +230,26 @@ export default function ManeviSureDetayScreen({ navigation, route }) {
     } catch (_) {}
   }, [player, sesVar, oynaniyor, bitti]);
 
+  // Ayet bazli atlama: tilavet tek mp3, her kelimede bas_ms var. Bir ayetin
+  // baslangici = ilk kelimesinin bas_ms'i. Onceki/sonraki ayetin basina seek.
+  const ayetBasiSn = (idx) => {
+    const ay = ayetler[idx];
+    const k = ay && Array.isArray(ay.kelimeler) ? ay.kelimeler[0] : null;
+    return k && typeof k.bas_ms === 'number' ? k.bas_ms / 1000 : null;
+  };
+  const ayeteGit = (hedefIdx) => {
+    if (!player || !sesVar) return;
+    if (hedefIdx < 0 || hedefIdx >= ayetler.length) return;
+    const sn = ayetBasiSn(hedefIdx);
+    if (sn == null) return;
+    try { player.seekTo(sn); } catch (_) {}
+    // Durakta bile highlight + meal karti hemen guncellensin.
+    const yeniIdx = aktifKelimeBul(tumKelimeler, Math.round(sn * 1000));
+    if (yeniIdx >= 0) setAktifIdx(yeniIdx);
+  };
+  const oncekiAyet = () => ayeteGit((aktifAyetIdx >= 0 ? aktifAyetIdx : 0) - 1);
+  const sonrakiAyet = () => ayeteGit((aktifAyetIdx >= 0 ? aktifAyetIdx : -1) + 1);
+
   // Empty / hata durumu
   if (!sure) {
     return (
@@ -276,6 +299,18 @@ export default function ManeviSureDetayScreen({ navigation, route }) {
 
           {/* 2. Tilavet kontrol kartı */}
           <View style={styles.tilavetKart}>
+            <View style={styles.kontrolSatir}>
+            <TouchableOpacity
+              style={[styles.sarBtn, !sesVar && styles.sarBtnPasif]}
+              onPress={oncekiAyet}
+              disabled={!sesVar}
+              activeOpacity={0.7}
+              accessibilityRole="button"
+              accessibilityLabel="Önceki ayet"
+            >
+              <View style={styles.skipBar} />
+              <Text style={styles.skipTri}>◀</Text>
+            </TouchableOpacity>
             <TouchableOpacity
               style={[
                 styles.oynatBtn,
@@ -291,6 +326,18 @@ export default function ManeviSureDetayScreen({ navigation, route }) {
             >
               <Text style={styles.oynatIcon}>{oynaniyor ? '❚❚' : '▶'}</Text>
             </TouchableOpacity>
+            <TouchableOpacity
+              style={[styles.sarBtn, !sesVar && styles.sarBtnPasif]}
+              onPress={sonrakiAyet}
+              disabled={!sesVar}
+              activeOpacity={0.7}
+              accessibilityRole="button"
+              accessibilityLabel="Sonraki ayet"
+            >
+              <Text style={styles.skipTri}>▶</Text>
+              <View style={styles.skipBar} />
+            </TouchableOpacity>
+            </View>
             <View style={styles.tilavetBilgi}>
               {sesVar ? (
                 <>
@@ -381,9 +428,17 @@ export default function ManeviSureDetayScreen({ navigation, route }) {
           {/* 4. Meal kartı — aktif ayetin meali */}
           {aktifAyet ? (
             <View style={styles.mealKart}>
-              <Text style={[styles.mealRozet, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>
+              <TouchableOpacity
+                onPress={() => setSecilenAyet(aktifAyet)}
+                activeOpacity={0.6}
+                accessibilityRole="button"
+                accessibilityLabel={`Âyet ${aktifAyet.no} anlamını göster`}
+              >
+              <Text style={[styles.mealRozet, { fontSize: Math.max(9, tip.xs.fontSize - 1), lineHeight: tip.xs.lineHeight }]}>
                 ÂYET {aktifAyet.no} / {ayetSayisi}
               </Text>
+                <Text style={[styles.rozetIpucu, { fontSize: Math.max(8, tip.xs.fontSize - 2), lineHeight: tip.xs.lineHeight }]}>ⓘ anlamı için dokun</Text>
+              </TouchableOpacity>
               <Text
                 style={[
                   styles.mealMetin,
@@ -431,6 +486,41 @@ export default function ManeviSureDetayScreen({ navigation, route }) {
             </View>
           ) : null}
         </ScrollView>
+
+        <Modal
+          visible={!!secilenAyet}
+          transparent
+          animationType="fade"
+          onRequestClose={() => setSecilenAyet(null)}
+        >
+          <TouchableOpacity
+            style={styles.modalArka}
+            activeOpacity={1}
+            onPress={() => setSecilenAyet(null)}
+          >
+            <View style={styles.modalKart}>
+              <Text style={[styles.modalRozet, { fontSize: tip.xs.fontSize, lineHeight: tip.xs.lineHeight }]}>
+                ÂYET {secilenAyet?.no} / {ayetSayisi}
+              </Text>
+              <Text style={[styles.modalMeal, { fontSize: tip.lg.fontSize, lineHeight: tip.lg.lineHeight * 1.4 }]}>
+                {secilenAyet?.meal}
+              </Text>
+              {secilenAyet?.okunus ? (
+                <Text style={[styles.modalOkunus, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight * 1.3 }]}>
+                  {secilenAyet.okunus}
+                </Text>
+              ) : null}
+              <TouchableOpacity
+                style={styles.modalKapat}
+                onPress={() => setSecilenAyet(null)}
+                accessibilityRole="button"
+                accessibilityLabel="Kapat"
+              >
+                <Text style={[styles.modalKapatYazi, { fontSize: tip.base.fontSize, lineHeight: tip.base.lineHeight }]}>Kapat</Text>
+              </TouchableOpacity>
+            </View>
+          </TouchableOpacity>
+        </Modal>
       </SafeAreaView>
     </GradientArkaPlan>
   );
@@ -486,18 +576,21 @@ const styles = StyleSheet.create({
   },
 
   tilavetKart: {
-    flexDirection: 'row',
-    alignItems: 'center',
     backgroundColor: '#fff',
     marginHorizontal: 16,
     marginTop: 12,
     borderRadius: radii.md,
-    padding: 14,
+    padding: 16,
     elevation: 1,
     shadowColor: '#000',
     shadowOpacity: 0.05,
     shadowRadius: 4,
     shadowOffset: { width: 0, height: 1 },
+  },
+  kontrolSatir: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   oynatBtn: {
     width: 60,
@@ -510,27 +603,29 @@ const styles = StyleSheet.create({
   oynatBtnAktif: { backgroundColor: colors.ortaYesil },
   oynatBtnPasif: { backgroundColor: colors.cizgi, opacity: 0.6 },
   oynatIcon: { color: '#fff', fontSize: 22, fontWeight: '700' },
-  tilavetBilgi: { flex: 1, marginLeft: 14 },
+  tilavetBilgi: { marginTop: 14 },
   barArka: {
-    height: 6,
-    backgroundColor: '#EFE9D8',
-    borderRadius: 3,
+    height: 4,
+    backgroundColor: '#ECE6D6',
+    borderRadius: 2,
     overflow: 'hidden',
   },
   barDolu: {
     height: '100%',
     backgroundColor: colors.altin,
+    borderRadius: 2,
   },
   zamanSatir: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop: 6,
+    marginTop: 7,
   },
   zamanYazi: { color: colors.ikincilMetin },
   kariYazi: {
     color: colors.altin,
-    marginTop: 4,
+    marginTop: 6,
     fontStyle: 'italic',
+    textAlign: 'center',
   },
 
   // Besmele banner — manevi sureler ust sabit
@@ -617,8 +712,8 @@ const styles = StyleSheet.create({
   mealRozet: {
     color: colors.altin,
     fontWeight: '700',
-    letterSpacing: 1.2,
-    marginBottom: 6,
+    letterSpacing: 0.6,
+    marginBottom: 2,
   },
   mealMetin: {
     color: colors.anaMetin,
@@ -645,4 +740,68 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   faziletMetin: { color: colors.anaMetin },
+  sarBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 10,
+    paddingHorizontal: 10,
+    marginHorizontal: 16,
+  },
+  sarBtnPasif: { opacity: 0.35 },
+  skipBar: {
+    width: 3,
+    height: 15,
+    borderRadius: 1.5,
+    backgroundColor: colors.altin,
+  },
+  skipTri: {
+    color: colors.altin,
+    fontSize: 17,
+    marginHorizontal: 2,
+  },
+  rozetIpucu: {
+    color: colors.altin,
+    fontWeight: '600',
+    marginBottom: 6,
+    opacity: 0.8,
+  },
+  modalArka: {
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.45)',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 28,
+  },
+  modalKart: {
+    backgroundColor: '#fff',
+    borderRadius: radii.md,
+    padding: 22,
+    width: '100%',
+    borderLeftWidth: 4,
+    borderLeftColor: colors.ortaYesil,
+  },
+  modalRozet: {
+    color: colors.altin,
+    fontWeight: '700',
+    letterSpacing: 1,
+    marginBottom: 10,
+  },
+  modalMeal: { color: colors.anaMetin },
+  modalOkunus: {
+    color: colors.ortaYesil,
+    fontStyle: 'italic',
+    marginTop: 10,
+  },
+  modalKapat: {
+    marginTop: 18,
+    alignSelf: 'flex-end',
+    paddingVertical: 8,
+    paddingHorizontal: 18,
+    borderRadius: radii.sm,
+    backgroundColor: colors.anaYesil,
+  },
+  modalKapatYazi: {
+    color: '#fff',
+    fontWeight: '600',
+  },
 });
